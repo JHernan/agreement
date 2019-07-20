@@ -18,7 +18,7 @@ class AgreementController extends Controller
     }
 
     /**
-     * @Route("/service", name="service")
+     * @Route("/service", name="service", methods={"GET","POST"})
      */
     public function serviceAction()
     {

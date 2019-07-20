@@ -5,5 +5,14 @@
     "vue-loader": "15.0.11",
     "vue-template-compiler": "^2.6.10",
     "webpack-notifier": "^1.8.0"
+  },
+  "scripts": {
+    "css": "node-sass public/scss/style.scss public/css/style.css",
+    "watch:css": "yarn css -watch",
+    "watch:vue": "yarn run encore dev --watch",
+    "watch:all": "yarn watch:css & yarn watch:vue & wait"
+  },
+  "dependencies": {
+    "node-sass": "^4.12.0"
   }
 }

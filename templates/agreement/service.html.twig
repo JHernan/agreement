@@ -12,46 +12,68 @@
     <div class="container">
         <div class="row" id="app">
             <div class="col-lg-6">
-                <form class="row contact_form" action="contact_process.php" method="post" id="contactForm" novalidate="novalidate">
+                <form class="row contact_form" action="{{ path('service') }}" method="post" id="contactForm" novalidate="novalidate">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <input type="text" v-model="message" class="form-control" id="city" name="city" placeholder="Ciudad"
+                            <input type="text" v-model="city" class="form-control" id="city" name="city" placeholder="Ciudad"
                                    onfocus="this.placeholder = ''" onblur="this.placeholder = 'Ciudad'">
                         </div>
                         <div class="form-group">
-                            <input type="email" class="form-control" id="email" name="email" placeholder="Nombre del cónyuge 1"
+                            <input type="text" v-model="partner_name_1" class="form-control" id="partner_name_1" name="partner_name_1" placeholder="Nombre del cónyuge 1"
                                    onfocus="this.placeholder = ''" onblur="this.placeholder = 'Nombre del cónyuge 1'">
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" id="subject" name="subject" placeholder="Nombre del cónyuge 2"
-                                   onfocus="this.placeholder = ''" onblur="this.placeholder = 'Nombre del cónyuge 1'">
+                            <input type="text" v-model="partner_nationality_1" class="form-control" id="partner_nationality_1" name="partner_nationality_1" placeholder="Nacionalidad del cónyuge 1"
+                                   onfocus="this.placeholder = ''" onblur="this.placeholder = 'Nacionalidad del cónyuge 1'">
                         </div>
-                    </div>
-                    <div class="col-md-6">
                         <div class="form-group">
-                                <textarea class="form-control" name="message" id="message" rows="1" placeholder="Enter Message"
-                                          onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Message'"></textarea>
+                            <input type="text" v-model="partner_address_1" class="form-control" id="partner_address_1" name="partner_address_1" placeholder="Dirección del cónyuge 1"
+                                   onfocus="this.placeholder = ''" onblur="this.placeholder = 'Dirección del cónyuge 1'">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" v-model="partner_town_1" class="form-control" id="partner_town_1" name="partner_town_1" placeholder="Localidad del cónyuge 1"
+                                   onfocus="this.placeholder = ''" onblur="this.placeholder = 'Localidad del cónyuge 1'">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" v-model="partner_id_1" class="form-control" id="partner_id_1" name="partner_id_1" placeholder="DNI del cónyuge 1"
+                                   onfocus="this.placeholder = ''" onblur="this.placeholder = 'DNI del cónyuge 1'">
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" v-model="partner_name_2" class="form-control" id="partner_name_2" name="partner_name_2" placeholder="Nombre del cónyuge 2"
+                                   onfocus="this.placeholder = ''" onblur="this.placeholder = 'Nombre del cónyuge 2'">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" v-model="partner_nationality_2" class="form-control" id="partner_nationality_2" name="partner_nationality_2" placeholder="Nacionalidad del cónyuge 2"
+                                   onfocus="this.placeholder = ''" onblur="this.placeholder = 'Nacionalidad del cónyuge 2'">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" v-model="partner_address_2" class="form-control" id="partner_address_2" name="partner_address_2" placeholder="Dirección del cónyuge 2"
+                                   onfocus="this.placeholder = ''" onblur="this.placeholder = 'Dirección del cónyuge 2'">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" v-model="partner_town_2" class="form-control" id="partner_town_2" name="partner_town_2" placeholder="Localidad del cónyuge 2"
+                                   onfocus="this.placeholder = ''" onblur="this.placeholder = 'Localidad del cónyuge 2'">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" v-model="partner_id_2" class="form-control" id="partner_id_2" name="partner_id_2" placeholder="DNI del cónyuge 2"
+                                   onfocus="this.placeholder = ''" onblur="this.placeholder = 'DNI del cónyuge 2'">
                         </div>
                     </div>
-                        <div class="text-center">
-                            <h3>My Symfony 4 sample project</h3>
-                            <div class="jumbotron text-center">
-                                <example></example>
-                            </div>
-                        </div>
-                    <div class="col-md-12 text-right">
-                        <button type="submit" value="submit" class="primary-btn text-uppercase">Send Message</button>
-                    </div>
+{#                    <div class="col-md-12 text-right">#}
+{#                        <button type="submit" value="submit" class="primary-btn text-uppercase">Send Message</button>#}
+{#                    </div>#}
                 </form>
             </div>
             <div class="col-lg-6">
                 <h1>CONVENIO REGULADOR DE DIVORCIO/SEPARACION</h1>
-                <div>En ${ message }, a ___ de ______ de _____.</div>
+                <div>En ${ city }, a ___ de ______ de _____.</div>
                 <h2>REUNIDOS</h2>
                 <div>De una parte,
-                    D. ___________________, mayor de edad, de nacionalidad ___________, con domicilio en Calle_________ DIRECCION/PISO/PORTAL/ESCALERA/PUERTA de __________LOCALIDAD y portador del Documento Nacional de Identidad núm. ___________ DNI</div>
+                    D. ${ partner_name_1 }, mayor de edad, de nacionalidad ${ partner_nationality_1 }, con domicilio en ${ partner_address_1 } de ${ partner_town_1 } y portador del Documento Nacional de Identidad núm. ${ partner_id_1 }
+                </div>
                 <div>Y de otra parte,
-                    D. ___________________, mayor de edad, de nacionalidad ___________, con domicilio en Calle_________ DIRECCION/PISO/PORTAL/ESCALERA/PUERTA de __________LOCALIDAD y portador del Documento Nacional de Identidad núm. ___________ DNI
+                    D. ${ partner_name_2 }, mayor de edad, de nacionalidad ${ partner_nationality_2 }, con domicilio en ${ partner_address_2 } de ${ partner_town_2 } y portador del Documento Nacional de Identidad núm. ${ partner_id_2 }
                 </div>
             </div>
         </div>
