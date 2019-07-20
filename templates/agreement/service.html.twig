@@ -59,6 +59,60 @@
                             <input type="text" v-model="partner_id_2" class="form-control" id="partner_id_2" name="partner_id_2" placeholder="DNI del cónyuge 2"
                                    onfocus="this.placeholder = ''" onblur="this.placeholder = 'DNI del cónyuge 2'">
                         </div>
+                        <div class="form-group">
+                            <select v-model="marriage_type" class="form-control" id="marriage_type" name="marriage_type">
+                                <option value="" disabled selected>Tipo de matrimonio</option>
+                                <option value="canonico">Canónico</option>
+                                <option value="civil">Civil</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" v-model="marriage_place" class="form-control" id="marriage_place" name="marriage_place" placeholder="Lugar del matrimonio"
+                                   onfocus="this.placeholder = ''" onblur="this.placeholder = 'Lugar del matrimonio'">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" v-model="marriage_date" class="form-control" id="marriage_date" name="marriage_date" placeholder="Fecha del matrimonio"
+                                   onfocus="this.placeholder = ''" onblur="this.placeholder = 'Fecha del matrimonio'">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" v-model="registry_place" class="form-control" id="registry_place" name="registry_place" placeholder="Lugar del Registro"
+                                   onfocus="this.placeholder = ''" onblur="this.placeholder = 'Lugar del Registro'">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" v-model="registry_volume" class="form-control" id="registry_volume" name="registry_volume" placeholder="Tomo del Registro"
+                                   onfocus="this.placeholder = ''" onblur="this.placeholder = 'Tomo del Registro'">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" v-model="registry_page" class="form-control" id="registry_page" name="registry_page" placeholder="Página del Registro"
+                                   onfocus="this.placeholder = ''" onblur="this.placeholder = 'Página del Registro'">
+                        </div>
+                        <div class="form-group">
+                            <select v-model="economic_system" class="form-control" id="economic_system" name="economic_system">
+                                <option value="" disabled selected>Regimen económico</option>
+                                <option value="Sociedad de gananciales">Sociedad de gananciales</option>
+                                <option value="Separación de bienes">Separación de bienes</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <input type="number" v-model="children_number" class="form-control" id="children_number" name="children_number" placeholder="Número de hijos"
+                                   onfocus="this.placeholder = ''" onblur="this.placeholder = 'Número de hijos'">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" v-model="last_partner_address" class="form-control" id="last_partner_address" name="last_partner_address" placeholder="Último domicilio conyugal"
+                                   onfocus="this.placeholder = ''" onblur="this.placeholder = 'Último domicilio conyugal'">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" v-model="last_partner_town" class="form-control" id="last_partner_town" name="last_partner_town" placeholder="Ciudad del último domicilio conyugal"
+                                   onfocus="this.placeholder = ''" onblur="this.placeholder = 'Ciudad del último domicilio conyugal'">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" v-model="family_house_address" class="form-control" id="family_house_address" name="family_house_address" placeholder="Domicilio de la vivienda familiar"
+                                   onfocus="this.placeholder = ''" onblur="this.placeholder = 'Domicilio de la vivienda familiar'">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" v-model="family_house_town" class="form-control" id="family_house_town" name="family_house_town" placeholder="Ciudad del domicilio de la vivienda familiar"
+                                   onfocus="this.placeholder = ''" onblur="this.placeholder = 'Ciudad del domicilio de la vivienda familiar'">
+                        </div>
                     </div>
 {#                    <div class="col-md-12 text-right">#}
 {#                        <button type="submit" value="submit" class="primary-btn text-uppercase">Send Message</button>#}
@@ -66,14 +120,51 @@
                 </form>
             </div>
             <div class="col-lg-6">
-                <h1>CONVENIO REGULADOR DE DIVORCIO/SEPARACION</h1>
-                <div>En ${ city }, a ___ de ______ de _____.</div>
-                <h2>REUNIDOS</h2>
-                <div>De una parte,
-                    D. ${ partner_name_1 }, mayor de edad, de nacionalidad ${ partner_nationality_1 }, con domicilio en ${ partner_address_1 } de ${ partner_town_1 } y portador del Documento Nacional de Identidad núm. ${ partner_id_1 }
-                </div>
-                <div>Y de otra parte,
-                    D. ${ partner_name_2 }, mayor de edad, de nacionalidad ${ partner_nationality_2 }, con domicilio en ${ partner_address_2 } de ${ partner_town_2 } y portador del Documento Nacional de Identidad núm. ${ partner_id_2 }
+                <div class="agreement">
+                    <h2>CONVENIO REGULADOR DE DIVORCIO/SEPARACION</h2>
+                    <div>En ${ city }, a ___ de ______ de _____.</div>
+                    <h3>REUNIDOS</h3>
+                    <div>De una parte,
+                        D. ${ partner_name_1 }, mayor de edad, de nacionalidad ${ partner_nationality_1 }, con domicilio en ${ partner_address_1 } de ${ partner_town_1 } y portador del Documento Nacional de Identidad núm. ${ partner_id_1 }
+                    </div>
+                    <div>Y de otra parte,
+                        D. ${ partner_name_2 }, mayor de edad, de nacionalidad ${ partner_nationality_2 }, con domicilio en ${ partner_address_2 } de ${ partner_town_2 } y portador del Documento Nacional de Identidad núm. ${ partner_id_2 }
+                    </div>
+                    <h3>INTERVIENEN</h3>
+                    <div>Ambos en su propio nombre y derecho, reconociéndose mutuamente capacidad legal suficiente para otorgar el presente CONVENIO REGULADOR, y por vía de antecedentes,</div>
+                    <h3>EXPONEN</h3>
+                    <div>
+                        <b>Primero.</b> Que contrajeron matrimonio ${ marriage_type }, en ${ marriage_place }, el día ${ marriage_date }, registrado en el Registro Civil de ${ registry_place }, tomo ${ registry_volume }, página ${ registry_page }. El matrimonio se contrajo bajo el régimen económico de ${ economic_system }.
+                    </div>
+                    <div>
+                        <b>Segundo.</b> Que de dicha unión nació ${ children_number } hijos.
+                        ___________________(NOMBRE APELLIDOS) el día __________ FECHA, que fue inscrito en el Registro Civil de ___________, en el Tomo __, página ___.
+                        (…)
+                    </div>
+                    <div>
+                        <b>Tercero.</b> El último domicilio conyugal estuvo establecido en ${ last_partner_address } de ${ last_partner_town }.
+                    </div>
+                    <div>
+                        <b>Cuarto.</b> Diferencias irreconciliables que no vienen al caso, llevan a los cónyuges a solicitar el divorcio de mutuo acuerdo.
+                    </div>
+                    <div>
+                        <b>Quinto.</b> Que con objeto de cumplir los requisitos exigidos por el Art 90 CC relativos a las exigencias y características que ha de tener el convenio regulador que acompañe a las demandas de divorcio de mutuo acuerdo, ambos cónyuges suscriben el presente convenio en base a las siguientes:
+                    </div>
+                    <h3>ESTIPULACIONES</h3>
+                    <h3>-I-</h3>
+                    <div>
+                        <b>DOMICILIO.</b> Ambos cónyuges, se comprometen a respetar la libertad e independencia tanto profesional como personal del otro, así como para la libre fijación de sus domicilios, sin intervenir ni inmiscuirse en modo alguno.
+                    </div>
+                    <h3>-II-</h3>
+                    <div>
+                        <b>USO Y DISFRUTE DEL DOMICILIO FAMILIAR.</b> La vivienda familiar, sita en la calle ${ family_house_address } de ${ family_house_town }), le corresponderá en el uso a _____________(CONYUGE 1/CONYUGE 2),  hasta ________________MULTIPLES POSIBLIDADES.
+                    </div>
+                    <h3>-III-</h3>
+                    <div>
+                        <b>PATRIA POTESTAD.</b> Del mismo modo, la patria potestad será ejercida conjuntamente por ambos progenitores, que adoptarán de común acuerdo y velando siempre por su interés, todas las decisiones transcendentes que afecten al menor,decidiendo en los casos de falta de acuerdo la autoridad judicial.
+                    </div>
+                    <h3>-IV-</h3>
+                    <h3>GUARDA Y CUSTODIA. ____________MULTIPLES POSIBILIDADES</h3>
                 </div>
             </div>
         </div>

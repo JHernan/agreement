@@ -3944,3 +3944,23 @@ h6 {
       margin-top: 80px; } }
 
 /*---------------------------------------------------- */
+/*----------------------------------------------------*/
+/*============== agreement css ================*/
+/* line 6, public/scss/_agreement.scss */
+.agreement h2 {
+  font-size: 26px;
+  font-family: "Open Sans", arial, sans-serif;
+  color: #494d55;
+  text-align: center;
+  margin-bottom: 30px; }
+
+/* line 13, public/scss/_agreement.scss */
+.agreement h3 {
+  font-size: 18px;
+  font-family: "Open Sans", arial, sans-serif;
+  color: #494d55;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px; }
+
+/*---------------------------------------------------- */
