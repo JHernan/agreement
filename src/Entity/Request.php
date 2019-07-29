@@ -23,7 +23,7 @@ class Request
     private $request_type;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Marriage", inversedBy="requests")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Marriage", inversedBy="request", cascade={"persist"})
      * @ORM\JoinColumn(nullable=false)
      */
     private $marriage;

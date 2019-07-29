@@ -41,25 +41,25 @@ class Marriage
     private $economic_system;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Registry", inversedBy="marriages")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Registry", inversedBy="marriage", cascade={"persist"})
      * @ORM\JoinColumn(nullable=false)
      */
     private $registry;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Partner", inversedBy="marriages")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Partner", inversedBy="marriages", cascade={"persist"})
      * @ORM\JoinColumn(nullable=false)
      */
     private $partner_first;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Partner", inversedBy="marriages")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Partner", inversedBy="marriages", cascade={"persist"})
      * @ORM\JoinColumn(nullable=false)
      */
     private $partner_second;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\House", inversedBy="marriages")
+     * @ORM\ManyToOne(targetEntity="App\Entity\House", inversedBy="marriages", cascade={"persist"})
      * @ORM\JoinColumn(nullable=false)
      */
     private $house;
@@ -111,24 +111,24 @@ class Marriage
 
     public function getMarriageType(): ?MarriageType
     {
-        return $this->MarriageType;
+        return $this->marriage_type;
     }
 
     public function setMarriageType(?MarriageType $marriage_type): self
     {
-        $this->MarriageType = $marriage_type;
+        $this->marriage_type = $marriage_type;
 
         return $this;
     }
 
     public function getEconomicSystem(): ?EconomicSystem
     {
-        return $this->EconomicSystem;
+        return $this->economic_system;
     }
 
     public function setEconomicSystem(?EconomicSystem $economic_system): self
     {
-        $this->EconomicSystem = $economic_system;
+        $this->economic_system = $economic_system;
 
         return $this;
     }

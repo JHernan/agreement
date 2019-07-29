@@ -7,8 +7,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
-use App\Form\PartnerType;
-use App\Entity\Partner;
+use App\Entity\Request as RequestDivorce;
+use App\Form\RequestType;
 
 class AgreementController extends Controller
 {
@@ -25,15 +25,15 @@ class AgreementController extends Controller
      */
     public function serviceAction(Request $request)
     {
-        $partner = new Partner();
+        $requestDivorce = new RequestDivorce();
 
-        $form = $this->createForm(PartnerType::class, $partner);
+        $form = $this->createForm(RequestType::class, $requestDivorce);
 
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($partner);
+            $entityManager->persist($requestDivorce);
             $entityManager->flush();
         }
 
