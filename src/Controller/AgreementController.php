@@ -5,7 +5,10 @@ namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Form\PartnerType;
+use App\Entity\Partner;
 
 class AgreementController extends Controller
 {
@@ -20,8 +23,22 @@ class AgreementController extends Controller
     /**
      * @Route("/service", name="service", methods={"GET","POST"})
      */
-    public function serviceAction()
+    public function serviceAction(Request $request)
     {
-        return $this->render('agreement/service.html.twig');
+        $partner = new Partner();
+
+        $form = $this->createForm(PartnerType::class, $partner);
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($partner);
+            $entityManager->flush();
+        }
+
+        return $this->render('agreement/service.html.twig', array(
+            'form' => $form->createView()
+        ));
     }
 }

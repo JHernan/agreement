@@ -12,12 +12,12 @@ new Vue({
         'partner_nationality_1': '',
         'partner_address_1': '',
         'partner_town_1': '',
-        'partner_id_1': '',
+        'partner_dni_1': '',
         'partner_name_2': '',
         'partner_nationality_2': '',
         'partner_address_2': '',
         'partner_town_2': '',
-        'partner_id_2': '',
+        'partner_dni_2': '',
         'marriage_type': '',
         'marriage_place': '',
         'marriage_date': '',
@@ -30,6 +30,9 @@ new Vue({
         'last_partner_town': '',
         'family_house_address': '',
         'family_house_town': ''
+    },
+    beforeMount: function() {
+        this.partner_dni_1 = this.$el.attributes['data-dni'].value;
     },
     delimiters: ['${', '}']
 });
