@@ -18,7 +18,7 @@ class Request
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\RequestType", inversedBy="requests")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=true)
      */
     private $request_type;
 
@@ -79,12 +79,12 @@ class Request
         return $this;
     }
 
-    public function getDate(): ?\DateTimeInterface
+    public function getDate()
     {
         return $this->date;
     }
 
-    public function setDate(\DateTimeInterface $date): self
+    public function setDate($date): self
     {
         $this->date = $date;
 

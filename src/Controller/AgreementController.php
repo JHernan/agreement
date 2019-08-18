@@ -35,10 +35,19 @@ class AgreementController extends Controller
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($requestDivorce);
             $entityManager->flush();
+
+            return $this->redirect($this->generateUrl('successForm'));
         }
 
         return $this->render('agreement/service.html.twig', array(
             'form' => $form->createView()
         ));
+    }
+
+    /**
+     * @Route("/success", name="successForm", methods={"GET"})
+     */
+    public function successFormAction(Request $request){
+        return $this->render('agreement/successForm.html.twig');
     }
 }

@@ -16,40 +16,294 @@
                     <div class="col-md-12">
                         {{ form_errors(form) }}
 
+                        <h1>Información general del convenio</h1>
+
                         <div class="form-group">
                         {{
-                            form_row(form.town, {'attr': {
+                            form_row(form.request_type, {'attr': {
                                 'class': 'form-control',
-                                'placeholder': 'Ciudad',
+                                'placeholder': 'Tipo de Convenio',
                                 'onfocus': 'this.placeholder = ""',
-                                'onblur': 'this.placeholder = "Ciudad"',
+                                'onblur': 'this.placeholder = "Tipo de Convenio"',
                             }})
                         }}
                         </div>
-
-                        {{ form_row(form.save, { 'label': 'Submit me' }) }}
+                        <div class="form-group">
+                            {{
+                                form_row(form.town, {'attr': {
+                                    'class': 'form-control',
+                                    'placeholder': 'Fecha del Convenio',
+                                    'onfocus': 'this.placeholder = ""',
+                                    'onblur': 'this.placeholder = "Ciudad del Convenio"',
+                                }})
+                            }}
+                        </div>
 {#                        <div class="form-group">#}
 {#                            {{#}
-{#                                form_widget(form.dni, {'attr': {#}
+{#                                form_row(form.date, {'attr': {#}
 {#                                    'class': 'form-control',#}
-{#                                    'v-model': 'partner_dni_1',#}
-{#                                    'id': 'partner_dni_1',#}
-{#                                    'name': 'partner_dni_1',#}
-{#                                    'placeholder': 'DNI del cónyuge 1',#}
+{#                                    'placeholder': 'Fecha del Convenio',#}
 {#                                    'onfocus': 'this.placeholder = ""',#}
-{#                                    'onblur': 'this.placeholder = "Nombre del cónyuge 1"',#}
-{#                                    'value': form.dni.vars.value#}
+{#                                    'onblur': 'this.placeholder = "Fecha del Convenio"',#}
 {#                                }})#}
 {#                            }}#}
 {#                        </div>#}
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="city" name="city" placeholder="Ciudad"
-                                   onfocus="this.placeholder = ''" onblur="this.placeholder = 'Ciudad'">
+
+                        <h1>Información de los cónyuges</h1>
+
+                        <div class="row">
+
+                            <div class="col-lg-6">
+
+                                <h2>Datos del primer cónyuge</h2>
+
+                                <div class="form-group">
+                                    {{
+                                        form_row(form.marriage.partner_first.name, {'attr': {
+                                            'class': 'form-control',
+                                            'placeholder': 'Nombre del primer cónyuge',
+                                            'onfocus': 'this.placeholder = ""',
+                                            'onblur': 'this.placeholder = "Nombre del primer cónyuge"',
+                                        }})
+                                    }}
+                                </div>
+                                <div class="form-group">
+                                    {{
+                                        form_row(form.marriage.partner_first.dni, {'attr': {
+                                            'class': 'form-control',
+                                            'placeholder': 'DNI del primer cónyuge',
+                                            'onfocus': 'this.placeholder = ""',
+                                            'onblur': 'this.placeholder = "DNI del primer cónyuge"',
+                                        }})
+                                    }}
+                                </div>
+                                <div class="form-group">
+                                    {{
+                                        form_row(form.marriage.partner_first.nationality, {'attr': {
+                                            'class': 'form-control',
+                                            'placeholder': 'Nacionalidad del primer cónyuge',
+                                            'onfocus': 'this.placeholder = ""',
+                                            'onblur': 'this.placeholder = "Nacionalidad del primer cónyuge"',
+                                        }})
+                                    }}
+                                </div>
+                                <div class="form-group">
+                                    {{
+                                        form_row(form.marriage.partner_first.address, {'attr': {
+                                            'class': 'form-control',
+                                            'placeholder': 'Dirección del primer cónyuge',
+                                            'onfocus': 'this.placeholder = ""',
+                                            'onblur': 'this.placeholder = "Dirección del primer cónyuge"',
+                                        }})
+                                    }}
+                                </div>
+                                <div class="form-group">
+                                    {{
+                                        form_row(form.marriage.partner_first.town, {'attr': {
+                                            'class': 'form-control',
+                                            'placeholder': 'Ciudad de la dirección del primer cónyuge',
+                                            'onfocus': 'this.placeholder = ""',
+                                            'onblur': 'this.placeholder = "Ciudad de la dirección del primer cónyuge"',
+                                        }})
+                                    }}
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6">
+
+                                <h2>Datos del segundo cónyuge</h2>
+
+                                <div class="form-group">
+                                    {{
+                                    form_row(form.marriage.partner_second.name, {'attr': {
+                                        'class': 'form-control',
+                                        'placeholder': 'Nombre del segundo cónyuge',
+                                        'onfocus': 'this.placeholder = ""',
+                                        'onblur': 'this.placeholder = "Nombre del segundo cónyuge"',
+                                    }})
+                                    }}
+                                </div>
+                                <div class="form-group">
+                                    {{
+                                    form_row(form.marriage.partner_second.dni, {'attr': {
+                                        'class': 'form-control',
+                                        'placeholder': 'DNI del segundo cónyuge',
+                                        'onfocus': 'this.placeholder = ""',
+                                        'onblur': 'this.placeholder = "DNI del segundo cónyuge"',
+                                    }})
+                                    }}
+                                </div>
+                                <div class="form-group">
+                                    {{
+                                    form_row(form.marriage.partner_second.nationality, {'attr': {
+                                        'class': 'form-control',
+                                        'placeholder': 'Nacionalidad del segundo cónyuge',
+                                        'onfocus': 'this.placeholder = ""',
+                                        'onblur': 'this.placeholder = "Nacionalidad del segundo cónyuge"',
+                                    }})
+                                    }}
+                                </div>
+                                <div class="form-group">
+                                    {{
+                                    form_row(form.marriage.partner_second.address, {'attr': {
+                                        'class': 'form-control',
+                                        'placeholder': 'Dirección del segundo cónyuge',
+                                        'onfocus': 'this.placeholder = ""',
+                                        'onblur': 'this.placeholder = "Dirección del segundo cónyuge"',
+                                    }})
+                                    }}
+                                </div>
+                                <div class="form-group">
+                                    {{
+                                    form_row(form.marriage.partner_second.town, {'attr': {
+                                        'class': 'form-control',
+                                        'placeholder': 'Ciudad de la dirección del segundo cónyuge',
+                                        'onfocus': 'this.placeholder = ""',
+                                        'onblur': 'this.placeholder = "Ciudad de la dirección del segundo cónyuge"',
+                                    }})
+                                    }}
+                                </div>
+                            </div>
                         </div>
-{#                    <div class="col-md-12 text-right">#}
-{#                        <button type="submit" value="submit" class="primary-btn text-uppercase">Send Message</button>#}
-{#                    </div>#}
+
+                        <h1>Último domicilio conyugal</h1>
+
+                        <div class="form-group">
+                            {{
+                            form_row(form.marriage.house.address, {'attr': {
+                                'class': 'form-control',
+                                'placeholder': 'Dirección del último domicilio conyugal',
+                                'onfocus': 'this.placeholder = ""',
+                                'onblur': 'this.placeholder = "Dirección del último domicilio conyugal"',
+                            }})
+                            }}
+                        </div>
+                        <div class="form-group">
+                            {{
+                            form_row(form.marriage.house.town, {'attr': {
+                                'class': 'form-control',
+                                'placeholder': 'Ciudad del último domicilio conyugal',
+                                'onfocus': 'this.placeholder = ""',
+                                'onblur': 'this.placeholder = "Ciudad del último domicilio conyugal"',
+                            }})
+                            }}
+                        </div>
+
+                        <h1>Datos del matrimonio</h1>
+
+                        <div class="form-group">
+                            {{
+                            form_row(form.marriage.marriage_type, {'attr': {
+                                'class': 'form-control',
+                                'placeholder': 'Tipo de Matrimonio',
+                                'onfocus': 'this.placeholder = ""',
+                                'onblur': 'this.placeholder = "Tipo de Matrimonio"',
+                            }})
+                            }}
+                        </div>
+                        <div class="form-group">
+                            {{
+                            form_row(form.marriage.town, {'attr': {
+                                'class': 'form-control',
+                                'placeholder': 'Ciudad del Matrimonio',
+                                'onfocus': 'this.placeholder = ""',
+                                'onblur': 'this.placeholder = "Ciudad del Matrimonio"',
+                            }})
+                            }}
+                        </div>
+{#                        <div class="form-group">#}
+{#                            {{#}
+{#                            form_row(form.marriage.date, {'attr': {#}
+{#                                'class': 'form-control',#}
+{#                                'placeholder': 'Fecha del Matrimonio',#}
+{#                                'onfocus': 'this.placeholder = ""',#}
+{#                                'onblur': 'this.placeholder = "Ciudad del Matrimonio"',#}
+{#                            }})#}
+{#                            }}#}
+{#                        </div>#}
+
+                        <div class="form-group">
+                            {{
+                            form_row(form.marriage.registry.town, {'attr': {
+                                'class': 'form-control',
+                                'placeholder': 'Ciudad del Registro Civil',
+                                'onfocus': 'this.placeholder = ""',
+                                'onblur': 'this.placeholder = "Ciudad del Registro Civil"',
+                            }})
+                            }}
+                        </div>
+
+                        <div class="form-group">
+                            {{
+                            form_row(form.marriage.registry.volume, {'attr': {
+                                'class': 'form-control',
+                                'placeholder': 'Volumen del Registro Civil',
+                                'onfocus': 'this.placeholder = ""',
+                                'onblur': 'this.placeholder = "Volumen del Registro Civil"',
+                            }})
+                            }}
+                        </div>
+
+                        <div class="form-group">
+                            {{
+                            form_row(form.marriage.registry.page, {'attr': {
+                                'class': 'form-control',
+                                'placeholder': 'Página del Registro Civil',
+                                'onfocus': 'this.placeholder = ""',
+                                'onblur': 'this.placeholder = "Página del Registro Civil',
+                            }})
+                            }}
+                        </div>
+
+                        <div class="form-group">
+                            {{
+                            form_row(form.marriage.marriage_type, {'attr': {
+                                'class': 'form-control',
+                                'placeholder': 'Tipo de Matrimonio',
+                                'onfocus': 'this.placeholder = ""',
+                                'onblur': 'this.placeholder = "Tipo de Matrimonio"',
+                            }})
+                            }}
+                        </div>
+
+                        <div class="form-group">
+                            {{
+                            form_row(form.marriage.economic_system, {'attr': {
+                                'class': 'form-control',
+                                'placeholder': 'Régimen económico del matrimonio',
+                                'onfocus': 'this.placeholder = ""',
+                                'onblur': 'this.placeholder = "Régimen económico del matrimonio"',
+                            }})
+                            }}
+                        </div>
+
+                        <h1>Último domicilio conyugal</h1>
+
+                        <div class="form-group">
+                            {{
+                            form_row(form.marriage.house.address, {'attr': {
+                                'class': 'form-control',
+                                'placeholder': 'Dirección del último domicilio conyugal',
+                                'onfocus': 'this.placeholder = ""',
+                                'onblur': 'this.placeholder = "Dirección del último domicilio conyugal"',
+                            }})
+                            }}
+                        </div>
+
+                        <div class="form-group">
+                            {{
+                            form_row(form.marriage.house.town, {'attr': {
+                                'class': 'form-control',
+                                'placeholder': 'Ciudad del último domicilio conyugal',
+                                'onfocus': 'this.placeholder = ""',
+                                'onblur': 'this.placeholder = "Ciudad del último domicilio conyugal"',
+                            }})
+                            }}
+                        </div>
+
+                        {{ form_row(form.save, { 'label': 'Submit me' }) }}
                     </div>
+                    {{ form_row(form._token) }}
                 </form>
             </div>
 {#            <div class="col-lg-6">#}

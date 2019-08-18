@@ -14,8 +14,12 @@ class MarriageType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('town')
-            ->add('date')
+            ->add('town', null, [
+                'label' => 'Introduzca la ciudad donde se realizó el matrimonio'
+            ])
+            ->add('date', null, [
+                'label' => 'Introduzca la fecha en la que se realizó el matrimonio'
+            ])
             ->add('marriage_type', EntityType::class, [
                 'class' => \App\Entity\MarriageType::class,
                 'query_builder' => function (MarriageTypeRepository $er) {
@@ -29,6 +33,7 @@ class MarriageType extends AbstractType
                     return $er->createQueryBuilder('es');
                 },
                 'choice_label' => 'name',
+                'label' => 'Indique el régimen económico del matrimonio'
             ])
             ->add('registry', RegistryType::class, [
                 'data_class' => 'App\Entity\Registry'
