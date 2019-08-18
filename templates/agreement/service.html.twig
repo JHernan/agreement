@@ -38,16 +38,16 @@
                                 }})
                             }}
                         </div>
-{#                        <div class="form-group">#}
-{#                            {{#}
-{#                                form_row(form.date, {'attr': {#}
-{#                                    'class': 'form-control',#}
-{#                                    'placeholder': 'Fecha del Convenio',#}
-{#                                    'onfocus': 'this.placeholder = ""',#}
-{#                                    'onblur': 'this.placeholder = "Fecha del Convenio"',#}
-{#                                }})#}
-{#                            }}#}
-{#                        </div>#}
+                        <div class="form-group">
+                            {{
+                                form_row(form.date, {'attr': {
+                                    'class': 'form-control',
+                                    'placeholder': 'Fecha del Convenio',
+                                    'onfocus': 'this.placeholder = ""',
+                                    'onblur': 'this.placeholder = "Fecha del Convenio"',
+                                }})
+                            }}
+                        </div>
 
                         <h1>Información de los cónyuges</h1>
 
@@ -211,16 +211,16 @@
                             }})
                             }}
                         </div>
-{#                        <div class="form-group">#}
-{#                            {{#}
-{#                            form_row(form.marriage.date, {'attr': {#}
-{#                                'class': 'form-control',#}
-{#                                'placeholder': 'Fecha del Matrimonio',#}
-{#                                'onfocus': 'this.placeholder = ""',#}
-{#                                'onblur': 'this.placeholder = "Ciudad del Matrimonio"',#}
-{#                            }})#}
-{#                            }}#}
-{#                        </div>#}
+                        <div class="form-group">
+                            {{
+                            form_row(form.marriage.date, {'attr': {
+                                'class': 'form-control',
+                                'placeholder': 'Fecha del Matrimonio',
+                                'onfocus': 'this.placeholder = ""',
+                                'onblur': 'this.placeholder = "Ciudad del Matrimonio"',
+                            }})
+                            }}
+                        </div>
 
                         <div class="form-group">
                             {{
@@ -301,6 +301,12 @@
                             }}
                         </div>
 
+                        <h1>Información de los hijos</h1>
+
+                        <ul class="tags" data-prototype="{{ form_widget(form.marriage.children.vars.prototype)|e('html_attr') }}">
+
+                        </ul>
+
                         {{ form_row(form.save, { 'label': 'Submit me' }) }}
                     </div>
                     {{ form_row(form._token) }}
@@ -364,5 +370,7 @@
 {% block blog %}{% endblock %}
 
 {% block javascripts %}
-       <script src="{{ asset('build/js/app.js') }}"></script>
+    <script src="{{ asset('build/js/app.js') }}"></script>
+    <script src="{{ asset('js/jquery-3.2.1.min.js') }}"></script>
+    <script src="{{ asset('js/children.js') }}"></script>
 {% endblock %}

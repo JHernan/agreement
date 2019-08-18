@@ -70,7 +70,7 @@ class Marriage
     private $requests;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Child", mappedBy="marriage")
+     * @ORM\OneToMany(targetEntity="App\Entity\Child", mappedBy="marriage", cascade={"persist"})
      */
     private $children;
 

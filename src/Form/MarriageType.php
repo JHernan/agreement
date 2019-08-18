@@ -3,11 +3,14 @@
 
 namespace App\Form;
 
+use App\Entity\Marriage;
 use App\Repository\EconomicSystemRepository;
 use App\Repository\MarriageTypeRepository;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\Form\Extension\Core\Type\CollectionType;
+use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class MarriageType extends AbstractType
 {
@@ -47,6 +50,19 @@ class MarriageType extends AbstractType
             ->add('house', HouseType::class, [
                 'data_class' => 'App\Entity\House'
             ])
+            ->add('children', CollectionType::class, [
+                'entry_type' => ChildType::class,
+                'entry_options' => ['label' => false],
+                'allow_add' => true,
+                'by_reference' => false,
+            ]);
     ;
+    }
+
+    public function configureOptions(OptionsResolver $resolver)
+    {
+        $resolver->setDefaults([
+            'data_class' => Marriage::class,
+        ]);
     }
 }
