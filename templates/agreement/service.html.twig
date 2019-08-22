@@ -166,29 +166,6 @@
                             </div>
                         </div>
 
-                        <h1>Último domicilio conyugal</h1>
-
-                        <div class="form-group">
-                            {{
-                            form_row(form.marriage.house.address, {'attr': {
-                                'class': 'form-control',
-                                'placeholder': 'Dirección del último domicilio conyugal',
-                                'onfocus': 'this.placeholder = ""',
-                                'onblur': 'this.placeholder = "Dirección del último domicilio conyugal"',
-                            }})
-                            }}
-                        </div>
-                        <div class="form-group">
-                            {{
-                            form_row(form.marriage.house.town, {'attr': {
-                                'class': 'form-control',
-                                'placeholder': 'Ciudad del último domicilio conyugal',
-                                'onfocus': 'this.placeholder = ""',
-                                'onblur': 'this.placeholder = "Ciudad del último domicilio conyugal"',
-                            }})
-                            }}
-                        </div>
-
                         <h1>Datos del matrimonio</h1>
 
                         <div class="form-group">
@@ -302,10 +279,9 @@
                         </div>
 
                         <h1>Información de los hijos</h1>
+                        A continuación indique los datos de los hijos e hijas producto del presente matrimonio.
 
-                        <ul class="tags" data-prototype="{{ form_widget(form.marriage.children.vars.prototype)|e('html_attr') }}">
-
-                        </ul>
+                        <div class="children" data-prototype="{{ form_widget(form.marriage.children.vars.prototype)|e('html_attr') }}"></div>
 
                         {{ form_row(form.save, { 'label': 'Submit me' }) }}
                     </div>
