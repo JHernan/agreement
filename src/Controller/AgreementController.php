@@ -50,4 +50,14 @@ class AgreementController extends Controller
     public function successFormAction(Request $request){
         return $this->render('agreement/successForm.html.twig');
     }
+
+    /**
+     * @Route("/request/{id}", name="requestView", methods={"GET"})
+     */
+    public function requestViewAction(\App\Entity\Request $request){
+
+        return $this->render('agreement/requestView.html.twig', array(
+            'request' => $request
+        ));
+    }
 }
