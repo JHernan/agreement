@@ -97,12 +97,12 @@ class Marriage
         return $this;
     }
 
-    public function getDate()
+    public function getDate(): ?\DateTimeInterface
     {
         return $this->date;
     }
 
-    public function setDate($date): self
+    public function setDate(\DateTimeInterface $date): self
     {
         $this->date = $date;
 

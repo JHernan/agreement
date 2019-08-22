@@ -38,6 +38,11 @@ class Request
      */
     private $date;
 
+    /**
+     * @ORM\OneToOne(targetEntity="App\Entity\Agreement", mappedBy="request", cascade={"persist", "remove"})
+     */
+    private $agreement;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -79,14 +84,31 @@ class Request
         return $this;
     }
 
-    public function getDate()
+    public function getDate(): ?\DateTimeInterface
     {
         return $this->date;
     }
 
-    public function setDate($date): self
+    public function setDate(\DateTimeInterface $date): self
     {
         $this->date = $date;
+
+        return $this;
+    }
+
+    public function getAgreement(): ?Agreement
+    {
+        return $this->agreement;
+    }
+
+    public function setAgreement(Agreement $agreement): self
+    {
+        $this->agreement = $agreement;
+
+        // set the owning side of the relation if necessary
+        if ($this !== $agreement->getRequest()) {
+            $agreement->setRequest($this);
+        }
 
         return $this;
     }

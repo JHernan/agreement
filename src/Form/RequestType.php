@@ -35,6 +35,9 @@ class RequestType extends AbstractType
                 'widget' => 'choice',
                 'label' => 'Indique la fecha del Convenio'
             ])
+            ->add('agreement', AgreementType::class, [
+                'data_class' => 'App\Entity\Agreement'
+            ])
             ->add('save', SubmitType::class)
         ;
     }

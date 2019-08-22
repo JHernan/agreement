@@ -55,9 +55,15 @@ class Partner
      */
     private $marriages;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Agreement", mappedBy="partner")
+     */
+    private $agreements;
+
     public function __construct()
     {
         $this->marriages = new ArrayCollection();
+        $this->agreements = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -161,5 +167,36 @@ class Partner
         return [
             'dni' => $this->getDni()
         ];
+    }
+
+    /**
+     * @return Collection|Agreement[]
+     */
+    public function getAgreements(): Collection
+    {
+        return $this->agreements;
+    }
+
+    public function addAgreement(Agreement $agreement): self
+    {
+        if (!$this->agreements->contains($agreement)) {
+            $this->agreements[] = $agreement;
+            $agreement->setPartner($this);
+        }
+
+        return $this;
+    }
+
+    public function removeAgreement(Agreement $agreement): self
+    {
+        if ($this->agreements->contains($agreement)) {
+            $this->agreements->removeElement($agreement);
+            // set the owning side to null (unless already changed)
+            if ($agreement->getPartner() === $this) {
+                $agreement->setPartner(null);
+            }
+        }
+
+        return $this;
     }
 }
