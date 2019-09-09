@@ -4,60 +4,37 @@ namespace App\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
-use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
-
-/**
- * @ORM\Entity(repositoryClass="App\Repository\PartnerRepository")
- */
 class Partner
 {
     /**
-     * @ORM\Id()
-     * @ORM\GeneratedValue()
-     * @ORM\Column(type="integer")
-     */
-    private $id;
-
-    /**
-     * @ORM\Column(type="string", length=255)
      * @Assert\NotBlank()
      */
     private $dni;
 
     /**
-     * @ORM\Column(type="string", length=255)
      * @Assert\NotBlank()
      */
     private $name;
 
     /**
-     * @ORM\Column(type="string", length=255)
      * @Assert\NotBlank()
      */
     private $nationality;
 
     /**
-     * @ORM\Column(type="string", length=255)
      * @Assert\NotBlank()
      */
     private $address;
 
     /**
-     * @ORM\Column(type="string", length=255)
      * @Assert\NotBlank()
      */
     private $town;
 
-    /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Marriage", mappedBy="partner_first")
-     */
     private $marriages;
 
-    /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Agreement", mappedBy="partner")
-     */
     private $agreements;
 
     public function __construct()

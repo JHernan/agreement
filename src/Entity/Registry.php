@@ -4,38 +4,15 @@ namespace App\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
-use Doctrine\ORM\Mapping as ORM;
 
-/**
- * @ORM\Entity(repositoryClass="App\Repository\RegistryRepository")
- */
 class Registry
 {
-    /**
-     * @ORM\Id()
-     * @ORM\GeneratedValue()
-     * @ORM\Column(type="integer")
-     */
-    private $id;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
     private $town;
 
-    /**
-     * @ORM\Column(type="integer")
-     */
     private $volume;
 
-    /**
-     * @ORM\Column(type="integer")
-     */
     private $page;
 
-    /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Marriage", mappedBy="registry")
-     */
     private $marriages;
 
     public function __construct()

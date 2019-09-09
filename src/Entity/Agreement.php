@@ -2,45 +2,16 @@
 
 namespace App\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
-
-/**
- * @ORM\Entity(repositoryClass="App\Repository\AgreementRepository")
- */
 class Agreement
 {
-    /**
-     * @ORM\Id()
-     * @ORM\GeneratedValue()
-     * @ORM\Column(type="integer")
-     */
-    private $id;
-
-    /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Custody", inversedBy="agreements")
-     * @ORM\JoinColumn(nullable=false)
-     */
     private $custody;
 
-    /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\PickUp", inversedBy="agreements")
-     */
     private $pick_up;
 
-    /**
-     * @ORM\Column(type="integer", nullable=true)
-     */
     private $alternate_weeks;
 
-    /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Partner", inversedBy="agreements")
-     */
     private $partner;
 
-    /**
-     * @ORM\OneToOne(targetEntity="App\Entity\Request", inversedBy="agreement", cascade={"persist", "remove"})
-     * @ORM\JoinColumn(nullable=false)
-     */
     private $request;
 
     public function getId(): ?int
@@ -48,24 +19,24 @@ class Agreement
         return $this->id;
     }
 
-    public function getCustody(): ?Custody
+    public function getCustody()
     {
         return $this->custody;
     }
 
-    public function setCustody(?Custody $custody): self
+    public function setCustody(string $custody): self
     {
         $this->custody = $custody;
 
         return $this;
     }
 
-    public function getPickUp(): ?PickUp
+    public function getPickUp()
     {
         return $this->pick_up;
     }
 
-    public function setPickUp(?PickUp $pick_up): self
+    public function setPickUp(string $pick_up): self
     {
         $this->pick_up = $pick_up;
 

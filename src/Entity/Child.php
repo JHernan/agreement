@@ -2,34 +2,12 @@
 
 namespace App\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
-
-/**
- * @ORM\Entity(repositoryClass="App\Repository\ChildRepository")
- */
 class Child
 {
-    /**
-     * @ORM\Id()
-     * @ORM\GeneratedValue()
-     * @ORM\Column(type="integer")
-     */
-    private $id;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
     private $name;
 
-    /**
-     * @ORM\Column(type="date")
-     */
     private $date;
 
-    /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Marriage", inversedBy="children")
-     * @ORM\JoinColumn(nullable=false)
-     */
     private $marriage;
 
     public function getId(): ?int

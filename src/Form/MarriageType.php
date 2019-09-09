@@ -4,10 +4,8 @@
 namespace App\Form;
 
 use App\Entity\Marriage;
-use App\Repository\EconomicSystemRepository;
-use App\Repository\MarriageTypeRepository;
-use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -23,19 +21,17 @@ class MarriageType extends AbstractType
             ->add('date', null, [
                 'label' => 'Introduzca la fecha en la que se realizó el matrimonio'
             ])
-            ->add('marriage_type', EntityType::class, [
-                'class' => \App\Entity\MarriageType::class,
-                'query_builder' => function (MarriageTypeRepository $er) {
-                    return $er->createQueryBuilder('mt');
-                },
-                'choice_label' => 'name',
+            ->add('marriage_type',ChoiceType::class, [
+                'choices'  => [
+                    'Canónico' => 'Canónico',
+                    'Civil' => 'Civil',
+                ],
             ])
-            ->add('economic_system', EntityType::class, [
-                'class' => \App\Entity\EconomicSystem::class,
-                'query_builder' => function (EconomicSystemRepository $er) {
-                    return $er->createQueryBuilder('es');
-                },
-                'choice_label' => 'name',
+            ->add('economic_system', ChoiceType::class, [
+                'choices'  => [
+                    'Sociedad de gananciales' => 'sociedad de gananciales',
+                    'Separación de bienes' => 'separación de bienes',
+                ],
                 'label' => 'Indique el régimen económico del matrimonio'
             ])
             ->add('registry', RegistryType::class, [

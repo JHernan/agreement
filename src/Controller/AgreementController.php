@@ -32,32 +32,14 @@ class AgreementController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($requestDivorce);
-            $entityManager->flush();
-
-            return $this->redirect($this->generateUrl('successForm'));
+            $request = $form->getData();
+            return $this->render('agreement/successForm.html.twig', array(
+                'request' => $request
+            ));
         }
 
         return $this->render('agreement/service.html.twig', array(
             'form' => $form->createView()
-        ));
-    }
-
-    /**
-     * @Route("/success", name="successForm", methods={"GET"})
-     */
-    public function successFormAction(Request $request){
-        return $this->render('agreement/successForm.html.twig');
-    }
-
-    /**
-     * @Route("/request/{id}", name="requestView", methods={"GET"})
-     */
-    public function requestViewAction(\App\Entity\Request $request){
-
-        return $this->render('agreement/requestView.html.twig', array(
-            'request' => $request
         ));
     }
 }

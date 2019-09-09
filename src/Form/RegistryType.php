@@ -3,9 +3,6 @@
 
 namespace App\Form;
 
-use App\Repository\EconomicSystemRepository;
-use App\Repository\MarriageTypeRepository;
-use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 

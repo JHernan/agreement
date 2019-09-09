@@ -6,9 +6,9 @@ namespace App\Form;
 use App\Entity\Request;
 use App\Repository\RequestTypeRepository;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -17,12 +17,11 @@ class RequestType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('request_type', EntityType::class, [
-                'class' => \App\Entity\RequestType::class,
-                'query_builder' => function (RequestTypeRepository $er) {
-                    return $er->createQueryBuilder('rt');
-                },
-                'choice_label' => 'name',
+            ->add('request_type', ChoiceType::class, [
+                'choices'  => [
+                    'Divorcio' => 'Divorcio',
+                    'Separación' => 'Separación',
+                ],
                 'label' => 'Indique el tipo de Convenio'
             ])
             ->add('marriage', MarriageType::class, [

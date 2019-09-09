@@ -4,33 +4,13 @@ namespace App\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
-use Doctrine\ORM\Mapping as ORM;
 
-/**
- * @ORM\Entity(repositoryClass="App\Repository\HouseRepository")
- */
 class House
 {
-    /**
-     * @ORM\Id()
-     * @ORM\GeneratedValue()
-     * @ORM\Column(type="integer")
-     */
-    private $id;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
     private $address;
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
     private $town;
 
-    /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Marriage", mappedBy="house")
-     */
     private $marriages;
 
     public function __construct()

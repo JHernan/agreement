@@ -4,74 +4,27 @@ namespace App\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
-use Doctrine\ORM\Mapping as ORM;
 
-/**
- * @ORM\Entity(repositoryClass="App\Repository\MarriageRepository")
- */
 class Marriage
 {
-    /**
-     * @ORM\Id()
-     * @ORM\GeneratedValue()
-     * @ORM\Column(type="integer")
-     */
-    private $id;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
     private $town;
 
-    /**
-     * @ORM\Column(type="date")
-     */
     private $date;
 
-    /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\MarriageType", inversedBy="marriages")
-     * @ORM\JoinColumn(nullable=false)
-     */
     private $marriage_type;
 
-    /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\EconomicSystem", inversedBy="marriages")
-     * @ORM\JoinColumn(nullable=false)
-     */
     private $economic_system;
 
-    /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Registry", inversedBy="marriage", cascade={"persist"})
-     * @ORM\JoinColumn(nullable=false)
-     */
     private $registry;
 
-    /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Partner", inversedBy="marriages", cascade={"persist"})
-     * @ORM\JoinColumn(nullable=false)
-     */
     private $partner_first;
 
-    /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Partner", inversedBy="marriages", cascade={"persist"})
-     * @ORM\JoinColumn(nullable=false)
-     */
     private $partner_second;
 
-    /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\House", inversedBy="marriages", cascade={"persist"})
-     * @ORM\JoinColumn(nullable=false)
-     */
     private $house;
 
-    /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Request", mappedBy="marriage")
-     */
     private $requests;
 
-    /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Child", mappedBy="marriage", cascade={"persist"})
-     */
     private $children;
 
     public function __construct()
@@ -109,24 +62,24 @@ class Marriage
         return $this;
     }
 
-    public function getMarriageType(): ?MarriageType
+    public function getMarriageType(): ?string
     {
         return $this->marriage_type;
     }
 
-    public function setMarriageType(?MarriageType $marriage_type): self
+    public function setMarriageType(string $marriage_type): self
     {
         $this->marriage_type = $marriage_type;
 
         return $this;
     }
 
-    public function getEconomicSystem(): ?EconomicSystem
+    public function getEconomicSystem(): ?string
     {
         return $this->economic_system;
     }
 
-    public function setEconomicSystem(?EconomicSystem $economic_system): self
+    public function setEconomicSystem(string $economic_system): self
     {
         $this->economic_system = $economic_system;
 
