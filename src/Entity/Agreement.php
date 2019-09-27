@@ -8,6 +8,12 @@ class Agreement
 
     private $pick_up;
 
+    private $pick_up_hour;
+
+    private $delivery;
+
+    private $delivery_hour;
+
     private $alternate_weeks;
 
     private $partner;
@@ -39,6 +45,42 @@ class Agreement
     public function setPickUp(string $pick_up): self
     {
         $this->pick_up = $pick_up;
+
+        return $this;
+    }
+
+    public function getPickUpHour()
+    {
+        return $this->pick_up_hour;
+    }
+
+    public function setPickUpHour(string $pick_up_hour): self
+    {
+        $this->pick_up_hour = $pick_up_hour;
+
+        return $this;
+    }
+
+    public function getDelivery()
+    {
+        return $this->delivery;
+    }
+
+    public function setDelivery(string $delivery): self
+    {
+        $this->delivery = $delivery;
+
+        return $this;
+    }
+
+    public function getDeliveryHour()
+    {
+        return $this->delivery_hour;
+    }
+
+    public function setDeliveryHour(string $delivery_hour): self
+    {
+        $this->delivery_hour = $delivery_hour;
 
         return $this;
     }
