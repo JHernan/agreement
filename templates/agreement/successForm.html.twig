@@ -15,6 +15,26 @@
         {% set custody_text = "Monoparental" %}
     {% endif %}
 
+    {% set children_count = request.marriage.children.count %}
+    {% if(children_count == 1) %}
+        {% set children_text = "el menor" %}
+        {% set children_will_be_text = "el menor estará" %}
+        {% set children_pick_up_text = "El menor será recogido" %}
+    {% elseif children_count > 1 %}
+        {% set children_text = "los menores" %}
+        {% set children_will_be_text = "los menores estarán" %}
+        {% set children_pick_up_text = "Los menores serán recogidos" %}
+    {% endif %}
+
+    {% set alternate_weeks = request.agreement.alternateWeeks %}
+    {% if alternate_weeks == 1 %}
+        {% set alternate_weeks_text = "durante semanas alternas" %}
+    {% else %}
+        {% set alternate_weeks_text = "cada " ~ alternate_weeks ~ " semanas alternas" %}
+    {% endif %}
+
+    {% set custody_partner = request.agreement.partner %}
+
     {% set pick_up = request.agreement.pickUp %}
     {% if pick_up == 1 %}
         {% set pick_up_text = "el centro escolar el viernes, a la finalización del horario lectivo" %}
@@ -31,16 +51,8 @@
         {% set delivery_text = "el domicilio del otro progenitor el domingo a las " ~ delivery_hour ~ " horas" %}
     {% endif %}
 
-    {% set children_count = request.marriage.children.count %}
-    {% if(children_count == 1) %}
-        {% set children = "el menor" %}
-        {% set children_will_be = "el menor estará" %}
-        {% set children_pick_up = "El menor será recogido" %}
-    {% elseif children_count > 1 %}
-        {% set children = "los menores" %}
-        {% set children_will_be = "los menores estarán" %}
-        {% set children_pick_up = "Los menores serán recogidos" %}
-    {% endif %}
+    {% set parent_first_name = request.marriage.partnerFirst.name %}
+    {% set parent_second_name = request.marriage.partnerSecond.name %}
 
     <section class="contact_area section_gap">
         <div class="container">
@@ -110,25 +122,31 @@
                     {% if(children_count > 0) %}
                     <h2>-III-</h2>
                     <div>
-                        <b>PATRIA POTESTAD.</b> Del mismo modo, la patria potestad será ejercida conjuntamente por ambos progenitores, que adoptarán de común acuerdo y velando siempre por su interés, todas las decisiones trascendentales que afecten a {{ children }}, decidiendo en los casos de falta de acuerdo la autoridad judicial.
+                        <b>PATRIA POTESTAD.</b> Del mismo modo, la patria potestad será ejercida conjuntamente por ambos progenitores, que adoptarán de común acuerdo y velando siempre por su interés, todas las decisiones trascendentales que afecten a {{ children_text }}, decidiendo en los casos de falta de acuerdo la autoridad judicial.
                     </div>
                     <h2>-IV-</h2>
                     <div>
                         <b>GUARDA Y CUSTODIA.</b> {{ custody_text }}
                         {% if custody == 1 %}
-                            La guarda y custodia {% if children_count == 1 %} d{{ children }} {% elseif children_count > 1 %} de {{ children }} {% endif %}, será compartida. Para ello {{ children_will_be }} en compañía cada progenitor _____ E.1.3. . _______________ E.1.4 y será recogido por el progenitor no custodio en ___________
+                            La guarda y custodia {{ children_text }}, será compartida. Para ello {{ children_will_be_text }} en compañía cada progenitor {{ alternate_weeks_text }} y será recogido por el progenitor no custodio en ___________ {# TODO #}
                         {% else %}
-
+                            La guardia y custodia de {{ children_text }} es atribuida a {{ custody_partner }}. {# TODO #}
                         {% endif %}
                     </div>
                     <h2>-V-</h2>
                     <div>
-                        <b>RÉGIMEN DE VISITAS.</b> En principio el régimen de visitas se determinará previo acuerdo de ambos progenitores, pero para el caso de desacuerdo y como mínimo, se estará al siguiente régimen, debiendo ser interpretado con criterios de flexibilidad y buena fe, dado que se contempla como un derecho DEL {{ children }}.
+                        <b>RÉGIMEN DE VISITAS.</b> En principio el régimen de visitas se determinará previo acuerdo de ambos progenitores, pero para el caso de desacuerdo y como mínimo, se estará al siguiente régimen, debiendo ser interpretado con criterios de flexibilidad y buena fe, dado que se contempla como un derecho DEL {{ children_text }}.
                         {% if custody == 1 %}
                             <br />
-                            <b>A)</b> {% if children_count == 1 %} Al menor {% elseif children_count > 1 %} A los menores {% endif %} en compañía del progenitor no custodio durante fines de semana alternos. {{ children_pick_up }} en {{ pick_up_text }} y será devuelto por el progenitor no custodio en {{ delivery_text }}.
+                            <b>A)</b> {% if children_count == 1 %} Al menor {% elseif children_count > 1 %} A los menores {% endif %} en compañía del progenitor no custodio durante fines de semana alternos. {{ children_pick_up_text }} en {{ pick_up_text }} y será devuelto por el progenitor no custodio en {{ delivery_text }}.
                             <br />
-                            <b>B)</b> En cuanto a las vacaciones de Navidad, estas se dividirán por mitad, desde el día de finalización del periodo escolar hasta el día 30 de diciembre, y el segundo periodo desde el día 31 de diciembre hasta el inicio del periodo escolar. {{ request.marriage.partnerFirst.name }} elegirá en los años pares cuando disfrutará del citado periodo de vacaciones, y {{ request.marriage.partnerSecond.name }} elegirá los años impares.
+                            {# TODO #}
+                            <b>B)</b> En cuanto a las vacaciones de Navidad, estas se dividirán por mitad, desde el día de finalización del periodo escolar hasta el día 30 de diciembre, y el segundo periodo desde el día 31 de diciembre hasta el inicio del periodo escolar. {{ parent_first_name }} elegirá en los años pares cuando disfrutará del citado periodo de vacaciones, y {{ parent_second_name }} elegirá los años impares.
+                            <br />
+                            {# TODO #}
+                            <b>C)</b> Las vacaciones de Semana Santa, las pasarán con ambos padres estableciéndose dos períodos de idéntica duración. Los días de vacaciones incluirán desde el viernes a la salida del colegio hasta el día antes del reinicio del periodo escolar. {{ parent_first_name }} elegirá en los años pares cuando disfrutará del citado periodo de vacaciones, y {{ parent_second_name }} elegirá los años impares.
+                            <br />
+                            <b>E)</b> Los progenitores permitirán que {{ children_text }} asista a celebraciones o eventos familiares, como cumpleaños de abuelos y otros familiares, bodas, comuniones, etc., en caso de que se produzcan en la familia del que no los tenga en su compañía, favoreciendo los cambios necesarios, siempre que se comunique con suficiente antelación.
                         {% else %}
                             FALTA ESTOOOOO
                         {% endif %}

@@ -49,7 +49,7 @@ class AgreementType extends AbstractType
                 ],
                 'placeholder' => '',
                 'label' => 'Indique el cónyuge que tendrá la custodia monoparental'
-            ])
+            ]) /* TODO partner */
         ;
     }
 
