@@ -51,6 +51,13 @@
         {% set delivery_text = "el domicilio del otro progenitor el domingo a las " ~ delivery_hour ~ " horas" %}
     {% endif %}
 
+    {% set summer_period = request.agreement.summerPeriod %}
+    {% if summer_period == 1 %}
+        {% set summer_period_text = "en periodos de dos semanas" %}
+    {% else %}
+        {% set summer_period_text = "en dos periodos iguales" %}
+    {% endif %}
+
     {% set parent_first_name = request.marriage.partnerFirst.name %}
     {% set parent_second_name = request.marriage.partnerSecond.name %}
 
@@ -146,23 +153,19 @@
                             {# TODO #}
                             <b>C)</b> Las vacaciones de Semana Santa, las pasarán con ambos padres estableciéndose dos períodos de idéntica duración. Los días de vacaciones incluirán desde el viernes a la salida del colegio hasta el día antes del reinicio del periodo escolar. {{ parent_first_name }} elegirá en los años pares cuando disfrutará del citado periodo de vacaciones, y {{ parent_second_name }} elegirá los años impares.
                             <br />
+                            <b>D)</b> Durante las vacaciones de verano, {{ children_text }} estará en compañía de los padres en {{ summer_period_text }}. {{ parent_first_name }} elegirá en los años pares cuando disfrutará del citado periodo de vacaciones, y {{ parent_second_name }} elegirá los años impares.<br />
+                            {% if summer_period == 1 %}
+                                El primer período comenzará el día 1 de julio hasta el dia 15 de julio. El segundo período comenzará el día 16 de julio hasta el dia 31 de julio. El tercero periodo comenzará el día 1 de agosto hasta el dia 15 de agosto. El cuarto periodo comenzará el día 16 de agosto hasta el dia 31 de agosto. {{ children_pick_up_text }} del domicilio donde se encuentren, ya sea durante el régimen habitual de guarda y custodia o durante alguno de los periodos de vacaciones.
+                            {% else %}
+                                El primer periodo comprenderá desde la finalización del periodo escolar hasta el dia 31 de julio, y el segundo periodo desde el día 1 de agosto hasta el inicio del curso escolar.
+                            {% endif %}
+                            <br />
                             <b>E)</b> Los progenitores permitirán que {{ children_text }} asista a celebraciones o eventos familiares, como cumpleaños de abuelos y otros familiares, bodas, comuniones, etc., en caso de que se produzcan en la familia del que no los tenga en su compañía, favoreciendo los cambios necesarios, siempre que se comunique con suficiente antelación.
                         {% else %}
                             FALTA ESTOOOOO
                         {% endif %}
                     </div>
                     {% endif %}
-
-
-
-
-
-
-                    
-
-
-
-
                 </div>
             </div>
         </div>

@@ -13,6 +13,8 @@ jQuery(document).ready(function() {
     $deliverySelect = $('select#request_agreement_delivery');
     $deliveryHourHolder = $('input#request_agreement_delivery_hour').parent().parent();
     $alternateWeeksHolder = $('input#request_agreement_alternate_weeks').parent().parent();
+    $summerPeriodHolder = $('select#request_agreement_summer_period').parent().parent();
+    $summerPeriodSelect = $('select#request_agreement_summer_period');
     $partnerHolder = $('select#request_agreement_partner').parent().parent();
 
     $pickUpHolder.hide();
@@ -20,6 +22,7 @@ jQuery(document).ready(function() {
     $deliveryHolder.hide();
     $deliveryHourHolder.hide();
     $alternateWeeksHolder.hide();
+    $summerPeriodHolder.hide();
     $partnerHolder.hide();
 
     $custodyHolder.change(function(){
@@ -28,6 +31,7 @@ jQuery(document).ready(function() {
             $pickUpHolder.show();
             $deliveryHolder.show();
             $alternateWeeksHolder.show();
+            $summerPeriodHolder.show();
             $partnerHolder.hide();
         } else if(selectedCustody == 2){
             $pickUpHolder.hide();
@@ -35,6 +39,7 @@ jQuery(document).ready(function() {
             $deliveryHolder.hide();
             $deliveryHourHolder.hide();
             $alternateWeeksHolder.hide();
+            $summerPeriodHolder.hide();
             $partnerHolder.show();
         } else{
             $pickUpHolder.hide();
@@ -42,6 +47,7 @@ jQuery(document).ready(function() {
             $deliveryHolder.hide();
             $deliveryHourHolder.hide();
             $alternateWeeksHolder.hide();
+            $summerPeriodHolder.hide();
             $partnerHolder.hide();
         }
     });

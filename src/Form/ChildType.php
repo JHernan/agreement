@@ -5,6 +5,7 @@ namespace App\Form;
 
 use App\Entity\Child;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -17,7 +18,7 @@ class ChildType extends AbstractType
             ->add('name', null, [
                 'label' => 'Indique el nombre del hijo/a'
             ])
-            ->add('date', null, [
+            ->add('date', DateType::class, [
                 'label' => 'Indique la fecha de nacimiento del hijo/a'
             ])
         ;

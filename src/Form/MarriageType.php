@@ -6,6 +6,7 @@ namespace App\Form;
 use App\Entity\Marriage;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -18,7 +19,7 @@ class MarriageType extends AbstractType
             ->add('town', null, [
                 'label' => 'Introduzca la ciudad donde se realizó el matrimonio'
             ])
-            ->add('date', null, [
+            ->add('date', DateType::class, [
                 'label' => 'Introduzca la fecha en la que se realizó el matrimonio'
             ])
             ->add('marriage_type',ChoiceType::class, [

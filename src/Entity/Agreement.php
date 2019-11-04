@@ -16,6 +16,8 @@ class Agreement
 
     private $alternate_weeks;
 
+    private $summer_period;
+
     private $partner;
 
     private $request;
@@ -93,6 +95,18 @@ class Agreement
     public function setAlternateWeeks(?int $alternate_weeks): self
     {
         $this->alternate_weeks = $alternate_weeks;
+
+        return $this;
+    }
+
+    public function getSummerPeriod()
+    {
+        return $this->summer_period;
+    }
+
+    public function setSummerPeriod(string $summer_period): self
+    {
+        $this->summer_period = $summer_period;
 
         return $this;
     }

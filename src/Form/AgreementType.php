@@ -42,6 +42,12 @@ class AgreementType extends AbstractType
             ->add('alternate_weeks', null, [
                 'label' => 'Indique el número de semanas alternas de la custodia'
             ])
+            ->add('summer_period', ChoiceType::class, [
+                'choices'  => [
+                    'En periodos de dos semanas' => '1',
+                    'En dos periodos iguales' => '2',
+                ],
+            ])
             ->add('partner', ChoiceType::class, [
                 'choices'  => [
                     '1' => 1,
