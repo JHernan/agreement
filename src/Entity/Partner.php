@@ -37,15 +37,11 @@ class Partner
 
     private $agreements;
 
+
     public function __construct()
     {
         $this->marriages = new ArrayCollection();
         $this->agreements = new ArrayCollection();
-    }
-
-    public function getId(): ?int
-    {
-        return $this->id;
     }
 
     public function getDni(): ?string

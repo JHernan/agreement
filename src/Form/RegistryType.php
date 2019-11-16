@@ -3,8 +3,10 @@
 
 namespace App\Form;
 
+use App\Entity\Registry;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class RegistryType extends AbstractType
 {
@@ -21,4 +23,12 @@ class RegistryType extends AbstractType
                 'label' => 'Introduzca la página del registro civil'
             ])
         ;
-    }}
+    }
+
+    public function configureOptions(OptionsResolver $resolver)
+    {
+        $resolver->setDefaults([
+            'data_class' => Registry::class,
+        ]);
+    }
+}

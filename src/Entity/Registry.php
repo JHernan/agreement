@@ -4,25 +4,32 @@ namespace App\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+use Symfony\Component\Validator\Constraints as Assert;
+
 
 class Registry
 {
+    /**
+     * @Assert\NotBlank()
+     */
     private $town;
 
+    /**
+     * @Assert\NotBlank()
+     */
     private $volume;
 
+    /**
+     * @Assert\NotBlank()
+     */
     private $page;
 
     private $marriages;
 
+
     public function __construct()
     {
         $this->marriages = new ArrayCollection();
-    }
-
-    public function getId(): ?int
-    {
-        return $this->id;
     }
 
     public function getTown(): ?string

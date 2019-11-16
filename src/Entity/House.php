@@ -4,23 +4,27 @@ namespace App\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+use Symfony\Component\Validator\Constraints as Assert;
+
 
 class House
 {
+    /**
+     * @Assert\NotBlank
+     */
     private $address;
 
+    /**
+     * @Assert\NotBlank
+     */
     private $town;
 
     private $marriages;
 
+
     public function __construct()
     {
         $this->marriages = new ArrayCollection();
-    }
-
-    public function getId(): ?int
-    {
-        return $this->id;
     }
 
     public function getAddress(): ?string

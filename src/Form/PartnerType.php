@@ -3,8 +3,10 @@
 
 namespace App\Form;
 
+use App\Entity\Partner;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
 
 
 class PartnerType extends AbstractType
@@ -28,5 +30,12 @@ class PartnerType extends AbstractType
                 'label' => 'Introduzca la ciudad de la dirección del cónyuge'
             ])
         ;
+    }
+
+    public function configureOptions(OptionsResolver $resolver)
+    {
+        $resolver->setDefaults([
+            'data_class' => Partner::class,
+        ]);
     }
 }

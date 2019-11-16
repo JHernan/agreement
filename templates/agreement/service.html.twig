@@ -12,6 +12,11 @@
     <div class="container">
         <div class="row" id="app">
             <div class="col-lg-12">
+
+
+                {# quitar novalidate="novalidate" para que se valide el JS #}
+
+
                 <form class="row contact_form" action="{{ path('service') }}" method="post" id="contactForm" novalidate="novalidate">
                     <div class="col-md-12">
                         {{ form_errors(form) }}

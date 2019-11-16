@@ -4,38 +4,64 @@ namespace App\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+use Symfony\Component\Validator\Constraints as Assert;
+
 
 class Marriage
 {
+    /**
+     * @Assert\NotBlank
+     */
     private $town;
 
+    /**
+     * @Assert\NotBlank
+     */
     private $date;
 
+    /**
+     * @Assert\NotBlank
+     */
     private $marriage_type;
 
+    /**
+     * @Assert\NotBlank
+     */
     private $economic_system;
 
+    /**
+     * @Assert\Type(type="App\Entity\Registry")
+     * @Assert\Valid
+     */
     private $registry;
 
+    /**
+     * @Assert\Type(type="App\Entity\Partner")
+     * @Assert\Valid
+     */
     private $partner_first;
 
+    /**
+     * @Assert\Type(type="App\Entity\Partner")
+     * @Assert\Valid
+     */
     private $partner_second;
 
+    /**
+     * @Assert\Type(type="App\Entity\House")
+     * @Assert\Valid
+     */
     private $house;
 
     private $requests;
 
     private $children;
 
+
     public function __construct()
     {
         $this->requests = new ArrayCollection();
         $this->children = new ArrayCollection();
-    }
-
-    public function getId(): ?int
-    {
-        return $this->id;
     }
 
     public function getTown(): ?string

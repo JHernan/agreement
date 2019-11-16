@@ -2,18 +2,27 @@
 
 namespace App\Entity;
 
+use Symfony\Component\Validator\Constraints as Assert;
+
+
 class Child
 {
+    /**
+     * @Assert\NotBlank
+     */
     private $name;
 
+    /**
+     * @Assert\NotBlank
+     */
     private $date;
 
+    /**
+     * @Assert\Type(type="App\Entity\Marriage")
+     * @Assert\Valid
+     */
     private $marriage;
 
-    public function getId(): ?int
-    {
-        return $this->id;
-    }
 
     public function getName(): ?string
     {

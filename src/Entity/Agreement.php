@@ -2,8 +2,14 @@
 
 namespace App\Entity;
 
+use Symfony\Component\Validator\Constraints as Assert;
+
+
 class Agreement
 {
+    /**
+     * @Assert\NotBlank
+     */
     private $custody;
 
     private $pick_up;
@@ -18,14 +24,18 @@ class Agreement
 
     private $summer_period;
 
+    /**
+     * @Assert\Type(type="App\Entity\Partner")
+     * @Assert\Valid
+     */
     private $partner;
 
+    /**
+     * @Assert\Type(type="App\Entity\Request")
+     * @Assert\Valid
+     */
     private $request;
 
-    public function getId(): ?int
-    {
-        return $this->id;
-    }
 
     public function getCustody()
     {

@@ -2,22 +2,38 @@
 
 namespace App\Entity;
 
+use Symfony\Component\Validator\Constraints as Assert;
+
+
 class Request
 {
+    /**
+     * @Assert\NotBlank()
+     */
     private $request_type;
 
+    /**
+     * @Assert\Type(type="App\Entity\Marriage")
+     * @Assert\Valid
+     */
     private $marriage;
 
+    /**
+     * @Assert\NotBlank()
+     */
     private $town;
 
+    /**
+     * @Assert\NotBlank()
+     */
     private $date;
 
+    /**
+     * @Assert\Type(type="App\Entity\Agreement")
+     * @Assert\Valid
+     */
     private $agreement;
 
-    public function getId(): ?int
-    {
-        return $this->id;
-    }
 
     public function getRequestType(): ?string
     {
