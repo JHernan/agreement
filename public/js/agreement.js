@@ -69,4 +69,8 @@ jQuery(document).ready(function() {
             $deliveryHourHolder.hide();
         }
     })
+
+    $('.datepicker').datepicker({
+        format: 'dd-mm-yyyy'
+    });
 });

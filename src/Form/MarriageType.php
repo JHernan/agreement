@@ -20,7 +20,10 @@ class MarriageType extends AbstractType
                 'label' => 'Introduzca la ciudad donde se realizó el matrimonio'
             ])
             ->add('date', DateType::class, [
-                'label' => 'Introduzca la fecha en la que se realizó el matrimonio'
+                'widget' => 'single_text',
+                'label' => 'Introduzca la fecha en la que se realizó el matrimonio',
+                'html5' => false,
+                'format' => 'dd-MM-yyyy',
             ])
             ->add('marriage_type',ChoiceType::class, [
                 'choices'  => [

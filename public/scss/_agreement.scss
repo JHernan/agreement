@@ -19,3 +19,16 @@ $primary-font: 'Open Sans', arial, sans-serif;
     margin-bottom: 20px;
   }
 }
+
+.select-small {
+  width: 300px;
+}
+
+.errors {
+  .error {
+    width: 100%;
+    margin-top: 0.25rem;
+    font-size: 80%;
+    color: #dc3545;
+  }
+}

@@ -2,11 +2,18 @@
 
 {% block title %}Service{% endblock %}
 
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+{% endblock %}
+
 {% block home_banner %}{% endblock %}
 {% block features %}{% endblock %}
 {% block video %}{% endblock %}
 
 {% block service %}
+
+{% form_theme form 'form/form_errors.html.twig' %}
 
 <section class="contact_area section_gap">
     <div class="container">
@@ -26,7 +33,7 @@
                         <div class="form-group">
                         {{
                             form_row(form.request_type, {'attr': {
-                                'class': 'form-control',
+                                'class': 'form-control select-small',
                                 'placeholder': 'Tipo de Convenio',
                                 'onfocus': 'this.placeholder = ""',
                                 'onblur': 'this.placeholder = "Tipo de Convenio"',
@@ -46,7 +53,7 @@
                         <div class="form-group">
                             {{
                                 form_row(form.date, {'attr': {
-                                    'class': 'form-control',
+                                    'class': 'form-control datepicker',
                                     'placeholder': 'Fecha del Convenio',
                                     'onfocus': 'this.placeholder = ""',
                                     'onblur': 'this.placeholder = "Fecha del Convenio"',
@@ -176,7 +183,7 @@
                         <div class="form-group">
                             {{
                             form_row(form.marriage.marriage_type, {'attr': {
-                                'class': 'form-control',
+                                'class': 'form-control select-small',
                                 'placeholder': 'Tipo de Matrimonio',
                                 'onfocus': 'this.placeholder = ""',
                                 'onblur': 'this.placeholder = "Tipo de Matrimonio"',
@@ -196,7 +203,7 @@
                         <div class="form-group">
                             {{
                             form_row(form.marriage.date, {'attr': {
-                                'class': 'form-control',
+                                'class': 'form-control datepicker',
                                 'placeholder': 'Fecha del Matrimonio',
                                 'onfocus': 'this.placeholder = ""',
                                 'onblur': 'this.placeholder = "Ciudad del Matrimonio"',
@@ -251,7 +258,7 @@
                         <div class="form-group">
                             {{
                             form_row(form.marriage.economic_system, {'attr': {
-                                'class': 'form-control',
+                                'class': 'form-control select-small',
                                 'placeholder': 'Régimen económico del matrimonio',
                                 'onfocus': 'this.placeholder = ""',
                                 'onblur': 'this.placeholder = "Régimen económico del matrimonio"',
@@ -293,7 +300,7 @@
                         <div class="form-group">
                             {{
                             form_row(form.agreement.custody, {'attr': {
-                                'class': 'form-control',
+                                'class': 'form-control select-small',
                             }})
                             }}
                         </div>
@@ -424,4 +431,6 @@
     <script src="{{ asset('js/jquery-3.2.1.min.js') }}"></script>
     <script src="{{ asset('js/children.js') }}"></script>
     <script src="{{ asset('js/agreement.js') }}"></script>
+    <!-- Bootstrap Date-Picker Plugin -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
 {% endblock %}

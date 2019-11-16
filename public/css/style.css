@@ -3963,4 +3963,15 @@ h6 {
   margin-top: 20px;
   margin-bottom: 20px; }
 
+/* line 23, public/scss/_agreement.scss */
+.select-small {
+  width: 300px; }
+
+/* line 28, public/scss/_agreement.scss */
+.errors .error {
+  width: 100%;
+  margin-top: 0.25rem;
+  font-size: 80%;
+  color: #dc3545; }
+
 /*---------------------------------------------------- */

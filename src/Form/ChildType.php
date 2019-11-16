@@ -19,7 +19,11 @@ class ChildType extends AbstractType
                 'label' => 'Indique el nombre del hijo/a'
             ])
             ->add('date', DateType::class, [
-                'label' => 'Indique la fecha de nacimiento del hijo/a'
+                'widget' => 'single_text',
+                'label' => 'Indique la fecha de nacimiento del hijo/a',
+                'html5' => false,
+                'format' => 'dd-MM-yyyy',
+                'attr' => ['class' => 'datepicker'],
             ])
         ;
     }

@@ -31,8 +31,10 @@ class RequestType extends AbstractType
                 'label' => 'Indique la ciudad del Convenio'
             ])
             ->add('date', DateType::class, [
-                'widget' => 'choice',
-                'label' => 'Indique la fecha del Convenio'
+                'widget' => 'single_text',
+                'label' => 'Indique la fecha del Convenio',
+                'html5' => false,
+                'format' => 'dd-MM-yyyy',
             ])
             ->add('agreement', AgreementType::class, [
                 'data_class' => 'App\Entity\Agreement'

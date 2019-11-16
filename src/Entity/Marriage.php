@@ -15,7 +15,7 @@ class Marriage
     private $town;
 
     /**
-     * @Assert\NotBlank
+     * @Assert\DateTime(format="dd/mm/yyyy")
      */
     private $date;
 
