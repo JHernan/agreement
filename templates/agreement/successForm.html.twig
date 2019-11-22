@@ -1,6 +1,23 @@
-{% extends 'base.html.twig' %}
+{# extends 'base.html.twig' #}
 
 {% block title %}Service{% endblock %}
+
+{% block stylesheets %}
+    <style>
+        .watermark {
+            position:fixed;
+            bottom:700px;
+            right:200px;
+            opacity:0.1;
+            z-index:99;
+            color:red;
+            font-size: 358px;
+            pointer-events: none;
+            -webkit-transform: rotate(-45deg);
+            -moz-transform: rotate(-45deg);
+        }
+    </style>
+{% endblock %}
 
 {% block home_banner %}{% endblock %}
 {% block features %}{% endblock %}
@@ -61,6 +78,7 @@
     {% set parent_first_name = request.marriage.partnerFirst.name %}
     {% set parent_second_name = request.marriage.partnerSecond.name %}
 
+    <div class="watermark">Juanqui</div>
     <section class="contact_area section_gap">
         <div class="container">
             <div class="row" id="app">
