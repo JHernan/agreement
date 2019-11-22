@@ -14,13 +14,13 @@ class RegistryType extends AbstractType
     {
         $builder
             ->add('town', null, [
-                'label' => 'Introduzca la ciudad del registro civil'
+                'label' => 'Ciudad del registro civil'
             ])
             ->add('volume', null, [
-                'label' => 'Introduzca el volumen del registro civil'
+                'label' => 'Volumen del registro civil'
             ])
             ->add('page', null, [
-                'label' => 'Introduzca la página del registro civil'
+                'label' => 'Página del registro civil'
             ])
         ;
     }

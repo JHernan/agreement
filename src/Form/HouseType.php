@@ -14,10 +14,10 @@ class HouseType extends AbstractType
     {
         $builder
             ->add('address', null, [
-                'label' => 'Indique la dirección del último domicilio conyugal'
+                'label' => 'Dirección del último domicilio conyugal'
             ])
             ->add('town', null, [
-                'label' => 'Indique la ciudad del último domicilio conyugal'
+                'label' => 'Ciudad del último domicilio conyugal'
             ])
         ;
     }

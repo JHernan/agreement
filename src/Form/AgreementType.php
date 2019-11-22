@@ -24,6 +24,7 @@ class AgreementType extends AbstractType
                     'Monoparental' => '2',
                 ],
                 'placeholder' => 'Seleccione una opción',
+                'label' => 'Tipo de custodia'
             ])
             ->add('pick_up', ChoiceType::class, [
                 'choices'  => [

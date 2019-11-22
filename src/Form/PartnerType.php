@@ -15,19 +15,19 @@ class PartnerType extends AbstractType
     {
         $builder
             ->add('dni', null, [
-                'label' => 'Introduzca el DNI del cónyuge'
+                'label' => 'DNI'
             ])
             ->add('name', null, [
-                'label' => 'Introduzca el nombre del cónyuge'
+                'label' => 'Nombre'
             ])
             ->add('nationality', null, [
-                'label' => 'Introduzca la nacionalidad del cónyuge'
+                'label' => 'Nacionalidad'
             ])
             ->add('address', null, [
-                'label' => 'Introduzca la dirección del cónyuge'
+                'label' => 'Dirección'
             ])
             ->add('town', null, [
-                'label' => 'Introduzca la ciudad de la dirección del cónyuge'
+                'label' => 'Ciudad de la dirección'
             ])
         ;
     }

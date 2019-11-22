@@ -3964,8 +3964,8 @@ h6 {
   margin-bottom: 20px; }
 
 /* line 23, public/scss/_agreement.scss */
-.select-small {
-  width: 300px; }
+.section_bottom {
+  margin-bottom: 70px; }
 
 /* line 28, public/scss/_agreement.scss */
 .errors .error {

@@ -17,11 +17,11 @@ class MarriageType extends AbstractType
     {
         $builder
             ->add('town', null, [
-                'label' => 'Introduzca la ciudad donde se realizó el matrimonio'
+                'label' => 'Ciudad donde se realizó el matrimonio'
             ])
             ->add('date', DateType::class, [
                 'widget' => 'single_text',
-                'label' => 'Introduzca la fecha en la que se realizó el matrimonio',
+                'label' => 'Fecha en la que se realizó el matrimonio',
                 'html5' => false,
                 'format' => 'dd-MM-yyyy',
             ])
@@ -30,13 +30,16 @@ class MarriageType extends AbstractType
                     'Canónico' => 'Canónico',
                     'Civil' => 'Civil',
                 ],
+                'placeholder' => 'Seleccione una opción',
+                'label' => 'Tipo de matrimonio',
             ])
             ->add('economic_system', ChoiceType::class, [
                 'choices'  => [
                     'Sociedad de gananciales' => 'sociedad de gananciales',
                     'Separación de bienes' => 'separación de bienes',
                 ],
-                'label' => 'Indique el régimen económico del matrimonio'
+                'label' => 'Régimen económico del matrimonio',
+                'placeholder' => 'Seleccione una opción',
             ])
             ->add('registry', RegistryType::class, [
                 'data_class' => 'App\Entity\Registry'

@@ -22,17 +22,18 @@ class RequestType extends AbstractType
                     'Divorcio' => 'Divorcio',
                     'Separación' => 'Separación',
                 ],
-                'label' => 'Indique el tipo de Convenio'
+                'label' => 'Tipo de Convenio',
+                'placeholder' => 'Seleccione una opción',
             ])
             ->add('marriage', MarriageType::class, [
                 'data_class' => 'App\Entity\Marriage'
             ])
             ->add('town', null, [
-                'label' => 'Indique la ciudad del Convenio'
+                'label' => 'Ciudad del Convenio'
             ])
             ->add('date', DateType::class, [
                 'widget' => 'single_text',
-                'label' => 'Indique la fecha del Convenio',
+                'label' => 'Fecha del Convenio',
                 'html5' => false,
                 'format' => 'dd-MM-yyyy',
             ])
