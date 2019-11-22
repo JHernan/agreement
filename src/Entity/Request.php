@@ -7,8 +7,11 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 class Request
 {
+    const REQUEST_TYPE = ['Divorcio', 'Separación'];
+
     /**
      * @Assert\NotBlank()
+     * @Assert\Choice(choices=Request::REQUEST_TYPE, message="Selecciona una opción válida.")
      */
     private $request_type;
 

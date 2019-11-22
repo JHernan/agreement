@@ -31,7 +31,7 @@
 
 {% block service %}
 
-{% form_theme form 'form/form_errors.html.twig' %}
+{% form_theme form with ['form/form_row.html.twig', 'form/form_errors.html.twig'] %}
 
 <section class="contact_area section_gap">
     <div class="container">
@@ -46,9 +46,9 @@
 
                 {# quitar novalidate="novalidate" para que se valide el JS #}
 
-{#                <form class="row contact_form" action="{{ path('service') }}" method="post" id="contactForm" novalidate="novalidate">#}
+                <form class="row contact_form" action="{{ path('service') }}" method="post" id="contactForm" novalidate="novalidate">
 
-                <form class="row contact_form" action="{{ path('service') }}" method="post" id="contactForm">
+{#                <form class="row contact_form" action="{{ path('service') }}" method="post" id="contactForm">#}
 
                     {{ form_errors(form) }}
 

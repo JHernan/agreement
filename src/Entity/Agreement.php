@@ -7,8 +7,11 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 class Agreement
 {
+    const CUSTODIES = ['Compartida', 'Monoparental'];
+
     /**
-     * @Assert\NotBlank
+     * @Assert\NotBlank()
+     * @Assert\Choice(choices=Agreement::CUSTODIES, message="Selecciona una opción válida.")
      */
     private $custody;
 

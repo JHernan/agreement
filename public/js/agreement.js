@@ -27,13 +27,13 @@ jQuery(document).ready(function() {
 
     $custodyHolder.change(function(){
         var selectedCustody = $(this).children("option:selected").val();
-        if(selectedCustody == 1){
+        if(selectedCustody == "Compartida"){
             $pickUpHolder.show();
             $deliveryHolder.show();
             $alternateWeeksHolder.show();
             $summerPeriodHolder.show();
             $partnerHolder.hide();
-        } else if(selectedCustody == 2){
+        } else if(selectedCustody == "Monoparental"){
             $pickUpHolder.hide();
             $pickUpHourHolder.hide();
             $deliveryHolder.hide();
@@ -54,7 +54,7 @@ jQuery(document).ready(function() {
 
     $pickUpSelect.change(function(){
         var selectedPickUp = $(this).children("option:selected").val();
-        if(selectedPickUp == 2){
+        if(selectedPickUp == "Monoparental"){
             $pickUpHourHolder.show();
         }else{
             $pickUpHourHolder.hide();
@@ -63,7 +63,7 @@ jQuery(document).ready(function() {
 
     $deliverySelect.change(function(){
         var selectedDelivery = $(this).children("option:selected").val();
-        if(selectedDelivery == 2){
+        if(selectedDelivery == "Monoparental"){
             $deliveryHourHolder.show();
         }else{
             $deliveryHourHolder.hide();

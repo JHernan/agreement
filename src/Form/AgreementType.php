@@ -20,8 +20,8 @@ class AgreementType extends AbstractType
         $builder
             ->add('custody', ChoiceType::class, [
                 'choices'  => [
-                    'Compartida' => '1',
-                    'Monoparental' => '2',
+                    Agreement::CUSTODIES[0] => Agreement::CUSTODIES[0],
+                    Agreement::CUSTODIES[1] => Agreement::CUSTODIES[1],
                 ],
                 'placeholder' => 'Seleccione una opción',
                 'label' => 'Tipo de custodia'

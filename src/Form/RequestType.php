@@ -19,8 +19,8 @@ class RequestType extends AbstractType
         $builder
             ->add('request_type', ChoiceType::class, [
                 'choices'  => [
-                    'Divorcio' => 'Divorcio',
-                    'Separación' => 'Separación',
+                    Request::REQUEST_TYPE[0] => Request::REQUEST_TYPE[0],
+                    Request::REQUEST_TYPE[1] => Request::REQUEST_TYPE[1],
                 ],
                 'label' => 'Tipo de Convenio',
                 'placeholder' => 'Seleccione una opción',
