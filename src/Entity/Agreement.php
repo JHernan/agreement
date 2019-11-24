@@ -7,24 +7,56 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 class Agreement
 {
-    const CUSTODIES = ['Compartida', 'Monoparental'];
+    const CUSTODY_CHOICES = ['Compartida', 'Monoparental'];
+    const CUSTODY_COMPARTIDA = self::CUSTODY_CHOICES[0];
+    const CUSTODY_MONOPARENTAL = self::CUSTODY_CHOICES[1];
+    const PICK_UP_CHOICES_LABELS = ['El centro escolar el viernes, a la finalización del horario lectivo', 'El domicilio del otro progenitor el viernes a una hora determinada'];
+    const PICK_UP_CHOICES_VALUES = [1 ,2];
+    const DELIVERY_CHOICES_LABELS = ['El centro escolar el lunes, al comienzo del horario lectivo', 'El domicilio del otro progenitor el domingo a una hora determinada'];
+    const DELIVERY_CHOICES_VALUES = [1, 2];
+    const SUMMER_PERIOD_CHOICES_LABELS = ['En periodos de dos semanas', 'En dos periodos iguales'];
+    const SUMMER_PERIOD_CHOICES_VALUES = [1, 2];
 
     /**
      * @Assert\NotBlank()
-     * @Assert\Choice(choices=Agreement::CUSTODIES, message="Selecciona una opción válida.")
+     * @Assert\Choice(choices=Agreement::CUSTODY_CHOICES, message="Selecciona una opción válida.")
      */
     private $custody;
 
+    /**
+     * @Assert\NotBlank(groups={"compartida"})
+     * @Assert\Choice(choices=Agreement::PICK_UP_CHOICES_VALUES, message="Selecciona una opción válida.")
+     */
     private $pick_up;
 
     private $pick_up_hour;
 
+    /**
+     * @Assert\NotBlank(groups={"compartida"})
+     * @Assert\Choice(choices=Agreement::DELIVERY_CHOICES_VALUES, message="Selecciona una opción válida.")
+     */
     private $delivery;
 
     private $delivery_hour;
 
+    /**
+     * @Assert\NotBlank(groups={"compartida"})
+     * @Assert\Type(
+     *     type="integer",
+     *     message="El valor {{ value }} no es un número válido.",
+     *     groups={"compartida"}
+     * )
+     * @Assert\GreaterThan(
+     *     value = 0,
+     *     groups={"compartida"}
+     * )
+     */
     private $alternate_weeks;
 
+    /**
+     * @Assert\NotBlank(groups={"compartida"})
+     * @Assert\Choice(choices=Agreement::SUMMER_PERIOD_CHOICES_VALUES, message="Selecciona una opción válida.")
+     */
     private $summer_period;
 
     /**

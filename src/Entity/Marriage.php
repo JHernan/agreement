@@ -9,8 +9,8 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 class Marriage
 {
-    const MARRIAGE_TYPE = ['Canónico', 'Civil'];
-    const ECONOMIC_SYSTEM = ['Sociedad de gananciales', 'Separación de bienes'];
+    const MARRIAGE_TYPE_CHOICES = ['Canónico', 'Civil'];
+    const ECONOMIC_SYSTEM_CHOICES = ['Sociedad de gananciales', 'Separación de bienes'];
 
     /**
      * @Assert\NotBlank
@@ -24,13 +24,13 @@ class Marriage
 
     /**
      * @Assert\NotBlank()
-     * @Assert\Choice(choices=Marriage::MARRIAGE_TYPE, message="Selecciona una opción válida.")
+     * @Assert\Choice(choices=Marriage::MARRIAGE_TYPE_CHOICES, message="Selecciona una opción válida.")
      */
     private $marriage_type;
 
     /**
      * @Assert\NotBlank()
-     * @Assert\Choice(choices=Marriage::ECONOMIC_SYSTEM, message="Selecciona una opción válida.")
+     * @Assert\Choice(choices=Marriage::ECONOMIC_SYSTEM_CHOICES, message="Selecciona una opción válida.")
      */
     private $economic_system;
 

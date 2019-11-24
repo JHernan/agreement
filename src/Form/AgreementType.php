@@ -20,34 +20,44 @@ class AgreementType extends AbstractType
         $builder
             ->add('custody', ChoiceType::class, [
                 'choices'  => [
-                    Agreement::CUSTODIES[0] => Agreement::CUSTODIES[0],
-                    Agreement::CUSTODIES[1] => Agreement::CUSTODIES[1],
+                    Agreement::CUSTODY_CHOICES[0] => Agreement::CUSTODY_CHOICES[0],
+                    Agreement::CUSTODY_CHOICES[1] => Agreement::CUSTODY_CHOICES[1],
                 ],
                 'placeholder' => 'Seleccione una opción',
                 'label' => 'Tipo de custodia'
             ])
             ->add('pick_up', ChoiceType::class, [
                 'choices'  => [
-                    'El centro escolar el viernes, a la finalización del horario lectivo' => '1',
-                    'El domicilio del otro progenitor el viernes a una hora determinada' => '2',
+                    Agreement::PICK_UP_CHOICES_LABELS[0] => Agreement::PICK_UP_CHOICES_VALUES[0],
+                    Agreement::PICK_UP_CHOICES_LABELS[1] => Agreement::PICK_UP_CHOICES_VALUES[1],
                 ],
+                'label' => 'Hora de recogida',
+                'placeholder' => 'Seleccione una opción',
+                'required' => false
             ])
-            ->add('pick_up_hour', TextType::class)
+//            ->add('pick_up_hour', TextType::class)
             ->add('delivery', ChoiceType::class, [
                 'choices'  => [
-                    'El centro escolar el lunes, al comienzo del horario lectivo' => '1',
-                    'El domicilio del otro progenitor el domingo a una hora determinada' => '2',
+                    Agreement::DELIVERY_CHOICES_LABELS[0] => Agreement::DELIVERY_CHOICES_VALUES[0],
+                    Agreement::DELIVERY_CHOICES_LABELS[1] => Agreement::DELIVERY_CHOICES_VALUES[1],
                 ],
+                'label' => 'Hora de entrega',
+                'placeholder' => 'Seleccione una opción',
+                'required' => false
             ])
-            ->add('delivery_hour', TextType::class)
+//            ->add('delivery_hour', TextType::class)
             ->add('alternate_weeks', null, [
-                'label' => 'Indique el número de semanas alternas de la custodia'
+                'label' => 'Semanas alternas de la custodia',
+                'required' => false
             ])
             ->add('summer_period', ChoiceType::class, [
                 'choices'  => [
-                    'En periodos de dos semanas' => '1',
-                    'En dos periodos iguales' => '2',
+                    Agreement::SUMMER_PERIOD_CHOICES_LABELS[0] => Agreement::SUMMER_PERIOD_CHOICES_VALUES[0],
+                    Agreement::SUMMER_PERIOD_CHOICES_LABELS[1] => Agreement::SUMMER_PERIOD_CHOICES_VALUES[1],
                 ],
+                'label' => 'Periodo de verano',
+                'placeholder' => 'Seleccione una opción',
+                'required' => false
             ])
             ->add('partner', ChoiceType::class, [
                 'choices'  => [
@@ -55,7 +65,8 @@ class AgreementType extends AbstractType
                     '2' => 2,
                 ],
                 'placeholder' => '',
-                'label' => 'Indique el cónyuge que tendrá la custodia monoparental'
+                'label' => 'Indique el cónyuge que tendrá la custodia monoparental',
+                'required' => false
             ]) /* TODO partner */
         ;
     }

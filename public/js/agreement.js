@@ -25,31 +25,12 @@ jQuery(document).ready(function() {
     $summerPeriodHolder.hide();
     $partnerHolder.hide();
 
+    var selectedCustody = $custodyHolder.children("option:selected").val();
+    toogleCustodyBlock(selectedCustody);
+
     $custodyHolder.change(function(){
         var selectedCustody = $(this).children("option:selected").val();
-        if(selectedCustody == "Compartida"){
-            $pickUpHolder.show();
-            $deliveryHolder.show();
-            $alternateWeeksHolder.show();
-            $summerPeriodHolder.show();
-            $partnerHolder.hide();
-        } else if(selectedCustody == "Monoparental"){
-            $pickUpHolder.hide();
-            $pickUpHourHolder.hide();
-            $deliveryHolder.hide();
-            $deliveryHourHolder.hide();
-            $alternateWeeksHolder.hide();
-            $summerPeriodHolder.hide();
-            $partnerHolder.show();
-        } else{
-            $pickUpHolder.hide();
-            $pickUpHourHolder.hide();
-            $deliveryHolder.hide();
-            $deliveryHourHolder.hide();
-            $alternateWeeksHolder.hide();
-            $summerPeriodHolder.hide();
-            $partnerHolder.hide();
-        }
+        toogleCustodyBlock(selectedCustody);
     });
 
     $pickUpSelect.change(function(){
@@ -70,7 +51,43 @@ jQuery(document).ready(function() {
         }
     });
 
+    function toogleCustodyBlock(selectedCustody){
+        if(selectedCustody == "Compartida"){
+            showCustodyBlockCompartida();
+        } else if(selectedCustody == "Monoparental"){
+            showCustodyBlockMonoparental();
+        } else{
+            hideCustodyBlock();
+        }
+    }
 
+    function showCustodyBlockCompartida(){
+        $pickUpHolder.show();
+        $deliveryHolder.show();
+        $alternateWeeksHolder.show();
+        $summerPeriodHolder.show();
+        $partnerHolder.hide();
+    }
+
+    function showCustodyBlockMonoparental(){
+        $pickUpHolder.hide();
+        $pickUpHourHolder.hide();
+        $deliveryHolder.hide();
+        $deliveryHourHolder.hide();
+        $alternateWeeksHolder.hide();
+        $summerPeriodHolder.hide();
+        $partnerHolder.show();
+    }
+
+    function hideCustodyBlock(){
+        $pickUpHolder.hide();
+        $pickUpHourHolder.hide();
+        $deliveryHolder.hide();
+        $deliveryHourHolder.hide();
+        $alternateWeeksHolder.hide();
+        $summerPeriodHolder.hide();
+        $partnerHolder.hide();
+    }
 
 
     $.fn.datepicker.dates['es'] = {

@@ -27,16 +27,16 @@ class MarriageType extends AbstractType
             ])
             ->add('marriage_type',ChoiceType::class, [
                 'choices'  => [
-                    Marriage::MARRIAGE_TYPE[0] => Marriage::MARRIAGE_TYPE[0],
-                    Marriage::MARRIAGE_TYPE[1] => Marriage::MARRIAGE_TYPE[1],
+                    Marriage::MARRIAGE_TYPE_CHOICES[0] => Marriage::MARRIAGE_TYPE_CHOICES[0],
+                    Marriage::MARRIAGE_TYPE_CHOICES[1] => Marriage::MARRIAGE_TYPE_CHOICES[1],
                 ],
                 'placeholder' => 'Seleccione una opción',
                 'label' => 'Tipo de matrimonio',
             ])
             ->add('economic_system', ChoiceType::class, [
                 'choices'  => [
-                    Marriage::ECONOMIC_SYSTEM[0] => Marriage::ECONOMIC_SYSTEM[0],
-                    Marriage::ECONOMIC_SYSTEM[1] => Marriage::ECONOMIC_SYSTEM[1],
+                    Marriage::ECONOMIC_SYSTEM_CHOICES[0] => Marriage::ECONOMIC_SYSTEM_CHOICES[0],
+                    Marriage::ECONOMIC_SYSTEM_CHOICES[1] => Marriage::ECONOMIC_SYSTEM_CHOICES[1],
                 ],
                 'label' => 'Régimen económico del matrimonio',
                 'placeholder' => 'Seleccione una opción',
