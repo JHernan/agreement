@@ -25,6 +25,7 @@ class MarriageType extends AbstractType
                 'label' => 'Fecha en la que se realizó el matrimonio',
                 'html5' => false,
                 'format' => 'dd-MM-yyyy',
+                'empty_data' => null,
             ])
             ->add('marriage_type',ChoiceType::class, [
                 'choices'  => [

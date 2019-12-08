@@ -38,6 +38,7 @@ class RequestType extends AbstractType
                 'label' => 'Fecha del Convenio',
                 'html5' => false,
                 'format' => 'dd-MM-yyyy',
+                'empty_data' => null,
             ])
             ->add('agreement', AgreementType::class, [
                 'data_class' => 'App\Entity\Agreement'

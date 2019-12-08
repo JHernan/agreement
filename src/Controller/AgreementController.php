@@ -61,9 +61,9 @@ class AgreementController extends Controller
                 "Attachment" => false
             ]);
 
-//            return $this->render('agreement/successForm.html.twig', array(
-//                'request' => $request
-//            ));
+            return $this->render('agreement/successForm.html.twig', array(
+                'request' => $request
+            ));
         }
 
         return $this->render('agreement/service.html.twig', array(

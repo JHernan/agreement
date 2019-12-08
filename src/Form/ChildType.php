@@ -25,6 +25,7 @@ class ChildType extends AbstractType
                 'html5' => false,
                 'format' => 'dd-MM-yyyy',
                 'attr' => ['class' => 'form-control datepicker'],
+                'empty_data' => null,
             ])
             ->add('registry', null, [
                 'label' => 'Registro Civil',

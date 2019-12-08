@@ -51,6 +51,9 @@
 {#                <form class="row contact_form" action="{{ path('service') }}" method="post" id="contactForm">#}
 
                     {{ form_errors(form) }}
+                    {%for error in form.vars.errors %}
+                        <li>{{error.message}}</li>
+                    {%endfor%}
 
                     <div class="col-md-12">
                         <h3>Información general del convenio</h3>
