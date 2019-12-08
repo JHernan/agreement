@@ -231,7 +231,7 @@
                             <div class="col-md-4">
                                     {{
                                         form_row(form.marriage.marriage_type, {'attr': {
-                                            'class': 'form-control select-small',
+                                            'class': 'form-control',
                                             'placeholder': 'Tipo de Matrimonio',
                                             'onfocus': 'this.placeholder = ""',
                                             'onblur': 'this.placeholder = "Tipo de Matrimonio"',
@@ -295,7 +295,7 @@
                             <div class="col-md-3">
                                     {{
                                         form_row(form.marriage.economic_system, {'attr': {
-                                            'class': 'form-control select-small',
+                                            'class': 'form-control',
                                             'placeholder': 'Régimen económico del matrimonio',
                                             'onfocus': 'this.placeholder = ""',
                                             'onblur': 'this.placeholder = "Régimen económico del matrimonio"',
@@ -332,16 +332,30 @@
 
                         <div class="children section_bottom" data-prototype="{{ form_row(form.marriage.children.vars.prototype)|e('html_attr') }}">
                             {% for child in form.marriage.children %}
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        {{ form_row(child.name) }}
+                                <div class="child">
+                                    <h5 class="child_number"></h5>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            {{ form_row(child.name) }}
+                                        </div>
+                                        <div class="col-md-4">
+                                            {{ form_row(child.date) }}
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="remove">
+                                                <button type="button" class="genric-btn danger-border circle text-uppercase">Borrar hijo/a</button>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="col-md-4">
-                                        {{ form_row(child.date) }}
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="remove">
-                                            <button type="button" class="primary-btn text-uppercase">Borrar hijo/a</button>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            {{ form_row(child.registry) }}
+                                        </div>
+                                        <div class="col-md-4">
+                                            {{ form_row(child.volume) }}
+                                        </div>
+                                        <div class="col-md-4">
+                                            {{ form_row(child.page) }}
                                         </div>
                                     </div>
                                 </div>
@@ -353,7 +367,7 @@
 
                                 {{
                                     form_row(form.agreement.custody, {'attr': {
-                                        'class': 'form-control select-small',
+                                        'class': 'form-control',
                                     }})
                                 }}
 

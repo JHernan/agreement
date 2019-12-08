@@ -1,7 +1,7 @@
 var $collectionHolder;
 
 // setup an "add a tag" link
-var $addTagButton = $('<button type="button" class="primary-btn text-uppercase add_child_link">Añadir hijo/a</button>');
+var $addTagButton = $('<button type="button" class="genric-btn info circle text-uppercase add_child_link">Añadir hijo/a</button>');
 var $newLinkLi = $('<div class="children"></div>').append($addTagButton);
 
 jQuery(document).ready(function() {
@@ -9,9 +9,9 @@ jQuery(document).ready(function() {
     $collectionHolder = $('div.children');
 
     // add a delete link to all of the existing tag form li elements
-    $collectionHolder.find('div.child').each(function() {
-        addTagFormDeleteLink($(this));
-    });
+    // $collectionHolder.find('div.child').each(function(key, value) {
+    //     //addTagFormDeleteLink($(this));
+    // });
 
     // add the "add a tag" anchor and li to the tags ul
     $collectionHolder.append($newLinkLi);
@@ -20,14 +20,16 @@ jQuery(document).ready(function() {
     // index when inserting a new item (e.g. 2)
     $collectionHolder.data('index', $collectionHolder.find(':input').length);
 
+    updateChildrenIndex();
+
     $addTagButton.on('click', function(e) {
         // add a new tag form (see next code block)
         addTagForm($collectionHolder, $newLinkLi);
     });
 
-    console.log($('div.remove button.primary-btn').html());
-    $('div.remove button.primary-btn').on('click', function(e){
-        $(this).parent().parent().parent().remove();
+    $('div.remove button.genric-btn.danger-border.circle').on('click', function(e){
+        $(this).parent().parent().parent().parent().remove();
+        updateChildrenIndex();
     });
 });
 
@@ -55,6 +57,7 @@ function addTagForm($collectionHolder, $newLinkLi) {
     var $newFormLi = $('<div class="child"></div>').append(newForm);
     $newLinkLi.before($newFormLi);
     addTagFormDeleteLink($newFormLi);
+    updateChildrenIndex();
 
     $('.datepicker').datepicker({
         format: 'dd-mm-yyyy',
@@ -63,11 +66,20 @@ function addTagForm($collectionHolder, $newLinkLi) {
 }
 
 function addTagFormDeleteLink($tagFormLi) {
-    var $removeFormButton = $('<button type="button" class="primary-btn text-uppercase">Borrar hijo/a</button>');
+    var $removeFormButton = $('<button type="button" class="genric-btn danger-border circle text-uppercase">Borrar hijo/a</button>');
     $tagFormLi.find('.remove').append($removeFormButton);
 
     $removeFormButton.on('click', function(e) {
         // remove the li for the tag form
         $tagFormLi.remove();
+        updateChildrenIndex();
+    });
+}
+
+function updateChildrenIndex(){
+    $collectionHolder = $('div.children');
+    $collectionHolder.find('div.child').each(function(key, value) {
+        var currentValue = key + 1;
+        $(this).find('.child_number').html('Hijo/a número ' + currentValue);
     });
 }

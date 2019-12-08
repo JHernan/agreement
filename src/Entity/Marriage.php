@@ -60,6 +60,9 @@ class Marriage
 
     private $requests;
 
+    /**
+     * @Assert\Type(type="App\Entity\Child")
+     */
     private $children;
 
 

@@ -18,6 +18,21 @@ class Child
     private $date;
 
     /**
+     * @Assert\NotBlank
+     */
+    private $registry;
+
+    /**
+     * @Assert\NotBlank
+     */
+    private $volume;
+
+    /**
+     * @Assert\NotBlank
+     */
+    private $page;
+
+    /**
      * @Assert\Type(type="App\Entity\Marriage")
      * @Assert\Valid
      */
@@ -56,6 +71,42 @@ class Child
     public function setMarriage(?Marriage $marriage): self
     {
         $this->marriage = $marriage;
+
+        return $this;
+    }
+
+    public function getRegistry(): ?string
+    {
+        return $this->registry;
+    }
+
+    public function setRegistry(string $registry): self
+    {
+        $this->registry = $registry;
+
+        return $this;
+    }
+
+    public function getVolume(): ?string
+    {
+        return $this->volume;
+    }
+
+    public function setVolume(string $volume): self
+    {
+        $this->volume = $volume;
+
+        return $this;
+    }
+
+    public function getPage(): ?string
+    {
+        return $this->page;
+    }
+
+    public function setPage(string $page): self
+    {
+        $this->page = $page;
 
         return $this;
     }

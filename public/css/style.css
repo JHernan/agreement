@@ -2814,152 +2814,154 @@ h6 {
 .genric-btn.danger-border {
   color: #f44a40;
   border: 1px solid #f44a40;
-  background: #fff; }
+  background: #fff;
+  float: right;
+  margin-top: 25px; }
 
-/* line 558, public/scss/_elements.scss */
+/* line 560, public/scss/_elements.scss */
 .genric-btn.danger-border:hover {
   color: #fff;
   background: #f44a40;
   border: 1px solid transparent; }
 
-/* line 564, public/scss/_elements.scss */
+/* line 566, public/scss/_elements.scss */
 .genric-btn.link {
   color: #222222;
   background: #f9f9ff;
   text-decoration: underline;
   border: 1px solid transparent; }
 
-/* line 571, public/scss/_elements.scss */
+/* line 573, public/scss/_elements.scss */
 .genric-btn.link:hover {
   color: #222222;
   border: 1px solid #f9f9ff;
   background: #fff; }
 
-/* line 577, public/scss/_elements.scss */
+/* line 579, public/scss/_elements.scss */
 .genric-btn.link-border {
   color: #222222;
   border: 1px solid #f9f9ff;
   background: #fff;
   text-decoration: underline; }
 
-/* line 584, public/scss/_elements.scss */
+/* line 586, public/scss/_elements.scss */
 .genric-btn.link-border:hover {
   color: #222222;
   background: #f9f9ff;
   border: 1px solid transparent; }
 
-/* line 590, public/scss/_elements.scss */
+/* line 592, public/scss/_elements.scss */
 .genric-btn.disable {
   color: #222222, 0.3;
   background: #f9f9ff;
   border: 1px solid transparent;
   cursor: not-allowed; }
 
-/* line 597, public/scss/_elements.scss */
+/* line 599, public/scss/_elements.scss */
 .generic-blockquote {
   padding: 30px 50px 30px 30px;
   background: #fff;
   border-left: 2px solid #f8b600; }
 
 @media (max-width: 991px) {
-  /* line 604, public/scss/_elements.scss */
+  /* line 606, public/scss/_elements.scss */
   .progress-table-wrap {
     overflow-x: scroll; } }
 
-/* line 609, public/scss/_elements.scss */
+/* line 611, public/scss/_elements.scss */
 .progress-table {
   background: #fff;
   padding: 15px 0px 30px 0px;
   min-width: 800px; }
 
-/* line 615, public/scss/_elements.scss */
+/* line 617, public/scss/_elements.scss */
 .progress-table .serial {
   width: 11.83%;
   padding-left: 30px; }
 
-/* line 620, public/scss/_elements.scss */
+/* line 622, public/scss/_elements.scss */
 .progress-table .country {
   width: 28.07%; }
 
-/* line 624, public/scss/_elements.scss */
+/* line 626, public/scss/_elements.scss */
 .progress-table .visit {
   width: 19.74%; }
 
-/* line 628, public/scss/_elements.scss */
+/* line 630, public/scss/_elements.scss */
 .progress-table .percentage {
   width: 40.36%;
   padding-right: 50px; }
 
-/* line 633, public/scss/_elements.scss */
+/* line 635, public/scss/_elements.scss */
 .progress-table .table-head {
   display: flex; }
 
-/* line 637, public/scss/_elements.scss */
+/* line 639, public/scss/_elements.scss */
 .progress-table .table-head .serial, .progress-table .table-head .country, .progress-table .table-head .visit, .progress-table .table-head .percentage {
   color: #222222;
   line-height: 40px;
   text-transform: uppercase;
   font-weight: 500; }
 
-/* line 644, public/scss/_elements.scss */
+/* line 646, public/scss/_elements.scss */
 .progress-table .table-row {
   padding: 15px 0;
   border-top: 1px solid #edf3fd;
   display: flex; }
 
-/* line 650, public/scss/_elements.scss */
+/* line 652, public/scss/_elements.scss */
 .progress-table .table-row .serial, .progress-table .table-row .country, .progress-table .table-row .visit, .progress-table .table-row .percentage {
   display: flex;
   align-items: center; }
 
-/* line 655, public/scss/_elements.scss */
+/* line 657, public/scss/_elements.scss */
 .progress-table .table-row .country img {
   margin-right: 15px; }
 
-/* line 659, public/scss/_elements.scss */
+/* line 661, public/scss/_elements.scss */
 .progress-table .table-row .percentage .progress {
   width: 80%;
   border-radius: 0px;
   background: transparent; }
 
-/* line 665, public/scss/_elements.scss */
+/* line 667, public/scss/_elements.scss */
 .progress-table .table-row .percentage .progress .progress-bar {
   height: 5px;
   line-height: 5px; }
 
-/* line 670, public/scss/_elements.scss */
+/* line 672, public/scss/_elements.scss */
 .progress-table .table-row .percentage .progress .progress-bar.color-1 {
   background-color: #6382e6; }
 
-/* line 674, public/scss/_elements.scss */
+/* line 676, public/scss/_elements.scss */
 .progress-table .table-row .percentage .progress .progress-bar.color-2 {
   background-color: #e66686; }
 
-/* line 678, public/scss/_elements.scss */
+/* line 680, public/scss/_elements.scss */
 .progress-table .table-row .percentage .progress .progress-bar.color-3 {
   background-color: #f09359; }
 
-/* line 682, public/scss/_elements.scss */
+/* line 684, public/scss/_elements.scss */
 .progress-table .table-row .percentage .progress .progress-bar.color-4 {
   background-color: #73fbaf; }
 
-/* line 686, public/scss/_elements.scss */
+/* line 688, public/scss/_elements.scss */
 .progress-table .table-row .percentage .progress .progress-bar.color-5 {
   background-color: #73fbaf; }
 
-/* line 690, public/scss/_elements.scss */
+/* line 692, public/scss/_elements.scss */
 .progress-table .table-row .percentage .progress .progress-bar.color-6 {
   background-color: #6382e6; }
 
-/* line 694, public/scss/_elements.scss */
+/* line 696, public/scss/_elements.scss */
 .progress-table .table-row .percentage .progress .progress-bar.color-7 {
   background-color: #a367e7; }
 
-/* line 698, public/scss/_elements.scss */
+/* line 700, public/scss/_elements.scss */
 .progress-table .table-row .percentage .progress .progress-bar.color-8 {
   background-color: #e66686; }
 
-/* line 702, public/scss/_elements.scss */
+/* line 704, public/scss/_elements.scss */
 .single-gallery-image {
   margin-top: 30px;
   background-repeat: no-repeat !important;
@@ -2971,23 +2973,23 @@ h6 {
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s; }
 
-/* line 714, public/scss/_elements.scss */
+/* line 716, public/scss/_elements.scss */
 .single-gallery-image:hover {
   opacity: .8; }
 
-/* line 718, public/scss/_elements.scss */
+/* line 720, public/scss/_elements.scss */
 .list-style {
   width: 14px;
   height: 14px; }
 
-/* line 723, public/scss/_elements.scss */
+/* line 725, public/scss/_elements.scss */
 .unordered-list li {
   position: relative;
   padding-left: 30px;
   line-height: 1.82em !important;
   list-style: none; }
 
-/* line 730, public/scss/_elements.scss */
+/* line 732, public/scss/_elements.scss */
 .unordered-list li:before {
   content: "";
   position: absolute;
@@ -2999,23 +3001,23 @@ h6 {
   left: 0;
   border-radius: 50%; }
 
-/* line 742, public/scss/_elements.scss */
+/* line 744, public/scss/_elements.scss */
 .ordered-list {
   margin-left: 30px; }
 
-/* line 746, public/scss/_elements.scss */
+/* line 748, public/scss/_elements.scss */
 .ordered-list li {
   list-style-type: decimal-leading-zero;
   color: #f8b600;
   font-weight: 500;
   line-height: 1.82em !important; }
 
-/* line 753, public/scss/_elements.scss */
+/* line 755, public/scss/_elements.scss */
 .ordered-list li span {
   font-weight: 300;
   color: #777777; }
 
-/* line 758, public/scss/_elements.scss */
+/* line 760, public/scss/_elements.scss */
 .ordered-list-alpha li {
   margin-left: 30px;
   list-style-type: lower-alpha;
@@ -3023,12 +3025,12 @@ h6 {
   font-weight: 500;
   line-height: 1.82em !important; }
 
-/* line 766, public/scss/_elements.scss */
+/* line 768, public/scss/_elements.scss */
 .ordered-list-alpha li span {
   font-weight: 300;
   color: #777777; }
 
-/* line 771, public/scss/_elements.scss */
+/* line 773, public/scss/_elements.scss */
 .ordered-list-roman li {
   margin-left: 30px;
   list-style-type: lower-roman;
@@ -3036,12 +3038,12 @@ h6 {
   font-weight: 500;
   line-height: 1.82em !important; }
 
-/* line 779, public/scss/_elements.scss */
+/* line 781, public/scss/_elements.scss */
 .ordered-list-roman li span {
   font-weight: 300;
   color: #777777; }
 
-/* line 784, public/scss/_elements.scss */
+/* line 786, public/scss/_elements.scss */
 .single-input {
   display: block;
   width: 100%;
@@ -3051,15 +3053,15 @@ h6 {
   background: #f9f9ff;
   padding: 0 20px; }
 
-/* line 794, public/scss/_elements.scss */
+/* line 796, public/scss/_elements.scss */
 .single-input:focus {
   outline: none; }
 
-/* line 798, public/scss/_elements.scss */
+/* line 800, public/scss/_elements.scss */
 .input-group-icon {
   position: relative; }
 
-/* line 802, public/scss/_elements.scss */
+/* line 804, public/scss/_elements.scss */
 .input-group-icon .icon {
   position: absolute;
   left: 20px;
@@ -3067,15 +3069,15 @@ h6 {
   line-height: 40px;
   z-index: 3; }
 
-/* line 810, public/scss/_elements.scss */
+/* line 812, public/scss/_elements.scss */
 .input-group-icon .icon i {
   color: #797979; }
 
-/* line 814, public/scss/_elements.scss */
+/* line 816, public/scss/_elements.scss */
 .input-group-icon .single-input {
   padding-left: 45px; }
 
-/* line 818, public/scss/_elements.scss */
+/* line 820, public/scss/_elements.scss */
 .single-textarea {
   display: block;
   width: 100%;
@@ -3087,11 +3089,11 @@ h6 {
   height: 100px;
   resize: none; }
 
-/* line 830, public/scss/_elements.scss */
+/* line 832, public/scss/_elements.scss */
 .single-textarea:focus {
   outline: none; }
 
-/* line 834, public/scss/_elements.scss */
+/* line 836, public/scss/_elements.scss */
 .single-input-primary {
   display: block;
   width: 100%;
@@ -3101,12 +3103,12 @@ h6 {
   background: #f9f9ff;
   padding: 0 20px; }
 
-/* line 844, public/scss/_elements.scss */
+/* line 846, public/scss/_elements.scss */
 .single-input-primary:focus {
   outline: none;
   border: 1px solid #f8b600; }
 
-/* line 849, public/scss/_elements.scss */
+/* line 851, public/scss/_elements.scss */
 .single-input-accent {
   display: block;
   width: 100%;
@@ -3116,12 +3118,12 @@ h6 {
   background: #f9f9ff;
   padding: 0 20px; }
 
-/* line 859, public/scss/_elements.scss */
+/* line 861, public/scss/_elements.scss */
 .single-input-accent:focus {
   outline: none;
   border: 1px solid #eb6b55; }
 
-/* line 864, public/scss/_elements.scss */
+/* line 866, public/scss/_elements.scss */
 .single-input-secondary {
   display: block;
   width: 100%;
@@ -3131,12 +3133,12 @@ h6 {
   background: #f9f9ff;
   padding: 0 20px; }
 
-/* line 874, public/scss/_elements.scss */
+/* line 876, public/scss/_elements.scss */
 .single-input-secondary:focus {
   outline: none;
   border: 1px solid #f09359; }
 
-/* line 879, public/scss/_elements.scss */
+/* line 881, public/scss/_elements.scss */
 .default-switch {
   width: 35px;
   height: 17px;
@@ -3145,7 +3147,7 @@ h6 {
   position: relative;
   cursor: pointer; }
 
-/* line 888, public/scss/_elements.scss */
+/* line 890, public/scss/_elements.scss */
 .default-switch input {
   position: absolute;
   left: 0;
@@ -3157,7 +3159,7 @@ h6 {
   opacity: 0;
   cursor: pointer; }
 
-/* line 900, public/scss/_elements.scss */
+/* line 902, public/scss/_elements.scss */
 .default-switch input + label {
   position: absolute;
   top: 1px;
@@ -3173,15 +3175,15 @@ h6 {
   box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.2);
   cursor: pointer; }
 
-/* line 916, public/scss/_elements.scss */
+/* line 918, public/scss/_elements.scss */
 .default-switch input:checked + label {
   left: 19px; }
 
-/* line 920, public/scss/_elements.scss */
+/* line 922, public/scss/_elements.scss */
 .single-element-widget {
   margin-bottom: 30px; }
 
-/* line 924, public/scss/_elements.scss */
+/* line 926, public/scss/_elements.scss */
 .primary-switch {
   width: 35px;
   height: 17px;
@@ -3190,7 +3192,7 @@ h6 {
   position: relative;
   cursor: pointer; }
 
-/* line 933, public/scss/_elements.scss */
+/* line 935, public/scss/_elements.scss */
 .primary-switch input {
   position: absolute;
   left: 0;
@@ -3201,7 +3203,7 @@ h6 {
   height: 100%;
   opacity: 0; }
 
-/* line 944, public/scss/_elements.scss */
+/* line 946, public/scss/_elements.scss */
 .primary-switch input + label {
   position: absolute;
   left: 0;
@@ -3211,7 +3213,7 @@ h6 {
   width: 100%;
   height: 100%; }
 
-/* line 954, public/scss/_elements.scss */
+/* line 956, public/scss/_elements.scss */
 .primary-switch input + label:before {
   content: "";
   position: absolute;
@@ -3229,7 +3231,7 @@ h6 {
   -o-transition: all 0.2s;
   transition: all 0.2s; }
 
-/* line 972, public/scss/_elements.scss */
+/* line 974, public/scss/_elements.scss */
 .primary-switch input + label:after {
   content: "";
   position: absolute;
@@ -3246,15 +3248,15 @@ h6 {
   box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.2);
   cursor: pointer; }
 
-/* line 989, public/scss/_elements.scss */
+/* line 991, public/scss/_elements.scss */
 .primary-switch input:checked + label:after {
   left: 19px; }
 
-/* line 993, public/scss/_elements.scss */
+/* line 995, public/scss/_elements.scss */
 .primary-switch input:checked + label:before {
   background: #f8b600; }
 
-/* line 997, public/scss/_elements.scss */
+/* line 999, public/scss/_elements.scss */
 .confirm-switch {
   width: 35px;
   height: 17px;
@@ -3263,7 +3265,7 @@ h6 {
   position: relative;
   cursor: pointer; }
 
-/* line 1006, public/scss/_elements.scss */
+/* line 1008, public/scss/_elements.scss */
 .confirm-switch input {
   position: absolute;
   left: 0;
@@ -3274,7 +3276,7 @@ h6 {
   height: 100%;
   opacity: 0; }
 
-/* line 1017, public/scss/_elements.scss */
+/* line 1019, public/scss/_elements.scss */
 .confirm-switch input + label {
   position: absolute;
   left: 0;
@@ -3284,7 +3286,7 @@ h6 {
   width: 100%;
   height: 100%; }
 
-/* line 1027, public/scss/_elements.scss */
+/* line 1029, public/scss/_elements.scss */
 .confirm-switch input + label:before {
   content: "";
   position: absolute;
@@ -3302,7 +3304,7 @@ h6 {
   transition: all 0.2s;
   cursor: pointer; }
 
-/* line 1045, public/scss/_elements.scss */
+/* line 1047, public/scss/_elements.scss */
 .confirm-switch input + label:after {
   content: "";
   position: absolute;
@@ -3319,15 +3321,15 @@ h6 {
   box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.2);
   cursor: pointer; }
 
-/* line 1062, public/scss/_elements.scss */
+/* line 1064, public/scss/_elements.scss */
 .confirm-switch input:checked + label:after {
   left: 19px; }
 
-/* line 1066, public/scss/_elements.scss */
+/* line 1068, public/scss/_elements.scss */
 .confirm-switch input:checked + label:before {
   background: #4cd3e3; }
 
-/* line 1070, public/scss/_elements.scss */
+/* line 1072, public/scss/_elements.scss */
 .primary-checkbox {
   width: 16px;
   height: 16px;
@@ -3336,7 +3338,7 @@ h6 {
   position: relative;
   cursor: pointer; }
 
-/* line 1079, public/scss/_elements.scss */
+/* line 1081, public/scss/_elements.scss */
 .primary-checkbox input {
   position: absolute;
   left: 0;
@@ -3347,7 +3349,7 @@ h6 {
   height: 100%;
   opacity: 0; }
 
-/* line 1090, public/scss/_elements.scss */
+/* line 1092, public/scss/_elements.scss */
 .primary-checkbox input + label {
   position: absolute;
   left: 0;
@@ -3360,16 +3362,16 @@ h6 {
   cursor: pointer;
   border: 1px solid #f1f1f1; }
 
-/* line 1103, public/scss/_elements.scss */
+/* line 1105, public/scss/_elements.scss */
 .single-defination h4 {
   color: #222222; }
 
-/* line 1108, public/scss/_elements.scss */
+/* line 1110, public/scss/_elements.scss */
 .primary-checkbox input:checked + label {
   background: url(../img/elements/primary-check.png) no-repeat center center/cover;
   border: none; }
 
-/* line 1113, public/scss/_elements.scss */
+/* line 1115, public/scss/_elements.scss */
 .confirm-checkbox {
   width: 16px;
   height: 16px;
@@ -3378,7 +3380,7 @@ h6 {
   position: relative;
   cursor: pointer; }
 
-/* line 1122, public/scss/_elements.scss */
+/* line 1124, public/scss/_elements.scss */
 .confirm-checkbox input {
   position: absolute;
   left: 0;
@@ -3389,7 +3391,7 @@ h6 {
   height: 100%;
   opacity: 0; }
 
-/* line 1133, public/scss/_elements.scss */
+/* line 1135, public/scss/_elements.scss */
 .confirm-checkbox input + label {
   position: absolute;
   left: 0;
@@ -3402,12 +3404,12 @@ h6 {
   cursor: pointer;
   border: 1px solid #f1f1f1; }
 
-/* line 1146, public/scss/_elements.scss */
+/* line 1148, public/scss/_elements.scss */
 .confirm-checkbox input:checked + label {
   background: url(../img/elements/success-check.png) no-repeat center center/cover;
   border: none; }
 
-/* line 1151, public/scss/_elements.scss */
+/* line 1153, public/scss/_elements.scss */
 .disabled-checkbox {
   width: 16px;
   height: 16px;
@@ -3416,7 +3418,7 @@ h6 {
   position: relative;
   cursor: pointer; }
 
-/* line 1160, public/scss/_elements.scss */
+/* line 1162, public/scss/_elements.scss */
 .disabled-checkbox input {
   position: absolute;
   left: 0;
@@ -3427,7 +3429,7 @@ h6 {
   height: 100%;
   opacity: 0; }
 
-/* line 1171, public/scss/_elements.scss */
+/* line 1173, public/scss/_elements.scss */
 .disabled-checkbox input + label {
   position: absolute;
   left: 0;
@@ -3440,17 +3442,17 @@ h6 {
   cursor: pointer;
   border: 1px solid #f1f1f1; }
 
-/* line 1184, public/scss/_elements.scss */
+/* line 1186, public/scss/_elements.scss */
 .disabled-checkbox input:disabled {
   cursor: not-allowed;
   z-index: 3; }
 
-/* line 1189, public/scss/_elements.scss */
+/* line 1191, public/scss/_elements.scss */
 .disabled-checkbox input:checked + label {
   background: url(../img/elements/disabled-check.png) no-repeat center center/cover;
   border: none; }
 
-/* line 1194, public/scss/_elements.scss */
+/* line 1196, public/scss/_elements.scss */
 .primary-radio {
   width: 16px;
   height: 16px;
@@ -3459,7 +3461,7 @@ h6 {
   position: relative;
   cursor: pointer; }
 
-/* line 1203, public/scss/_elements.scss */
+/* line 1205, public/scss/_elements.scss */
 .primary-radio input {
   position: absolute;
   left: 0;
@@ -3470,7 +3472,7 @@ h6 {
   height: 100%;
   opacity: 0; }
 
-/* line 1214, public/scss/_elements.scss */
+/* line 1216, public/scss/_elements.scss */
 .primary-radio input + label {
   position: absolute;
   left: 0;
@@ -3483,12 +3485,12 @@ h6 {
   cursor: pointer;
   border: 1px solid #f1f1f1; }
 
-/* line 1227, public/scss/_elements.scss */
+/* line 1229, public/scss/_elements.scss */
 .primary-radio input:checked + label {
   background: url(../img/elements/primary-radio.png) no-repeat center center/cover;
   border: none; }
 
-/* line 1232, public/scss/_elements.scss */
+/* line 1234, public/scss/_elements.scss */
 .confirm-radio {
   width: 16px;
   height: 16px;
@@ -3497,7 +3499,7 @@ h6 {
   position: relative;
   cursor: pointer; }
 
-/* line 1241, public/scss/_elements.scss */
+/* line 1243, public/scss/_elements.scss */
 .confirm-radio input {
   position: absolute;
   left: 0;
@@ -3508,7 +3510,7 @@ h6 {
   height: 100%;
   opacity: 0; }
 
-/* line 1252, public/scss/_elements.scss */
+/* line 1254, public/scss/_elements.scss */
 .confirm-radio input + label {
   position: absolute;
   left: 0;
@@ -3521,12 +3523,12 @@ h6 {
   cursor: pointer;
   border: 1px solid #f1f1f1; }
 
-/* line 1265, public/scss/_elements.scss */
+/* line 1267, public/scss/_elements.scss */
 .confirm-radio input:checked + label {
   background: url(../img/elements/success-radio.png) no-repeat center center/cover;
   border: none; }
 
-/* line 1270, public/scss/_elements.scss */
+/* line 1272, public/scss/_elements.scss */
 .disabled-radio {
   width: 16px;
   height: 16px;
@@ -3535,7 +3537,7 @@ h6 {
   position: relative;
   cursor: pointer; }
 
-/* line 1279, public/scss/_elements.scss */
+/* line 1281, public/scss/_elements.scss */
 .disabled-radio input {
   position: absolute;
   left: 0;
@@ -3546,7 +3548,7 @@ h6 {
   height: 100%;
   opacity: 0; }
 
-/* line 1290, public/scss/_elements.scss */
+/* line 1292, public/scss/_elements.scss */
 .disabled-radio input + label {
   position: absolute;
   left: 0;
@@ -3559,32 +3561,32 @@ h6 {
   cursor: pointer;
   border: 1px solid #f1f1f1; }
 
-/* line 1303, public/scss/_elements.scss */
+/* line 1305, public/scss/_elements.scss */
 .disabled-radio input:disabled {
   cursor: not-allowed;
   z-index: 3; }
 
-/* line 1307, public/scss/_elements.scss */
+/* line 1309, public/scss/_elements.scss */
 .unordered-list {
   list-style: none;
   padding: 0px;
   margin: 0px; }
 
-/* line 1312, public/scss/_elements.scss */
+/* line 1314, public/scss/_elements.scss */
 .ordered-list {
   list-style: none;
   padding: 0px; }
 
-/* line 1316, public/scss/_elements.scss */
+/* line 1318, public/scss/_elements.scss */
 .disabled-radio input:checked + label {
   background: url(../img/elements/disabled-radio.png) no-repeat center center/cover;
   border: none; }
 
-/* line 1321, public/scss/_elements.scss */
+/* line 1323, public/scss/_elements.scss */
 .default-select {
   height: 40px; }
 
-/* line 1325, public/scss/_elements.scss */
+/* line 1327, public/scss/_elements.scss */
 .default-select .nice-select {
   border: none;
   border-radius: 0px;
@@ -3593,7 +3595,7 @@ h6 {
   padding-left: 20px;
   padding-right: 40px; }
 
-/* line 1334, public/scss/_elements.scss */
+/* line 1336, public/scss/_elements.scss */
 .default-select .nice-select .list {
   margin-top: 0;
   border: none;
@@ -3602,7 +3604,7 @@ h6 {
   width: 100%;
   padding: 10px 0 10px 0px; }
 
-/* line 1343, public/scss/_elements.scss */
+/* line 1345, public/scss/_elements.scss */
 .default-select .nice-select .list .option {
   font-weight: 300;
   -webkit-transition: all 0.3s ease 0s;
@@ -3614,36 +3616,36 @@ h6 {
   font-size: 12px;
   padding-left: 20px; }
 
-/* line 1355, public/scss/_elements.scss */
+/* line 1357, public/scss/_elements.scss */
 .default-select .nice-select .list .option.selected {
   color: #f8b600;
   background: transparent; }
 
-/* line 1360, public/scss/_elements.scss */
+/* line 1362, public/scss/_elements.scss */
 .default-select .nice-select .list .option:hover {
   color: #f8b600;
   background: transparent; }
 
-/* line 1365, public/scss/_elements.scss */
+/* line 1367, public/scss/_elements.scss */
 .default-select .current {
   margin-right: 50px;
   font-weight: 300; }
 
-/* line 1370, public/scss/_elements.scss */
+/* line 1372, public/scss/_elements.scss */
 .default-select .nice-select::after {
   right: 20px; }
 
 @media (max-width: 991px) {
-  /* line 1375, public/scss/_elements.scss */
+  /* line 1377, public/scss/_elements.scss */
   .left-align-p p {
     margin-top: 20px; } }
 
-/* line 1380, public/scss/_elements.scss */
+/* line 1382, public/scss/_elements.scss */
 .form-select {
   height: 40px;
   width: 100%; }
 
-/* line 1385, public/scss/_elements.scss */
+/* line 1387, public/scss/_elements.scss */
 .form-select .nice-select {
   border: none;
   border-radius: 0px;
@@ -3653,7 +3655,7 @@ h6 {
   padding-right: 40px;
   width: 100%; }
 
-/* line 1395, public/scss/_elements.scss */
+/* line 1397, public/scss/_elements.scss */
 .form-select .nice-select .list {
   margin-top: 0;
   border: none;
@@ -3662,11 +3664,11 @@ h6 {
   width: 100%;
   padding: 10px 0 10px 0px; }
 
-/* line 1403, public/scss/_elements.scss */
+/* line 1405, public/scss/_elements.scss */
 .mt-10 {
   margin-top: 10px; }
 
-/* line 1406, public/scss/_elements.scss */
+/* line 1408, public/scss/_elements.scss */
 .form-select .nice-select .list .option {
   font-weight: 300;
   -webkit-transition: all 0.3s ease 0s;
@@ -3678,22 +3680,22 @@ h6 {
   font-size: 12px;
   padding-left: 45px; }
 
-/* line 1418, public/scss/_elements.scss */
+/* line 1420, public/scss/_elements.scss */
 .form-select .nice-select .list .option.selected {
   color: #f8b600;
   background: transparent; }
 
-/* line 1423, public/scss/_elements.scss */
+/* line 1425, public/scss/_elements.scss */
 .form-select .nice-select .list .option:hover {
   color: #f8b600;
   background: transparent; }
 
-/* line 1428, public/scss/_elements.scss */
+/* line 1430, public/scss/_elements.scss */
 .form-select .current {
   margin-right: 50px;
   font-weight: 300; }
 
-/* line 1433, public/scss/_elements.scss */
+/* line 1435, public/scss/_elements.scss */
 .form-select .nice-select::after {
   right: 20px; }
 

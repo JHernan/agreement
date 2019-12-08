@@ -1,15 +1,27 @@
 {% form_theme form _self %}
 
 {% block _request_marriage_children_entry_row %}
-    <div class="row">
-        <div class="col-md-4">
-            {{ form_row(form.name) }}
+        <h5 class="child_number"></h5>
+        <div class="row">
+            <div class="col-md-4">
+                {{ form_row(form.name) }}
+            </div>
+            <div class="col-md-4">
+                {{ form_row(form.date) }}
+            </div>
+            <div class="col-md-4">
+                <div class="remove"></div>
+            </div>
         </div>
-        <div class="col-md-4">
-            {{ form_row(form.date) }}
+        <div class="row">
+            <div class="col-md-4">
+                {{ form_row(form.registry) }}
+            </div>
+            <div class="col-md-4">
+                {{ form_row(form.volume) }}
+            </div>
+            <div class="col-md-4">
+                {{ form_row(form.page) }}
+            </div>
         </div>
-        <div class="col-md-4">
-            <div class="remove"></div>
-        </div>
-    </div>
 {% endblock %}

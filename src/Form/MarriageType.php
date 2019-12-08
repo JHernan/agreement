@@ -10,6 +10,7 @@ use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Validator\Constraints\Valid;
 
 class MarriageType extends AbstractType
 {
@@ -58,6 +59,10 @@ class MarriageType extends AbstractType
                 'entry_options' => ['label' => false],
                 'allow_add' => true,
                 'by_reference' => false,
+                'error_bubbling' => false,
+                'constraints' => [
+                    new Valid(),
+                ],
             ]);
     ;
     }

@@ -16,15 +16,27 @@ class ChildType extends AbstractType
     {
         $builder
             ->add('name', null, [
-                'label' => 'Indique el nombre del hijo/a',
+                'label' => 'Nombre',
                 'attr' => ['class' => 'form-control'],
             ])
             ->add('date', DateType::class, [
                 'widget' => 'single_text',
-                'label' => 'Indique la fecha de nacimiento del hijo/a',
+                'label' => 'Fecha de nacimiento',
                 'html5' => false,
                 'format' => 'dd-MM-yyyy',
                 'attr' => ['class' => 'form-control datepicker'],
+            ])
+            ->add('registry', null, [
+                'label' => 'Registro Civil',
+                'attr' => ['class' => 'form-control'],
+            ])
+            ->add('volume', null, [
+                'label' => 'Volumen del Registro Civil',
+                'attr' => ['class' => 'form-control'],
+            ])
+            ->add('page', null, [
+                'label' => 'Página del Registro Civil',
+                'attr' => ['class' => 'form-control'],
             ])
         ;
     }
