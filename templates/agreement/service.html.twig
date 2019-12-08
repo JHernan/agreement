@@ -31,7 +31,7 @@
 
 {% block service %}
 
-{% form_theme form with ['form/form_row.html.twig', 'form/form_errors.html.twig'] %}
+{% form_theme form with ['form/form_row.html.twig', 'form/form_errors.html.twig', 'form/_request_marriage_children_entry_row.html.twig'] %}
 
 <section class="contact_area section_gap">
     <div class="container">
@@ -57,16 +57,13 @@
                         <p>Introduzca la información general del convenio</p>
                         <div class="row section_bottom">
                             <div class="col-md-4">
-                                <div class="form-group">
                                     {{
                                         form_row(form.request_type, {'attr': {
                                             'class': 'form-control',
                                         }})
                                     }}
-                                </div>
                             </div>
                             <div class="col-md-4">
-                                <div class="form-group">
                                     {{
                                         form_row(form.town, {'attr': {
                                             'class': 'form-control',
@@ -75,10 +72,8 @@
                                             'onblur': 'this.placeholder = "Ciudad del Convenio"',
                                         }})
                                     }}
-                                </div>
                             </div>
                             <div class="col-md-4">
-                                <div class="form-group">
                                     {{
                                         form_row(form.date, {'attr': {
                                             'class': 'form-control datepicker',
@@ -88,7 +83,6 @@
                                             'autocomplete': 'off',
                                         }})
                                     }}
-                                </div>
                             </div>
                         </div>
 
@@ -106,7 +100,6 @@
 
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <div class="form-group">
                                             {{
                                                 form_row(form.marriage.partner_first.name, {'attr': {
                                                     'class': 'form-control',
@@ -115,10 +108,8 @@
                                                     'onblur': 'this.placeholder = "Nombre del primer cónyuge"',
                                                 }})
                                             }}
-                                        </div>
                                     </div>
                                     <div class="col-md-6">
-                                        <div class="form-group">
                                             {{
                                                 form_row(form.marriage.partner_first.dni, {'attr': {
                                                     'class': 'form-control',
@@ -127,13 +118,11 @@
                                                     'onblur': 'this.placeholder = "DNI del primer cónyuge"',
                                                 }})
                                             }}
-                                        </div>
                                     </div>
                                 </div>
 
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <div class="form-group">
                                             {{
                                                 form_row(form.marriage.partner_first.nationality, {'attr': {
                                                     'class': 'form-control',
@@ -142,10 +131,8 @@
                                                     'onblur': 'this.placeholder = "Nacionalidad del primer cónyuge"',
                                                 }})
                                             }}
-                                        </div>
                                     </div>
                                     <div class="col-md-6">
-                                        <div class="form-group">
                                             {{
                                                 form_row(form.marriage.partner_first.town, {'attr': {
                                                     'class': 'form-control',
@@ -154,13 +141,11 @@
                                                     'onblur': 'this.placeholder = "Ciudad de la dirección del primer cónyuge"',
                                                 }})
                                             }}
-                                        </div>
                                     </div>
                                 </div>
 
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <div class="form-group">
                                             {{
                                                 form_row(form.marriage.partner_first.address, {'attr': {
                                                     'class': 'form-control',
@@ -169,7 +154,6 @@
                                                     'onblur': 'this.placeholder = "Dirección del primer cónyuge"',
                                                 }})
                                             }}
-                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -181,7 +165,6 @@
 
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <div class="form-group">
                                             {{
                                                 form_row(form.marriage.partner_second.name, {'attr': {
                                                     'class': 'form-control',
@@ -190,10 +173,8 @@
                                                     'onblur': 'this.placeholder = "Nombre del segundo cónyuge"',
                                                 }})
                                             }}
-                                        </div>
                                     </div>
                                     <div class="col-md-6">
-                                        <div class="form-group">
                                             {{
                                                 form_row(form.marriage.partner_second.dni, {'attr': {
                                                     'class': 'form-control',
@@ -202,13 +183,11 @@
                                                     'onblur': 'this.placeholder = "DNI del segundo cónyuge"',
                                                 }})
                                             }}
-                                        </div>
                                     </div>
                                 </div>
 
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <div class="form-group">
                                             {{
                                                 form_row(form.marriage.partner_second.nationality, {'attr': {
                                                     'class': 'form-control',
@@ -217,10 +196,8 @@
                                                     'onblur': 'this.placeholder = "Nacionalidad del segundo cónyuge"',
                                                 }})
                                             }}
-                                        </div>
-                                    </div>
+                                     </div>
                                     <div class="col-md-6">
-                                        <div class="form-group">
                                             {{
                                                 form_row(form.marriage.partner_second.town, {'attr': {
                                                     'class': 'form-control',
@@ -229,13 +206,11 @@
                                                     'onblur': 'this.placeholder = "Ciudad de la dirección del segundo cónyuge"',
                                                 }})
                                             }}
-                                        </div>
                                     </div>
                                 </div>
 
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <div class="form-group">
                                             {{
                                                 form_row(form.marriage.partner_second.address, {'attr': {
                                                     'class': 'form-control',
@@ -244,7 +219,6 @@
                                                     'onblur': 'this.placeholder = "Dirección del segundo cónyuge"',
                                                 }})
                                             }}
-                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -255,7 +229,6 @@
 
                         <div class="row">
                             <div class="col-md-4">
-                                <div class="form-group">
                                     {{
                                         form_row(form.marriage.marriage_type, {'attr': {
                                             'class': 'form-control select-small',
@@ -264,10 +237,8 @@
                                             'onblur': 'this.placeholder = "Tipo de Matrimonio"',
                                         }})
                                     }}
-                                </div>
                             </div>
                             <div class="col-md-4">
-                                <div class="form-group">
                                     {{
                                         form_row(form.marriage.town, {'attr': {
                                             'class': 'form-control',
@@ -276,10 +247,8 @@
                                             'onblur': 'this.placeholder = "Ciudad del Matrimonio"',
                                         }})
                                     }}
-                                </div>
                             </div>
                             <div class="col-md-4">
-                                <div class="form-group">
                                     {{
                                         form_row(form.marriage.date, {'attr': {
                                             'class': 'form-control datepicker',
@@ -289,13 +258,11 @@
                                             'autocomplete': 'off',
                                         }})
                                     }}
-                                </div>
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col-md-3">
-                                <div class="form-group">
                                     {{
                                         form_row(form.marriage.registry.town, {'attr': {
                                             'class': 'form-control',
@@ -304,10 +271,8 @@
                                             'onblur': 'this.placeholder = "Ciudad del Registro Civil"',
                                         }})
                                     }}
-                                </div>
                             </div>
                             <div class="col-md-3">
-                                <div class="form-group">
                                     {{
                                         form_row(form.marriage.registry.volume, {'attr': {
                                             'class': 'form-control',
@@ -316,11 +281,9 @@
                                             'onblur': 'this.placeholder = "Volumen del Registro Civil"',
                                         }})
                                     }}
-                                </div>
                             </div>
                             <div class="col-md-3">
-                                <div class="form-group">
-                                    {{
+                                        {{
                                         form_row(form.marriage.registry.page, {'attr': {
                                             'class': 'form-control',
                                             'placeholder': 'Página del Registro Civil',
@@ -328,10 +291,8 @@
                                             'onblur': 'this.placeholder = "Página del Registro Civil',
                                         }})
                                     }}
-                                </div>
                             </div>
                             <div class="col-md-3">
-                                <div class="form-group">
                                     {{
                                         form_row(form.marriage.economic_system, {'attr': {
                                             'class': 'form-control select-small',
@@ -340,13 +301,11 @@
                                             'onblur': 'this.placeholder = "Régimen económico del matrimonio"',
                                         }})
                                     }}
-                                </div>
                             </div>
                         </div>
 
                         <div class="row section_bottom">
                             <div class="col-md-6">
-                                <div class="form-group">
                                     {{
                                         form_row(form.marriage.house.address, {'attr': {
                                             'class': 'form-control',
@@ -355,10 +314,8 @@
                                             'onblur': 'this.placeholder = "Dirección del último domicilio conyugal"',
                                         }})
                                     }}
-                                </div>
                             </div>
                             <div class="col-md-6">
-                                <div class="form-group">
                                     {{
                                         form_row(form.marriage.house.town, {'attr': {
                                             'class': 'form-control',
@@ -367,33 +324,28 @@
                                             'onblur': 'this.placeholder = "Ciudad del último domicilio conyugal"',
                                         }})
                                     }}
-                                </div>
                             </div>
                         </div>
 
                         <h3>Información de los hijos</h3>
                         <p>A continuación indique los datos de los hijos e hijas fruto del presente matrimonio.</p>
 
-                        <div class="children section_bottom" data-prototype="{{ form_widget(form.marriage.children.vars.prototype)|e('html_attr') }}"></div>
+                        <div class="children section_bottom" data-prototype="{{ form_row(form.marriage.children.vars.prototype)|e('html_attr') }}"></div>
 
                         <h3>Guarda y custodia</h3>
                         <p>A continuación indique los datos de guarda y custodia de los hijos e hijas.</p>
 
-                            <div class="form-group">
                                 {{
                                     form_row(form.agreement.custody, {'attr': {
                                         'class': 'form-control select-small',
                                     }})
                                 }}
-                            </div>
 
-                            <div class="form-group">
                                 {{
                                     form_row(form.agreement.pick_up, {'attr': {
                                         'class': 'form-control',
                                     }})
                                 }}
-                            </div>
 
 {#                            <div class="form-group">#}
 {#                                {{#}
@@ -403,13 +355,11 @@
 {#                                }}#}
 {#                            </div>#}
 
-                            <div class="form-group">
                                 {{
                                     form_row(form.agreement.delivery, {'attr': {
                                         'class': 'form-control',
                                     }})
                                 }}
-                            </div>
 
 {#                            <div class="form-group">#}
 {#                                {{#}
@@ -419,7 +369,6 @@
 {#                                }}#}
 {#                            </div>#}
 
-                            <div class="form-group">
                                 {{
                                     form_row(form.agreement.alternate_weeks, {'attr': {
                                         'class': 'form-control',
@@ -428,25 +377,25 @@
                                         'onblur': 'this.placeholder = "Indique el número de semanas alternas de la custodia"',
                                     }})
                                 }}
-                            </div>
 
-                            <div class="form-group">
                                 {{
                                     form_row(form.agreement.summer_period, {'attr': {
                                         'class': 'form-control',
                                     }})
                                 }}
-                            </div>
 
-                            <div class="form-group">
                                 {{
                                     form_row(form.agreement.partner, {'attr': {
                                         'class': 'form-control',
                                     }})
                                 }}
-                            </div>
 
-                        {{ form_row(form.save, { 'label': 'Submit me' }) }}
+                        {{ form_row(form.save, {
+                            'label': 'Enviar',
+                            'attr': {
+                                'class': 'primary-btn text-uppercase'
+                            }
+                        }) }}
                     </div>
                     {{ form_row(form._token) }}
                 </form>

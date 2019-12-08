@@ -1,7 +1,7 @@
 var $collectionHolder;
 
 // setup an "add a tag" link
-var $addTagButton = $('<button type="button" class="add_child_link">Añadir hijo/a</button>');
+var $addTagButton = $('<button type="button" class="primary-btn text-uppercase add_child_link">Añadir hijo/a</button>');
 var $newLinkLi = $('<div class="children"></div>').append($addTagButton);
 
 jQuery(document).ready(function() {
@@ -50,11 +50,17 @@ function addTagForm($collectionHolder, $newLinkLi) {
     var $newFormLi = $('<div class="child"></div>').append(newForm);
     $newLinkLi.before($newFormLi);
     addTagFormDeleteLink($newFormLi);
+
+    $('.datepicker').datepicker({
+        format: 'dd-mm-yyyy',
+        language: 'es'
+    });
 }
 
 function addTagFormDeleteLink($tagFormLi) {
-    var $removeFormButton = $('<button type="button">Borrar hijo/a</button>');
-    $tagFormLi.append($removeFormButton);
+    var $removeFormButton = $('<button type="button" class="primary-btn text-uppercase">Borrar hijo/a</button>');
+    console.log($tagFormLi.find('.remove').html());
+    $tagFormLi.find('.remove').append($removeFormButton);
 
     $removeFormButton.on('click', function(e) {
         // remove the li for the tag form
