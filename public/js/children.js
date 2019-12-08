@@ -24,6 +24,11 @@ jQuery(document).ready(function() {
         // add a new tag form (see next code block)
         addTagForm($collectionHolder, $newLinkLi);
     });
+
+    console.log($('div.remove button.primary-btn').html());
+    $('div.remove button.primary-btn').on('click', function(e){
+        $(this).parent().parent().parent().remove();
+    });
 });
 
 function addTagForm($collectionHolder, $newLinkLi) {
@@ -59,7 +64,6 @@ function addTagForm($collectionHolder, $newLinkLi) {
 
 function addTagFormDeleteLink($tagFormLi) {
     var $removeFormButton = $('<button type="button" class="primary-btn text-uppercase">Borrar hijo/a</button>');
-    console.log($tagFormLi.find('.remove').html());
     $tagFormLi.find('.remove').append($removeFormButton);
 
     $removeFormButton.on('click', function(e) {
