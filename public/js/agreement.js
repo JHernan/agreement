@@ -16,6 +16,9 @@ jQuery(document).ready(function() {
     $summerPeriodHolder = $('select#request_agreement_summer_period').parent().parent();
     $summerPeriodSelect = $('select#request_agreement_summer_period');
     $partnerHolder = $('select#request_agreement_partner').parent().parent();
+    $partnerSelect = $('select#request_agreement_partner');
+    $partnerFirstField = $('input#request_marriage_partner_first_name');
+    $partnerSecondField = $('input#request_marriage_partner_second_name');
 
     $pickUpHolder.hide();
     $pickUpHourHolder.hide();
@@ -50,6 +53,21 @@ jQuery(document).ready(function() {
             $deliveryHourHolder.hide();
         }
     });
+
+    changePartnerOption(1, $partnerFirstField.val());
+    changePartnerOption(2, $partnerSecondField.val());
+
+    $partnerFirstField.change(function(){
+        changePartnerOption(1, $(this).val());
+    });
+
+    $partnerSecondField.change(function(){
+        changePartnerOption(2, $(this).val());
+    });
+
+    function changePartnerOption(index, val){
+        $partnerSelect.find('option:eq('+index+')').text(val);
+    }
 
     function toogleCustodyBlock(selectedCustody){
         if(selectedCustody == "Compartida"){

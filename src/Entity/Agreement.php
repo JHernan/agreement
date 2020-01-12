@@ -16,6 +16,8 @@ class Agreement
     const DELIVERY_CHOICES_VALUES = [1, 2];
     const SUMMER_PERIOD_CHOICES_LABELS = ['En periodos de dos semanas', 'En dos periodos iguales'];
     const SUMMER_PERIOD_CHOICES_VALUES = [1, 2];
+    const PARTNER_CHOICES_LABELS = ['Cónyuge 1', 'Cónyuge 2'];
+    const PARTNER_CHOICES_VALUES = [1, 2];
 
     /**
      * @Assert\NotBlank()
@@ -60,8 +62,8 @@ class Agreement
     private $summer_period;
 
     /**
-     * @Assert\Type(type="App\Entity\Partner")
-     * @Assert\Valid
+     * @Assert\NotBlank(groups={"monoparental"})
+     * @Assert\Choice(choices=Agreement::PARTNER_CHOICES_VALUES, message="Selecciona una opción válida.")
      */
     private $partner;
 
@@ -120,6 +122,10 @@ class Agreement
         return $this;
     }
 
+    public function getDeliveryText(){
+        return self::DELIVERY_CHOICES_LABELS[$this->delivery];
+    }
+
     public function getDeliveryHour()
     {
         return $this->delivery_hour;
@@ -156,12 +162,12 @@ class Agreement
         return $this;
     }
 
-    public function getPartner(): ?Partner
+    public function getPartner(): ?int
     {
         return $this->partner;
     }
 
-    public function setPartner(?Partner $partner): self
+    public function setPartner(?int $partner): self
     {
         $this->partner = $partner;
 

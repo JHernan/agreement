@@ -33,7 +33,6 @@ class AgreementType extends AbstractType
                 ],
                 'label' => 'Hora de recogida',
                 'placeholder' => 'Seleccione una opción',
-                'required' => false
             ])
 //            ->add('pick_up_hour', TextType::class)
             ->add('delivery', ChoiceType::class, [
@@ -43,12 +42,10 @@ class AgreementType extends AbstractType
                 ],
                 'label' => 'Hora de entrega',
                 'placeholder' => 'Seleccione una opción',
-                'required' => false
             ])
 //            ->add('delivery_hour', TextType::class)
             ->add('alternate_weeks', null, [
                 'label' => 'Semanas alternas de la custodia',
-                'required' => false
             ])
             ->add('summer_period', ChoiceType::class, [
                 'choices'  => [
@@ -57,17 +54,15 @@ class AgreementType extends AbstractType
                 ],
                 'label' => 'Periodo de verano',
                 'placeholder' => 'Seleccione una opción',
-                'required' => false
             ])
             ->add('partner', ChoiceType::class, [
                 'choices'  => [
-                    '1' => 1,
-                    '2' => 2,
+                    Agreement::PARTNER_CHOICES_LABELS[0] => Agreement::PARTNER_CHOICES_VALUES[0],
+                    Agreement::PARTNER_CHOICES_LABELS[1] => Agreement::PARTNER_CHOICES_VALUES[1],
                 ],
-                'placeholder' => '',
+                'placeholder' => 'Seleccione un cónyuge',
                 'label' => 'Indique el cónyuge que tendrá la custodia monoparental',
-                'required' => false
-            ]) /* TODO partner */
+            ])
         ;
     }
 
