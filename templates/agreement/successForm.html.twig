@@ -3,6 +3,7 @@
 {% block title %}Service{% endblock %}
 
 {% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
     <style>
         .watermark {
             position:fixed;
@@ -39,6 +40,7 @@
         {% set children_younger_text = "el menor" %}
         {% set children_of_younger_text = "del menor" %}
         {% set children_will_be_text = "el menor estará" %}
+        {% set children_will_remain_text = "el menor permancerá" %}
         {% set children_pick_up_text = "El menor será recogido" %}
     {% elseif children_count > 1 %}
         {% set children_born_text = "nacieron" %}
@@ -46,6 +48,7 @@
         {% set children_younger_text = "los menores" %}
         {% set children_of_younger_text = "de los menores" %}
         {% set children_will_be_text = "los menores estarán" %}
+        {% set children_will_remain_text = "los menores permancerán" %}
         {% set children_pick_up_text = "Los menores serán recogidos" %}
     {% endif %}
 
@@ -196,10 +199,34 @@
                             <br />
                             <b>E)</b> Los progenitores permitirán que {{ children_younger_text }} asista a celebraciones o eventos familiares, como cumpleaños de abuelos y otros familiares, bodas, comuniones, etc., en caso de que se produzcan en la familia del que no los tenga en su compañía, favoreciendo los cambios necesarios, siempre que se comunique con suficiente antelación.
                         {% else %}
-                            FALTA ESTOOOOO
+
+                        {% endif %}
+                    </div>
+                    <h2>-VI-</h2>
+                    <div>
+                        <b>PENSIÓN ALIMENTICIA.</b>
+                        {% if custody == 'Compartida' %}
+                        {% else %}
                         {% endif %}
                     </div>
                     {% endif %}
+                    <h2>-VIII-</h2>
+                    <div>
+                        <b>COMUNICACIONES.</b>
+                        Los progenitores quedan obligados, durante los periodos de tiempo en que {{ children_will_remain_text }} en su compañía, a comunicar al otro todas las cuestiones relativas a la salud, educación, y demás aspectos esenciales de la vida {{ children_of_younger_text }} en común, comprometiéndose a facilitar la documentación relativa a tales asuntos.<br />
+                        En caso de enfermedad {{ children_of_younger_text }} en común, ambos progenitores quedan obligados a informarse mutuamente de dicha circunstancia, y el progenitor que en ese momento no se encuentre en compañía {{ children_of_younger_text }} tendrá derecho a la visita en el domicilio en el que {{ children_of_younger_text }} se encuentre, debiendo comunicar previamente esa visita al progenitor en cuyo domicilio se encuentre {{ children_of_younger_text }}.
+                    </div>
+                    <h2>-IX-</h2>
+                    <div>
+                        Ambos cónyuges se comprometen a presentar este Convenio a aprobación judicial, junto con la demanda de solicitud de divorcio de mutuo acuerdo y a ratificarlo.<br />
+                        Leído el documento por ambas partes, se ratifican en el mismo los cónyuges, que seguidamente lo firman en la fecha y lugar arriba indicados, manifestando también estar dispuestos a ratificarlo en el Juzgado, a presencia judicial, en la correspondiente causa de divorcio, que a tenor de la legislación vigente solicitarán de mutuo acuerdo.
+                    </div>
+                    <div>
+                        <div style="width: 100%; margin-top: 50px;">
+                            <div style="width: 50%; text-align: center; float: left;">{{ request.marriage.partnerFirst.name }}</div>
+                            <div style="width: 50%; text-align: center; float: left;">{{ request.marriage.partnerSecond.name }}</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
