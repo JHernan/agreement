@@ -7,6 +7,7 @@ use App\Entity\Agreement;
 use App\Entity\PickUp;
 use App\Repository\PickUpRepository;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -62,6 +63,10 @@ class AgreementType extends AbstractType
                 ],
                 'placeholder' => 'Seleccione un cónyuge',
                 'label' => 'Indique el cónyuge que tendrá la custodia monoparental',
+            ])
+            ->add('alimony', CheckboxType::class, [
+                'label' => ' ',
+                'required' => false
             ])
         ;
     }

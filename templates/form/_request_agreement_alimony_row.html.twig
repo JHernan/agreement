@@ -1,0 +1,14 @@
+{% form_theme form _self %}
+
+{% block _request_agreement_alimony_row %}
+    <div id="alimony-holder">
+        <div class="switch-wrap d-flex justify-content-between">
+            <p>¿Hay pensión alimenticia?</p>
+            {{ form_errors(form) }}
+            <div class="confirm-switch">
+                {{ form_widget(form) }}
+                {{ form_label(form) }}
+            </div>
+        </div>
+    </div>
+{% endblock %}

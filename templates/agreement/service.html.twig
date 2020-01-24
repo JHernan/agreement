@@ -31,7 +31,12 @@
 
 {% block service %}
 
-{% form_theme form with ['form/form_row.html.twig', 'form/form_errors.html.twig', 'form/_request_marriage_children_entry_row.html.twig'] %}
+{% form_theme form with [
+    'form/form_row.html.twig',
+    'form/form_errors.html.twig',
+    'form/_request_marriage_children_entry_row.html.twig',
+    'form/_request_agreement_alimony_row.html.twig'
+] %}
 
 <section class="contact_area section_gap">
     <div class="container">
@@ -368,11 +373,21 @@
                         <h3>Guarda y custodia</h3>
                         <p>A continuación indique los datos de guarda y custodia de los hijos e hijas.</p>
 
+                        <div class="row">
+                            <div class="col-md-6">
+
                                 {{
                                     form_row(form.agreement.custody, {'attr': {
                                         'class': 'form-control',
                                     }})
                                 }}
+
+                                {{
+                                    form_row(form.agreement.alimony)
+                                }}
+
+                            </div>
+                            <div class="col-md-6">
 
                                 {{
                                     form_row(form.agreement.pick_up, {'attr': {
@@ -423,6 +438,8 @@
                                     }})
                                 }}
 
+                            </div>
+
                         {{ form_row(form.save, {
                             'label': 'Enviar',
                             'attr': {
@@ -433,54 +450,6 @@
                     {{ form_row(form._token) }}
                 </form>
             </div>
-{#            <div class="col-lg-6">#}
-{#                <div class="agreement">#}
-{#                    <h2>CONVENIO REGULADOR DE DIVORCIO/SEPARACION</h2>#}
-{#                    <div>En ${ city }, a ___ de ______ de _____.</div>#}
-{#                    <h3>REUNIDOS</h3>#}
-{#                    <div>De una parte,#}
-{#                        D. ${ partner_name_1 }, mayor de edad, de nacionalidad ${ partner_nationality_1 }, con domicilio en ${ partner_address_1 } de ${ partner_town_1 } y portador del Documento Nacional de Identidad núm. ${ partner_dni_1 }#}
-{#                    </div>#}
-{#                    <div>Y de otra parte,#}
-{#                        D. ${ partner_name_2 }, mayor de edad, de nacionalidad ${ partner_nationality_2 }, con domicilio en ${ partner_address_2 } de ${ partner_town_2 } y portador del Documento Nacional de Identidad núm. ${ partner_dni_2 }#}
-{#                    </div>#}
-{#                    <h3>INTERVIENEN</h3>#}
-{#                    <div>Ambos en su propio nombre y derecho, reconociéndose mutuamente capacidad legal suficiente para otorgar el presente CONVENIO REGULADOR, y por vía de antecedentes,</div>#}
-{#                    <h3>EXPONEN</h3>#}
-{#                    <div>#}
-{#                        <b>Primero.</b> Que contrajeron matrimonio ${ marriage_type }, en ${ marriage_place }, el día ${ marriage_date }, registrado en el Registro Civil de ${ registry_place }, tomo ${ registry_volume }, página ${ registry_page }. El matrimonio se contrajo bajo el régimen económico de ${ economic_system }.#}
-{#                    </div>#}
-{#                    <div>#}
-{#                        <b>Segundo.</b> Que de dicha unión nació ${ children_number } hijos.#}
-{#                        ___________________(NOMBRE APELLIDOS) el día __________ FECHA, que fue inscrito en el Registro Civil de ___________, en el Tomo __, página ___.#}
-{#                        (…)#}
-{#                    </div>#}
-{#                    <div>#}
-{#                        <b>Tercero.</b> El último domicilio conyugal estuvo establecido en ${ last_partner_address } de ${ last_partner_town }.#}
-{#                    </div>#}
-{#                    <div>#}
-{#                        <b>Cuarto.</b> Diferencias irreconciliables que no vienen al caso, llevan a los cónyuges a solicitar el divorcio de mutuo acuerdo.#}
-{#                    </div>#}
-{#                    <div>#}
-{#                        <b>Quinto.</b> Que con objeto de cumplir los requisitos exigidos por el Art 90 CC relativos a las exigencias y características que ha de tener el convenio regulador que acompañe a las demandas de divorcio de mutuo acuerdo, ambos cónyuges suscriben el presente convenio en base a las siguientes:#}
-{#                    </div>#}
-{#                    <h3>ESTIPULACIONES</h3>#}
-{#                    <h3>-I-</h3>#}
-{#                    <div>#}
-{#                        <b>DOMICILIO.</b> Ambos cónyuges, se comprometen a respetar la libertad e independencia tanto profesional como personal del otro, así como para la libre fijación de sus domicilios, sin intervenir ni inmiscuirse en modo alguno.#}
-{#                    </div>#}
-{#                    <h3>-II-</h3>#}
-{#                    <div>#}
-{#                        <b>USO Y DISFRUTE DEL DOMICILIO FAMILIAR.</b> La vivienda familiar, sita en la calle ${ family_house_address } de ${ family_house_town }), le corresponderá en el uso a _____________(CONYUGE 1/CONYUGE 2),  hasta ________________MULTIPLES POSIBLIDADES.#}
-{#                    </div>#}
-{#                    <h3>-III-</h3>#}
-{#                    <div>#}
-{#                        <b>PATRIA POTESTAD.</b> Del mismo modo, la patria potestad será ejercida conjuntamente por ambos progenitores, que adoptarán de común acuerdo y velando siempre por su interés, todas las decisiones transcendentes que afecten al menor,decidiendo en los casos de falta de acuerdo la autoridad judicial.#}
-{#                    </div>#}
-{#                    <h3>-IV-</h3>#}
-{#                    <h3>GUARDA Y CUSTODIA. ____________MULTIPLES POSIBILIDADES</h3>#}
-{#                </div>#}
-{#            </div>#}
         </div>
     </div>
 </section>

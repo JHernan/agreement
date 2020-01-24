@@ -73,6 +73,11 @@ class Agreement
      */
     private $request;
 
+    /**
+     * @Assert\Type("bool")
+     */
+    private $alimony;
+
 
     public function getCustody()
     {
@@ -182,6 +187,18 @@ class Agreement
     public function setRequest(Request $request): self
     {
         $this->request = $request;
+
+        return $this;
+    }
+
+    public function getAlimony(): ?bool
+    {
+        return $this->alimony;
+    }
+
+    public function setAlimony(?bool $alimony): self
+    {
+        $this->alimony = $alimony;
 
         return $this;
     }

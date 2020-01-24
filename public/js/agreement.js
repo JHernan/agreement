@@ -19,6 +19,7 @@ jQuery(document).ready(function() {
     $partnerSelect = $('select#request_agreement_partner');
     $partnerFirstField = $('input#request_marriage_partner_first_name');
     $partnerSecondField = $('input#request_marriage_partner_second_name');
+    $alimonyHolder = $('#alimony-holder');
 
     $pickUpHolder.hide();
     $pickUpHourHolder.hide();
@@ -26,6 +27,7 @@ jQuery(document).ready(function() {
     $deliveryHourHolder.hide();
     $alternateWeeksHolder.hide();
     $summerPeriodHolder.hide();
+    $alimonyHolder.hide();
     $partnerHolder.hide();
 
     var selectedCustody = $custodyHolder.children("option:selected").val();
@@ -75,7 +77,7 @@ jQuery(document).ready(function() {
         } else if(selectedCustody == "Monoparental"){
             showCustodyBlockMonoparental();
         } else{
-            hideCustodyBlock();
+            hideCustodyBlockBoth();
         }
     }
 
@@ -84,6 +86,7 @@ jQuery(document).ready(function() {
         $deliveryHolder.show();
         $alternateWeeksHolder.show();
         $summerPeriodHolder.show();
+        $alimonyHolder.show();
         $partnerHolder.hide();
     }
 
@@ -94,16 +97,18 @@ jQuery(document).ready(function() {
         $deliveryHourHolder.hide();
         $alternateWeeksHolder.hide();
         $summerPeriodHolder.hide();
+        $alimonyHolder.hide();
         $partnerHolder.show();
     }
 
-    function hideCustodyBlock(){
+    function hideCustodyBlockBoth(){
         $pickUpHolder.hide();
         $pickUpHourHolder.hide();
         $deliveryHolder.hide();
         $deliveryHourHolder.hide();
         $alternateWeeksHolder.hide();
         $summerPeriodHolder.hide();
+        $alimonyHolder.hide();
         $partnerHolder.hide();
     }
 

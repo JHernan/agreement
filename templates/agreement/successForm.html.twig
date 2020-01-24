@@ -205,17 +205,55 @@
                     <h2>-VI-</h2>
                     <div>
                         <b>PENSIÓN ALIMENTICIA.</b>
-                        {% if custody == 'Compartida' %}
-                        {% else %}
+                        {% if custody == 'Compartida' and request.agreement.alimony %}
+                            _____________________  G.1.2.1  abonara a ______________ G.1.2.2 en concepto de pensión de alimentos ____ G.1.2.3 euros _____________ G.1.2.4, esta obligación se extinguirá en el momento que los hijos mantengan una situación laboral estable.
+
+                            Dicha cantidad deberá ser ingresada en los cinco primeros días de cada mes, en la entidad y en la cuenta bancaria que designe ________G.1.2.5
+
+                            La cantidad abonada en concepto de alimentos, será actualizada anualmente a tenor de las variaciones porcentuales experimentadas por el IPC, a nivel nacional, según conste en el certificado que a tal efecto expida el INE o el organismo que pueda sustituirlo en sus funciones. La primera actualización se realizará el 1 de enero de ______G.1.2.6.
+
+                            Los gastos extraordinarios que sean necesarios, serán sufragados previo acuerdo de los progenitores, al 50%, y en general aquellos gastos imprevisibles o de coste excepcional, como matrículas universitarias o similares, etc. HAY QUE AÑADIR MAS COSAS
+
+                            G.1.2.1 CAMPO B1.1/ B.2.1
+                            G.1.2.2 if G.1.2.1 B.1.1 => B.2.1
+                            G.1.2.2 if G.1.2.1 B.2.1 => B.1.1
+                            G.1.2.3 CAMPO NUMERICO
+                            G.1.2.4  Si  C.2.1 >1 “para cada hijo”.
+                            Si C.2.1= 1 “ “
+                            G.1.2.5 = G.1.2.2
+                            G.1.2.6 ______ AÑO ACTUAL
+                        {% endif %}
+                        {% if custody == 'Compartida' and not request.agreement.alimony %}
+                            Dado que se establece el régimen de guarda y custodia compartido, no se establece pensión alimenticia en favor {{ children_of_younger_text }}, estando obligados ambos progenitores a afrontar los gastos derivados de la custodia {{ children_of_younger_text }} durante el tiempo que permanezca a su cargo.
+                            Los gastos extraordinarios {{ children_of_younger_text }} en común que sean necesarios, serán sufragados previo acuerdo de los progenitores, al 50%, y en general aquellos gastos imprevisibles o de coste excepcional, como matrículas universitarias o similares, etc.
+                        {% endif %}
+                        {% if custody == 'Monoparental' %}
+                            _____________________  G.2.2.1  abonara a ______________ G.1.2.2 en concepto de pensión de alimentos ____ G.2.2.3 euros _____________ G.2.2.4, esta obligación se extinguirá en el momento que los hijos mantengan una situación laboral estable.
+
+                            Dicha cantidad deberá ser ingresada en los cinco primeros días de cada mes, en la entidad y en la cuenta bancaria que designe ________G.2.2.5
+
+                            La cantidad abonada en concepto de alimentos, será actualizada anualmente a tenor de las variaciones porcentuales experimentadas por el IPC, a nivel nacional, según conste en el certificado que a tal efecto expida el INE o el organismo que pueda sustituirlo en sus funciones. La primera actualización se realizará el 1 de enero de ______G.2.2.6.
+
+                            Los gastos extraordinarios que sean necesarios, serán sufragados previo acuerdo de los progenitores, al 50%, y en general aquellos gastos imprevisibles o de coste excepcional, como matrículas universitarias o similares, etc. HAY QUE AÑADIR MAS COSAS.
+
+                            G.2.2.1 CAMPO B1.1/ B.2.1
+                            G.2.2.2 if G.1.2.1 B.1.1 => B.2.1
+                            G.2.2.2 if G.1.2.1 B.2.1 => B.1.1
+                            G.2.2.3 CAMPO NUMERICO
+                            G.2.2.4  Si  C.2.1 >1 “para cada hijo”.
+                            Si C.2.1= 1 “ “
+                            G.2.2.5 = G.1.2.2
+                            G.2.2.6 if C.2.1=1 CAMPO del menor
+                            If  C.2.1 >1 CAMPO de los menores
                         {% endif %}
                     </div>
-                    {% endif %}
                     <h2>-VIII-</h2>
                     <div>
                         <b>COMUNICACIONES.</b>
                         Los progenitores quedan obligados, durante los periodos de tiempo en que {{ children_will_remain_text }} en su compañía, a comunicar al otro todas las cuestiones relativas a la salud, educación, y demás aspectos esenciales de la vida {{ children_of_younger_text }} en común, comprometiéndose a facilitar la documentación relativa a tales asuntos.<br />
                         En caso de enfermedad {{ children_of_younger_text }} en común, ambos progenitores quedan obligados a informarse mutuamente de dicha circunstancia, y el progenitor que en ese momento no se encuentre en compañía {{ children_of_younger_text }} tendrá derecho a la visita en el domicilio en el que {{ children_of_younger_text }} se encuentre, debiendo comunicar previamente esa visita al progenitor en cuyo domicilio se encuentre {{ children_of_younger_text }}.
                     </div>
+                    {% endif %}
                     <h2>-IX-</h2>
                     <div>
                         Ambos cónyuges se comprometen a presentar este Convenio a aprobación judicial, junto con la demanda de solicitud de divorcio de mutuo acuerdo y a ratificarlo.<br />
