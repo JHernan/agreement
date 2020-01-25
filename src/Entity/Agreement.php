@@ -74,7 +74,8 @@ class Agreement
     private $request;
 
     /**
-     * @Assert\Type("bool")
+     * @Assert\Type(type="App\Entity\Alimony")
+     * @Assert\Valid
      */
     private $alimony;
 
@@ -191,12 +192,12 @@ class Agreement
         return $this;
     }
 
-    public function getAlimony(): ?bool
+    public function getAlimony(): ?Alimony
     {
         return $this->alimony;
     }
 
-    public function setAlimony(?bool $alimony): self
+    public function setAlimony(Alimony $alimony): self
     {
         $this->alimony = $alimony;
 

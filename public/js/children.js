@@ -82,15 +82,11 @@ function updateChildrenIndex(){
         var currentValue = key + 1;
         $(this).find('.child_number').html('Hijo/a número ' + currentValue);
     });
-    console.log('updateChildren');
-    console.log($collectionHolder.find('div.child').length);
     toogleChildrenBlocksHolder($collectionHolder.find('div.child').length);
 }
 
 function toogleChildrenBlocksHolder(value){
     $childrenBlocksHolder = $('#children-blocks-holder');
-    console.log('toogle');
-    console.log(value);
     if(value == 0){
         $childrenBlocksHolder.hide();
     }else{

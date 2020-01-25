@@ -35,7 +35,7 @@
     'form/form_row.html.twig',
     'form/form_errors.html.twig',
     'form/_request_marriage_children_entry_row.html.twig',
-    'form/_request_agreement_alimony_row.html.twig'
+    'form/_request_agreement_alimony_alimony_row.html.twig'
 ] %}
 
 <section class="contact_area section_gap">
@@ -383,10 +383,6 @@
                                         }})
                                     }}
 
-                                    {{
-                                        form_row(form.agreement.alimony)
-                                    }}
-
                                 </div>
                                 <div class="col-md-6">
 
@@ -439,6 +435,42 @@
                                         }})
                                     }}
 
+                                </div>
+                            </div>
+                            <div id="alimony-block">
+                                <h3>Pensión alimenticia</h3>
+                                <p>A continuación indique los datos de la pensión alimenticia de los hijos e hijas.</p>
+
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        {{
+                                            form_row(form.agreement.alimony.alimony)
+                                        }}
+                                    </div>
+                                    <div class="col-md-3">
+                                        {{
+                                            form_row(form.agreement.alimony.amount, {'attr': {
+                                                'class': 'form-control',
+                                                'placeholder': 'Importe',
+                                                'onfocus': 'this.placeholder = ""',
+                                                'onblur': 'this.placeholder = "Importe"',
+                                            }})
+                                        }}
+                                    </div>
+                                    <div class="col-md-3">
+                                        {{
+                                            form_row(form.agreement.alimony.debtor, {'attr': {
+                                                'class': 'form-control'
+                                            }})
+                                        }}
+                                    </div>
+                                    <div class="col-md-3">
+                                        {{
+                                            form_row(form.agreement.alimony.creditor, {'attr': {
+                                                'class': 'form-control'
+                                            }})
+                                        }}
+                                    </div>
                                 </div>
                             </div>
                         </div>

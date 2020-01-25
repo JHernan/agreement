@@ -17,6 +17,8 @@ jQuery(document).ready(function() {
     $summerPeriodSelect = $('select#request_agreement_summer_period');
     $partnerHolder = $('select#request_agreement_partner').parent().parent();
     $partnerSelect = $('select#request_agreement_partner');
+    $debtorSelect = $('select#request_agreement_alimony_debtor');
+    $creditorInput = $('input#request_agreement_alimony_creditor');
     $partnerFirstField = $('input#request_marriage_partner_first_name');
     $partnerSecondField = $('input#request_marriage_partner_second_name');
     $alimonyHolder = $('#alimony-holder');
@@ -56,19 +58,40 @@ jQuery(document).ready(function() {
         }
     });
 
-    changePartnerOption(1, $partnerFirstField.val());
-    changePartnerOption(2, $partnerSecondField.val());
+    initPartnerFields();
 
     $partnerFirstField.change(function(){
         changePartnerOption(1, $(this).val());
+        changeDebtorOption(1, $(this).val());
     });
 
     $partnerSecondField.change(function(){
         changePartnerOption(2, $(this).val());
+        changeDebtorOption(2, $(this).val());
     });
+
+    $debtorSelect.change(function(){
+        toogleCreditorField($(this).val());
+    });
+
+    function initPartnerFields(){
+        changePartnerOption(1, $partnerFirstField.val());
+        changePartnerOption(2, $partnerSecondField.val());
+        changeDebtorOption(1, $partnerFirstField.val());
+        changeDebtorOption(2, $partnerSecondField.val());
+        toogleCreditorField($debtorSelect.val());
+    }
 
     function changePartnerOption(index, val){
         $partnerSelect.find('option:eq('+index+')').text(val);
+    }
+
+    function changeDebtorOption(index, val){
+        $debtorSelect.find('option:eq('+index+')').text(val);
+    }
+
+    function changeCreditorOption(val){
+        $creditorInput.val(val);
     }
 
     function toogleCustodyBlock(selectedCustody){
@@ -78,6 +101,16 @@ jQuery(document).ready(function() {
             showCustodyBlockMonoparental();
         } else{
             hideCustodyBlockBoth();
+        }
+    }
+
+    function toogleCreditorField(val){
+        if(val == 1) {
+            changeCreditorOption($partnerSecondField.val());
+        }else if(val == 2){
+            changeCreditorOption($partnerFirstField.val());
+        }else{
+            changeCreditorOption('');
         }
     }
 
