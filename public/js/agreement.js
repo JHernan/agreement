@@ -21,7 +21,8 @@ jQuery(document).ready(function() {
     $creditorInput = $('input#request_agreement_alimony_creditor');
     $partnerFirstField = $('input#request_marriage_partner_first_name');
     $partnerSecondField = $('input#request_marriage_partner_second_name');
-    $alimonyHolder = $('#alimony-holder');
+    $alimonySwitchHolder = $('#alimony-switch-holder').parent();
+    $alimonyHolder = $('#alimony-holder').parent();
 
     $pickUpHolder.hide();
     $pickUpHourHolder.hide();
@@ -74,6 +75,11 @@ jQuery(document).ready(function() {
         toogleCreditorField($(this).val());
     });
 
+    $partnerSelect.change(function(){
+        setCreditorField($(this).val());
+        toogleDebtorField($(this).val());
+    });
+
     function initPartnerFields(){
         changePartnerOption(1, $partnerFirstField.val());
         changePartnerOption(2, $partnerSecondField.val());
@@ -90,7 +96,7 @@ jQuery(document).ready(function() {
         $debtorSelect.find('option:eq('+index+')').text(val);
     }
 
-    function changeCreditorOption(val){
+    function changeCreditorField(val){
         $creditorInput.val(val);
     }
 
@@ -104,13 +110,41 @@ jQuery(document).ready(function() {
         }
     }
 
+    function toogleDebtorField(val){
+        if(val == 1){
+            val = 2;
+        }else{
+            val = 1;
+        }
+        $debtorSelect.find('option:selected').prop("selected", false);
+        $debtorSelect.find('option[value='+val+']').prop('selected', true);
+    }
+
     function toogleCreditorField(val){
         if(val == 1) {
-            changeCreditorOption($partnerSecondField.val());
+            changeCreditorField($partnerSecondField.val());
         }else if(val == 2){
-            changeCreditorOption($partnerFirstField.val());
+            changeCreditorField($partnerFirstField.val());
         }else{
-            changeCreditorOption('');
+            changeCreditorField('');
+        }
+    }
+
+    function setCreditorField(val){
+        if(val == 1) {
+            changeCreditorField($partnerFirstField.val());
+        }else if(val == 2){
+            changeCreditorField($partnerSecondField.val());
+        }else{
+            changeCreditorField('');
+        }
+    }
+
+    function disabledDebtorField(disabled){
+        if(disabled){
+            $debtorSelect.attr("disabled", "disabled");
+        }else{
+            $debtorSelect.removeAttr("disabled");
         }
     }
 
@@ -120,6 +154,8 @@ jQuery(document).ready(function() {
         $alternateWeeksHolder.show();
         $summerPeriodHolder.show();
         $alimonyHolder.show();
+        $alimonySwitchHolder.show();
+        disabledDebtorField(false);
         $partnerHolder.hide();
     }
 
@@ -130,7 +166,9 @@ jQuery(document).ready(function() {
         $deliveryHourHolder.hide();
         $alternateWeeksHolder.hide();
         $summerPeriodHolder.hide();
-        $alimonyHolder.hide();
+        $alimonyHolder.show();
+        $alimonySwitchHolder.hide();
+        disabledDebtorField(true);
         $partnerHolder.show();
     }
 

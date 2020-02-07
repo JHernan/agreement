@@ -51,7 +51,7 @@
         {% set children_will_be_text = "los menores estarán" %}
         {% set children_will_remain_text = "los menores permancerán" %}
         {% set children_pick_up_text = "Los menores serán recogidos" %}
-        {% set each_children_text = 'para cada hijo' %}
+        {% set each_children_text = ' para cada hijo' %}
     {% endif %}
 
     {% set alternate_weeks = request.agreement.alternateWeeks %}
@@ -216,7 +216,7 @@
                     <div>
                         <b>PENSIÓN ALIMENTICIA.</b>
                         {% if custody == 'Compartida' and request.agreement.alimony.alimony %}
-                            {{ debtor }} abonara a {{ creditor }} en concepto de pensión de alimentos {{ request.agreement.alimony.amount }} euros {{ each_children_text }}, esta obligación se extinguirá en el momento que los hijos mantengan una situación laboral estable.
+                            {{ debtor }} abonara a {{ creditor }} en concepto de pensión de alimentos {{ request.agreement.alimony.amount }} euros{{ each_children_text }}, esta obligación se extinguirá en el momento que los hijos mantengan una situación laboral estable.
                             <br />
                             <br />
                             Dicha cantidad deberá ser ingresada en los cinco primeros días de cada mes, en la entidad y en la cuenta bancaria que designe {{ creditor }}.
@@ -232,7 +232,7 @@
                             Los gastos extraordinarios {{ children_of_younger_text }} en común que sean necesarios, serán sufragados previo acuerdo de los progenitores, al 50%, y en general aquellos gastos imprevisibles o de coste excepcional, como matrículas universitarias o similares, etc.
                         {% endif %}
                         {% if custody == 'Monoparental' %}
-                            {{ debtor }} abonara a {{ creditor }} en concepto de pensión de alimentos {{ request.agreement.alimony.amount }} euros {{ each_children_text }}, esta obligación se extinguirá en el momento que los hijos mantengan una situación laboral estable.
+                            {{ debtor }} abonara a {{ creditor }} en concepto de pensión de alimentos {{ request.agreement.alimony.amount }} euros{{ each_children_text }}, esta obligación se extinguirá en el momento que los hijos mantengan una situación laboral estable.
                             <br />
                             <br />
                             Dicha cantidad deberá ser ingresada en los cinco primeros días de cada mes, en la entidad y en la cuenta bancaria que designe {{ creditor }}.
