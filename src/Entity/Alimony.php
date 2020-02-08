@@ -10,8 +10,6 @@ class Alimony
 {
     const DEBTOR_CHOICES_LABELS = ['Cónyuge 1', 'Cónyuge 2'];
     const DEBTOR_CHOICES_VALUES = [1, 2];
-    const CREDITOR_CHOICES_LABELS = ['Cónyuge 1', 'Cónyuge 2'];
-    const CREDITOR_CHOICES_VALUES = [1, 2];
 
     /**
      * @Assert\Type("bool")
@@ -19,16 +17,18 @@ class Alimony
     private $alimony;
 
     /**
+     * @Assert\NotBlank(groups={"monoparental", "alimony"})
      * @Assert\Choice(choices=Alimony::DEBTOR_CHOICES_VALUES, message="Selecciona una opción válida.")
      */
     private $debtor;
 
     /**
-     * @Assert\Choice(choices=Alimony::CREDITOR_CHOICES_VALUES, message="Selecciona una opción válida.")
+     * @Assert\NotBlank(groups={"monoparental", "alimony"})
      */
     private $creditor;
 
     /**
+     * @Assert\NotBlank(groups={"monoparental", "alimony"})
      * @Assert\Type("int")
      */
     private $amount;
@@ -58,12 +58,12 @@ class Alimony
         return $this;
     }
 
-    public function getCreditor(): ?int
+    public function getCreditor(): ?string
     {
         return $this->creditor;
     }
 
-    public function setCreditor(?int $creditor): self
+    public function setCreditor(?string $creditor): self
     {
         $this->creditor = $creditor;
 

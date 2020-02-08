@@ -31,7 +31,9 @@ class AlimonyType extends AbstractType
                 'label' => 'Cónyuge que abonará la pensión',
             ])
             ->add('creditor', null, [
-                'disabled' => true,
+                'attr' => array(
+                    'readonly' => true,
+                ),
                 'label' => 'Cónyuge que recibirá la pensión',
             ])
             ->add('amount', MoneyType::class, [

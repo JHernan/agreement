@@ -52,12 +52,20 @@ class RequestType extends AbstractType
         $resolver->setDefaults([
             'data_class' => Request::class,
             'validation_groups' => function (FormInterface $form) {
+                $validation_groups = ['Default'];
                 $data = $form->getData();
                 if ($data->getAgreement()->getCustody() == Agreement::CUSTODY_COMPARTIDA) {
-                    return ['Default', 'compartida'];
+                    array_push($validation_groups, 'compartida');
+
+                    if($data->getAgreement()->getAlimony()->getAlimony()){
+                        array_push($validation_groups, 'alimony');
+                    }
+
+                    return $validation_groups;
                 }
 
-                return ['Default', 'monoparental'];
+                array_push($validation_groups, 'monoparental', 'alimony');
+                return $validation_groups;
             },
         ]);
     }

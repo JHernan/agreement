@@ -59,8 +59,6 @@ jQuery(document).ready(function() {
         }
     });
 
-    initPartnerFields();
-
     $partnerFirstField.change(function(){
         changePartnerOption(1, $(this).val());
         changeDebtorOption(1, $(this).val());
@@ -85,7 +83,6 @@ jQuery(document).ready(function() {
         changePartnerOption(2, $partnerSecondField.val());
         changeDebtorOption(1, $partnerFirstField.val());
         changeDebtorOption(2, $partnerSecondField.val());
-        toogleCreditorField($debtorSelect.val());
     }
 
     function changePartnerOption(index, val){
@@ -157,6 +154,8 @@ jQuery(document).ready(function() {
         $alimonySwitchHolder.show();
         disabledDebtorField(false);
         $partnerHolder.hide();
+        initPartnerFields();
+        toogleCreditorField($debtorSelect.val());
     }
 
     function showCustodyBlockMonoparental(){
@@ -170,6 +169,9 @@ jQuery(document).ready(function() {
         $alimonySwitchHolder.hide();
         disabledDebtorField(true);
         $partnerHolder.show();
+        initPartnerFields();
+        toogleDebtorField($partnerSelect.val());
+        setCreditorField($partnerSelect.val());
     }
 
     function hideCustodyBlockBoth(){
@@ -199,5 +201,9 @@ jQuery(document).ready(function() {
     $('.datepicker').datepicker({
         format: 'dd-mm-yyyy',
         language: 'es'
+    });
+
+    $('form').bind('submit', function(){
+        $debtorSelect.prop('disabled', false);
     });
 });
