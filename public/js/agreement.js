@@ -1,37 +1,39 @@
-var $custodyHolder;
-var $pickUpHolder;
-var $alternateWeeksHolder;
-var $partnerHolder;
-
 jQuery(document).ready(function() {
     $custodyHolder = $('select#request_agreement_custody');
 
     $pickUpHolder = $('select#request_agreement_pick_up').parent().parent();
     $pickUpSelect = $('select#request_agreement_pick_up');
-    $pickUpHourHolder = $('input#request_agreement_pick_up_hour').parent().parent();
+    // $pickUpHourHolder = $('input#request_agreement_pick_up_hour').parent().parent();
     $deliveryHolder = $('select#request_agreement_delivery').parent().parent();
     $deliverySelect = $('select#request_agreement_delivery');
-    $deliveryHourHolder = $('input#request_agreement_delivery_hour').parent().parent();
+    // $deliveryHourHolder = $('input#request_agreement_delivery_hour').parent().parent();
     $alternateWeeksHolder = $('input#request_agreement_alternate_weeks').parent().parent();
+    $alternateWeeksInput = $('input#request_agreement_alternate_weeks');
     $summerPeriodHolder = $('select#request_agreement_summer_period').parent().parent();
     $summerPeriodSelect = $('select#request_agreement_summer_period');
     $partnerHolder = $('select#request_agreement_partner').parent().parent();
     $partnerSelect = $('select#request_agreement_partner');
+    $debtorHolder = $('select#request_agreement_alimony_debtor').parent().parent().parent();
     $debtorSelect = $('select#request_agreement_alimony_debtor');
+    $creditorHolder = $('input#request_agreement_alimony_creditor').parent().parent().parent();
     $creditorInput = $('input#request_agreement_alimony_creditor');
     $partnerFirstField = $('input#request_marriage_partner_first_name');
     $partnerSecondField = $('input#request_marriage_partner_second_name');
     $alimonySwitchHolder = $('#alimony-switch-holder').parent();
     $alimonyHolder = $('#alimony-holder').parent();
+    $alimonyCheckbox = $('input#request_agreement_alimony_alimony');
+    $amountHolder = $('input#request_agreement_alimony_amount').parent().parent().parent();
+    $amountImput = $('input#request_agreement_alimony_amount');
+
 
     $pickUpHolder.hide();
-    $pickUpHourHolder.hide();
+    // $pickUpHourHolder.hide();
     $deliveryHolder.hide();
-    $deliveryHourHolder.hide();
+    // $deliveryHourHolder.hide();
     $alternateWeeksHolder.hide();
     $summerPeriodHolder.hide();
     $alimonyHolder.hide();
-    $partnerHolder.hide();
+    partnerHide();
 
     var selectedCustody = $custodyHolder.children("option:selected").val();
     toogleCustodyBlock(selectedCustody);
@@ -44,18 +46,18 @@ jQuery(document).ready(function() {
     $pickUpSelect.change(function(){
         var selectedPickUp = $(this).children("option:selected").val();
         if(selectedPickUp == "Monoparental"){
-            $pickUpHourHolder.show();
+            // $pickUpHourHolder.show();
         }else{
-            $pickUpHourHolder.hide();
+            // $pickUpHourHolder.hide();
         }
     });
 
     $deliverySelect.change(function(){
         var selectedDelivery = $(this).children("option:selected").val();
         if(selectedDelivery == "Monoparental"){
-            $deliveryHourHolder.show();
+            // $deliveryHourHolder.show();
         }else{
-            $deliveryHourHolder.hide();
+            // $deliveryHourHolder.hide();
         }
     });
 
@@ -76,6 +78,18 @@ jQuery(document).ready(function() {
     $partnerSelect.change(function(){
         setCreditorField($(this).val());
         toogleDebtorField($(this).val());
+    });
+
+    $alimonyCheckbox.change(function(){
+        if ($(this).is(":checked")){
+            amountShow();
+            debtorShow();
+            creditorShow();
+        }else{
+            amountHide();
+            debtorHide();
+            creditorHide();
+        }
     });
 
     function initPartnerFields(){
@@ -145,44 +159,144 @@ jQuery(document).ready(function() {
         }
     }
 
-    function showCustodyBlockCompartida(){
+    function pickUpShow(){
         $pickUpHolder.show();
+        $pickUpSelect.prop('required',true);
+    }
+
+    function pickUpHide(){
+        $pickUpHolder.hide();
+        $pickUpSelect.removeAttr('required');
+    }
+
+    function deliveryShow(){
         $deliveryHolder.show();
+        $deliverySelect.prop('required',true);
+    }
+
+    function deliveryHide(){
+        $deliveryHolder.hide();
+        $deliverySelect.removeAttr('required');
+    }
+
+    function alternateWeeksShow(){
         $alternateWeeksHolder.show();
+        $alternateWeeksInput.prop('required',true);
+    }
+
+    function alternateWeeksHide() {
+        $alternateWeeksHolder.hide();
+        $alternateWeeksInput.removeAttr('required');
+    }
+
+    function summerPeriodShow(){
         $summerPeriodHolder.show();
+        $summerPeriodSelect.prop('required',true);
+    }
+
+    function summerPeriodHide(){
+        $summerPeriodHolder.hide();
+        $summerPeriodSelect.removeAttr('required');
+    }
+
+    function partnerShow(){
+        $partnerHolder.show();
+        $partnerSelect.prop('required',true);
+    }
+
+    function partnerHide(){
+        $partnerHolder.hide();
+        $partnerSelect.removeAttr('required');
+    }
+
+    function amountShow(){
+        $amountHolder.show();
+        $amountImput.prop('required',true);
+    }
+
+    function amountHide(){
+        $amountHolder.hide();
+        $amountImput.removeAttr('required');
+    }
+
+    function debtorShow(){
+        $debtorHolder.show();
+        $debtorSelect.prop('required', true);
+    }
+
+    function debtorHide(){
+        $debtorHolder.hide();
+        $debtorSelect.removeAttr('required');
+    }
+
+    function creditorShow(){
+        $creditorHolder.show();
+        $creditorInput.prop('required', true);
+    }
+
+    function creditorHide(){
+        $creditorHolder.hide();
+        $creditorInput.removeAttr('required');
+    }
+
+    function alimonyFieldsShow(){
+        amountShow();
+        debtorShow();
+        creditorShow();
+    }
+
+    function alimonyFieldsHide(){
+        amountHide();
+        debtorHide();
+        creditorHide();
+    }
+
+    function showCustodyBlockCompartida(){
+        pickUpShow();
+        deliveryShow();
+        alternateWeeksShow();
+        summerPeriodShow();
         $alimonyHolder.show();
         $alimonySwitchHolder.show();
+        if($alimonyCheckbox.is(":checked")){
+            alimonyFieldsShow();
+        }else{
+            alimonyFieldsHide();
+        }
         disabledDebtorField(false);
-        $partnerHolder.hide();
+        partnerHide();
         initPartnerFields();
         toogleCreditorField($debtorSelect.val());
     }
 
     function showCustodyBlockMonoparental(){
-        $pickUpHolder.hide();
-        $pickUpHourHolder.hide();
-        $deliveryHolder.hide();
-        $deliveryHourHolder.hide();
-        $alternateWeeksHolder.hide();
-        $summerPeriodHolder.hide();
+        pickUpHide();
+        deliveryHide();
+        alternateWeeksHide();
+        summerPeriodHide();
+        // $pickUpHourHolder.hide();
+        // $deliveryHourHolder.hide();
         $alimonyHolder.show();
         $alimonySwitchHolder.hide();
+        alimonyFieldsShow();
         disabledDebtorField(true);
-        $partnerHolder.show();
+        partnerShow();
         initPartnerFields();
         toogleDebtorField($partnerSelect.val());
         setCreditorField($partnerSelect.val());
     }
 
     function hideCustodyBlockBoth(){
-        $pickUpHolder.hide();
-        $pickUpHourHolder.hide();
-        $deliveryHolder.hide();
-        $deliveryHourHolder.hide();
-        $alternateWeeksHolder.hide();
-        $summerPeriodHolder.hide();
+        pickUpHide();
+        deliveryHide();
+        alternateWeeksHide();
+        summerPeriodHide();
+        // $pickUpHourHolder.hide();
+        // $deliveryHourHolder.hide();
         $alimonyHolder.hide();
-        $partnerHolder.hide();
+        $alimonySwitchHolder.hide();
+        alimonyFieldsHide();
+        partnerHide();
     }
 
 
