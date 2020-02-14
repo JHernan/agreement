@@ -24,6 +24,17 @@ jQuery(document).ready(function() {
     $alimonyCheckbox = $('input#request_agreement_alimony_alimony');
     $amountHolder = $('input#request_agreement_alimony_amount').parent().parent().parent();
     $amountImput = $('input#request_agreement_alimony_amount');
+    $pensionCheckbox = $('input#request_agreement_compensatory_pension_isPension');
+    $pensionCreditorHolder = $('select#request_agreement_compensatory_pension_creditor').parent().parent().parent();
+    $pensionCreditorSelect = $('select#request_agreement_compensatory_pension_creditor');
+    $pensionAmountHolder = $('input#request_agreement_compensatory_pension_amount').parent().parent().parent();
+    $pensionAmountInput = $('input#request_agreement_compensatory_pension_amount');
+    $pensionLimitHolder = $('input#request_agreement_compensatory_pension_hasLimit').parent().parent().parent().parent();
+    $pensionLimitCheckbox = $('input#request_agreement_compensatory_pension_hasLimit');
+    $pensionTermHolder = $('input#request_agreement_compensatory_pension_term').parent().parent().parent();
+    $pensionTermInput = $('input#request_agreement_compensatory_pension_term');
+    $pensionTermTimeHolder = $('select#request_agreement_compensatory_pension_term_time').parent().parent().parent();
+    $pensionTermTimeSelect = $('select#request_agreement_compensatory_pension_term_time');
 
 
     $pickUpHolder.hide();
@@ -64,11 +75,13 @@ jQuery(document).ready(function() {
     $partnerFirstField.change(function(){
         changePartnerOption(1, $(this).val());
         changeDebtorOption(1, $(this).val());
+        changePensionCreditorOption(1, $(this).val())
     });
 
     $partnerSecondField.change(function(){
         changePartnerOption(2, $(this).val());
         changeDebtorOption(2, $(this).val());
+        changePensionCreditorOption(2, $(this).val())
     });
 
     $debtorSelect.change(function(){
@@ -92,11 +105,41 @@ jQuery(document).ready(function() {
         }
     });
 
+    $pensionCheckbox.change(function(){
+        if ($(this).is(":checked")){
+            pensionCreditorShow();
+            pensionAmountShow();
+            pensionLimitShow();
+            if($pensionLimitCheckbox.is(":checked")){
+                pensionTermShow();
+                pensionTermTimeShow();
+            }
+        }else{
+            pensionCreditorHide();
+            pensionAmountHide();
+            pensionLimitHide();
+            pensionTermHide();
+            pensionTermTimeHide();
+        }
+    });
+
+    $pensionLimitCheckbox.change(function(){
+        if ($(this).is(":checked")){
+            pensionTermShow();
+            pensionTermTimeShow();
+        }else{
+            pensionTermHide();
+            pensionTermTimeHide();
+        }
+    });
+
     function initPartnerFields(){
         changePartnerOption(1, $partnerFirstField.val());
         changePartnerOption(2, $partnerSecondField.val());
         changeDebtorOption(1, $partnerFirstField.val());
         changeDebtorOption(2, $partnerSecondField.val());
+        changePensionCreditorOption(1, $partnerFirstField.val());
+        changePensionCreditorOption(2, $partnerSecondField.val());
     }
 
     function changePartnerOption(index, val){
@@ -109,6 +152,10 @@ jQuery(document).ready(function() {
 
     function changeCreditorField(val){
         $creditorInput.val(val);
+    }
+
+    function changePensionCreditorOption(index, val){
+        $pensionCreditorSelect.find('option:eq('+index+')').text(val);
     }
 
     function toogleCustodyBlock(selectedCustody){
@@ -249,6 +296,54 @@ jQuery(document).ready(function() {
         amountHide();
         debtorHide();
         creditorHide();
+    }
+
+    function pensionCreditorShow(){
+        $pensionCreditorHolder.show();
+        $pensionCreditorSelect.prop('required', true);
+    }
+
+    function pensionCreditorHide(){
+        $pensionCreditorHolder.hide();
+        $pensionCreditorSelect.removeAttr('required');
+    }
+
+    function pensionAmountShow(){
+        $pensionAmountHolder.show();
+        $pensionAmountInput.prop('required',true);
+    }
+
+    function pensionAmountHide(){
+        $pensionAmountHolder.hide();
+        $pensionAmountInput.removeAttr('required');
+    }
+
+    function pensionLimitShow(){
+        $pensionLimitHolder.show();
+    }
+
+    function pensionLimitHide(){
+        $pensionLimitHolder.hide();
+    }
+
+    function pensionTermShow(){
+        $pensionTermHolder.show();
+        $pensionTermInput.prop('required',true);
+    }
+
+    function pensionTermHide(){
+        $pensionTermHolder.hide();
+        $pensionTermInput.removeAttr('required');
+    }
+
+    function pensionTermTimeShow(){
+        $pensionTermTimeHolder.show();
+        $pensionTermTimeSelect.prop('required',true);
+    }
+
+    function pensionTermTimeHide(){
+        $pensionTermTimeHolder.hide();
+        $pensionTermTimeSelect.removeAttr('required');
     }
 
     function showCustodyBlockCompartida(){

@@ -1,0 +1,14 @@
+{% form_theme form _self %}
+
+{% block _request_agreement_compensatory_pension_hasLimit_row %}
+    <div id="compensatory_pension-switch-holder">
+        <div class="switch-wrap d-flex justify-content-between">
+            <p>¿La pensión se acabará en un plazo determinado?</p>
+            {{ form_errors(form) }}
+            <div class="confirm-switch">
+                {{ form_widget(form) }}
+                {{ form_label(form) }}
+            </div>
+        </div>
+    </div>
+{% endblock %}

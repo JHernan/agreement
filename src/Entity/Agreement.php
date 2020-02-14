@@ -79,6 +79,12 @@ class Agreement
      */
     private $alimony;
 
+    /**
+     * @Assert\Type(type="App\Entity\CompensatoryPension")
+     * @Assert\Valid
+     */
+    private $compensatory_pension;
+
 
     public function getCustody()
     {
@@ -200,6 +206,18 @@ class Agreement
     public function setAlimony(Alimony $alimony): self
     {
         $this->alimony = $alimony;
+
+        return $this;
+    }
+
+    public function getCompensatoryPension(): ?CompensatoryPension
+    {
+        return $this->compensatory_pension;
+    }
+
+    public function setCompensatoryPension(CompensatoryPension $compensatory_pension): self
+    {
+        $this->compensatory_pension = $compensatory_pension;
 
         return $this;
     }

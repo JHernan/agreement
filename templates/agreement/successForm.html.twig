@@ -75,6 +75,12 @@
         {% set creditor = request.marriage.partnerFirst.name %}
     {% endif %}
 
+    {% if request.agreement.compensatoryPension.creditor == 1 %}
+        {% set pensionCreditor = request.marriage.partnerFirst.name %}
+    {% else %}
+        {% set pensionCreditor = request.marriage.partnerSecond.name %}
+    {% endif %}
+
     {% set pick_up = request.agreement.pickUp %}
     {% if pick_up == 1 %}
         {% set pick_up_text = "el centro escolar el viernes, a la finalización del horario lectivo" %}
@@ -222,7 +228,7 @@
                             Dicha cantidad deberá ser ingresada en los cinco primeros días de cada mes, en la entidad y en la cuenta bancaria que designe {{ creditor }}.
                             <br />
                             <br />
-                            La cantidad abonada en concepto de alimentos, será actualizada anualmente a tenor de las variaciones porcentuales experimentadas por el IPC, a nivel nacional, según conste en el certificado que a tal efecto expida el INE o el organismo que pueda sustituirlo en sus funciones. La primera actualización se realizará el 1 de enero de {{ 'now' | date('Y') }}.
+                            La cantidad abonada en concepto de alimentos, será actualizada anualmente a tenor de las variaciones porcentuales experimentadas por el IPC, a nivel nacional, según conste en el certificado que a tal efecto expida el INE o el organismo que pueda sustituirlo en sus funciones. La primera actualización se realizará el 1 de enero de {{ 'now' | date_modify("+1 year") | date('Y') }}.
                             <br />
                             <br />
                             Los gastos extraordinarios que sean necesarios, serán sufragados previo acuerdo de los progenitores, al 50%, y en general aquellos gastos imprevisibles o de coste excepcional, como matrículas universitarias o similares, etc.
@@ -238,10 +244,24 @@
                             Dicha cantidad deberá ser ingresada en los cinco primeros días de cada mes, en la entidad y en la cuenta bancaria que designe {{ creditor }}.
                             <br />
                             <br />
-                            La cantidad abonada en concepto de alimentos, será actualizada anualmente a tenor de las variaciones porcentuales experimentadas por el IPC, a nivel nacional, según conste en el certificado que a tal efecto expida el INE o el organismo que pueda sustituirlo en sus funciones. La primera actualización se realizará el 1 de enero de {{ 'now' | date('Y') }}.
+                            La cantidad abonada en concepto de alimentos, será actualizada anualmente a tenor de las variaciones porcentuales experimentadas por el IPC, a nivel nacional, según conste en el certificado que a tal efecto expida el INE o el organismo que pueda sustituirlo en sus funciones. La primera actualización se realizará el 1 de enero de {{ 'now' | date_modify("+1 year") | date('Y') }}.
                             <br />
                             <br />
                             Los gastos extraordinarios que sean necesarios, serán sufragados previo acuerdo de los progenitores, al 50%, y en general aquellos gastos imprevisibles o de coste excepcional, como matrículas universitarias o similares, etc.
+                        {% endif %}
+                    </div>
+                    <h2>-VII-</h2>
+                    <div>
+                        <b>PENSIÓN COMPENSATORIA.</b>
+                        {% if request.agreement.compensatoryPension.isPension %}
+                            Se establece una pensión compensatoria de {{ request.agreement.compensatoryPension.amount }} euros a favor de {{ pensionCreditor }} dada la descompensación económica existente entre los progenitores.
+                            {% if request.agreement.compensatoryPension.hasLimit %}
+                                Dicha cantidad se limita al plazo de {{ request.agreement.compensatoryPension.term }} {{ request.agreement.compensatoryPension.termTime }}.
+                            {% endif %}
+                            <br />
+                            La cantidad abonada en concepto de pensión compensatoria, será actualizada anualmente a tenor de las variaciones porcentuales experimentadas por el IPC, a nivel nacional, según conste en el certificado que a tal efecto expida el INE o el organismo que pueda sustituirlo en sus funciones. La primera actualización se realizará el 1 de enero de {{ 'now' | date_modify("+1 year") | date('Y') }}.
+                        {% else %}
+                            Los cónyuges tienen independencia económica y no es necesario el establecimiento de pensión alguna al no producirse desequilibrio económico.
                         {% endif %}
                     </div>
                     <h2>-VIII-</h2>

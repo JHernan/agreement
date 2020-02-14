@@ -54,17 +54,25 @@ class RequestType extends AbstractType
             'validation_groups' => function (FormInterface $form) {
                 $validation_groups = ['Default'];
                 $data = $form->getData();
+
+                if($data->getAgreement()->getCompensatoryPension()->getIsPension()){
+                    array_push($validation_groups, 'pension');
+
+                    if($data->getAgreement()->getCompensatoryPension()->getHasLimit()){
+                        array_push($validation_groups, 'term');
+                    }
+                }
+
                 if ($data->getAgreement()->getCustody() == Agreement::CUSTODY_COMPARTIDA) {
                     array_push($validation_groups, 'compartida');
 
                     if($data->getAgreement()->getAlimony()->getAlimony()){
                         array_push($validation_groups, 'alimony');
                     }
-
-                    return $validation_groups;
+                }else{
+                    array_push($validation_groups, 'monoparental', 'alimony');
                 }
 
-                array_push($validation_groups, 'monoparental', 'alimony');
                 return $validation_groups;
             },
         ]);

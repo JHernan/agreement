@@ -66,6 +66,9 @@ class AgreementType extends AbstractType
             ->add('alimony', AlimonyType::class, [
                 'data_class' => 'App\Entity\Alimony'
             ])
+            ->add('compensatory_pension', CompensatoryPensionType::class, [
+                'data_class' => 'App\Entity\CompensatoryPension'
+            ])
         ;
     }
 

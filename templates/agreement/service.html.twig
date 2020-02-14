@@ -35,7 +35,9 @@
     'form/form_row.html.twig',
     'form/form_errors.html.twig',
     'form/_request_marriage_children_entry_row.html.twig',
-    'form/_request_agreement_alimony_alimony_row.html.twig'
+    'form/_request_agreement_alimony_alimony_row.html.twig',
+    'form/_request_agreement_compensatory_pension_isPension_row.html.twig',
+    'form/_request_agreement_compensatory_pension_hasLimit_row.html.twig'
 ] %}
 
 <section class="contact_area section_gap">
@@ -51,14 +53,14 @@
 
                 {# quitar novalidate="novalidate" para que se valide el JS #}
 
-                <form class="row contact_form" action="{{ path('service') }}" method="post" id="contactForm" novalidate="novalidate">
+{#                <form class="row contact_form" action="{{ path('service') }}" method="post" id="contactForm" novalidate="novalidate">#}
 
-{#                <form class="row contact_form" action="{{ path('service') }}" method="post" id="contactForm">#}
+                <form class="row contact_form" action="{{ path('service') }}" method="post" id="contactForm">
 
-                    {{ form_errors(form) }}
-                    {%for error in form.vars.errors %}
-                        <li>{{error.message}}</li>
-                    {%endfor%}
+{#                    {{ form_errors(form) }}#}
+{#                    {%for error in form.vars.errors %}#}
+{#                        <li>{{error.message}}</li>#}
+{#                    {%endfor%}#}
 
                     <div class="col-md-12">
                         <h3>Información general del convenio</h3>
@@ -471,6 +473,59 @@
                                             }})
                                         }}
                                     </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <h3>Pensión compensatoria</h3>
+                            <p>A continuación indique los datos de la pensión compensatoria.</p>
+
+                            <div class="row">
+                                <div class="col-md-4">
+                                    {{
+                                        form_row(form.agreement.compensatory_pension.isPension)
+                                    }}
+                                </div>
+                                <div class="col-md-4">
+                                    {{
+                                        form_row(form.agreement.compensatory_pension.creditor, {'attr': {
+                                            'class': 'form-control'
+                                        }})
+                                    }}
+                                </div>
+                                <div class="col-md-4">
+                                    {{
+                                        form_row(form.agreement.compensatory_pension.amount, {'attr': {
+                                            'class': 'form-control',
+                                            'placeholder': 'Importe',
+                                            'onfocus': 'this.placeholder = ""',
+                                            'onblur': 'this.placeholder = "Importe"',
+                                        }})
+                                    }}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    {{
+                                        form_row(form.agreement.compensatory_pension.hasLimit)
+                                    }}
+                                </div>
+                                <div class="col-md-4">
+                                    {{
+                                        form_row(form.agreement.compensatory_pension.term, {'attr': {
+                                            'class': 'form-control',
+                                            'placeholder': 'Plazo',
+                                            'onfocus': 'this.placeholder = ""',
+                                            'onblur': 'this.placeholder = "Plazo"',
+                                        }})
+                                    }}
+                                </div>
+                                <div class="col-md-4">
+                                    {{
+                                        form_row(form.agreement.compensatory_pension.term_time, {'attr': {
+                                            'class': 'form-control'
+                                        }})
+                                    }}
                                 </div>
                             </div>
                         </div>
