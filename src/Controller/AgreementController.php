@@ -43,7 +43,7 @@ class AgreementController extends Controller
             $dompdf = new Dompdf($pdfOptions);
 
             // Retrieve the HTML generated in our twig file
-            $html = $this->render('agreement/successForm.html.twig', [
+            $html = $this->renderView('agreement/successForm.html.twig', [
                 'request' => $request
             ]);
 

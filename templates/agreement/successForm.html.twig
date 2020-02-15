@@ -1,6 +1,6 @@
 {# extends 'base.html.twig' #}
 
-{% block title %}Service{% endblock %}
+{% block title %}{% endblock %}
 
 {% block stylesheets %}
     <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
@@ -171,7 +171,8 @@
                     </div>
                     <h2>-II-</h2>
                     <div>
-                        <b>USO Y DISFRUTE DEL DOMICILIO FAMILIAR.</b> La vivienda familiar, sita en la {{ request.marriage.house.address }} de {{ request.marriage.house.town }}, le corresponderá en el uso a _____________(CONYUGE 1/CONYUGE 2) D.2.3.1/D.2.3.2 .
+                        {# TODO #}
+                        <b>USO Y DISFRUTE DEL DOMICILIO FAMILIAR.</b> La vivienda familiar, sita en la {{ request.marriage.house.address }} de {{ request.marriage.house.town }}, le corresponderá en el uso a {#_____________(CONYUGE 1/CONYUGE 2) D.2.3.1/D.2.3.2 .#}
                     </div>
                     {% if(children_count > 0) %}
                     <h2>-III-</h2>
