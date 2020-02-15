@@ -24,7 +24,8 @@ class AgreementType extends AbstractType
                     Agreement::CUSTODY_CHOICES[1] => Agreement::CUSTODY_CHOICES[1],
                 ],
                 'placeholder' => 'Seleccione una opción',
-                'label' => 'Tipo de custodia'
+                'label' => 'Tipo de custodia',
+                'required' => false
             ])
             ->add('pick_up', ChoiceType::class, [
                 'choices'  => [

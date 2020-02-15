@@ -58,12 +58,8 @@ class AgreementController extends Controller
 
             // Output the generated PDF to Browser (inline view)
             $dompdf->stream("convenio.pdf", [
-                "Attachment" => false
+                "Attachment" => true
             ]);
-
-            return $this->render('agreement/successForm.html.twig', array(
-                'request' => $request
-            ));
         }
 
         return $this->render('agreement/service.html.twig', array(
