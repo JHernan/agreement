@@ -182,7 +182,7 @@
                     <div>
                         <b>GUARDA Y CUSTODIA.</b>
                         {% if custody == 'Compartida' %}
-                            La guarda y custodia {{ children_of_younger_text }}, será compartida. Para ello {{ children_will_be_text }} en compañía cada progenitor {{ alternate_weeks_text }} y será recogido por el progenitor no custodio en {{ request.agreement.getDeliveryText | lower }}.
+                            La guarda y custodia {{ children_of_younger_text }}, será compartida. Para ello {{ children_will_be_text }} en compañía cada progenitor {{ alternate_weeks_text }} y será recogido por el progenitor no custodio en {{ delivery_text }}.
                         {% else %}
                             La guardia y custodia {{ children_of_younger_text }} es atribuida a {{ custody_partner }}. {# TODO #}
                         {% endif %}

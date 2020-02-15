@@ -20,7 +20,7 @@ class Agreement
     const PARTNER_CHOICES_VALUES = [1, 2];
 
     /**
-     * @Assert\NotBlank()
+     * @Assert\NotBlank(groups={"children"})
      * @Assert\Choice(choices=Agreement::CUSTODY_CHOICES, message="Selecciona una opción válida.")
      */
     private $custody;
@@ -132,10 +132,6 @@ class Agreement
         $this->delivery = $delivery;
 
         return $this;
-    }
-
-    public function getDeliveryText(){
-        return self::DELIVERY_CHOICES_LABELS[$this->delivery];
     }
 
     public function getDeliveryHour()
