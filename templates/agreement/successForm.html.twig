@@ -25,6 +25,7 @@
 {% block video %}{% endblock %}
 
 {% block service %}
+    {% set section = 1 %}
 
     {% set custody = request.agreement.custody %}
     {% if custody == 1 %}
@@ -165,21 +166,25 @@
                     <br />
                     <br />
                     <h1>ESTIPULACIONES</h1>
-                    <h2>-I-</h2>
+                    <h2>-{{ section|roman }}-</h2>
+                    {% set section = section + 1 %}
                     <div>
                         <b>DOMICILIO.</b> Ambos cónyuges, se comprometen a respetar la libertad e independencia tanto profesional como personal del otro, así como para la libre fijación de sus domicilios, sin intervenir ni inmiscuirse en modo alguno.
                     </div>
-                    <h2>-II-</h2>
+                    <h2>-{{ section|roman }}-</h2>
+                    {% set section = section + 1 %}
                     <div>
                         {# TODO #}
                         <b>USO Y DISFRUTE DEL DOMICILIO FAMILIAR.</b> La vivienda familiar, sita en la {{ request.marriage.house.address }} de {{ request.marriage.house.town }}, le corresponderá en el uso a {#_____________(CONYUGE 1/CONYUGE 2) D.2.3.1/D.2.3.2 .#}
                     </div>
                     {% if(children_count > 0) %}
-                    <h2>-III-</h2>
-                    <div>
+                    <h2>-{{ section|roman }}-</h2>
+                    {% set section = section + 1 %}
+                        <div>
                         <b>PATRIA POTESTAD.</b> Del mismo modo, la patria potestad será ejercida conjuntamente por ambos progenitores, que adoptarán de común acuerdo y velando siempre por su interés, todas las decisiones trascendentales que afecten a {{ children_younger_text }}, decidiendo en los casos de falta de acuerdo la autoridad judicial.
                     </div>
-                    <h2>-IV-</h2>
+                    <h2>-{{ section|roman }}-</h2>
+                    {% set section = section + 1 %}
                     <div>
                         <b>GUARDA Y CUSTODIA.</b>
                         {% if custody == 'Compartida' %}
@@ -188,7 +193,8 @@
                             La guardia y custodia {{ children_of_younger_text }} es atribuida a {{ custody_partner }}. {# TODO #}
                         {% endif %}
                     </div>
-                    <h2>-V-</h2>
+                    <h2>-{{ section|roman }}-</h2>
+                    {% set section = section + 1 %}
                     <div>
                         <b>RÉGIMEN DE VISITAS.</b> En principio el régimen de visitas se determinará previo acuerdo de ambos progenitores, pero para el caso de desacuerdo y como mínimo, se estará al siguiente régimen, debiendo ser interpretado con criterios de flexibilidad y buena fe, dado que se contempla como un derecho {{ children_of_younger_text }}.
                         {% if custody == 'Compartida' %}
@@ -219,7 +225,8 @@
 
                         {% endif %}
                     </div>
-                    <h2>-VI-</h2>
+                    <h2>-{{ section|roman }}-</h2>
+                    {% set section = section + 1 %}
                     <div>
                         <b>PENSIÓN ALIMENTICIA.</b>
                         {% if custody == 'Compartida' and request.agreement.alimony.alimony %}
@@ -251,7 +258,8 @@
                             Los gastos extraordinarios que sean necesarios, serán sufragados previo acuerdo de los progenitores, al 50%, y en general aquellos gastos imprevisibles o de coste excepcional, como matrículas universitarias o similares, etc.
                         {% endif %}
                     </div>
-                    <h2>-VII-</h2>
+                    <h2>-{{ section|roman }}-</h2>
+                    {% set section = section + 1 %}
                     <div>
                         <b>PENSIÓN COMPENSATORIA.</b>
                         {% if request.agreement.compensatoryPension.isPension %}
@@ -265,14 +273,16 @@
                             Los cónyuges tienen independencia económica y no es necesario el establecimiento de pensión alguna al no producirse desequilibrio económico.
                         {% endif %}
                     </div>
-                    <h2>-VIII-</h2>
+                    <h2>-{{ section|roman }}-</h2>
+                    {% set section = section + 1 %}
                     <div>
                         <b>COMUNICACIONES.</b>
                         Los progenitores quedan obligados, durante los periodos de tiempo en que {{ children_will_remain_text }} en su compañía, a comunicar al otro todas las cuestiones relativas a la salud, educación, y demás aspectos esenciales de la vida {{ children_of_younger_text }} en común, comprometiéndose a facilitar la documentación relativa a tales asuntos.<br />
                         En caso de enfermedad {{ children_of_younger_text }} en común, ambos progenitores quedan obligados a informarse mutuamente de dicha circunstancia, y el progenitor que en ese momento no se encuentre en compañía {{ children_of_younger_text }} tendrá derecho a la visita en el domicilio en el que {{ children_of_younger_text }} se encuentre, debiendo comunicar previamente esa visita al progenitor en cuyo domicilio se encuentre {{ children_of_younger_text }}.
                     </div>
                     {% endif %}
-                    <h2>-IX-</h2>
+                    <h2>-{{ section|roman }}-</h2>
+                    {% set section = section + 1 %}
                     <div>
                         Ambos cónyuges se comprometen a presentar este Convenio a aprobación judicial, junto con la demanda de solicitud de divorcio de mutuo acuerdo y a ratificarlo.<br />
                         Leído el documento por ambas partes, se ratifican en el mismo los cónyuges, que seguidamente lo firman en la fecha y lugar arriba indicados, manifestando también estar dispuestos a ratificarlo en el Juzgado, a presencia judicial, en la correspondiente causa de divorcio, que a tenor de la legislación vigente solicitarán de mutuo acuerdo.

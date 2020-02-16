@@ -26,7 +26,8 @@
         "symfony/web-link": "*",
         "symfony/webpack-encore-bundle": "^1.6",
         "symfony/yaml": "*",
-        "twig/extensions": "^1.5"
+        "twig/extensions": "^1.5",
+        "wandersonwhcr/romans": "^1.0"
     },
     "require-dev": {
         "symfony/debug-pack": "*",
