@@ -1,6 +1,7 @@
 jQuery(document).ready(function() {
+    $partnerHomeUseHolder = $('select#request_agreement_partner_home_use').parent().parent().parent().parent();
+    $partnerHomeUseSelect = $('select#request_agreement_partner_home_use');
     $custodyHolder = $('select#request_agreement_custody');
-
     $pickUpHolder = $('select#request_agreement_pick_up').parent().parent();
     $pickUpSelect = $('select#request_agreement_pick_up');
     // $pickUpHourHolder = $('input#request_agreement_pick_up_hour').parent().parent();
@@ -73,12 +74,14 @@ jQuery(document).ready(function() {
     });
 
     $partnerFirstField.change(function(){
+        changePartnerUseHomeOption(1, $(this).val());
         changePartnerOption(1, $(this).val());
         changeDebtorOption(1, $(this).val());
         changePensionCreditorOption(1, $(this).val())
     });
 
     $partnerSecondField.change(function(){
+        changePartnerUseHomeOption(2, $(this).val());
         changePartnerOption(2, $(this).val());
         changeDebtorOption(2, $(this).val());
         changePensionCreditorOption(2, $(this).val())
@@ -134,12 +137,18 @@ jQuery(document).ready(function() {
     });
 
     function initPartnerFields(){
+        changePartnerUseHomeOption(1, $partnerFirstField.val());
+        changePartnerUseHomeOption(2, $partnerSecondField.val());
         changePartnerOption(1, $partnerFirstField.val());
         changePartnerOption(2, $partnerSecondField.val());
         changeDebtorOption(1, $partnerFirstField.val());
         changeDebtorOption(2, $partnerSecondField.val());
         changePensionCreditorOption(1, $partnerFirstField.val());
         changePensionCreditorOption(2, $partnerSecondField.val());
+    }
+
+    function changePartnerUseHomeOption(index, val){
+        $partnerHomeUseSelect.find('option:eq('+index+')').text(val);
     }
 
     function changePartnerOption(index, val){

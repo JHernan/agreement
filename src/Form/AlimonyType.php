@@ -37,7 +37,8 @@ class AlimonyType extends AbstractType
                 'label' => 'Cónyuge que recibirá la pensión',
             ])
             ->add('amount', MoneyType::class, [
-                'label' => 'Importe de pensión'
+                'label' => 'Importe de pensión',
+                'currency' => ''
             ])
         ;
     }

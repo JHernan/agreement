@@ -30,7 +30,8 @@ class CompensatoryPensionType extends AbstractType
                 'label' => 'Cónyuge que recibirá la pensión',
             ])
             ->add('amount', MoneyType::class, [
-                'label' => 'Importe de pensión'
+                'label' => 'Importe de pensión',
+                'currency' => ''
             ])
             ->add('hasLimit', CheckboxType::class, [
                 'label' => ' ',

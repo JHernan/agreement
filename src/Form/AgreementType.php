@@ -18,6 +18,14 @@ class AgreementType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+            ->add('partner_home_use', ChoiceType::class, [
+                'choices'  => [
+                    Agreement::PARTNER_CHOICES_LABELS[0] => Agreement::PARTNER_CHOICES_VALUES[0],
+                    Agreement::PARTNER_CHOICES_LABELS[1] => Agreement::PARTNER_CHOICES_VALUES[1],
+                ],
+                'placeholder' => 'Seleccione un cónyuge',
+                'label' => 'Indique el cónyuge que tendrá el uso y disfrute del domicilio conyugal',
+            ])
             ->add('custody', ChoiceType::class, [
                 'choices'  => [
                     Agreement::CUSTODY_CHOICES[0] => Agreement::CUSTODY_CHOICES[0],

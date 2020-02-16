@@ -20,6 +20,11 @@ class Agreement
     const PARTNER_CHOICES_VALUES = [1, 2];
 
     /**
+     * @Assert\NotBlank()
+     */
+    private $partner_home_use;
+
+    /**
      * @Assert\NotBlank(groups={"children"})
      * @Assert\Choice(choices=Agreement::CUSTODY_CHOICES, message="Selecciona una opción válida.")
      */
@@ -85,6 +90,17 @@ class Agreement
      */
     private $compensatory_pension;
 
+
+    public function getPartnerHomeUse()
+    {
+        return $this->partner_home_use;
+    }
+
+    public function setPartnerHomeUse($partner_home_use)
+    {
+        $this->partner_home_use = $partner_home_use;
+        return $this;
+    }
 
     public function getCustody()
     {
