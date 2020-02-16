@@ -48,6 +48,7 @@ jQuery(document).ready(function() {
     summerPeriodHide();
     alimonyFieldsHide();
     partnerHide();
+    tooglePension();
 
     var selectedCustody = $custodyHolder.children("option:selected").val();
     toogleCustodyBlock(selectedCustody);
@@ -101,21 +102,7 @@ jQuery(document).ready(function() {
     });
 
     $pensionCheckbox.change(function(){
-        if ($(this).is(":checked")){
-            pensionCreditorShow();
-            pensionAmountShow();
-            pensionLimitShow();
-            if($pensionLimitCheckbox.is(":checked")){
-                pensionTermShow();
-                pensionTermTimeShow();
-            }
-        }else{
-            pensionCreditorHide();
-            pensionAmountHide();
-            pensionLimitHide();
-            pensionTermHide();
-            pensionTermTimeHide();
-        }
+        tooglePension();
     });
 
     $pensionLimitCheckbox.change(function(){
@@ -381,6 +368,27 @@ jQuery(document).ready(function() {
     function pensionTermTimeHide(){
         $pensionTermTimeHolder.hide();
         $pensionTermTimeSelect.removeAttr('required');
+    }
+
+    function tooglePension(){
+        if ($pensionCheckbox.is(":checked")){
+            pensionCreditorShow();
+            pensionAmountShow();
+            pensionLimitShow();
+            if($pensionLimitCheckbox.is(":checked")){
+                pensionTermShow();
+                pensionTermTimeShow();
+            }else{
+                pensionTermHide();
+                pensionTermTimeHide();
+            }
+        }else{
+            pensionCreditorHide();
+            pensionAmountHide();
+            pensionLimitHide();
+            pensionTermHide();
+            pensionTermTimeHide();
+        }
     }
 
     function showCustodyBlockCompartida(){
