@@ -23,9 +23,9 @@ class AgreementController extends Controller
     }
 
     /**
-     * @Route("/service", name="service", methods={"GET","POST"})
+     * @Route("/formulario", name="form", methods={"GET","POST"})
      */
-    public function serviceAction(Request $request)
+    public function formAction(Request $request)
     {
         $requestDivorce = new RequestDivorce();
 
@@ -62,17 +62,22 @@ class AgreementController extends Controller
             ]);
         }
 
-        return $this->render('agreement/service.html.twig', array(
+        return $this->render('agreement/form.html.twig', array(
             'form' => $form->createView()
         ));
     }
 
     /**
-     * @Route("/price", name="price", methods={"GET"})
+     * @Route("/precio", name="price", methods={"GET"})
      */
     public function priceAction(Request $request){
+        return $this->render('agreement/price.html.twig');
+    }
 
-
-        return $this->render('agreement/price.html.twig', array());
+    /**
+     * @Route("/contacto", name="contact", methods={"GET"})
+     */
+    public function contactAction(Request $request){
+        return $this->render('agreement/contact.html.twig');
     }
 }

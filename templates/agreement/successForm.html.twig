@@ -183,7 +183,7 @@
                         <b>USO Y DISFRUTE DEL DOMICILIO FAMILIAR.</b> La vivienda familiar, sita en la {{ request.marriage.house.address }} de {{ request.marriage.house.town }}, le corresponderá en el uso a {{ partner_home_use }}.
                     </div>
                     {% if(children_count > 0) %}
-                    <h2>-{{ section|roman }}-</h2>
+                    <h2 style="text-align: center;">-{{ section|roman }}-</h2>
                     {% set section = section + 1 %}
                         <div>
                         <b>PATRIA POTESTAD.</b> Del mismo modo, la patria potestad será ejercida conjuntamente por ambos progenitores, que adoptarán de común acuerdo y velando siempre por su interés, todas las decisiones trascendentales que afecten a {{ children_younger_text }}, decidiendo en los casos de falta de acuerdo la autoridad judicial.
@@ -208,15 +208,15 @@
                             <b>A)</b> {% if children_count == 1 %} Al menor {% elseif children_count > 1 %} A los menores {% endif %} en compañía del progenitor no custodio durante fines de semana alternos. {{ children_pick_up_text }} en {{ pick_up_text }} y será devuelto por el progenitor no custodio en {{ delivery_text }}.
                             <br />
                             <br />
-                            <b>B)</b> En cuanto a las vacaciones de Navidad, estas se dividirán por mitad, desde el día de finalización del periodo escolar hasta el día 30 de diciembre, y el segundo periodo desde el día 31 de diciembre hasta el inicio del periodo escolar. {{ parent_first_name }} elegirá en los años pares cuando disfrutará del citado periodo de vacaciones, y {{ parent_second_name }} elegirá los años impares.
+                            <b>B)</b> En cuanto a las vacaciones de Navidad, éstas se dividirán por la mitad, desde el día de finalización del periodo escolar hasta el día 30 de diciembre, y el segundo periodo desde el día 31 de diciembre hasta el inicio del periodo escolar. {{ parent_first_name }} elegirá en los años pares cuándo disfrutará del citado periodo de vacaciones, y {{ parent_second_name }} elegirá los años impares.
                             <br />
                             <br />
-                            <b>C)</b> Las vacaciones de Semana Santa, las pasarán con ambos padres estableciéndose dos períodos de idéntica duración. Los días de vacaciones incluirán desde el viernes a la salida del colegio hasta el día antes del reinicio del periodo escolar. {{ parent_first_name }} elegirá en los años pares cuando disfrutará del citado periodo de vacaciones, y {{ parent_second_name }} elegirá los años impares.
+                            <b>C)</b> Las vacaciones de Semana Santa, las pasarán con ambos padres estableciéndose dos períodos de idéntica duración. Los días de vacaciones incluirán desde el viernes a la salida del colegio hasta el día antes del reinicio del periodo escolar. {{ parent_first_name }} elegirá en los años pares cuándo disfrutará del citado periodo de vacaciones, y {{ parent_second_name }} elegirá los años impares.
                             <br />
                             <br />
                             <b>D)</b> Durante las vacaciones de verano, {{ children_younger_text }} estará en compañía de los padres {{ summer_period_text }}.
                             {% if summer_period == 1 %}
-                                El primer período comenzará el día 1 de julio hasta el dia 15 de julio. El segundo período comenzará el día 16 de julio hasta el dia 31 de julio. El tercero periodo comenzará el día 1 de agosto hasta el dia 15 de agosto. El cuarto periodo comenzará el día 16 de agosto hasta el dia 31 de agosto. {{ children_pick_up_text }} del domicilio donde se encuentren, ya sea durante el régimen habitual de guarda y custodia o durante alguno de los periodos de vacaciones.
+                                El primer período comenzará el día 1 de julio hasta el dia 15 de julio. El segundo período comenzará el día 16 de julio hasta el dia 31 de julio. El tercero periodo comenzará el día 1 de agosto hasta el día 15 de agosto. El cuarto periodo comenzará el día 16 de agosto hasta el día 31 de agosto. {{ children_pick_up_text }} del domicilio donde se encuentren, ya sea durante el régimen habitual de guarda y custodia o durante alguno de los periodos de vacaciones.
                             {% else %}
                                 El primer periodo comprenderá desde la finalización del periodo escolar hasta el dia 31 de julio, y el segundo periodo desde el día 1 de agosto hasta el inicio del curso escolar.
                             {% endif %}

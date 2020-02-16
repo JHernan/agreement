@@ -124,6 +124,8 @@ jQuery(document).ready(function() {
         changeDebtorOption(2, $partnerSecondField.val());
         changePensionCreditorOption(1, $partnerFirstField.val());
         changePensionCreditorOption(2, $partnerSecondField.val());
+        changePartnerUseHomeOption(1, $partnerFirstField.val());
+        changePartnerUseHomeOption(2, $partnerSecondField.val());
     }
 
     function changePartnerUseHomeOption(index, val){
