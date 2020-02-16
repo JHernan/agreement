@@ -4,10 +4,12 @@ jQuery(document).ready(function() {
     $custodyHolder = $('select#request_agreement_custody');
     $pickUpHolder = $('select#request_agreement_pick_up').parent().parent();
     $pickUpSelect = $('select#request_agreement_pick_up');
-    // $pickUpHourHolder = $('input#request_agreement_pick_up_hour').parent().parent();
+    $pickUpHourHolder = $('input#request_agreement_pick_up_hour').parent().parent();
+    $pickUpHourInput = $('input#request_agreement_pick_up_hour');
     $deliveryHolder = $('select#request_agreement_delivery').parent().parent();
     $deliverySelect = $('select#request_agreement_delivery');
-    // $deliveryHourHolder = $('input#request_agreement_delivery_hour').parent().parent();
+    $deliveryHourHolder = $('input#request_agreement_delivery_hour').parent().parent();
+    $deliveryHourInput = $('input#request_agreement_delivery_hour');
     $alternateWeeksHolder = $('input#request_agreement_alternate_weeks').parent().parent();
     $alternateWeeksInput = $('input#request_agreement_alternate_weeks');
     $summerPeriodHolder = $('select#request_agreement_summer_period').parent().parent();
@@ -38,13 +40,13 @@ jQuery(document).ready(function() {
     $pensionTermTimeSelect = $('select#request_agreement_compensatory_pension_term_time');
 
 
-    $pickUpHolder.hide();
-    // $pickUpHourHolder.hide();
-    $deliveryHolder.hide();
-    // $deliveryHourHolder.hide();
-    $alternateWeeksHolder.hide();
-    $summerPeriodHolder.hide();
-    $alimonyHolder.hide();
+    pickUpHide();
+    pickUpHourHide();
+    deliveryHide();
+    deliveryHourHide();
+    alternateWeeksHide();
+    summerPeriodHide();
+    alimonyFieldsHide();
     partnerHide();
 
     var selectedCustody = $custodyHolder.children("option:selected").val();
@@ -56,21 +58,11 @@ jQuery(document).ready(function() {
     });
 
     $pickUpSelect.change(function(){
-        var selectedPickUp = $(this).children("option:selected").val();
-        if(selectedPickUp == "Monoparental"){
-            // $pickUpHourHolder.show();
-        }else{
-            // $pickUpHourHolder.hide();
-        }
+        tooglePickUpHour();
     });
 
     $deliverySelect.change(function(){
-        var selectedDelivery = $(this).children("option:selected").val();
-        if(selectedDelivery == "Monoparental"){
-            // $deliveryHourHolder.show();
-        }else{
-            // $deliveryHourHolder.hide();
-        }
+        toogleDeliveryHour();
     });
 
     $partnerFirstField.change(function(){
@@ -225,6 +217,24 @@ jQuery(document).ready(function() {
         $pickUpSelect.removeAttr('required');
     }
 
+    function pickUpHourShow(){
+        $pickUpHourHolder.show();
+        $pickUpHourInput.prop('required',true);
+    }
+
+    function pickUpHourHide(){
+        $pickUpHourHolder.hide();
+        $pickUpHourInput.removeAttr('required');
+    }
+
+    function tooglePickUpHour(){
+        if($pickUpSelect.children("option:selected").val() == 2){
+            pickUpHourShow();
+        }else{
+            pickUpHourHide();
+        }
+    }
+
     function deliveryShow(){
         $deliveryHolder.show();
         $deliverySelect.prop('required',true);
@@ -233,6 +243,24 @@ jQuery(document).ready(function() {
     function deliveryHide(){
         $deliveryHolder.hide();
         $deliverySelect.removeAttr('required');
+    }
+
+    function deliveryHourShow(){
+        $deliveryHourHolder.show();
+        $deliveryHourInput.prop('required',true);
+    }
+
+    function deliveryHourHide(){
+        $deliveryHourHolder.hide();
+        $deliveryHourInput.removeAttr('required');
+    }
+
+    function toogleDeliveryHour(){
+        if($deliverySelect.children("option:selected").val() == 2){
+            deliveryHourShow();
+        }else{
+            deliveryHourHide();
+        }
     }
 
     function alternateWeeksShow(){
@@ -357,7 +385,9 @@ jQuery(document).ready(function() {
 
     function showCustodyBlockCompartida(){
         pickUpShow();
+        tooglePickUpHour();
         deliveryShow();
+        toogleDeliveryHour();
         alternateWeeksShow();
         summerPeriodShow();
         $alimonyHolder.show();
@@ -375,11 +405,11 @@ jQuery(document).ready(function() {
 
     function showCustodyBlockMonoparental(){
         pickUpHide();
+        pickUpHourHide();
         deliveryHide();
+        deliveryHourHide();
         alternateWeeksHide();
         summerPeriodHide();
-        // $pickUpHourHolder.hide();
-        // $deliveryHourHolder.hide();
         $alimonyHolder.show();
         $alimonySwitchHolder.hide();
         alimonyFieldsShow();
@@ -392,11 +422,11 @@ jQuery(document).ready(function() {
 
     function hideCustodyBlockBoth(){
         pickUpHide();
+        pickUpHourHide();
         deliveryHide();
+        deliveryHourHide();
         alternateWeeksHide();
         summerPeriodHide();
-        // $pickUpHourHolder.hide();
-        // $deliveryHourHolder.hide();
         $alimonyHolder.hide();
         $alimonySwitchHolder.hide();
         alimonyFieldsHide();

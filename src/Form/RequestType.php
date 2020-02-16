@@ -61,6 +61,14 @@ class RequestType extends AbstractType
                     if ($data->getAgreement()->getCustody() == Agreement::CUSTODY_COMPARTIDA) {
                         array_push($validation_groups, 'compartida');
 
+                        if($data->getAgreement()->getPickUp() == Agreement::PICK_UP_CHOICES_VALUES[1]){
+                            array_push($validation_groups, 'pick_up_hour');
+                        }
+
+                        if($data->getAgreement()->getDelivery() == Agreement::DELIVERY_CHOICES_VALUES[1]){
+                            array_push($validation_groups, 'delivery_hour');
+                        }
+
                         if($data->getAgreement()->getAlimony()->getAlimony()){
                             array_push($validation_groups, 'alimony');
                         }

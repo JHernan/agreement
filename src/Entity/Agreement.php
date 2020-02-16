@@ -11,7 +11,7 @@ class Agreement
     const CUSTODY_COMPARTIDA = self::CUSTODY_CHOICES[0];
     const CUSTODY_MONOPARENTAL = self::CUSTODY_CHOICES[1];
     const PICK_UP_CHOICES_LABELS = ['El centro escolar el viernes, a la finalización del horario lectivo', 'El domicilio del otro progenitor el viernes a una hora determinada'];
-    const PICK_UP_CHOICES_VALUES = [1 ,2];
+    const PICK_UP_CHOICES_VALUES = [1,  2];
     const DELIVERY_CHOICES_LABELS = ['El centro escolar el lunes, al comienzo del horario lectivo', 'El domicilio del otro progenitor el domingo a una hora determinada'];
     const DELIVERY_CHOICES_VALUES = [1, 2];
     const SUMMER_PERIOD_CHOICES_LABELS = ['En periodos de dos semanas', 'En dos periodos iguales'];
@@ -36,6 +36,10 @@ class Agreement
      */
     private $pick_up;
 
+    /**
+     * @Assert\NotBlank(groups={"pick_up_hour"})
+     * @Assert\Time
+     */
     private $pick_up_hour;
 
     /**
@@ -44,6 +48,10 @@ class Agreement
      */
     private $delivery;
 
+    /**
+     * @Assert\NotBlank(groups={"delivery_hour"})
+     * @Assert\Time
+     */
     private $delivery_hour;
 
     /**

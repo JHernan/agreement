@@ -8,6 +8,7 @@ use App\Entity\PickUp;
 use App\Repository\PickUpRepository;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+use Symfony\Component\Form\Extension\Core\Type\TimeType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
@@ -40,19 +41,29 @@ class AgreementType extends AbstractType
                     Agreement::PICK_UP_CHOICES_LABELS[0] => Agreement::PICK_UP_CHOICES_VALUES[0],
                     Agreement::PICK_UP_CHOICES_LABELS[1] => Agreement::PICK_UP_CHOICES_VALUES[1],
                 ],
-                'label' => 'Hora de recogida',
+                'label' => 'Recogida',
                 'placeholder' => 'Seleccione una opción',
             ])
-//            ->add('pick_up_hour', TextType::class)
+            ->add('pick_up_hour', TimeType::class, [
+                'label' => 'Hora de recogida',
+                'placeholder' => 'Selecciona una hora',
+                'input' => 'string',
+                'widget' => 'single_text'
+            ])
             ->add('delivery', ChoiceType::class, [
                 'choices'  => [
                     Agreement::DELIVERY_CHOICES_LABELS[0] => Agreement::DELIVERY_CHOICES_VALUES[0],
                     Agreement::DELIVERY_CHOICES_LABELS[1] => Agreement::DELIVERY_CHOICES_VALUES[1],
                 ],
-                'label' => 'Hora de entrega',
+                'label' => 'Entrega',
                 'placeholder' => 'Seleccione una opción',
             ])
-//            ->add('delivery_hour', TextType::class)
+            ->add('delivery_hour', TimeType::class, [
+                'label' => 'Hora de entrega',
+                'placeholder' => 'Selecciona una hora',
+                'input' => 'string',
+                'widget' => 'single_text'
+            ])
             ->add('alternate_weeks', null, [
                 'label' => 'Semanas alternas de la custodia',
             ])

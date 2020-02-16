@@ -395,65 +395,73 @@
 
                                 <div class="row">
                                     <div class="col-md-6">
-
-                                        {{
-                                            form_row(form.agreement.custody, {'attr': {
-                                                'class': 'form-control',
-                                            }})
-                                        }}
-
+                                        <div class="form-group">
+                                            {{
+                                                form_row(form.agreement.custody, {'attr': {
+                                                    'class': 'form-control',
+                                                }})
+                                            }}
+                                        </div>
                                     </div>
                                     <div class="col-md-6">
+                                        <div class="form-group">
+                                            {{
+                                                form_row(form.agreement.pick_up, {'attr': {
+                                                    'class': 'form-control',
+                                                }})
+                                            }}
+                                        </div>
 
-                                        {{
-                                            form_row(form.agreement.pick_up, {'attr': {
-                                                'class': 'form-control',
-                                            }})
-                                        }}
+                                        <div class="form-group">
+                                            {{
+                                                form_row(form.agreement.pick_up_hour, {'attr': {
+                                                    'class': 'form-control',
+                                                }})
+                                            }}
+                                        </div>
 
-        {#                            <div class="form-group">#}
-        {#                                {{#}
-        {#                                    form_row(form.agreement.pick_up_hour, {'attr': {#}
-        {#                                        'class': 'form-control',#}
-        {#                                    }})#}
-        {#                                }}#}
-        {#                            </div>#}
+                                        <div class="form-group">
+                                            {{
+                                                form_row(form.agreement.delivery, {'attr': {
+                                                    'class': 'form-control',
+                                                }})
+                                            }}
+                                        </div>
 
-                                        {{
-                                            form_row(form.agreement.delivery, {'attr': {
-                                                'class': 'form-control',
-                                            }})
-                                        }}
+                                        <div class="form-group">
+                                            {{
+                                                form_row(form.agreement.delivery_hour, {'attr': {
+                                                    'class': 'form-control',
+                                                }})
+                                            }}
+                                        </div>
 
-        {#                            <div class="form-group">#}
-        {#                                {{#}
-        {#                                    form_row(form.agreement.delivery_hour, {'attr': {#}
-        {#                                        'class': 'form-control',#}
-        {#                                    }})#}
-        {#                                }}#}
-        {#                            </div>#}
+                                        <div class="form-group">
+                                            {{
+                                                form_row(form.agreement.alternate_weeks, {'attr': {
+                                                    'class': 'form-control',
+                                                    'placeholder': 'Indique el número de semanas alternas de la custodia',
+                                                    'onfocus': 'this.placeholder = ""',
+                                                    'onblur': 'this.placeholder = "Indique el número de semanas alternas de la custodia"',
+                                                }})
+                                            }}
+                                        </div>
 
-                                        {{
-                                            form_row(form.agreement.alternate_weeks, {'attr': {
-                                                'class': 'form-control',
-                                                'placeholder': 'Indique el número de semanas alternas de la custodia',
-                                                'onfocus': 'this.placeholder = ""',
-                                                'onblur': 'this.placeholder = "Indique el número de semanas alternas de la custodia"',
-                                            }})
-                                        }}
+                                        <div class="form-group">
+                                            {{
+                                                form_row(form.agreement.summer_period, {'attr': {
+                                                    'class': 'form-control',
+                                                }})
+                                            }}
+                                        </div>
 
-                                        {{
-                                            form_row(form.agreement.summer_period, {'attr': {
-                                                'class': 'form-control',
-                                            }})
-                                        }}
-
-                                        {{
-                                            form_row(form.agreement.partner, {'attr': {
-                                                'class': 'form-control',
-                                            }})
-                                        }}
-
+                                        <div class="form-group">
+                                            {{
+                                                form_row(form.agreement.partner, {'attr': {
+                                                    'class': 'form-control',
+                                                }})
+                                            }}
+                                        </div>
                                     </div>
                                 </div>
                             </div>

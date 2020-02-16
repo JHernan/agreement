@@ -93,7 +93,7 @@
         {% set pick_up_text = "el centro escolar el viernes, a la finalización del horario lectivo" %}
     {% else %}
         {% set pick_up_hour = request.agreement.pickUpHour %}
-        {% set pick_up_text = "el domicilio del otro progenitor el viernes a las " ~ pick_up_hour ~ " horas" %}
+        {% set pick_up_text = "el domicilio del otro progenitor el viernes a las " ~ pick_up_hour|date('H:i') ~ " horas" %}
     {% endif %}
 
     {% set delivery = request.agreement.delivery %}
@@ -101,7 +101,7 @@
         {% set delivery_text = "el centro escolar el lunes, al comienzo del horario lectivo" %}
     {% else %}
         {% set delivery_hour = request.agreement.deliveryHour %}
-        {% set delivery_text = "el domicilio del otro progenitor el domingo a las " ~ delivery_hour ~ " horas" %}
+        {% set delivery_text = "el domicilio del otro progenitor el domingo a las " ~ delivery_hour|date('H:i') ~ " horas" %}
     {% endif %}
 
     {% set summer_period = request.agreement.summerPeriod %}
