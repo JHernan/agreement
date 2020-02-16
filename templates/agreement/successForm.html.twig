@@ -119,13 +119,13 @@
         <div class="container">
             <div class="row" id="app">
                 <div class="col-lg-12">
-                    <h1>CONVENIO REGULADOR DE {{ request.requestType | upper }}</h1>
+                    <h1 style="text-align: center;">CONVENIO REGULADOR DE {{ request.requestType | upper }}</h1>
                     <div>
                         En {{ request.town }}, a {{ request.date | localizeddate('none', 'none', 'es_ES', null, "d 'de' MMMM 'de' Y") }}.
                     </div>
                     <br />
                     <br />
-                    <h1>REUNIDOS</h1>
+                    <h1 style="text-align: center;">REUNIDOS</h1>
                     <div>
                         De una parte, <br />
                         D/Dª. {{ request.marriage.partnerFirst.name }}, mayor de edad, de nacionalidad {{ request.marriage.partnerFirst.nationality }}, con domicilio en {{ request.marriage.partnerFirst.address }} de {{ request.marriage.partnerFirst.town }} y portador del Documento Nacional de Identidad núm. {{ request.marriage.partnerFirst.dni }}
@@ -137,13 +137,13 @@
                     </div>
                     <br />
                     <br />
-                    <h1>INTERVIENEN</h1>
+                    <h1 style="text-align: center;">INTERVIENEN</h1>
                     <div>
                         Ambos en su propio nombre y derecho, reconociéndose mutuamente capacidad legal suficiente para otorgar el presente CONVENIO REGULADOR, y por vía de antecedentes,
                     </div>
                     <br />
                     <br />
-                    <h1>EXPONEN</h1>
+                    <h1 style="text-align: center;">EXPONEN</h1>
                     <div>
                         <b>Primero.</b> Que contrajeron matrimonio {{ request.marriage.marriageType }}, en {{ request.marriage.town }}, el día {{ request.marriage.date | date('d/m/Y') }}, registrado en el Registro Civil de {{ request.marriage.registry.town }}, tomo {{ request.marriage.registry.volume }}, página {{ request.marriage.registry.page }}. El matrimonio se contrajo bajo el régimen económico de la {{ request.marriage.economicSystem }}.
                     </div>
@@ -171,13 +171,13 @@
                     </div>
                     <br />
                     <br />
-                    <h1>ESTIPULACIONES</h1>
-                    <h2>-{{ section|roman }}-</h2>
+                    <h1 style="text-align: center;">ESTIPULACIONES</h1>
+                    <h2 style="text-align: center;">-{{ section|roman }}-</h2>
                     {% set section = section + 1 %}
                     <div>
                         <b>DOMICILIO.</b> Ambos cónyuges, se comprometen a respetar la libertad e independencia tanto profesional como personal del otro, así como para la libre fijación de sus domicilios, sin intervenir ni inmiscuirse en modo alguno.
                     </div>
-                    <h2>-{{ section|roman }}-</h2>
+                    <h2 style="text-align: center;">-{{ section|roman }}-</h2>
                     {% set section = section + 1 %}
                     <div>
                         <b>USO Y DISFRUTE DEL DOMICILIO FAMILIAR.</b> La vivienda familiar, sita en la {{ request.marriage.house.address }} de {{ request.marriage.house.town }}, le corresponderá en el uso a {{ partner_home_use }}.
@@ -188,7 +188,7 @@
                         <div>
                         <b>PATRIA POTESTAD.</b> Del mismo modo, la patria potestad será ejercida conjuntamente por ambos progenitores, que adoptarán de común acuerdo y velando siempre por su interés, todas las decisiones trascendentales que afecten a {{ children_younger_text }}, decidiendo en los casos de falta de acuerdo la autoridad judicial.
                     </div>
-                    <h2>-{{ section|roman }}-</h2>
+                    <h2 style="text-align: center;">-{{ section|roman }}-</h2>
                     {% set section = section + 1 %}
                     <div>
                         <b>GUARDA Y CUSTODIA.</b>
@@ -198,7 +198,7 @@
                             La guardia y custodia {{ children_of_younger_text }} es atribuida a {{ custody_partner }}. {# TODO #}
                         {% endif %}
                     </div>
-                    <h2>-{{ section|roman }}-</h2>
+                    <h2 style="text-align: center;">-{{ section|roman }}-</h2>
                     {% set section = section + 1 %}
                     <div>
                         <b>RÉGIMEN DE VISITAS.</b> En principio el régimen de visitas se determinará previo acuerdo de ambos progenitores, pero para el caso de desacuerdo y como mínimo, se estará al siguiente régimen, debiendo ser interpretado con criterios de flexibilidad y buena fe, dado que se contempla como un derecho {{ children_of_younger_text }}.
@@ -228,7 +228,7 @@
 
                         {% endif %}
                     </div>
-                    <h2>-{{ section|roman }}-</h2>
+                    <h2 style="text-align: center;">-{{ section|roman }}-</h2>
                     {% set section = section + 1 %}
                     <div>
                         <b>PENSIÓN ALIMENTICIA.</b>
@@ -261,7 +261,7 @@
                             Los gastos extraordinarios que sean necesarios, serán sufragados previo acuerdo de los progenitores, al 50%, y en general aquellos gastos imprevisibles o de coste excepcional, como matrículas universitarias o similares, etc.
                         {% endif %}
                     </div>
-                    <h2>-{{ section|roman }}-</h2>
+                    <h2 style="text-align: center;">-{{ section|roman }}-</h2>
                     {% set section = section + 1 %}
                     <div>
                         <b>PENSIÓN COMPENSATORIA.</b>
@@ -276,7 +276,7 @@
                             Los cónyuges tienen independencia económica y no es necesario el establecimiento de pensión alguna al no producirse desequilibrio económico.
                         {% endif %}
                     </div>
-                    <h2>-{{ section|roman }}-</h2>
+                    <h2 style="text-align: center;">-{{ section|roman }}-</h2>
                     {% set section = section + 1 %}
                     <div>
                         <b>COMUNICACIONES.</b>
@@ -284,7 +284,7 @@
                         En caso de enfermedad {{ children_of_younger_text }} en común, ambos progenitores quedan obligados a informarse mutuamente de dicha circunstancia, y el progenitor que en ese momento no se encuentre en compañía {{ children_of_younger_text }} tendrá derecho a la visita en el domicilio en el que {{ children_of_younger_text }} se encuentre, debiendo comunicar previamente esa visita al progenitor en cuyo domicilio se encuentre {{ children_of_younger_text }}.
                     </div>
                     {% endif %}
-                    <h2>-{{ section|roman }}-</h2>
+                    <h2 style="text-align: center;">-{{ section|roman }}-</h2>
                     {% set section = section + 1 %}
                     <div>
                         Ambos cónyuges se comprometen a presentar este Convenio a aprobación judicial, junto con la demanda de solicitud de divorcio de mutuo acuerdo y a ratificarlo.<br />
