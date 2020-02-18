@@ -62,7 +62,7 @@
         {% set alternate_weeks_text = "cada " ~ alternate_weeks ~ " semanas alternas" %}
     {% endif %}
 
-    {% if request.agreement.partner == 1 %}
+    {% if request.agreement.getPartnerHomeUse == 1 %}
         {% set partner_home_use = request.marriage.partnerFirst.name %}
     {% else %}
         {% set partner_home_use = request.marriage.partnerSecond.name %}
