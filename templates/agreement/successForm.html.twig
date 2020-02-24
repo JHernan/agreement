@@ -204,7 +204,7 @@
                     {% set section = section + 1 %}
                     <div>
                         <b>RÉGIMEN DE VISITAS.</b>
-                        {% if custody == 'Compartida' %}
+                        {% if custody == 'Compartida' and alternate_weeks == 1 %}
                             <br />
                             <b>A)</b> Dado que se fija un régimen de custodia compartida por semanas alternas no se establecen visitas intersemanales.
                         {% else %}
