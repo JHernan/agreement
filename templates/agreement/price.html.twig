@@ -88,10 +88,10 @@
         }
         .p-blue big,
         .p-blue h3 {
-            color: #3f4bb8;
+            color: #38a4ff;
         }
         .p-blue button {
-            background: #3f4bb8;
+            background: #38a4ff;
         }
     </style>
 {% endblock %}
@@ -139,10 +139,29 @@
                     </div>
 
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <ul class="pricing p-green">
                                 <li>
                                     <big>Opción 1</big>
+                                </li>
+                                <li>Generación automática del convenio de separación</li>
+                                <li>Blabla</li>
+                                <li>Blabla</li>
+                                <li>Blabla</li>
+                                <li>
+                                    <h3>0€</h3>
+                                    <span>GRATIS</span>
+                                </li>
+                                <li>
+                                    <a href="{{ path('form') }}" class="genric-btn success circle">Rellena el formulario</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="col-md-4">
+                            <ul class="pricing p-blue">
+                                <li>
+                                    <big>Opción 2</big>
                                 </li>
                                 <li>Generación automática del convenio de separación</li>
                                 <li>Presentación del convenio en el juzgado</li>
@@ -153,15 +172,15 @@
                                     <span>pago único</span>
                                 </li>
                                 <li>
-                                    <a href="{{ path('form') }}" class="genric-btn success circle">Rellena el formulario</a>
+                                    <a href="{{ path('form') }}" class="genric-btn info circle">Rellena el formulario</a>
                                 </li>
                             </ul>
                         </div>
 
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <ul class="pricing p-red">
                                 <li>
-                                    <big>Opción 2</big>
+                                    <big>Opción 3</big>
                                 </li>
                                 <li>Generación personalizada del convenio de separación</li>
                                 <li>Presentación del convenio en el juzgado</li>
