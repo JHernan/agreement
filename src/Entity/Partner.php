@@ -8,6 +8,15 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 class Partner
 {
+    const TITLE_LABELS = ['Don', 'Doña'];
+    const TITLE_VALUES = [1, 2];
+
+    /**
+     * @Assert\NotBlank()
+     * @Assert\Choice(choices=Partner::TITLE_VALUES, message="Selecciona una opción válida.")
+     */
+    private $title;
+
     /**
      * @Assert\NotBlank()
      */
@@ -42,6 +51,18 @@ class Partner
     {
         $this->marriages = new ArrayCollection();
         $this->agreements = new ArrayCollection();
+    }
+
+    public function getTitle(): ?string
+    {
+        return $this->title;
+    }
+
+    public function setTitle(string $title): self
+    {
+        $this->title = $title;
+
+        return $this;
     }
 
     public function getDni(): ?string

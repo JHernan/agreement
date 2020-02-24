@@ -62,6 +62,18 @@
         {% set alternate_weeks_text = "cada " ~ alternate_weeks ~ " semanas alternas" %}
     {% endif %}
 
+    {% if request.marriage.partnerFirst.title == 1 %}
+        {% set partner_first_title = 'D.' %}
+    {% else %}
+        {% set partner_first_title = 'Dª.' %}
+    {% endif %}
+
+    {% if request.marriage.partnerSecond.title == 1 %}
+        {% set partner_second_title = 'D.' %}
+    {% else %}
+        {% set partner_second_title = 'Dª.' %}
+    {% endif %}
+
     {% if request.agreement.getPartnerHomeUse == 1 %}
         {% set partner_home_use = request.marriage.partnerFirst.name %}
     {% else %}
@@ -128,12 +140,12 @@
                     <h1 style="text-align: center;">REUNIDOS</h1>
                     <div>
                         De una parte, <br />
-                        D/Dª. {{ request.marriage.partnerFirst.name }}, mayor de edad, de nacionalidad {{ request.marriage.partnerFirst.nationality }}, con domicilio en {{ request.marriage.partnerFirst.address }} de {{ request.marriage.partnerFirst.town }} y portador del Documento Nacional de Identidad núm. {{ request.marriage.partnerFirst.dni }}
+                        {{ partner_first_title }} {{ request.marriage.partnerFirst.name }}, mayor de edad, de nacionalidad {{ request.marriage.partnerFirst.nationality }}, con domicilio en {{ request.marriage.partnerFirst.address }} de {{ request.marriage.partnerFirst.town }} y portador del Documento Nacional de Identidad núm. {{ request.marriage.partnerFirst.dni }}
                     </div>
                     <br />
                     <div>
                         Y de otra parte, <br />
-                        D/Dª. {{ request.marriage.partnerSecond.name }}, mayor de edad, de nacionalidad {{ request.marriage.partnerSecond.nationality }}, con domicilio en {{ request.marriage.partnerSecond.address }} de {{ request.marriage.partnerSecond.town }} y portador del Documento Nacional de Identidad núm. {{ request.marriage.partnerSecond.dni }}
+                        {{ partner_second_title }} {{ request.marriage.partnerSecond.name }}, mayor de edad, de nacionalidad {{ request.marriage.partnerSecond.nationality }}, con domicilio en {{ request.marriage.partnerSecond.address }} de {{ request.marriage.partnerSecond.town }} y portador del Documento Nacional de Identidad núm. {{ request.marriage.partnerSecond.dni }}
                     </div>
                     <br />
                     <br />
