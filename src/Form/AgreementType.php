@@ -47,8 +47,9 @@ class AgreementType extends AbstractType
             ->add('pick_up_hour', TimeType::class, [
                 'label' => 'Hora de recogida',
                 'placeholder' => 'Selecciona una hora',
-                'input' => 'string',
-                'widget' => 'single_text'
+                'widget' => 'choice',
+                'hours' => ['15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00'],
+                'with_minutes' => false,
             ])
             ->add('delivery', ChoiceType::class, [
                 'choices'  => [

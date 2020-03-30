@@ -4,8 +4,8 @@ jQuery(document).ready(function() {
     $custodyHolder = $('select#request_agreement_custody');
     $pickUpHolder = $('select#request_agreement_pick_up').parent().parent();
     $pickUpSelect = $('select#request_agreement_pick_up');
-    $pickUpHourHolder = $('input#request_agreement_pick_up_hour').parent().parent();
-    $pickUpHourInput = $('input#request_agreement_pick_up_hour');
+    $pickUpHourHolder = $('select#request_agreement_pick_up_hour_hour').parent().parent();
+    $pickUpHourSelect = $('select#request_agreement_pick_up_hour_hour');
     $deliveryHolder = $('select#request_agreement_delivery').parent().parent();
     $deliverySelect = $('select#request_agreement_delivery');
     $deliveryHourHolder = $('input#request_agreement_delivery_hour').parent().parent();
@@ -208,12 +208,12 @@ jQuery(document).ready(function() {
 
     function pickUpHourShow(){
         $pickUpHourHolder.show();
-        $pickUpHourInput.prop('required',true);
+        $pickUpHourSelect.prop('required',true);
     }
 
     function pickUpHourHide(){
         $pickUpHourHolder.hide();
-        $pickUpHourInput.removeAttr('required');
+        $pickUpHourSelect.removeAttr('required');
     }
 
     function tooglePickUpHour(){

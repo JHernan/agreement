@@ -1,0 +1,11 @@
+{% form_theme form _self %}
+
+{% block _request_agreement_pick_up_hour_widget %}
+    {%- if widget == 'single_text' -%}
+        {{ block('form_widget_simple') }}
+    {%- else -%}
+        {%- set vars = widget == 'text' ? { 'attr': { 'size': 1 }} : {'attr': {'class': 'form-control'}} -%}
+            {{ form_widget(form.hour, vars) }}{% if with_minutes %}:{{ form_widget(form.minute, vars) }}{% endif %}{% if with_seconds %}:{{ form_widget(form.second, vars) }}{% endif %}
+    {%- endif -%}
+
+{% endblock %}
