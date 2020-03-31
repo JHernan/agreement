@@ -42,6 +42,7 @@
         {% set children_younger_text = "el menor" %}
         {% set children_of_younger_text = "del menor" %}
         {% set children_will_be_text = "el menor estará" %}
+        {% set children_will_be_pick_up_text = "el menor será recogido" %}
         {% set children_will_remain_text = "el menor permancerá" %}
         {% set children_pick_up_text = "El menor será recogido" %}
     {% elseif children_count > 1 %}
@@ -50,6 +51,7 @@
         {% set children_younger_text = "los menores" %}
         {% set children_of_younger_text = "de los menores" %}
         {% set children_will_be_text = "los menores estarán" %}
+        {% set children_will_be_pick_up_text = "los menores serán recogidos" %}
         {% set children_will_remain_text = "los menores permancerán" %}
         {% set children_pick_up_text = "Los menores serán recogidos" %}
         {% set each_children_text = ' para cada hijo' %}
@@ -101,19 +103,22 @@
     {% endif %}
 
     {% set pick_up = request.agreement.pickUp %}
+    {% set pick_up_school = request.agreement.pickUpSchool %}
+    {% set pick_up_home = request.agreement.pickUpHome %}
+    {% set pick_up_text = children_will_be_pick_up_text | capitalize %}
     {% if pick_up == 1 %}
-        {% set pick_up_text = "el centro escolar el viernes, a la finalización del horario lectivo" %}
+        {% if pick_up_school == 1 %}
+            {% set pick_up_text = pick_up_text ~ " los viernes a la finalización del horario escolar por el progenitor no custodio." %}
+        {% else %}
+            {% set pick_up_text = pick_up_text ~ " los lunes a la finalización del horario escolar por el progenitor no custodio." %}
+        {% endif %}
     {% else %}
         {% set pick_up_hour = request.agreement.pickUpHour %}
-        {% set pick_up_text = "el domicilio del otro progenitor el viernes a las " ~ pick_up_hour|date('H:i') ~ " horas" %}
-    {% endif %}
-
-    {% set delivery = request.agreement.delivery %}
-    {% if delivery == 1 %}
-        {% set delivery_text = "el centro escolar el lunes, al comienzo del horario lectivo" %}
-    {% else %}
-        {% set delivery_hour = request.agreement.deliveryHour %}
-        {% set delivery_text = "el domicilio del otro progenitor el domingo a las " ~ delivery_hour|date('H:i') ~ " horas" %}
+        {% if pick_up_home == 1 %}
+            {% set pick_up_text = pick_up_text ~ " en el domicilio del otro progenitor, el domingo a las " ~ pick_up_hour|date('H:i') ~ " horas." %}
+        {% else %}
+            {% set pick_up_text = pick_up_text ~ " en el domicilio del otro progenitor, el viernes a las " ~ pick_up_hour|date('H:i') ~ " horas." %}
+        {% endif %}
     {% endif %}
 
     {% set summer_period = request.agreement.summerPeriod %}
@@ -207,7 +212,7 @@
                     <div>
                         <b>GUARDA Y CUSTODIA.</b>
                         {% if custody == 'Compartida' %}
-                            La guarda y custodia {{ children_of_younger_text }}, será compartida. Para ello {{ children_will_be_text }} en compañía cada progenitor {{ alternate_weeks_text }} y será recogido por el progenitor no custodio en {{ delivery_text }}.
+                            La guarda y custodia {{ children_of_younger_text }}, será compartida. Para ello {{ children_will_be_text }} en compañía de cada progenitor {{ alternate_weeks_text }}.
                         {% else %}
                             La guardia y custodia {{ children_of_younger_text }} es atribuida a {{ custody_partner }}. {# TODO #}
                         {% endif %}
@@ -223,7 +228,7 @@
                             En principio el régimen de visitas se determinará previo acuerdo de ambos progenitores, pero para el caso de desacuerdo y como mínimo, se estará al siguiente régimen, debiendo ser interpretado con criterios de flexibilidad y buena fe, dado que se contempla como un derecho {{ children_of_younger_text }}.
                             <br />
                             <br />
-                            <b>A)</b> {% if children_count == 1 %} Al menor {% elseif children_count > 1 %} A los menores {% endif %} en compañía del progenitor no custodio durante fines de semana alternos. {{ children_pick_up_text }} en {{ pick_up_text }} y será devuelto por el progenitor no custodio en {{ delivery_text }}.
+                            <b>A)</b> {{ children_younger_text | capitalize }} estará en compañía del progenitor no custodio durante fines de semana alternos. {{ pick_up_text }}
                         {% endif %}
                         <br />
                         <br />

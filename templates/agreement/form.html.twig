@@ -37,8 +37,7 @@
     'form/_request_marriage_children_entry_row.html.twig',
     'form/_request_agreement_alimony_alimony_row.html.twig',
     'form/_request_agreement_compensatory_pension_isPension_row.html.twig',
-    'form/_request_agreement_compensatory_pension_hasLimit_row.html.twig',
-    'form/_request_agreement_pick_up_hour_widget.html.twig'
+    'form/_request_agreement_compensatory_pension_hasLimit_row.html.twig'
 ] %}
 
 <section class="contact_area section_gap">
@@ -431,13 +430,7 @@
 
                                         <div class="form-group">
                                             {{
-                                                form_row(form.agreement.pick_up_hour)
-                                            }}
-                                        </div>
-
-                                        <div class="form-group">
-                                            {{
-                                                form_row(form.agreement.delivery, {'attr': {
+                                                form_row(form.agreement.pick_up_school, {'attr': {
                                                     'class': 'form-control',
                                                 }})
                                             }}
@@ -445,7 +438,15 @@
 
                                         <div class="form-group">
                                             {{
-                                                form_row(form.agreement.delivery_hour, {'attr': {
+                                                form_row(form.agreement.pick_up_home, {'attr': {
+                                                    'class': 'form-control',
+                                                }})
+                                            }}
+                                        </div>
+
+                                        <div class="form-group">
+                                            {{
+                                                form_row(form.agreement.pick_up_hour, {'attr': {
                                                     'class': 'form-control',
                                                 }})
                                             }}

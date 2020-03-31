@@ -4,12 +4,12 @@ jQuery(document).ready(function() {
     $custodyHolder = $('select#request_agreement_custody');
     $pickUpHolder = $('select#request_agreement_pick_up').parent().parent();
     $pickUpSelect = $('select#request_agreement_pick_up');
-    $pickUpHourHolder = $('select#request_agreement_pick_up_hour_hour').parent().parent();
-    $pickUpHourSelect = $('select#request_agreement_pick_up_hour_hour');
-    $deliveryHolder = $('select#request_agreement_delivery').parent().parent();
-    $deliverySelect = $('select#request_agreement_delivery');
-    $deliveryHourHolder = $('input#request_agreement_delivery_hour').parent().parent();
-    $deliveryHourInput = $('input#request_agreement_delivery_hour');
+    $pickUpSchoolHolder = $('select#request_agreement_pick_up_school').parent().parent();
+    $pickUpSchoolSelect = $('select#request_agreement_pick_up_school');
+    $pickUpHomeHolder = $('select#request_agreement_pick_up_home').parent().parent();
+    $pickUpHomeSelect = $('select#request_agreement_pick_up_home');
+    $pickUpHourHolder = $('select#request_agreement_pick_up_hour').parent().parent();
+    $pickUpHourSelect = $('select#request_agreement_pick_up_hour');
     $alternateWeeksHolder = $('input#request_agreement_alternate_weeks').parent().parent();
     $alternateWeeksInput = $('input#request_agreement_alternate_weeks');
     $summerPeriodHolder = $('select#request_agreement_summer_period').parent().parent();
@@ -41,9 +41,9 @@ jQuery(document).ready(function() {
 
 
     pickUpHide();
+    pickUpSchoolHide();
+    pickUpHomeHide();
     pickUpHourHide();
-    deliveryHide();
-    deliveryHourHide();
     alternateWeeksHide();
     summerPeriodHide();
     alimonyFieldsHide();
@@ -59,11 +59,7 @@ jQuery(document).ready(function() {
     });
 
     $pickUpSelect.change(function(){
-        tooglePickUpHour();
-    });
-
-    $deliverySelect.change(function(){
-        toogleDeliveryHour();
+        tooglePickUpOptions();
     });
 
     $partnerFirstField.change(function(){
@@ -206,6 +202,58 @@ jQuery(document).ready(function() {
         $pickUpSelect.removeAttr('required');
     }
 
+    function tooglePickUpOptions(){
+        if($pickUpSelect.children("option:selected").val() == 1){
+            pickUpSchoolShow();
+            pickUpHomeHide();
+            pickUpHourHide();
+        }else if($pickUpSelect.children("option:selected").val() == 2){
+            pickUpHomeShow();
+            pickUpHourShow();
+            pickUpSchoolHide();
+        }else{
+            pickUpSchoolHide();
+            pickUpHomeHide();
+            pickUpHourHide();
+        }
+    }
+
+    function pickUpSchoolShow(){
+        $pickUpSchoolHolder.show();
+        $pickUpSchoolSelect.prop('required',true);
+    }
+
+    function pickUpSchoolHide(){
+        $pickUpSchoolHolder.hide();
+        $pickUpSchoolSelect.removeAttr('required');
+    }
+
+    function tooglePickUpSchool(){
+        if($pickUpSchoolSelect.children("option:selected").val() == 2){
+            pickUpSchoolShow();
+        }else{
+            pickUpSchoolHide();
+        }
+    }
+
+    function pickUpHomeShow(){
+        $pickUpHomeHolder.show();
+        $pickUpHomeSelect.prop('required',true);
+    }
+
+    function pickUpHomeHide(){
+        $pickUpHomeHolder.hide();
+        $pickUpHomeSelect.removeAttr('required');
+    }
+
+    function tooglePickUpHome(){
+        if($pickUpHomeSelect.children("option:selected").val() == 2){
+            pickUpHomeShow();
+        }else{
+            pickUpHomeHide();
+        }
+    }
+
     function pickUpHourShow(){
         $pickUpHourHolder.show();
         $pickUpHourSelect.prop('required',true);
@@ -221,34 +269,6 @@ jQuery(document).ready(function() {
             pickUpHourShow();
         }else{
             pickUpHourHide();
-        }
-    }
-
-    function deliveryShow(){
-        $deliveryHolder.show();
-        $deliverySelect.prop('required',true);
-    }
-
-    function deliveryHide(){
-        $deliveryHolder.hide();
-        $deliverySelect.removeAttr('required');
-    }
-
-    function deliveryHourShow(){
-        $deliveryHourHolder.show();
-        $deliveryHourInput.prop('required',true);
-    }
-
-    function deliveryHourHide(){
-        $deliveryHourHolder.hide();
-        $deliveryHourInput.removeAttr('required');
-    }
-
-    function toogleDeliveryHour(){
-        if($deliverySelect.children("option:selected").val() == 2){
-            deliveryHourShow();
-        }else{
-            deliveryHourHide();
         }
     }
 
@@ -395,9 +415,7 @@ jQuery(document).ready(function() {
 
     function showCustodyBlockCompartida(){
         pickUpShow();
-        tooglePickUpHour();
-        deliveryShow();
-        toogleDeliveryHour();
+        tooglePickUpOptions();
         alternateWeeksShow();
         summerPeriodShow();
         $alimonyHolder.show();
@@ -415,9 +433,9 @@ jQuery(document).ready(function() {
 
     function showCustodyBlockMonoparental(){
         pickUpHide();
+        pickUpSchoolHide();
+        pickUpHomeHide();
         pickUpHourHide();
-        deliveryHide();
-        deliveryHourHide();
         alternateWeeksHide();
         summerPeriodHide();
         $alimonyHolder.show();
@@ -432,9 +450,9 @@ jQuery(document).ready(function() {
 
     function hideCustodyBlockBoth(){
         pickUpHide();
+        pickUpSchoolHide();
+        pickUpHomeHide();
         pickUpHourHide();
-        deliveryHide();
-        deliveryHourHide();
         alternateWeeksHide();
         summerPeriodHide();
         $alimonyHolder.hide();

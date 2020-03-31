@@ -10,10 +10,14 @@ class Agreement
     const CUSTODY_CHOICES = ['Compartida', 'Monoparental'];
     const CUSTODY_COMPARTIDA = self::CUSTODY_CHOICES[0];
     const CUSTODY_MONOPARENTAL = self::CUSTODY_CHOICES[1];
-    const PICK_UP_CHOICES_LABELS = ['El centro escolar el viernes, a la finalización del horario lectivo', 'El domicilio del otro progenitor el viernes a una hora determinada'];
+    const PICK_UP_CHOICES_LABELS = ['En el centro escolar', 'En el domicilio del progenitor no custodio'];
     const PICK_UP_CHOICES_VALUES = [1,  2];
-    const DELIVERY_CHOICES_LABELS = ['El centro escolar el lunes, al comienzo del horario lectivo', 'El domicilio del otro progenitor el domingo a una hora determinada'];
-    const DELIVERY_CHOICES_VALUES = [1, 2];
+    const PICK_UP_SCHOOL_CHOICES_LABELS = ['Los viernes a la finalización del horario escolar por el progenitor no custodio', 'Los lunes a la finalización del horario escolar por el progenitor no custodio'];
+    const PICK_UP_SCHOOL_CHOICES_VALUES = [1, 2];
+    const PICK_UP_HOME_CHOICES_LABELS = ['Los domingos en el domicilio del progenitor no custodio a una hora determinada', 'Los viernes en el domicilio del progenitor no custodio a una hora determinada'];
+    const PICK_UP_HOME_CHOICES_VALUES = [1, 2];
+    const PICK_UP_HOUR_CHOICES_LABELS = ['15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00'];
+    const PICK_UP_HOUR_CHOICES_VALUES = ['15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00'];
     const SUMMER_PERIOD_CHOICES_LABELS = ['En periodos de dos semanas', 'En dos periodos iguales'];
     const SUMMER_PERIOD_CHOICES_VALUES = [1, 2];
     const PARTNER_CHOICES_LABELS = ['Cónyuge 1', 'Cónyuge 2'];
@@ -37,22 +41,22 @@ class Agreement
     private $pick_up;
 
     /**
-     * @Assert\NotBlank(groups={"pick_up_hour"})
-     * @Assert\Time
+     * @Assert\NotBlank(groups={"pick_up_school"})
+     * @Assert\Choice(choices=Agreement::PICK_UP_SCHOOL_CHOICES_VALUES, message="Selecciona una opción válida.")
+     */
+    private $pick_up_school;
+
+    /**
+     * @Assert\NotBlank(groups={"pick_up_home"})
+     * @Assert\Choice(choices=Agreement::PICK_UP_HOME_CHOICES_VALUES, message="Selecciona una opción válida.")
+     */
+    private $pick_up_home;
+
+    /**
+     * @Assert\NotBlank(groups={"pick_up_home"})
+     * @Assert\Choice(choices=Agreement::PICK_UP_HOUR_CHOICES_VALUES, message="Selecciona una opción válida.")
      */
     private $pick_up_hour;
-
-    /**
-     * @Assert\NotBlank(groups={"compartida"})
-     * @Assert\Choice(choices=Agreement::DELIVERY_CHOICES_VALUES, message="Selecciona una opción válida.")
-     */
-    private $delivery;
-
-    /**
-     * @Assert\NotBlank(groups={"delivery_hour"})
-     * @Assert\Time
-     */
-    private $delivery_hour;
 
     /**
      * @Assert\NotBlank(groups={"compartida"})
@@ -134,6 +138,30 @@ class Agreement
         return $this;
     }
 
+    public function getPickUpSchool()
+    {
+        return $this->pick_up_school;
+    }
+
+    public function setPickUpSchool(string $pick_up_school): self
+    {
+        $this->pick_up_school = $pick_up_school;
+
+        return $this;
+    }
+
+    public function getPickUpHome()
+    {
+        return $this->pick_up_home;
+    }
+
+    public function setPickUpHome(string $pick_up_home): self
+    {
+        $this->pick_up_home = $pick_up_home;
+
+        return $this;
+    }
+
     public function getPickUpHour()
     {
         return $this->pick_up_hour;
@@ -142,30 +170,6 @@ class Agreement
     public function setPickUpHour(string $pick_up_hour): self
     {
         $this->pick_up_hour = $pick_up_hour;
-
-        return $this;
-    }
-
-    public function getDelivery()
-    {
-        return $this->delivery;
-    }
-
-    public function setDelivery(string $delivery): self
-    {
-        $this->delivery = $delivery;
-
-        return $this;
-    }
-
-    public function getDeliveryHour()
-    {
-        return $this->delivery_hour;
-    }
-
-    public function setDeliveryHour(string $delivery_hour): self
-    {
-        $this->delivery_hour = $delivery_hour;
 
         return $this;
     }

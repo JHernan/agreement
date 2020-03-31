@@ -44,26 +44,34 @@ class AgreementType extends AbstractType
                 'label' => 'Recogida',
                 'placeholder' => 'Seleccione una opción',
             ])
-            ->add('pick_up_hour', TimeType::class, [
-                'label' => 'Hora de recogida',
-                'placeholder' => 'Selecciona una hora',
-                'widget' => 'choice',
-                'hours' => ['15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00'],
-                'with_minutes' => false,
-            ])
-            ->add('delivery', ChoiceType::class, [
+            ->add('pick_up_school', ChoiceType::class, [
                 'choices'  => [
-                    Agreement::DELIVERY_CHOICES_LABELS[0] => Agreement::DELIVERY_CHOICES_VALUES[0],
-                    Agreement::DELIVERY_CHOICES_LABELS[1] => Agreement::DELIVERY_CHOICES_VALUES[1],
+                    Agreement::PICK_UP_SCHOOL_CHOICES_LABELS[0] => Agreement::PICK_UP_SCHOOL_CHOICES_VALUES[0],
+                    Agreement::PICK_UP_SCHOOL_CHOICES_LABELS[1] => Agreement::PICK_UP_SCHOOL_CHOICES_VALUES[1],
                 ],
-                'label' => 'Entrega',
+                'label' => 'Colegio',
                 'placeholder' => 'Seleccione una opción',
             ])
-            ->add('delivery_hour', TimeType::class, [
-                'label' => 'Hora de entrega',
+            ->add('pick_up_home', ChoiceType::class, [
+                'choices'  => [
+                    Agreement::PICK_UP_HOME_CHOICES_LABELS[0] => Agreement::PICK_UP_HOME_CHOICES_VALUES[0],
+                    Agreement::PICK_UP_HOME_CHOICES_LABELS[1] => Agreement::PICK_UP_HOME_CHOICES_VALUES[1],
+                ],
+                'label' => 'Domicilio',
+                'placeholder' => 'Seleccione una opción',
+            ])
+            ->add('pick_up_hour', ChoiceType::class, [
+                'label' => 'Hora de recogida',
                 'placeholder' => 'Selecciona una hora',
-                'input' => 'string',
-                'widget' => 'single_text'
+                'choices'  => [
+                    Agreement::PICK_UP_HOUR_CHOICES_LABELS[0] => Agreement::PICK_UP_HOUR_CHOICES_VALUES[0],
+                    Agreement::PICK_UP_HOUR_CHOICES_LABELS[1] => Agreement::PICK_UP_HOUR_CHOICES_VALUES[1],
+                    Agreement::PICK_UP_HOUR_CHOICES_LABELS[2] => Agreement::PICK_UP_HOUR_CHOICES_VALUES[2],
+                    Agreement::PICK_UP_HOUR_CHOICES_LABELS[3] => Agreement::PICK_UP_HOUR_CHOICES_VALUES[3],
+                    Agreement::PICK_UP_HOUR_CHOICES_LABELS[4] => Agreement::PICK_UP_HOUR_CHOICES_VALUES[4],
+                    Agreement::PICK_UP_HOUR_CHOICES_LABELS[5] => Agreement::PICK_UP_HOUR_CHOICES_VALUES[5],
+                    Agreement::PICK_UP_HOUR_CHOICES_LABELS[6] => Agreement::PICK_UP_HOUR_CHOICES_VALUES[6],
+                ],
             ])
             ->add('alternate_weeks', null, [
                 'label' => 'Semanas alternas de la custodia',
