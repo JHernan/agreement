@@ -41,7 +41,6 @@
                                 <li class="nav-item {{ app.request.get('_route') == 'home' ? 'active' }}"><a class="nav-link" href="{{ path('home') }}">Inicio</a></li>
                                 <li class="nav-item"><a class="nav-link" href="about-us.html">About</a></li>
                                 <li class="nav-item {{ app.request.get('_route') == 'form' ? 'active' }}"><a class="nav-link" href="{{ path('form') }}">Formulario</a></li>
-                                <li class="nav-item {{ app.request.get('_route') == 'price' ? 'active' }}"><a class="nav-link" href="{{ path('price') }}">Precios</a></li>
                                 <li class="nav-item submenu dropdown">
                                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                                        aria-expanded="false">Pages</a>
@@ -499,7 +498,6 @@
                                         <ul class="list">
                                             <li><a href="{{ path('home') }}">Inicio</a></li>
                                             <li><a href="{{ path('form') }}">Formulario</a></li>
-                                            <li><a href="{{ path('price') }}">Precios</a></li>
                                             <li><a href="{{ path('contact') }}">Contacto</a></li>
                                         </ul>
                                     </div>

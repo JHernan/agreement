@@ -68,13 +68,6 @@ class AgreementController extends Controller
     }
 
     /**
-     * @Route("/precio", name="price", methods={"GET"})
-     */
-    public function priceAction(Request $request){
-        return $this->render('agreement/price.html.twig');
-    }
-
-    /**
      * @Route("/contacto", name="contact", methods={"GET"})
      */
     public function contactAction(Request $request){
