@@ -6,6 +6,7 @@ namespace App\Form;
 use App\Entity\Child;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -31,11 +32,11 @@ class ChildType extends AbstractType
                 'label' => 'Registro Civil',
                 'attr' => ['class' => 'form-control'],
             ])
-            ->add('volume', null, [
+            ->add('volume', IntegerType::class, [
                 'label' => 'Volumen del Registro Civil',
                 'attr' => ['class' => 'form-control'],
             ])
-            ->add('page', null, [
+            ->add('page', IntegerType::class, [
                 'label' => 'Página del Registro Civil',
                 'attr' => ['class' => 'form-control'],
             ])
