@@ -16,11 +16,13 @@ class Registry
 
     /**
      * @Assert\NotBlank()
+     * @Assert\GreaterThan(0)
      */
     private $volume;
 
     /**
      * @Assert\NotBlank()
+     * @Assert\GreaterThan(0)
      */
     private $page;
 

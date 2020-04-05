@@ -5,6 +5,7 @@ namespace App\Form;
 
 use App\Entity\Registry;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -16,10 +17,10 @@ class RegistryType extends AbstractType
             ->add('town', null, [
                 'label' => 'Ciudad del registro civil'
             ])
-            ->add('volume', null, [
+            ->add('volume', IntegerType::class, [
                 'label' => 'Volumen del registro civil'
             ])
-            ->add('page', null, [
+            ->add('page', IntegerType::class, [
                 'label' => 'Página del registro civil'
             ])
         ;
