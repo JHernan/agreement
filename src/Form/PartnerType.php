@@ -26,8 +26,11 @@ class PartnerType extends AbstractType
             ->add('dni', null, [
                 'label' => 'DNI'
             ])
-            ->add('name', null, [
+            ->add('first_name', null, [
                 'label' => 'Nombre'
+            ])
+            ->add('last_name', null, [
+                'label' => 'Apellidos'
             ])
             ->add('nationality', null, [
                 'label' => 'Nacionalidad'

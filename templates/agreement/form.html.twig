@@ -113,13 +113,26 @@
                                                     }})
                                                 }}
                                             </div>
+                                        </div>
+
+                                        <div class="row">
                                             <div class="col-md-6">
                                                 {{
-                                                    form_row(form.marriage.partner_first.name, {'attr': {
+                                                    form_row(form.marriage.partner_first.first_name, {'attr': {
                                                         'class': 'form-control',
                                                         'placeholder': 'Nombre del primer cónyuge',
                                                         'onfocus': 'this.placeholder = ""',
                                                         'onblur': 'this.placeholder = "Nombre del primer cónyuge"',
+                                                    }})
+                                                }}
+                                            </div>
+                                            <div class="col-md-6">
+                                                {{
+                                                    form_row(form.marriage.partner_first.last_name, {'attr': {
+                                                        'class': 'form-control',
+                                                        'placeholder': 'Apellidos del primer cónyuge',
+                                                        'onfocus': 'this.placeholder = ""',
+                                                        'onblur': 'this.placeholder = "Apellidos del primer cónyuge"',
                                                     }})
                                                 }}
                                             </div>
@@ -185,13 +198,26 @@
                                                     }})
                                                 }}
                                             </div>
+                                        </div>
+
+                                        <div class="row">
                                             <div class="col-md-6">
                                                 {{
-                                                    form_row(form.marriage.partner_second.name, {'attr': {
+                                                    form_row(form.marriage.partner_second.first_name, {'attr': {
                                                         'class': 'form-control',
                                                         'placeholder': 'Nombre del segundo cónyuge',
                                                         'onfocus': 'this.placeholder = ""',
                                                         'onblur': 'this.placeholder = "Nombre del segundo cónyuge"',
+                                                    }})
+                                                }}
+                                            </div>
+                                            <div class="col-md-6">
+                                                {{
+                                                    form_row(form.marriage.partner_second.last_name, {'attr': {
+                                                        'class': 'form-control',
+                                                        'placeholder': 'Apellido del segundo cónyuge',
+                                                        'onfocus': 'this.placeholder = ""',
+                                                        'onblur': 'this.placeholder = "Apellido del segundo cónyuge"',
                                                     }})
                                                 }}
                                             </div>

@@ -70,55 +70,58 @@
     {% else %}
         {% set partner_second_title = 'Dª.' %}
     {% endif %}
+    
+    {% set partner_first_full_name = request.marriage.partnerFirst.firstName ~ ' ' ~ request.marriage.partnerFirst.lastName %}
+    {% set partner_second_full_name = request.marriage.partnerSecond.firstName ~ ' ' ~ request.marriage.partnerSecond.LastName %}
 
     {% if request.agreement.getPartnerHomeUse == 1 %}
-        {% set partner_home_use = request.marriage.partnerFirst.name %}
+        {% set partner_home_use = partner_first_full_name %}
     {% else %}
-        {% set partner_home_use = request.marriage.partnerSecond.name %}
+        {% set partner_home_use = partner_second_full_name %}
     {% endif %}
 
     {% if request.agreement.partnerSummer == 1 %}
-        {% set partner_summer_even = request.marriage.partnerFirst.name %}
-        {% set partner_summer_odd = request.marriage.partnerSecond.name %}
+        {% set partner_summer_even = partner_first_full_name %}
+        {% set partner_summer_odd = partner_second_full_name %}
     {% else %}
-        {% set partner_summer_even = request.marriage.partnerSecond.name %}
-        {% set partner_summer_odd = request.marriage.partnerFirst.name %}
+        {% set partner_summer_even = partner_second_full_name %}
+        {% set partner_summer_odd = partner_first_full_name %}
     {% endif %}
 
     {% if request.agreement.partnerHolyWeek == 1 %}
-        {% set partner_holy_week_even = request.marriage.partnerFirst.name %}
-        {% set partner_holy_week_odd = request.marriage.partnerSecond.name %}
+        {% set partner_holy_week_even = partner_first_full_name %}
+        {% set partner_holy_week_odd = partner_second_full_name %}
     {% else %}
-        {% set partner_holy_week_even = request.marriage.partnerSecond.name %}
-        {% set partner_holy_week_odd = request.marriage.partnerFirst.name %}
+        {% set partner_holy_week_even = partner_second_full_name %}
+        {% set partner_holy_week_odd = partner_first_full_name %}
     {% endif %}
 
     {% if request.agreement.partnerChristmas == 1 %}
-        {% set partner_christmas_even = request.marriage.partnerFirst.name %}
-        {% set partner_christmas_odd = request.marriage.partnerSecond.name %}
+        {% set partner_christmas_even = partner_first_full_name %}
+        {% set partner_christmas_odd = partner_second_full_name %}
     {% else %}
-        {% set partner_christmas_even = request.marriage.partnerSecond.name %}
-        {% set partner_christmas_odd = request.marriage.partnerFirst.name %}
+        {% set partner_christmas_even = partner_second_full_name %}
+        {% set partner_christmas_odd = partner_first_full_name %}
     {% endif %}
 
     {% if request.agreement.partner == 1 %}
-        {% set custody_partner = request.marriage.partnerFirst.name %}
+        {% set custody_partner = partner_first_full_name %}
     {% else %}
-        {% set custody_partner = request.marriage.partnerSecond.name %}
+        {% set custody_partner = partner_second_full_name %}
     {% endif %}
 
     {% if request.agreement.alimony.debtor == 1 %}
-        {% set debtor = request.marriage.partnerFirst.name %}
-        {% set creditor = request.marriage.partnerSecond.name %}
+        {% set debtor = partner_first_full_name %}
+        {% set creditor = partner_second_full_name %}
     {% else %}
-        {% set debtor = request.marriage.partnerSecond.name %}
-        {% set creditor = request.marriage.partnerFirst.name %}
+        {% set debtor = partner_second_full_name %}
+        {% set creditor = partner_first_full_name %}
     {% endif %}
 
     {% if request.agreement.compensatoryPension.creditor == 1 %}
-        {% set pensionCreditor = request.marriage.partnerFirst.name %}
+        {% set pensionCreditor = partner_first_full_name %}
     {% else %}
-        {% set pensionCreditor = request.marriage.partnerSecond.name %}
+        {% set pensionCreditor = partner_second_full_name %}
     {% endif %}
 
     {% if children_count > 0 %}
@@ -148,9 +151,6 @@
             {% set summer_period_text = "en dos periodos iguales" %}
         {% endif %}
     {% endif %}
-
-    {% set parent_first_name = request.marriage.partnerFirst.name %}
-    {% set parent_second_name = request.marriage.partnerSecond.name %}
 
     {% if request.agreement.compensatoryPension.isPension %}
         {% if request.agreement.compensatoryPension.termTime == 1 %}
@@ -182,12 +182,12 @@
                     <h1 style="text-align: center;">REUNIDOS</h1>
                     <div>
                         De una parte, <br />
-                        {{ partner_first_title }} {{ request.marriage.partnerFirst.name }}, mayor de edad, de nacionalidad {{ request.marriage.partnerFirst.nationality }}, con domicilio en {{ request.marriage.partnerFirst.address }} de {{ request.marriage.partnerFirst.town }} y portador del Documento Nacional de Identidad núm. {{ request.marriage.partnerFirst.dni }}
+                        {{ partner_first_title }} {{ partner_first_full_name }}, mayor de edad, de nacionalidad {{ request.marriage.partnerFirst.nationality }}, con domicilio en {{ request.marriage.partnerFirst.address }} de {{ request.marriage.partnerFirst.town }} y portador del Documento Nacional de Identidad núm. {{ request.marriage.partnerFirst.dni }}
                     </div>
                     <br />
                     <div>
                         Y de otra parte, <br />
-                        {{ partner_second_title }} {{ request.marriage.partnerSecond.name }}, mayor de edad, de nacionalidad {{ request.marriage.partnerSecond.nationality }}, con domicilio en {{ request.marriage.partnerSecond.address }} de {{ request.marriage.partnerSecond.town }} y portador del Documento Nacional de Identidad núm. {{ request.marriage.partnerSecond.dni }}
+                        {{ partner_second_title }} {{ partner_second_full_name }}, mayor de edad, de nacionalidad {{ request.marriage.partnerSecond.nationality }}, con domicilio en {{ request.marriage.partnerSecond.address }} de {{ request.marriage.partnerSecond.town }} y portador del Documento Nacional de Identidad núm. {{ request.marriage.partnerSecond.dni }}
                     </div>
                     <br />
                     <br />
@@ -204,7 +204,7 @@
                     <br />
                     <div>
                     {% if(children_count > 0) %}
-                        <b>Segundo.</b> Que de dicha unión {{ children_born_text }} {{ children_count }} hijos.
+                        <b>Segundo.</b> Que de dicha unión {{ children_born_text }} {{ children_count }} {{ children_text }}.
                         {% for child in request.marriage.children %}
                             {{ child.name }} el día {{ child.date | localizeddate('none', 'none', 'es_ES', null, "d 'de' MMMM 'de' Y") }}, que fue inscrito en el Registro Civil de {{ child.registry }}, en el Tomo {{ child.volume }}, página {{ child.page }}.<br />
                         {% endfor %}
@@ -365,8 +365,8 @@
                     </div>
                     <div>
                         <div style="width: 100%; margin-top: 50px;">
-                            <div style="width: 50%; text-align: center; float: left;">{{ request.marriage.partnerFirst.name }}</div>
-                            <div style="width: 50%; text-align: center; float: left;">{{ request.marriage.partnerSecond.name }}</div>
+                            <div style="width: 50%; text-align: center; float: left;">{{ partner_first_full_name }}</div>
+                            <div style="width: 50%; text-align: center; float: left;">{{ partner_second_full_name }}</div>
                         </div>
                     </div>
                 </div>

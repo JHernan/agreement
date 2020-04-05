@@ -25,7 +25,12 @@ class Partner
     /**
      * @Assert\NotBlank()
      */
-    private $name;
+    private $first_name;
+
+    /**
+     * @Assert\NotBlank()
+     */
+    private $last_name;
 
     /**
      * @Assert\NotBlank()
@@ -77,14 +82,26 @@ class Partner
         return $this;
     }
 
-    public function getName(): ?string
+    public function getFirstName(): ?string
     {
-        return $this->name;
+        return $this->first_name;
     }
 
-    public function setName(string $name): self
+    public function setFirstName(string $first_name): self
     {
-        $this->name = $name;
+        $this->first_name = $first_name;
+
+        return $this;
+    }
+
+    public function getLastName(): ?string
+    {
+        return $this->last_name;
+    }
+
+    public function setLastName(string $last_name): self
+    {
+        $this->last_name = $last_name;
 
         return $this;
     }

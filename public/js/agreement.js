@@ -30,8 +30,10 @@ jQuery(document).ready(function() {
     $debtorSelect = $('select#request_agreement_alimony_debtor');
     $creditorHolder = $('input#request_agreement_alimony_creditor').parent().parent().parent();
     $creditorInput = $('input#request_agreement_alimony_creditor');
-    $partnerFirstField = $('input#request_marriage_partner_first_name');
-    $partnerSecondField = $('input#request_marriage_partner_second_name');
+    $partnerFirstFirstNameField = $('input#request_marriage_partner_first_first_name');
+    $partnerFirstLastNameField = $('input#request_marriage_partner_first_last_name');
+    $partnerSecondFirstNameField = $('input#request_marriage_partner_second_first_name');
+    $partnerSecondLastNameField = $('input#request_marriage_partner_second_last_name');
     $alimonySwitchHolder = $('#alimony-switch-holder').parent();
     $alimonyHolder = $('#alimony-holder').parent();
     $alimonyCheckbox = $('input#request_agreement_alimony_alimony');
@@ -74,24 +76,44 @@ jQuery(document).ready(function() {
         tooglePickUpOptions();
     });
 
-    $partnerFirstField.change(function(){
-        changePartnerUseHomeOption(1, $(this).val());
-        changePartnerSummerOption(1, $(this).val());
-        changePartnerHolyWeekOption(1, $(this).val());
-        changePartnerChristmasOption(1, $(this).val());
-        changePartnerOption(1, $(this).val());
-        changeDebtorOption(1, $(this).val());
-        changePensionCreditorOption(1, $(this).val())
+    $partnerFirstFirstNameField.change(function(){
+        changePartnerUseHomeOption(1, $(this).val() + ' ' + $partnerFirstLastNameField.val());
+        changePartnerSummerOption(1, $(this).val() + ' ' + $partnerFirstLastNameField.val());
+        changePartnerHolyWeekOption(1, $(this).val() + ' ' + $partnerFirstLastNameField.val());
+        changePartnerChristmasOption(1, $(this).val() + ' ' + $partnerFirstLastNameField.val());
+        changePartnerOption(1, $(this).val() + ' ' + $partnerFirstLastNameField.val());
+        changeDebtorOption(1, $(this).val() + ' ' + $partnerFirstLastNameField.val());
+        changePensionCreditorOption(1, $(this).val() + ' ' + $partnerFirstLastNameField.val())
     });
 
-    $partnerSecondField.change(function(){
-        changePartnerUseHomeOption(2, $(this).val());
-        changePartnerSummerOption(2, $(this).val());
-        changePartnerHolyWeekOption(2, $(this).val());
-        changePartnerChristmasOption(2, $(this).val());
-        changePartnerOption(2, $(this).val());
-        changeDebtorOption(2, $(this).val());
-        changePensionCreditorOption(2, $(this).val())
+    $partnerFirstLastNameField.change(function(){
+        changePartnerUseHomeOption(1, $partnerFirstFirstNameField.val() + ' ' + $(this).val());
+        changePartnerSummerOption(1, $partnerFirstFirstNameField.val() + ' ' + $(this).val());
+        changePartnerHolyWeekOption(1, $partnerFirstFirstNameField.val() + ' ' + $(this).val());
+        changePartnerChristmasOption(1, $partnerFirstFirstNameField.val() + ' ' + $(this).val());
+        changePartnerOption(1, $partnerFirstFirstNameField.val() + ' ' + $(this).val());
+        changeDebtorOption(1, $partnerFirstFirstNameField.val() + ' ' + $(this).val());
+        changePensionCreditorOption(1, $partnerFirstFirstNameField.val() + ' ' + $(this).val())
+    });
+
+    $partnerSecondFirstNameField.change(function(){
+        changePartnerUseHomeOption(2, $(this).val() + ' ' + $partnerSecondLastNameField.val());
+        changePartnerSummerOption(2, $(this).val() + ' ' + $partnerSecondLastNameField.val());
+        changePartnerHolyWeekOption(2, $(this).val() + ' ' + $partnerSecondLastNameField.val());
+        changePartnerChristmasOption(2, $(this).val() + ' ' + $partnerSecondLastNameField.val());
+        changePartnerOption(2, $(this).val() + ' ' + $partnerSecondLastNameField.val());
+        changeDebtorOption(2, $(this).val() + ' ' + $partnerSecondLastNameField.val());
+        changePensionCreditorOption(2, $(this).val() + ' ' + $partnerSecondLastNameField.val())
+    });
+
+    $partnerSecondLastNameField.change(function(){
+        changePartnerUseHomeOption(2, $partnerSecondFirstNameField.val() + ' ' + $(this).val());
+        changePartnerSummerOption(2, $partnerSecondFirstNameField.val() + ' ' + $(this).val());
+        changePartnerHolyWeekOption(2, $partnerSecondFirstNameField.val() + ' ' + $(this).val());
+        changePartnerChristmasOption(2, $partnerSecondFirstNameField.val() + ' ' + $(this).val());
+        changePartnerOption(2, $partnerSecondFirstNameField.val() + ' ' + $(this).val());
+        changeDebtorOption(2, $partnerSecondFirstNameField.val() + ' ' + $(this).val());
+        changePensionCreditorOption(2, $partnerSecondFirstNameField.val() + ' ' + $(this).val())
     });
 
     $debtorSelect.change(function(){
@@ -130,20 +152,20 @@ jQuery(document).ready(function() {
     });
 
     function initPartnerFields(){
-        changePartnerUseHomeOption(1, $partnerFirstField.val());
-        changePartnerUseHomeOption(2, $partnerSecondField.val());
-        changePartnerSummerOption(1, $partnerFirstField.val());
-        changePartnerSummerOption(2, $partnerSecondField.val());
-        changePartnerHolyWeekOption(1, $partnerFirstField.val());
-        changePartnerHolyWeekOption(2, $partnerSecondField.val());
-        changePartnerChristmasOption(1, $partnerFirstField.val());
-        changePartnerChristmasOption(2, $partnerSecondField.val());
-        changePartnerOption(1, $partnerFirstField.val());
-        changePartnerOption(2, $partnerSecondField.val());
-        changeDebtorOption(1, $partnerFirstField.val());
-        changeDebtorOption(2, $partnerSecondField.val());
-        changePensionCreditorOption(1, $partnerFirstField.val());
-        changePensionCreditorOption(2, $partnerSecondField.val());
+        changePartnerUseHomeOption(1, $partnerFirstFirstNameField.val() + ' ' + $partnerFirstLastNameField.val());
+        changePartnerUseHomeOption(2, $partnerSecondFirstNameField.val() + ' ' + $partnerSecondLastNameField.val());
+        changePartnerSummerOption(1, $partnerFirstFirstNameField.val() + ' ' + $partnerFirstLastNameField.val());
+        changePartnerSummerOption(2, $partnerSecondFirstNameField.val() + ' ' + $partnerSecondLastNameField.val());
+        changePartnerHolyWeekOption(1, $partnerFirstFirstNameField.val() + ' ' + $partnerFirstLastNameField.val());
+        changePartnerHolyWeekOption(2, $partnerSecondFirstNameField.val() + ' ' + $partnerSecondLastNameField.val());
+        changePartnerChristmasOption(1, $partnerFirstFirstNameField.val() + ' ' + $partnerFirstLastNameField.val());
+        changePartnerChristmasOption(2, $partnerSecondFirstNameField.val() + ' ' + $partnerSecondLastNameField.val());
+        changePartnerOption(1, $partnerFirstFirstNameField.val() + ' ' + $partnerFirstLastNameField.val());
+        changePartnerOption(2, $partnerSecondFirstNameField.val() + ' ' + $partnerSecondLastNameField.val());
+        changeDebtorOption(1, $partnerFirstFirstNameField.val() + ' ' + $partnerFirstLastNameField.val());
+        changeDebtorOption(2, $partnerSecondFirstNameField.val() + ' ' + $partnerSecondLastNameField.val());
+        changePensionCreditorOption(1, $partnerFirstFirstNameField.val() + ' ' + $partnerFirstLastNameField.val());
+        changePensionCreditorOption(2, $partnerSecondFirstNameField.val() + ' ' + $partnerSecondLastNameField.val());
     }
 
     function changePartnerUseHomeOption(index, val){
@@ -200,9 +222,9 @@ jQuery(document).ready(function() {
 
     function toogleCreditorField(val){
         if(val == 1) {
-            changeCreditorField($partnerSecondField.val());
+            changeCreditorField($partnerSecondFirstNameField.val() + ' ' + $partnerSecondLastNameField.val());
         }else if(val == 2){
-            changeCreditorField($partnerFirstField.val());
+            changeCreditorField($partnerFirstFirstNameField.val() + ' ' + $partnerFirstLastNameField.val());
         }else{
             changeCreditorField('');
         }
@@ -210,9 +232,9 @@ jQuery(document).ready(function() {
 
     function setCreditorField(val){
         if(val == 1) {
-            changeCreditorField($partnerFirstField.val());
+            changeCreditorField($partnerFirstFirstNameField.val() + ' ' + $partnerFirstLastNameField.val());
         }else if(val == 2){
-            changeCreditorField($partnerSecondField.val());
+            changeCreditorField($partnerSecondFirstNameField.val() + ' ' + $partnerSecondLastNameField.val());
         }else{
             changeCreditorField('');
         }
