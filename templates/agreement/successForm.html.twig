@@ -57,12 +57,7 @@
         {% set each_children_text = ' para cada hijo' %}
     {% endif %}
 
-    {% set alternate_weeks = request.agreement.alternateWeeks %}
-    {% if alternate_weeks == 1 %}
-        {% set alternate_weeks_text = "durante semanas alternas" %}
-    {% else %}
-        {% set alternate_weeks_text = "cada " ~ alternate_weeks ~ " semanas alternas" %}
-    {% endif %}
+    {% set alternate_weeks_text = "durante semanas alternas" %}
 
     {% if request.marriage.partnerFirst.title == 1 %}
         {% set partner_first_title = 'D.' %}
@@ -221,7 +216,7 @@
                     {% set section = section + 1 %}
                     <div>
                         <b>RÉGIMEN DE VISITAS.</b>
-                        {% if custody == 'Compartida' and alternate_weeks == 1 %}
+                        {% if custody == 'Compartida' %}
                             <br />
                             <b>A)</b> Dado que se fija un régimen de custodia compartida por semanas alternas no se establecen visitas intersemanales.
                         {% else %}

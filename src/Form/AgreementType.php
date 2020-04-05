@@ -49,7 +49,7 @@ class AgreementType extends AbstractType
                     Agreement::PICK_UP_SCHOOL_CHOICES_LABELS[0] => Agreement::PICK_UP_SCHOOL_CHOICES_VALUES[0],
                     Agreement::PICK_UP_SCHOOL_CHOICES_LABELS[1] => Agreement::PICK_UP_SCHOOL_CHOICES_VALUES[1],
                 ],
-                'label' => 'Colegio',
+                'label' => 'Día de recogida',
                 'placeholder' => 'Seleccione una opción',
             ])
             ->add('pick_up_home', ChoiceType::class, [
@@ -57,7 +57,7 @@ class AgreementType extends AbstractType
                     Agreement::PICK_UP_HOME_CHOICES_LABELS[0] => Agreement::PICK_UP_HOME_CHOICES_VALUES[0],
                     Agreement::PICK_UP_HOME_CHOICES_LABELS[1] => Agreement::PICK_UP_HOME_CHOICES_VALUES[1],
                 ],
-                'label' => 'Domicilio',
+                'label' => 'Día de recogida',
                 'placeholder' => 'Seleccione una opción',
             ])
             ->add('pick_up_hour', ChoiceType::class, [
@@ -72,9 +72,6 @@ class AgreementType extends AbstractType
                     Agreement::PICK_UP_HOUR_CHOICES_LABELS[5] => Agreement::PICK_UP_HOUR_CHOICES_VALUES[5],
                     Agreement::PICK_UP_HOUR_CHOICES_LABELS[6] => Agreement::PICK_UP_HOUR_CHOICES_VALUES[6],
                 ],
-            ])
-            ->add('alternate_weeks', null, [
-                'label' => 'Semanas alternas de la custodia',
             ])
             ->add('summer_period', ChoiceType::class, [
                 'choices'  => [

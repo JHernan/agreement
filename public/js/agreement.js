@@ -10,8 +10,6 @@ jQuery(document).ready(function() {
     $pickUpHomeSelect = $('select#request_agreement_pick_up_home');
     $pickUpHourHolder = $('select#request_agreement_pick_up_hour').parent().parent();
     $pickUpHourSelect = $('select#request_agreement_pick_up_hour');
-    $alternateWeeksHolder = $('input#request_agreement_alternate_weeks').parent().parent();
-    $alternateWeeksInput = $('input#request_agreement_alternate_weeks');
     $summerPeriodHolder = $('select#request_agreement_summer_period').parent().parent();
     $summerPeriodSelect = $('select#request_agreement_summer_period');
     $partnerHolder = $('select#request_agreement_partner').parent().parent();
@@ -44,7 +42,6 @@ jQuery(document).ready(function() {
     pickUpSchoolHide();
     pickUpHomeHide();
     pickUpHourHide();
-    alternateWeeksHide();
     summerPeriodHide();
     alimonyFieldsHide();
     partnerHide();
@@ -272,16 +269,6 @@ jQuery(document).ready(function() {
         }
     }
 
-    function alternateWeeksShow(){
-        $alternateWeeksHolder.show();
-        $alternateWeeksInput.prop('required',true);
-    }
-
-    function alternateWeeksHide() {
-        $alternateWeeksHolder.hide();
-        $alternateWeeksInput.removeAttr('required');
-    }
-
     function summerPeriodShow(){
         $summerPeriodHolder.show();
         $summerPeriodSelect.prop('required',true);
@@ -416,7 +403,6 @@ jQuery(document).ready(function() {
     function showCustodyBlockCompartida(){
         pickUpShow();
         tooglePickUpOptions();
-        alternateWeeksShow();
         summerPeriodShow();
         $alimonyHolder.show();
         $alimonySwitchHolder.show();
@@ -436,7 +422,6 @@ jQuery(document).ready(function() {
         pickUpSchoolHide();
         pickUpHomeHide();
         pickUpHourHide();
-        alternateWeeksHide();
         summerPeriodHide();
         $alimonyHolder.show();
         $alimonySwitchHolder.hide();
@@ -453,7 +438,6 @@ jQuery(document).ready(function() {
         pickUpSchoolHide();
         pickUpHomeHide();
         pickUpHourHide();
-        alternateWeeksHide();
         summerPeriodHide();
         $alimonyHolder.hide();
         $alimonySwitchHolder.hide();

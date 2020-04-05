@@ -60,20 +60,6 @@ class Agreement
 
     /**
      * @Assert\NotBlank(groups={"compartida"})
-     * @Assert\Type(
-     *     type="integer",
-     *     message="El valor {{ value }} no es un número válido.",
-     *     groups={"compartida"}
-     * )
-     * @Assert\GreaterThan(
-     *     value = 0,
-     *     groups={"compartida"}
-     * )
-     */
-    private $alternate_weeks;
-
-    /**
-     * @Assert\NotBlank(groups={"compartida"})
      * @Assert\Choice(choices=Agreement::SUMMER_PERIOD_CHOICES_VALUES, message="Selecciona una opción válida.")
      */
     private $summer_period;
@@ -170,18 +156,6 @@ class Agreement
     public function setPickUpHour(string $pick_up_hour): self
     {
         $this->pick_up_hour = $pick_up_hour;
-
-        return $this;
-    }
-
-    public function getAlternateWeeks(): ?int
-    {
-        return $this->alternate_weeks;
-    }
-
-    public function setAlternateWeeks(?int $alternate_weeks): self
-    {
-        $this->alternate_weeks = $alternate_weeks;
 
         return $this;
     }
