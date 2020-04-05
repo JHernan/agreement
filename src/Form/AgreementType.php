@@ -81,6 +81,30 @@ class AgreementType extends AbstractType
                 'label' => 'Periodo de verano',
                 'placeholder' => 'Seleccione una opción',
             ])
+            ->add('partner_summer', ChoiceType::class, [
+                'choices'  => [
+                    Agreement::PARTNER_CHOICES_LABELS[0] => Agreement::PARTNER_CHOICES_VALUES[0],
+                    Agreement::PARTNER_CHOICES_LABELS[1] => Agreement::PARTNER_CHOICES_VALUES[1],
+                ],
+                'placeholder' => 'Seleccione un cónyuge',
+                'label' => 'Indique el cónyuge que elegirá el periodo vacacional los años pares',
+            ])
+            ->add('partner_holy_week', ChoiceType::class, [
+                'choices'  => [
+                    Agreement::PARTNER_CHOICES_LABELS[0] => Agreement::PARTNER_CHOICES_VALUES[0],
+                    Agreement::PARTNER_CHOICES_LABELS[1] => Agreement::PARTNER_CHOICES_VALUES[1],
+                ],
+                'placeholder' => 'Seleccione un cónyuge',
+                'label' => 'Indique el cónyuge que elegirá el periodo vacacional de Semana Santa los años pares',
+            ])
+            ->add('partner_christmas', ChoiceType::class, [
+                'choices'  => [
+                    Agreement::PARTNER_CHOICES_LABELS[0] => Agreement::PARTNER_CHOICES_VALUES[0],
+                    Agreement::PARTNER_CHOICES_LABELS[1] => Agreement::PARTNER_CHOICES_VALUES[1],
+                ],
+                'placeholder' => 'Seleccione un cónyuge',
+                'label' => 'Indique el cónyuge que elegirá el periodo vacacional de Navidad los años pares',
+            ])
             ->add('partner', ChoiceType::class, [
                 'choices'  => [
                     Agreement::PARTNER_CHOICES_LABELS[0] => Agreement::PARTNER_CHOICES_VALUES[0],

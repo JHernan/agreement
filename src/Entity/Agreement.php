@@ -65,6 +65,24 @@ class Agreement
     private $summer_period;
 
     /**
+     * @Assert\NotBlank(groups={"compartida"})
+     * @Assert\Choice(choices=Agreement::PARTNER_CHOICES_VALUES, message="Selecciona una opción válida.")
+     */
+    private $partner_summer;
+
+    /**
+     * @Assert\NotBlank(groups={"compartida"})
+     * @Assert\Choice(choices=Agreement::PARTNER_CHOICES_VALUES, message="Selecciona una opción válida.")
+     */
+    private $partner_holy_week;
+
+    /**
+     * @Assert\NotBlank(groups={"compartida"})
+     * @Assert\Choice(choices=Agreement::PARTNER_CHOICES_VALUES, message="Selecciona una opción válida.")
+     */
+    private $partner_christmas;
+
+    /**
      * @Assert\NotBlank(groups={"monoparental"})
      * @Assert\Choice(choices=Agreement::PARTNER_CHOICES_VALUES, message="Selecciona una opción válida.")
      */
@@ -168,6 +186,42 @@ class Agreement
     public function setSummerPeriod(string $summer_period): self
     {
         $this->summer_period = $summer_period;
+
+        return $this;
+    }
+
+    public function getPartnerSummer(): ?int
+    {
+        return $this->partner_summer;
+    }
+
+    public function setPartnerSummer(?int $partner_summer): self
+    {
+        $this->partner_summer = $partner_summer;
+
+        return $this;
+    }
+
+    public function getPartnerHolyWeek(): ?int
+    {
+        return $this->partner_holy_week;
+    }
+
+    public function setPartnerHolyWeek(?int $partner_holy_week): self
+    {
+        $this->partner_holy_week = $partner_holy_week;
+
+        return $this;
+    }
+
+    public function getPartnerChristmas(): ?int
+    {
+        return $this->partner_christmas;
+    }
+
+    public function setPartnerChristmas(?int $partner_christmas): self
+    {
+        $this->partner_christmas = $partner_christmas;
 
         return $this;
     }

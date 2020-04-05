@@ -18,6 +18,12 @@ jQuery(document).ready(function() {
     $pickUpHourSelect = $('select#request_agreement_pick_up_hour');
     $summerPeriodHolder = $('select#request_agreement_summer_period').parent().parent();
     $summerPeriodSelect = $('select#request_agreement_summer_period');
+    $partnerSummerHolder = $('select#request_agreement_partner_summer').parent().parent();
+    $partnerSummerSelect = $('select#request_agreement_partner_summer');
+    $partnerHolyWeekHolder = $('select#request_agreement_partner_holy_week').parent().parent();
+    $partnerHolyWeekSelect =  $('select#request_agreement_partner_holy_week')
+    $partnerChristmasHolder = $('select#request_agreement_partner_christmas').parent().parent();
+    $partnerChristmasSelect = $('select#request_agreement_partner_christmas');
     $partnerHolder = $('select#request_agreement_partner').parent().parent();
     $partnerSelect = $('select#request_agreement_partner');
     $debtorHolder = $('select#request_agreement_alimony_debtor').parent().parent().parent();
@@ -49,6 +55,9 @@ jQuery(document).ready(function() {
     pickUpHomeHide();
     pickUpHourHide();
     summerPeriodHide();
+    partnerSummerHide();
+    partnerHolyWeekHide();
+    partnerChristmasHide();
     alimonyFieldsHide();
     partnerHide();
     tooglePension();
@@ -67,6 +76,9 @@ jQuery(document).ready(function() {
 
     $partnerFirstField.change(function(){
         changePartnerUseHomeOption(1, $(this).val());
+        changePartnerSummerOption(1, $(this).val());
+        changePartnerHolyWeekOption(1, $(this).val());
+        changePartnerChristmasOption(1, $(this).val());
         changePartnerOption(1, $(this).val());
         changeDebtorOption(1, $(this).val());
         changePensionCreditorOption(1, $(this).val())
@@ -74,6 +86,9 @@ jQuery(document).ready(function() {
 
     $partnerSecondField.change(function(){
         changePartnerUseHomeOption(2, $(this).val());
+        changePartnerSummerOption(2, $(this).val());
+        changePartnerHolyWeekOption(2, $(this).val());
+        changePartnerChristmasOption(2, $(this).val());
         changePartnerOption(2, $(this).val());
         changeDebtorOption(2, $(this).val());
         changePensionCreditorOption(2, $(this).val())
@@ -117,18 +132,34 @@ jQuery(document).ready(function() {
     function initPartnerFields(){
         changePartnerUseHomeOption(1, $partnerFirstField.val());
         changePartnerUseHomeOption(2, $partnerSecondField.val());
+        changePartnerSummerOption(1, $partnerFirstField.val());
+        changePartnerSummerOption(2, $partnerSecondField.val());
+        changePartnerHolyWeekOption(1, $partnerFirstField.val());
+        changePartnerHolyWeekOption(2, $partnerSecondField.val());
+        changePartnerChristmasOption(1, $partnerFirstField.val());
+        changePartnerChristmasOption(2, $partnerSecondField.val());
         changePartnerOption(1, $partnerFirstField.val());
         changePartnerOption(2, $partnerSecondField.val());
         changeDebtorOption(1, $partnerFirstField.val());
         changeDebtorOption(2, $partnerSecondField.val());
         changePensionCreditorOption(1, $partnerFirstField.val());
         changePensionCreditorOption(2, $partnerSecondField.val());
-        changePartnerUseHomeOption(1, $partnerFirstField.val());
-        changePartnerUseHomeOption(2, $partnerSecondField.val());
     }
 
     function changePartnerUseHomeOption(index, val){
         $partnerHomeUseSelect.find('option:eq('+index+')').text(val);
+    }
+
+    function changePartnerSummerOption(index, val){
+        $partnerSummerSelect.find('option:eq('+index+')').text(val);
+    }
+
+    function changePartnerHolyWeekOption(index, val){
+        $partnerHolyWeekSelect.find('option:eq('+index+')').text(val);
+    }
+
+    function changePartnerChristmasOption(index, val){
+        $partnerChristmasSelect.find('option:eq('+index+')').text(val);
     }
 
     function changePartnerOption(index, val){
@@ -285,6 +316,36 @@ jQuery(document).ready(function() {
         $summerPeriodSelect.removeAttr('required');
     }
 
+    function partnerSummerShow(){
+        $partnerSummerHolder.show();
+        $partnerSummerSelect.prop('required',true);
+    }
+
+    function partnerSummerHide(){
+        $partnerSummerHolder.hide();
+        $partnerSummerSelect.removeAttr('required');
+    }
+
+    function partnerHolyWeekShow(){
+        $partnerHolyWeekHolder.show();
+        $partnerHolyWeekSelect.prop('required',true);
+    }
+
+    function partnerHolyWeekHide(){
+        $partnerHolyWeekHolder.hide();
+        $partnerHolyWeekSelect.removeAttr('required');
+    }
+
+    function partnerChristmasShow(){
+        $partnerChristmasHolder.show();
+        $partnerChristmasSelect.prop('required',true);
+    }
+
+    function partnerChristmasHide(){
+        $partnerChristmasHolder.hide();
+        $partnerChristmasSelect.removeAttr('required');
+    }
+
     function partnerShow(){
         $partnerHolder.show();
         $partnerSelect.prop('required',true);
@@ -410,6 +471,9 @@ jQuery(document).ready(function() {
         pickUpShow();
         tooglePickUpOptions();
         summerPeriodShow();
+        partnerSummerShow();
+        partnerHolyWeekShow();
+        partnerChristmasShow();
         $alimonyHolder.show();
         $alimonySwitchHolder.show();
         if($alimonyCheckbox.is(":checked")){
@@ -429,6 +493,9 @@ jQuery(document).ready(function() {
         pickUpHomeHide();
         pickUpHourHide();
         summerPeriodHide();
+        partnerSummerHide();
+        partnerHolyWeekHide();
+        partnerChristmasHide();
         $alimonyHolder.show();
         $alimonySwitchHolder.hide();
         alimonyFieldsShow();
@@ -445,6 +512,9 @@ jQuery(document).ready(function() {
         pickUpHomeHide();
         pickUpHourHide();
         summerPeriodHide();
+        partnerSummerHide();
+        partnerHolyWeekHide();
+        partnerChristmasHide();
         $alimonyHolder.hide();
         $alimonySwitchHolder.hide();
         alimonyFieldsHide();

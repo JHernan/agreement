@@ -77,6 +77,30 @@
         {% set partner_home_use = request.marriage.partnerSecond.name %}
     {% endif %}
 
+    {% if request.agreement.partnerSummer == 1 %}
+        {% set partner_summer_even = request.marriage.partnerFirst.name %}
+        {% set partner_summer_odd = request.marriage.partnerSecond.name %}
+    {% else %}
+        {% set partner_summer_even = request.marriage.partnerSecond.name %}
+        {% set partner_summer_odd = request.marriage.partnerFirst.name %}
+    {% endif %}
+
+    {% if request.agreement.partnerHolyWeek == 1 %}
+        {% set partner_holy_week_even = request.marriage.partnerFirst.name %}
+        {% set partner_holy_week_odd = request.marriage.partnerSecond.name %}
+    {% else %}
+        {% set partner_holy_week_even = request.marriage.partnerSecond.name %}
+        {% set partner_holy_week_odd = request.marriage.partnerFirst.name %}
+    {% endif %}
+
+    {% if request.agreement.partnerChristmas == 1 %}
+        {% set partner_christmas_even = request.marriage.partnerFirst.name %}
+        {% set partner_christmas_odd = request.marriage.partnerSecond.name %}
+    {% else %}
+        {% set partner_christmas_even = request.marriage.partnerSecond.name %}
+        {% set partner_christmas_odd = request.marriage.partnerFirst.name %}
+    {% endif %}
+
     {% if request.agreement.partner == 1 %}
         {% set custody_partner = request.marriage.partnerFirst.name %}
     {% else %}
@@ -181,7 +205,6 @@
                     <div>
                     {% if(children_count > 0) %}
                         <b>Segundo.</b> Que de dicha unión {{ children_born_text }} {{ children_count }} hijos.
-                        <br />
                         {% for child in request.marriage.children %}
                             {{ child.name }} el día {{ child.date | localizeddate('none', 'none', 'es_ES', null, "d 'de' MMMM 'de' Y") }}, que fue inscrito en el Registro Civil de {{ child.registry }}, en el Tomo {{ child.volume }}, página {{ child.page }}.<br />
                         {% endfor %}
@@ -245,10 +268,10 @@
                         {% endif %}
                         <br />
                         <br />
-                        <b>B)</b> En cuanto a las vacaciones de Navidad, éstas se dividirán por la mitad, desde el día de finalización del periodo escolar hasta el día 30 de diciembre, y el segundo periodo desde el día 31 de diciembre hasta el inicio del periodo escolar. {{ parent_first_name }} elegirá en los años pares cuándo disfrutará del citado periodo de vacaciones, y {{ parent_second_name }} elegirá los años impares.
+                        <b>B)</b> En cuanto a las vacaciones de Navidad, éstas se dividirán por la mitad, desde el día de finalización del periodo escolar hasta el día 30 de diciembre, y el segundo periodo desde el día 31 de diciembre hasta el inicio del periodo escolar. {{ partner_christmas_even }} elegirá en los años pares cuándo disfrutará del citado periodo de vacaciones, y {{ partner_christmas_odd }} elegirá los años impares.
                         <br />
                         <br />
-                        <b>C)</b> Las vacaciones de Semana Santa, las pasarán con ambos padres estableciéndose dos períodos de idéntica duración. Los días de vacaciones incluirán desde el viernes a la salida del colegio hasta el día antes del reinicio del periodo escolar. {{ parent_first_name }} elegirá en los años pares cuándo disfrutará del citado periodo de vacaciones, y {{ parent_second_name }} elegirá los años impares.
+                        <b>C)</b> Las vacaciones de Semana Santa, las pasarán con ambos padres estableciéndose dos períodos de idéntica duración. Los días de vacaciones incluirán desde el viernes a la salida del colegio hasta el día antes del reinicio del periodo escolar. {{ partner_holy_week_even }} elegirá en los años pares cuándo disfrutará del citado periodo de vacaciones, y {{ partner_holy_week_odd }} elegirá los años impares.
                         <br />
                         <br />
                         <b>D)</b> Durante las vacaciones de verano, {{ children_younger_text }} estará en compañía de los padres {{ summer_period_text }}.
@@ -257,7 +280,7 @@
                         {% else %}
                             El primer periodo comprenderá desde la finalización del periodo escolar hasta el dia 31 de julio, y el segundo periodo desde el día 1 de agosto hasta el inicio del curso escolar.
                         {% endif %}
-                        {{ parent_first_name }} elegirá en los años pares cuando disfrutará del citado periodo de vacaciones, y {{ parent_second_name }} elegirá los años impares.
+                        {{ partner_summer_even }} elegirá en los años pares cuando disfrutará del citado periodo de vacaciones, y {{ partner_summer_odd }} elegirá los años impares.
                         <br />
                         <br />
                         <b>E)</b> Los progenitores permitirán que {{ children_younger_text }} asista a celebraciones o eventos familiares, como cumpleaños de abuelos y otros familiares, bodas, comuniones, etc., en caso de que se produzcan en la familia del que no los tenga en su compañía, favoreciendo los cambios necesarios, siempre que se comunique con suficiente antelación.
