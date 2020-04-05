@@ -128,6 +128,22 @@
     {% set parent_first_name = request.marriage.partnerFirst.name %}
     {% set parent_second_name = request.marriage.partnerSecond.name %}
 
+    {% if request.agreement.compensatoryPension.isPension %}
+        {% if request.agreement.compensatoryPension.termTime == 1 %}
+            {% if request.agreement.compensatoryPension.term == 1 %}
+                {% set term_time_text = "mes" %}
+            {% else %}
+                {% set term_time_text = "meses" %}
+            {% endif %}
+        {% else %}
+            {% if request.agreement.compensatoryPension.term == 1 %}
+                {% set term_time_text = "año" %}
+            {% else %}
+                {% set term_time_text = "años" %}
+            {% endif %}
+        {% endif %}
+    {% endif %}
+
     <div class="watermark">Juanqui</div>
     <section class="contact_area section_gap">
         <div class="container">
@@ -286,7 +302,7 @@
                         {% if request.agreement.compensatoryPension.isPension %}
                             Se establece una pensión compensatoria de {{ request.agreement.compensatoryPension.amount }} euros a favor de {{ pensionCreditor }} dada la descompensación económica existente entre los progenitores.
                             {% if request.agreement.compensatoryPension.hasLimit %}
-                                Dicha cantidad se limita al plazo de {{ request.agreement.compensatoryPension.term }} {{ request.agreement.compensatoryPension.termTime }}.
+                                Dicha cantidad se limita al plazo de {{ request.agreement.compensatoryPension.term }} {{ term_time_text }}.
                             {% endif %}
                             <br />
                             La cantidad abonada en concepto de pensión compensatoria, será actualizada anualmente a tenor de las variaciones porcentuales experimentadas por el IPC, a nivel nacional, según conste en el certificado que a tal efecto expida el INE o el organismo que pueda sustituirlo en sus funciones. La primera actualización se realizará el 1 de enero de {{ 'now' | date_modify("+1 year") | date('Y') }}.

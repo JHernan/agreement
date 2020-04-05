@@ -11,7 +11,7 @@ class CompensatoryPension
     const CREDITOR_CHOICES_LABELS = ['Cónyuge 1', 'Cónyuge 2'];
     const CREDITOR_CHOICES_VALUES = [1, 2];
     const TERM_TIME_CHOICES_LABELS = ['Meses', 'Años'];
-    const TERM_TIME_CHOICES_VALUES = ['meses', 'años'];
+    const TERM_TIME_CHOICES_VALUES = [1, 2];
 
     /**
      * @Assert\Type("bool")
@@ -37,6 +37,7 @@ class CompensatoryPension
     /**
      * @Assert\NotBlank(groups={"term"})
      * @Assert\Type("int")
+     * @Assert\GreaterThan(0)
      */
     private $term;
 
