@@ -175,7 +175,7 @@
                     <br />
                     <h1 style="text-align: center;">EXPONEN</h1>
                     <div>
-                        <b>Primero.</b> Que contrajeron matrimonio {{ request.marriage.marriageType }}, en {{ request.marriage.town }}, el día {{ request.marriage.date | date('d/m/Y') }}, registrado en el Registro Civil de {{ request.marriage.registry.town }}, tomo {{ request.marriage.registry.volume }}, página {{ request.marriage.registry.page }}. El matrimonio se contrajo bajo el régimen económico de la {{ request.marriage.economicSystem }}.
+                        <b>Primero.</b> Que contrajeron matrimonio {{ request.marriage.marriageType }}, en {{ request.marriage.town }}, el día {{ request.marriage.date | localizeddate('none', 'none', 'es_ES', null, "d 'de' MMMM 'de' Y") }}, registrado en el Registro Civil de {{ request.marriage.registry.town }}, tomo {{ request.marriage.registry.volume }}, página {{ request.marriage.registry.page }}. El matrimonio se contrajo bajo el régimen económico de la {{ request.marriage.economicSystem }}.
                     </div>
                     <br />
                     <div>
@@ -183,7 +183,7 @@
                         <b>Segundo.</b> Que de dicha unión {{ children_born_text }} {{ children_count }} hijos.
                         <br />
                         {% for child in request.marriage.children %}
-                            {{ child.name }} el día {{ child.date | date('d/m/Y') }}, que fue inscrito en el Registro Civil de {{ child.registry }}, en el Tomo {{ child.volume }}, página {{ child.page }}.<br />
+                            {{ child.name }} el día {{ child.date | localizeddate('none', 'none', 'es_ES', null, "d 'de' MMMM 'de' Y") }}, que fue inscrito en el Registro Civil de {{ child.registry }}, en el Tomo {{ child.volume }}, página {{ child.page }}.<br />
                         {% endfor %}
                     {% else %}
                         <b>Segundo.</b> Que de dicho matrimonio no ha nacido ningún hijo.
