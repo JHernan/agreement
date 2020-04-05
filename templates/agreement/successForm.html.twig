@@ -317,7 +317,23 @@
                         Los progenitores quedan obligados, durante los periodos de tiempo en que {{ children_will_remain_text }} en su compañía, a comunicar al otro todas las cuestiones relativas a la salud, educación, y demás aspectos esenciales de la vida {{ children_of_younger_text }} en común, comprometiéndose a facilitar la documentación relativa a tales asuntos.<br />
                         En caso de enfermedad {{ children_of_younger_text }} en común, ambos progenitores quedan obligados a informarse mutuamente de dicha circunstancia, y el progenitor que en ese momento no se encuentre en compañía {{ children_of_younger_text }} tendrá derecho a la visita en el domicilio en el que {{ children_of_younger_text }} se encuentre, debiendo comunicar previamente esa visita al progenitor en cuyo domicilio se encuentre {{ children_of_younger_text }}.
                     </div>
+                    {% else %}
+                        <h2 style="text-align: center;">-{{ section|roman }}-</h2>
+                        {% set section = section + 1 %}
+                        <div>
+                            <b>MEDIDAS RESPECTOS DE LOS HIJOS.</b> No habiendo descendencia no cabe pronunciamiento al respecto.
+                        </div>
                     {% endif %}
+                    <h2 style="text-align: center;">-{{ section|roman }}-</h2>
+                    {% set section = section + 1 %}
+                    <div>
+                        <b>RÉGIMEN ECONÓMICO MATRIMONIAL.</b>
+                        {% if request.marriage.economicSystem == 'Sociedad de gananciales'%}
+                            El matrimonio se contrajo, como ya se ha expuesto, bajo el régimen económico de gananciales. La liquidación del régimen económico se realizará mediante acuerdo de los cónyuges cuando lo consideren oportuno o, en caso de discrepancia, acudiendo a la vía judicial.
+                        {% else %}
+                            El matrimonio se contrajo, como ya se ha expuesto, bajo el régimen económico de separación de bienes, por lo que, al no existir patrimonio ganancial, no tienen nada que reclamarse al respecto.
+                        {% endif %}
+                    </div>
                     <h2 style="text-align: center;">-{{ section|roman }}-</h2>
                     {% set section = section + 1 %}
                     <div>
