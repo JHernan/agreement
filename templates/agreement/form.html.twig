@@ -404,8 +404,8 @@
                             </div>
                         </div>
 
-                        <div id="custody_information" class="section_bottom">
-                            <div id="children-blocks-holder">
+                        <div id="children-blocks-holder">
+                            <div id="custody_information" class="section_bottom">
                                 <h3>Guarda y custodia</h3>
                                 <p>A continuación indique los datos de guarda y custodia de los hijos e hijas.</p>
 
@@ -470,48 +470,49 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <div id="alimony_information" class="section_bottom">
-                            <div id="alimony-block">
-                                <h3>Pensión alimenticia</h3>
-                                <p>A continuación indique los datos de la pensión alimenticia de los hijos e hijas.</p>
+                            <div id="alimony_information" class="section_bottom">
+                                <div id="alimony-block">
+                                    <h3>Pensión alimenticia</h3>
+                                    <p>A continuación indique los datos de la pensión alimenticia de los hijos e hijas.</p>
 
-                                <div class="row" id="alimony-holder">
-                                    <div class="col-md-3">
-                                        {{
-                                            form_row(form.agreement.alimony.alimony)
-                                        }}
-                                        <p>La pensión que se indique aplicará a cada hijo e hija.</p>
-                                    </div>
-                                    <div class="col-md-3">
-                                        {{
-                                            form_row(form.agreement.alimony.amount, {'attr': {
-                                                'class': 'form-control',
-                                                'placeholder': 'Importe',
-                                                'onfocus': 'this.placeholder = ""',
-                                                'onblur': 'this.placeholder = "Importe"',
-                                            }})
-                                        }}
-                                    </div>
-                                    <div class="col-md-3">
-                                        {{
-                                            form_row(form.agreement.alimony.debtor, {'attr': {
-                                                'class': 'form-control'
-                                            }})
-                                        }}
-                                    </div>
-                                    <div class="col-md-3">
-                                        {{
-                                            form_row(form.agreement.alimony.creditor, {'attr': {
-                                                'class': 'form-control'
-                                            }})
-                                        }}
+                                    <div class="row" id="alimony-holder">
+                                        <div class="col-md-3">
+                                            {{
+                                                form_row(form.agreement.alimony.alimony)
+                                            }}
+                                            <p>La pensión que se indique aplicará a cada hijo e hija.</p>
+                                        </div>
+                                        <div class="col-md-3">
+                                            {{
+                                                form_row(form.agreement.alimony.amount, {'attr': {
+                                                    'class': 'form-control',
+                                                    'placeholder': 'Importe',
+                                                    'onfocus': 'this.placeholder = ""',
+                                                    'onblur': 'this.placeholder = "Importe"',
+                                                }})
+                                            }}
+                                        </div>
+                                        <div class="col-md-3">
+                                            {{
+                                                form_row(form.agreement.alimony.debtor, {'attr': {
+                                                    'class': 'form-control'
+                                                }})
+                                            }}
+                                        </div>
+                                        <div class="col-md-3">
+                                            {{
+                                                form_row(form.agreement.alimony.creditor, {'attr': {
+                                                    'class': 'form-control'
+                                                }})
+                                            }}
+                                        </div>
                                     </div>
                                 </div>
+                                <p>En este <a href="http://www6.poderjudicial.es/PensionAlimenticiaWeb/frmGeneral.aspx" target="_blank">enlace</a> tiene una calculadora del Consejo General del Poder Judicial para calcular la pensión alimentícia.</p>
                             </div>
-                            <p>En este <a href="http://www6.poderjudicial.es/PensionAlimenticiaWeb/frmGeneral.aspx" target="_blank">enlace</a> tiene una calculadora del Consejo General del Poder Judicial para calcular la pensión alimentícia.</p>
                         </div>
+
                         <div id="compensatory_pension_information" class="section_bottom">
                             <h3>Pensión compensatoria</h3>
                             <p>A continuación indique los datos de la pensión compensatoria.</p>
@@ -587,7 +588,6 @@
 {% block javascripts %}
 {#    <script src="{{ asset('build/js/app.js') }}"></script>#}
     <script src="{{ asset('js/jquery-3.2.1.min.js') }}"></script>
-    <script src="{{ asset('js/children.js') }}"></script>
     <script src="{{ asset('js/agreement.js') }}"></script>
     <!-- Bootstrap Date-Picker Plugin -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
