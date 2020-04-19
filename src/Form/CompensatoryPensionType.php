@@ -35,7 +35,7 @@ class CompensatoryPensionType extends AbstractType
             ])
             ->add('hasLimit', CheckboxType::class, [
                 'label' => ' ',
-                'data' => true,
+                'data' => false,
                 'required' => false
             ])
             ->add('term', IntegerType::class, [
