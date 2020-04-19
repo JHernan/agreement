@@ -18,10 +18,10 @@ class RegistryType extends AbstractType
                 'label' => 'Ciudad del registro civil'
             ])
             ->add('volume', IntegerType::class, [
-                'label' => 'Volumen del registro civil'
+                'label' => 'Volumen o Tomo de la inscripción'
             ])
             ->add('page', IntegerType::class, [
-                'label' => 'Página del registro civil'
+                'label' => 'Página de la inscripción'
             ])
         ;
     }
