@@ -59,6 +59,11 @@ class Request
     {
         $this->marriage = $marriage;
 
+        // set the owning side of the relation if necessary
+        if ($this !== $marriage->getRequest()) {
+            $marriage->setRequest($this);
+        }
+
         return $this;
     }
 

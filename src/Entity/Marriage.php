@@ -19,6 +19,7 @@ class Marriage
 
     /**
      * @Assert\DateTime(format="dd/mm/yyyy")
+     * @Assert\LessThan(propertyPath="request.date", message = "La fecha debe ser anterior a la fecha de realización del convenio")
      */
     private $date;
 
@@ -58,14 +59,16 @@ class Marriage
      */
     private $house;
 
-    private $requests;
+    /**
+     * @Assert\Type(type="App\Entity\Request")
+     */
+    private $request;
 
     private $children;
 
 
     public function __construct()
     {
-        $this->requests = new ArrayCollection();
         $this->children = new ArrayCollection();
     }
 
@@ -165,20 +168,14 @@ class Marriage
         return $this;
     }
 
-    /**
-     * @return Collection|Request[]
-     */
-    public function getRequests(): Collection
+    public function getRequest(): ?Request
     {
-        return $this->requests;
+        return $this->request;
     }
 
-    public function addRequest(Request $request): self
+    public function setRequest(Request $request): self
     {
-        if (!$this->requests->contains($request)) {
-            $this->requests[] = $request;
-            $request->setMarriage($this);
-        }
+        $this->request = $request;
 
         return $this;
     }

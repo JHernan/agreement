@@ -14,6 +14,7 @@ class Child
 
     /**
      * @Assert\DateTime(format="dd/mm/yyyy")
+     * @Assert\LessThan(propertyPath="marriage.request.date", message = "La fecha debe ser anterior a la fecha de realización del convenio")
      */
     private $date;
 
