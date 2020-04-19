@@ -177,6 +177,8 @@
         {% endif %}
     {% endif %}
 
+    {% set ipc_year = request.date | date_modify("+1 year") | date('Y') %}
+
     <body>
         <div class="watermark">Juanqui</div>
         <section class="contact_area section_gap">
@@ -306,7 +308,7 @@
                                 Dicha cantidad deberá ser ingresada en los cinco primeros días de cada mes, en la entidad y en la cuenta bancaria que designe {{ creditor }}.
                                 <br />
                                 <br />
-                                La cantidad abonada en concepto de alimentos, será actualizada anualmente a tenor de las variaciones porcentuales experimentadas por el IPC, a nivel nacional, según conste en el certificado que a tal efecto expida el INE o el organismo que pueda sustituirlo en sus funciones. La primera actualización se realizará el 1 de enero de {{ 'now' | date_modify("+1 year") | date('Y') }}.
+                                La cantidad abonada en concepto de alimentos, será actualizada anualmente a tenor de las variaciones porcentuales experimentadas por el IPC, a nivel nacional, según conste en el certificado que a tal efecto expida el INE o el organismo que pueda sustituirlo en sus funciones. La primera actualización se realizará el 1 de enero de {{ ipc_year }}.
                                 <br />
                                 <br />
                                 Los gastos extraordinarios que sean necesarios, serán sufragados previo acuerdo de los progenitores, al 50%, y en general aquellos gastos imprevisibles o de coste excepcional, como matrículas universitarias o similares, etc.
@@ -322,7 +324,7 @@
                                 Dicha cantidad deberá ser ingresada en los cinco primeros días de cada mes, en la entidad y en la cuenta bancaria que designe {{ creditor }}.
                                 <br />
                                 <br />
-                                La cantidad abonada en concepto de alimentos, será actualizada anualmente a tenor de las variaciones porcentuales experimentadas por el IPC, a nivel nacional, según conste en el certificado que a tal efecto expida el INE o el organismo que pueda sustituirlo en sus funciones. La primera actualización se realizará el 1 de enero de {{ 'now' | date_modify("+1 year") | date('Y') }}.
+                                La cantidad abonada en concepto de alimentos, será actualizada anualmente a tenor de las variaciones porcentuales experimentadas por el IPC, a nivel nacional, según conste en el certificado que a tal efecto expida el INE o el organismo que pueda sustituirlo en sus funciones. La primera actualización se realizará el 1 de enero de {{ ipc_year }}.
                                 <br />
                                 <br />
                                 Los gastos extraordinarios que sean necesarios, serán sufragados previo acuerdo de los progenitores, al 50%, y en general aquellos gastos imprevisibles o de coste excepcional, como matrículas universitarias o similares, etc.
@@ -338,7 +340,7 @@
                                     Dicha cantidad se limita al plazo de {{ request.agreement.compensatoryPension.term }} {{ term_time_text }}.
                                 {% endif %}
                                 <br />
-                                La cantidad abonada en concepto de pensión compensatoria, será actualizada anualmente a tenor de las variaciones porcentuales experimentadas por el IPC, a nivel nacional, según conste en el certificado que a tal efecto expida el INE o el organismo que pueda sustituirlo en sus funciones. La primera actualización se realizará el 1 de enero de {{ 'now' | date_modify("+1 year") | date('Y') }}.
+                                La cantidad abonada en concepto de pensión compensatoria, será actualizada anualmente a tenor de las variaciones porcentuales experimentadas por el IPC, a nivel nacional, según conste en el certificado que a tal efecto expida el INE o el organismo que pueda sustituirlo en sus funciones. La primera actualización se realizará el 1 de enero de {{ ipc_year }}.
                             {% else %}
                                 Los cónyuges tienen independencia económica y no es necesario el establecimiento de pensión alguna al no producirse desequilibrio económico.
                             {% endif %}
