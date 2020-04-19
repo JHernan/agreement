@@ -52,6 +52,7 @@
         {% set children_will_be_pick_up_text = "el menor será recogido" %}
         {% set children_will_remain_text = "el menor permancerá" %}
         {% set children_pick_up_text = "El menor será recogido" %}
+        {% set children_count_text = "un" %}
     {% elseif children_count > 1 %}
         {% set children_born_text = "nacieron" %}
         {% set children_text = "hijos" %}
@@ -62,6 +63,7 @@
         {% set children_will_remain_text = "los menores permancerán" %}
         {% set children_pick_up_text = "Los menores serán recogidos" %}
         {% set each_children_text = ' para cada hijo' %}
+        {% set children_count_text = children_count|localizednumber('spellout') %}
     {% endif %}
 
     {% set alternate_weeks_text = "durante semanas alternas" %}
@@ -212,7 +214,7 @@
                         <br />
                         <div>
                         {% if(children_count > 0) %}
-                            <b>Segundo.</b> Que de dicha unión {{ children_born_text }} {{ children_count }} {{ children_text }}.
+                            <b>Segundo.</b> Que de dicha unión {{ children_born_text }} {{ children_count_text }} {{ children_text }}.
                             {% for child in request.marriage.children %}
                                 {{ child.name }} el día {{ child.date | localizeddate('none', 'none', 'es_ES', null, "d 'de' MMMM 'de' Y") }}, que fue inscrito en el Registro Civil de {{ child.registry }}, en el Tomo {{ child.volume }}, página {{ child.page }}.<br />
                             {% endfor %}
