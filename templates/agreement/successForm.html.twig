@@ -251,7 +251,7 @@
                         <h2 style="text-align: center;">-{{ section|roman }}-</h2>
                         {% set section = section + 1 %}
                             <div>
-                            <b>PATRIA POTESTAD.</b> Del mismo modo, la patria potestad será ejercida conjuntamente por ambos progenitores, que adoptarán de común acuerdo y velando siempre por su interés, todas las decisiones trascendentales que afecten a {{ children_younger_text }}, decidiendo en los casos de falta de acuerdo la autoridad judicial.
+                            <b>PATRIA POTESTAD.</b> Del mismo modo, la patria potestad será ejercida conjuntamente por ambos progenitores, que adoptarán de común acuerdo y velando siempre por su interés, todas las decisiones trascendentales que afecten a {{ children_younger_text }}, decidiendo la autoridad judicial en los casos de falta de acuerdo.
                         </div>
                         <h2 style="text-align: center;">-{{ section|roman }}-</h2>
                         {% set section = section + 1 %}
@@ -266,7 +266,7 @@
                         <h2 style="text-align: center;">-{{ section|roman }}-</h2>
                         {% set section = section + 1 %}
                         <div>
-                            <b>RÉGIMEN DE VISITAS.</b>
+                            <b>RÉGIMEN DE VISITAS.</b> Los cónyuges acuerdan el siguiente régimen de visitas:
                             {% if custody == 'Compartida' %}
                                 <br />
                                 <b>A)</b> Dado que se fija un régimen de custodia compartida por semanas alternas no se establecen visitas intersemanales.
@@ -300,7 +300,7 @@
                         <div>
                             <b>PENSIÓN ALIMENTICIA.</b>
                             {% if custody == 'Compartida' and request.agreement.alimony.alimony %}
-                                {{ debtor }} abonará a {{ creditor }} en concepto de pensión de alimentos {{ request.agreement.alimony.amount }} euros{{ each_children_text }}, esta obligación se extinguirá en el momento que los hijos mantengan una situación laboral estable.
+                                {{ debtor }} abonará a {{ creditor }} en concepto de pensión de alimentos {{ request.agreement.alimony.amount }} euros{{ each_children_text }}, esta obligación se extinguirá en el momento que los hijos alcancen la independencia económica.
                                 <br />
                                 <br />
                                 Dicha cantidad deberá ser ingresada en los cinco primeros días de cada mes, en la entidad y en la cuenta bancaria que designe {{ creditor }}.
@@ -316,7 +316,7 @@
                                 Los gastos extraordinarios {{ children_of_younger_text }} en común que sean necesarios, serán sufragados previo acuerdo de los progenitores, al 50%, y en general aquellos gastos imprevisibles o de coste excepcional, como matrículas universitarias o similares, etc.
                             {% endif %}
                             {% if custody == 'Monoparental' %}
-                                {{ debtor }} abonará a {{ creditor }} en concepto de pensión de alimentos {{ request.agreement.alimony.amount }} euros{{ each_children_text }}, esta obligación se extinguirá en el momento que los hijos mantengan una situación laboral estable.
+                                {{ debtor }} abonará a {{ creditor }} en concepto de pensión de alimentos {{ request.agreement.alimony.amount }} euros{{ each_children_text }}, esta obligación se extinguirá en el momento que los hijos alcancen la independencia económica.
                                 <br />
                                 <br />
                                 Dicha cantidad deberá ser ingresada en los cinco primeros días de cada mes, en la entidad y en la cuenta bancaria que designe {{ creditor }}.
@@ -366,6 +366,11 @@
                             {% else %}
                                 El matrimonio se contrajo, como ya se ha expuesto, bajo el régimen económico de separación de bienes, por lo que, al no existir patrimonio ganancial, no tienen nada que reclamarse al respecto.
                             {% endif %}
+                        </div>
+                        <h2 style="text-align: center;">-{{ section|roman }}-</h2>
+                        {% set section = section + 1 %}
+                        <div>
+                            Este régimen constituye un mínimo que podrá ser modificado de común acuerdo entre los cónyuges.
                         </div>
                         <h2 style="text-align: center;">-{{ section|roman }}-</h2>
                         {% set section = section + 1 %}
