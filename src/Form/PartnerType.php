@@ -39,7 +39,7 @@ class PartnerType extends AbstractType
                 'label' => 'Dirección'
             ])
             ->add('town', null, [
-                'label' => 'Ciudad de la dirección'
+                'label' => 'Localidad'
             ])
         ;
     }
