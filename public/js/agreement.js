@@ -561,6 +561,214 @@ jQuery(document).ready(function() {
         language: 'es'
     });
 
+    $('#request_request_type').qtip({
+        content: {
+            text: '<b>Separación.</b><br />'+
+                  'Las separación produce la suspensión de la vida común de los casados y cesa la posibilidad de vincular bienes del otro cónyuge en el ejercicio de la potestad doméstica. Se sigue estando casado y no se puede contraer matrimonio nuevamente.<br /><br />'+
+                  '<b>Divorcio.</b><br />'+
+                  'Se produce la disolución del matrimonio, la disolución del régimen económico matrimonial.'
+        },
+        style: {
+            classes: 'qtip-bootstrap'
+        },
+        position: {
+            my: 'bottom left',
+            at: 'top left',
+        }
+    });
+    $('#request_town').qtip({
+        content: {
+            text: 'Se debe incluir el lugar donde se firma el convenio.<br />Generalmente el del último domicilio familiar.'
+        },
+        style: {
+            classes: 'qtip-bootstrap'
+        },
+        position: {
+            at: 'bottom left',
+        }
+    });
+    $('#request_date').qtip({
+        content: {
+            text: 'Tiene que ser posterior a la celebración del día del matrimonio y como mínimo tres meses después de la celebración de éste.'
+        },
+        style: {
+            classes: 'qtip-bootstrap'
+        },
+        position: {
+            my: 'bottom left',
+            at: 'top left',
+        }
+    });
+    $('#request_marriage_partner_first_address').qtip({
+        content: {
+            text: 'Indicar la dirección en el momento de la firma del convenio. Puede ser la misma dirección para ambos cónyuges.'
+        },
+        style: {
+            classes: 'qtip-bootstrap'
+        },
+        position: {
+            at: 'bottom left',
+        }
+    });
+    $('#request_marriage_partner_second_address').qtip({
+        content: {
+            text: 'Indicar la dirección en el momento de la firma del convenio. Puede ser la misma dirección para ambos cónyuges.'
+        },
+        style: {
+            classes: 'qtip-bootstrap'
+        },
+        position: {
+            at: 'bottom left',
+        }
+    });
+    $('#request_marriage_marriage_type').qtip({
+        content: {
+            text: 'El canónico es el realizado por la Iglesia Católica, y el Civil el realizado en Juzgados, registros civiles, notarias o ayuntamientos.'
+        },
+        style: {
+            classes: 'qtip-bootstrap'
+        },
+        position: {
+            my: 'bottom left',
+            at: 'top left',
+        }
+    });
+    $('#request_marriage_registry_volume').qtip({
+        content: {
+            text: 'En el libro de familia consta el tomo en el que se encuentra inscrito. <img src="/img/content/volumen.jpeg" />'
+        },
+        style: {
+            classes: 'qtip-bootstrap'
+        },
+        position: {
+            at: 'bottom left',
+        }
+    });
+    $('#request_marriage_registry_page').qtip({
+        content: {
+            text: 'En el libro de familia consta el tomo en el que se encuentra inscrito. <img src="/img/content/volumen.jpeg" />'
+        },
+        style: {
+            classes: 'qtip-bootstrap'
+        },
+        position: {
+            at: 'bottom left',
+        }
+    });
+    $('#request_marriage_economic_system').qtip({
+        content: {
+            text: 'Si el matrimonio no se realiza en una región que posea derecho foral, y si no se ha expresado lo contrario el matrimonio se realiza en régimen de gananciales.'
+        },
+        style: {
+            classes: 'qtip-bootstrap'
+        },
+        position: {
+            my: 'bottom left',
+            at: 'top left',
+        }
+    });
+    $('#request_marriage_house_address').qtip({
+        content: {
+            text: 'El último domicilio que tuvo la unidad familiar en común, puede coincidir con el de los ambos cónyuges, o con el de uno de ellos.'
+        },
+        style: {
+            classes: 'qtip-bootstrap'
+        },
+        position: {
+            my: 'bottom left',
+            at: 'top left',
+        }
+    });
+    $('#request_agreement_custody').qtip({
+        content: {
+            text: '<li><b>Compartida.</b> Ambos padres ejercen la custodia de manera compartida y la patria potestad se ejerce de manera conjunta.</li><br />' +
+                  '<li><b>Monoparental.</b> La guarda y custodia es ejercida de manera conjunta por uno de los cónyuges. La patria potestad se ejerce de manera conjunta.</li>'
+        },
+        style: {
+            classes: 'qtip-bootstrap'
+        },
+        position: {
+            my: 'bottom right',
+            at: 'top right',
+        }
+    });
+    $('#request_agreement_pick_up').qtip({
+        content: {
+            text: 'Se tiene que escoger un lugar para la recogida de los menores. Damos a elegir entre el centro escolar o el domicilio de los cónyuges.'
+        },
+        style: {
+            classes: 'qtip-bootstrap'
+        },
+        position: {
+            my: 'bottom right',
+            at: 'top right',
+        }
+    });
+    $('#request_agreement_pick_up_home').qtip({
+        content: {
+            text: 'Se tiene que escoger un día de recogida. Varia en funcion si elegimos entre el centro escolar o el domicilio de los cónyuges.'
+        },
+        style: {
+            classes: 'qtip-bootstrap'
+        },
+        position: {
+            my: 'bottom right',
+            at: 'top right',
+        }
+    });
+    $('#request_agreement_summer_period').qtip({
+        content: {
+            text: 'Se da la opción de dos períodos iguales o periodos por quincenas. Se recomienda la opción de las quincenas cuando los hijos tienen una corta edad.'
+        },
+        style: {
+            classes: 'qtip-bootstrap'
+        },
+        position: {
+            my: 'bottom right',
+            at: 'top right',
+        }
+    });
+    $('#request_agreement_partner_christmas').qtip({
+        content: {
+            text: 'Los periodos de navidad siempre se dividen por mitad, eligiendo cada progenitor en los distintos años.'
+        },
+        style: {
+            classes: 'qtip-bootstrap'
+        },
+        position: {
+            my: 'bottom right',
+            at: 'top right',
+        }
+    });
+    $('#alimony_help').qtip({
+        content: {
+            text: 'La pensión es independiente del régimen de guarda y custodia, de tal manera que aunque se establezca un régimen de guarda y custodia compartida, no implica que se pueda fijar una pensión de alimentos en favor de los hijos.'
+        },
+        style: {
+            classes: 'qtip-bootstrap'
+        },
+        position: {
+            my: 'bottom right',
+            at: 'top right',
+        }
+    });
+    $('#compensatory_pension_help').qtip({
+        content: {
+            text: 'La pensión compensatoria busca compensar los desequilibrios económicos que pueden ocurrir entre los cónyuges en el momento de la separación o divorcio.<br />' +
+                '<li><b>¿Quién recibirá la pensión?</b> Aquel cónyuge que tenga menos ingresos o no tenga</li>' +
+                '<li><b>¿Qué cantidad?</b> Aquella cantidad que permitan cubrir el desequilibrio existente.</li>' +
+                '<li><b>¿Cuándo se de debe fijar?</b> Si el cónyuge con menos ingresos está incorporado a la vida laboral no es necesario fijar pensión. Si nunca ha trabajado uno de los cónyuges en ese caso habrá que fijar una pensión, siempre y cuando ya no sea posible su incorporación al mercado de trabajo.</li>' +
+                '<li><b>¿Se puede limitar la pensión?</b> Se puede establecer un límite temporal, ello dependerá de las posibilidades del cónyuge que recibe la pensión de poder obtener ingresos en el futuro. Ese plazo puede fijarse por plazos y años.</li>'
+        },
+        style: {
+            classes: 'qtip-bootstrap compensatory_pension_help',
+        },
+        position: {
+            my: 'bottom left',
+            at: 'top right',
+        }
+    });
+
     $('form').bind('submit', function(){
         $debtorSelect.prop('disabled', false);
     });

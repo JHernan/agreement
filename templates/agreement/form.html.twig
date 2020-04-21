@@ -3,8 +3,9 @@
 {% block title %}Service{% endblock %}
 
 {% block stylesheets %}
-    {{ parent() }}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/qtip2/3.0.3/jquery.qtip.min.css">
+    {{ parent() }}
 {% endblock %}
 
 {% block home_banner %}
@@ -62,32 +63,32 @@
                             <p>Introduzca la información general del convenio</p>
                             <div class="row">
                                 <div class="col-md-4">
-                                        {{
-                                            form_row(form.request_type, {'attr': {
-                                                'class': 'form-control',
-                                            }})
-                                        }}
+                                    {{
+                                        form_row(form.request_type, {'attr': {
+                                            'class': 'form-control'
+                                        }})
+                                    }}
                                 </div>
                                 <div class="col-md-4">
-                                        {{
-                                            form_row(form.town, {'attr': {
-                                                'class': 'form-control',
-                                                'placeholder': 'Fecha del Convenio',
-                                                'onfocus': 'this.placeholder = ""',
-                                                'onblur': 'this.placeholder = "Ciudad del Convenio"',
-                                            }})
-                                        }}
+                                    {{
+                                        form_row(form.town, {'attr': {
+                                            'class': 'form-control',
+                                            'placeholder': 'Fecha del Convenio',
+                                            'onfocus': 'this.placeholder = ""',
+                                            'onblur': 'this.placeholder = "Ciudad del Convenio"',
+                                        }})
+                                    }}
                                 </div>
                                 <div class="col-md-4">
-                                        {{
-                                            form_row(form.date, {'attr': {
-                                                'class': 'form-control datepicker',
-                                                'placeholder': 'Fecha del Convenio',
-                                                'onfocus': 'this.placeholder = ""',
-                                                'onblur': 'this.placeholder = "Fecha del Convenio"',
-                                                'autocomplete': 'off',
-                                            }})
-                                        }}
+                                    {{
+                                        form_row(form.date, {'attr': {
+                                            'class': 'form-control datepicker',
+                                            'placeholder': 'Fecha del Convenio',
+                                            'onfocus': 'this.placeholder = ""',
+                                            'onblur': 'this.placeholder = "Fecha del Convenio"',
+                                            'autocomplete': 'off',
+                                        }})
+                                    }}
                                 </div>
                             </div>
                         </div>
@@ -522,7 +523,7 @@
                             <div id="alimony_information" class="section_bottom">
                                 <div id="alimony-block">
                                     <h3>Pensión alimenticia</h3>
-                                    <p>A continuación indique los datos de la pensión alimenticia de los hijos e hijas.</p>
+                                    <p>A continuación indique los datos de la pensión alimenticia de los hijos e hijas. <img src="{{ asset('img/content/help.png') }}" width="20px" id="alimony_help" /></p>
 
                                     <div class="row" id="alimony-holder">
                                         <div class="col-md-3">
@@ -563,7 +564,7 @@
 
                         <div id="compensatory_pension_information" class="section_bottom">
                             <h3>Pensión compensatoria</h3>
-                            <p>A continuación indique los datos de la pensión compensatoria.</p>
+                            <p>A continuación indique los datos de la pensión compensatoria. <img src="{{ asset('img/content/help.png') }}" width="20px" id="compensatory_pension_help" /></p>
 
                             <div class="row">
                                 <div class="col-md-4">
@@ -636,6 +637,7 @@
 {% block javascripts %}
 {#    <script src="{{ asset('build/js/app.js') }}"></script>#}
     <script src="{{ asset('js/jquery-3.2.1.min.js') }}"></script>
+    <script src="http://cdn.jsdelivr.net/qtip2/3.0.3/jquery.qtip.min.js"></script>
     <script src="{{ asset('js/agreement.js') }}"></script>
     <!-- Bootstrap Date-Picker Plugin -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
