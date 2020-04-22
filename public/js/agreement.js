@@ -635,10 +635,10 @@ jQuery(document).ready(function() {
     });
     $('#request_marriage_registry_volume').qtip({
         content: {
-            text: 'En el libro de familia consta el tomo en el que se encuentra inscrito. <img src="/img/content/volumen.jpeg" />'
+            text: 'En el libro de familia consta el tomo en el que se encuentra inscrito.<br /><img src="/img/content/libro2.png" width="300px" /><img src="/img/content/libro3.png" width="300px" />'
         },
         style: {
-            classes: 'qtip-bootstrap'
+            classes: 'qtip-bootstrap registry_help'
         },
         position: {
             at: 'bottom left',
@@ -646,10 +646,10 @@ jQuery(document).ready(function() {
     });
     $('#request_marriage_registry_page').qtip({
         content: {
-            text: 'En el libro de familia consta el tomo en el que se encuentra inscrito. <img src="/img/content/volumen.jpeg" />'
+            text: 'En el libro de familia consta el tomo en el que se encuentra inscrito.<br /><img src="/img/content/libro2.png" width="300px" /><img src="/img/content/libro3.png" width="300px" />'
         },
         style: {
-            classes: 'qtip-bootstrap'
+            classes: 'qtip-bootstrap registry_help'
         },
         position: {
             at: 'bottom left',
@@ -840,6 +840,31 @@ jQuery(document).ready(function() {
         $('.datepicker').datepicker({
             format: 'dd-mm-yyyy',
             language: 'es'
+        });
+
+        $('.child-registry-volume').qtip({
+            content: {
+                text: 'En el libro de familia consta el tomo en el que se encuentra inscrito.<br /><img src="/img/content/libro3.png" width="300px" /><img src="/img/content/libro4.png" width="300px" />'
+            },
+            style: {
+                classes: 'qtip-bootstrap registry_help'
+            },
+            position: {
+                at: 'bottom left',
+            }
+        });
+
+        $('.child-registry-page').qtip({
+            content: {
+                text: 'En el libro de familia consta el tomo en el que se encuentra inscrito.<br /><img src="/img/content/libro3.png" width="300px" /><img src="/img/content/libro4.png" width="300px" />'
+            },
+            style: {
+                classes: 'qtip-bootstrap registry_help'
+            },
+            position: {
+                my: 'top right',
+                at: 'bottom right',
+            }
         });
     }
 

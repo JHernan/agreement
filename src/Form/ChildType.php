@@ -33,12 +33,12 @@ class ChildType extends AbstractType
                 'attr' => ['class' => 'form-control'],
             ])
             ->add('volume', IntegerType::class, [
-                'label' => 'Volumen del Registro Civil',
-                'attr' => ['class' => 'form-control'],
+                'label' => 'Volumen o Tomo de la inscripción',
+                'attr' => ['class' => 'form-control child-registry-volume'],
             ])
             ->add('page', IntegerType::class, [
-                'label' => 'Página del Registro Civil',
-                'attr' => ['class' => 'form-control'],
+                'label' => 'Página de la inscripción',
+                'attr' => ['class' => 'form-control child-registry-page'],
             ])
         ;
     }

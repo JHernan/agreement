@@ -3966,15 +3966,20 @@ h6 {
   margin-bottom: 20px; }
 
 /* line 23, public/scss/_agreement.scss */
+.registry_help {
+  max-width: 650px;
+  width: 650px; }
+
+/* line 28, public/scss/_agreement.scss */
 .compensatory_pension_help {
   max-width: 600px;
   width: 600px; }
 
-/* line 28, public/scss/_agreement.scss */
+/* line 33, public/scss/_agreement.scss */
 .section_bottom {
   margin-bottom: 70px; }
 
-/* line 33, public/scss/_agreement.scss */
+/* line 38, public/scss/_agreement.scss */
 .errors .error {
   width: 100%;
   margin-top: 0.25rem;
