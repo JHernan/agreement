@@ -10,6 +10,12 @@ use Symfony\Component\Validator\Constraints as Assert;
 class House
 {
     /**
+     * @Assert\NotBlank()
+     * @Assert\Choice(callback={"App\Util\Street", "getStreets"}, message="Selecciona una opción válida.")
+     */
+    private $street;
+
+    /**
      * @Assert\NotBlank
      */
     private $address;
@@ -25,6 +31,18 @@ class House
     public function __construct()
     {
         $this->marriages = new ArrayCollection();
+    }
+
+    public function getStreet()
+    {
+        return $this->street;
+    }
+
+    public function setStreet($street)
+    {
+        $this->street = $street;
+
+        return $this;
     }
 
     public function getAddress(): ?string

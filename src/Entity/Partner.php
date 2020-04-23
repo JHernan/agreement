@@ -39,6 +39,12 @@ class Partner
 
     /**
      * @Assert\NotBlank()
+     * @Assert\Choice(callback={"App\Util\Street", "getStreets"}, message="Selecciona una opción válida.")
+     */
+    private $street;
+
+    /**
+     * @Assert\NotBlank()
      */
     private $address;
 
@@ -114,6 +120,18 @@ class Partner
     public function setNationality(string $nationality): self
     {
         $this->nationality = $nationality;
+
+        return $this;
+    }
+
+    public function getStreet()
+    {
+        return $this->street;
+    }
+
+    public function setStreet($street)
+    {
+        $this->street = $street;
 
         return $this;
     }

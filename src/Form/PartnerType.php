@@ -4,6 +4,7 @@
 namespace App\Form;
 
 use App\Entity\Partner;
+use App\Util\Street;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -34,6 +35,11 @@ class PartnerType extends AbstractType
             ])
             ->add('nationality', null, [
                 'label' => 'Nacionalidad'
+            ])
+            ->add('street', ChoiceType::class, [
+                'choices' => Street::getStreets(),
+                'placeholder' => 'Seleccione una opción',
+                'label' => 'Tipo de vía'
             ])
             ->add('address', null, [
                 'label' => 'Dirección'

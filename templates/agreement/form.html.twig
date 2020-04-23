@@ -163,7 +163,14 @@
                                         </div>
 
                                         <div class="row">
-                                            <div class="col-md-6">
+                                            <div class="col-md-4">
+                                                {{
+                                                    form_row(form.marriage.partner_first.street, {'attr': {
+                                                        'class': 'form-control'
+                                                    }})
+                                                }}
+                                            </div>
+                                            <div class="col-md-4">
                                                 {{
                                                     form_row(form.marriage.partner_first.address, {'attr': {
                                                         'class': 'form-control',
@@ -173,7 +180,7 @@
                                                     }})
                                                 }}
                                             </div>
-                                            <div class="col-md-6">
+                                            <div class="col-md-4">
                                                 {{
                                                     form_row(form.marriage.partner_first.town, {'attr': {
                                                         'class': 'form-control',
@@ -248,7 +255,14 @@
                                         </div>
 
                                         <div class="row">
-                                            <div class="col-md-6">
+                                            <div class="col-md-4">
+                                                {{
+                                                    form_row(form.marriage.partner_second.street, {'attr': {
+                                                        'class': 'form-control'
+                                                    }})
+                                                }}
+                                            </div>
+                                            <div class="col-md-4">
                                                 {{
                                                     form_row(form.marriage.partner_second.address, {'attr': {
                                                         'class': 'form-control',
@@ -258,7 +272,7 @@
                                                     }})
                                                 }}
                                             </div>
-                                            <div class="col-md-6">
+                                            <div class="col-md-4">
                                                 {{
                                                     form_row(form.marriage.partner_second.town, {'attr': {
                                                         'class': 'form-control',
@@ -356,7 +370,14 @@
                             </div>
 
                             <div class="row">
-                                <div class="col-md-6">
+                                <div class="col-md-4">
+                                    {{
+                                        form_row(form.marriage.house.street, {'attr': {
+                                            'class': 'form-control'
+                                        }})
+                                    }}
+                                </div>
+                                <div class="col-md-4">
                                         {{
                                             form_row(form.marriage.house.address, {'attr': {
                                                 'class': 'form-control',
@@ -366,7 +387,7 @@
                                             }})
                                         }}
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-md-4">
                                         {{
                                             form_row(form.marriage.house.town, {'attr': {
                                                 'class': 'form-control',
