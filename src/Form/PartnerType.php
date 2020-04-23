@@ -4,6 +4,7 @@
 namespace App\Form;
 
 use App\Entity\Partner;
+use App\Util\Nationality;
 use App\Util\Street;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
@@ -33,7 +34,9 @@ class PartnerType extends AbstractType
             ->add('last_name', null, [
                 'label' => 'Apellidos'
             ])
-            ->add('nationality', null, [
+            ->add('nationality', ChoiceType::class, [
+                'choices' => Nationality::getNationalities(),
+                'placeholder' => 'Seleccione una opción',
                 'label' => 'Nacionalidad'
             ])
             ->add('street', ChoiceType::class, [

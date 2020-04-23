@@ -34,6 +34,7 @@ class Partner
 
     /**
      * @Assert\NotBlank()
+     * @Assert\Choice(callback={"App\Util\Nationality", "getNationalities"}, message="Selecciona una opción válida.")
      */
     private $nationality;
 
