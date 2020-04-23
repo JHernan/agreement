@@ -99,189 +99,171 @@
 
                             <div class="col-md-12">
 
-                                <div class="row">
+                                <h5>Primer cónyuge</h5>
+                                <p>Introduzca los datos del primer cónyuge</p>
 
-                                    <div class="col-md-6">
-
-                                        <h5>Primer cónyuge</h5>
-                                        <p>Introduzca los datos del primer cónyuge</p>
-
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                {{
-                                                    form_row(form.marriage.partner_first.title, {'attr': {
-                                                        'class': 'form-control',
-                                                    }})
-                                                }}
-                                            </div>
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            {{
+                                                form_row(form.marriage.partner_first.title, {'attr': {
+                                                    'class': 'form-control',
+                                                }})
+                                            }}
                                         </div>
-
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                {{
-                                                    form_row(form.marriage.partner_first.first_name, {'attr': {
-                                                        'class': 'form-control',
-                                                        'placeholder': 'Nombre del primer cónyuge',
-                                                        'onfocus': 'this.placeholder = ""',
-                                                        'onblur': 'this.placeholder = "Nombre del primer cónyuge"',
-                                                    }})
-                                                }}
-                                            </div>
-                                            <div class="col-md-6">
-                                                {{
-                                                    form_row(form.marriage.partner_first.last_name, {'attr': {
-                                                        'class': 'form-control',
-                                                        'placeholder': 'Apellidos del primer cónyuge',
-                                                        'onfocus': 'this.placeholder = ""',
-                                                        'onblur': 'this.placeholder = "Apellidos del primer cónyuge"',
-                                                    }})
-                                                }}
-                                            </div>
+                                        <div class="col-md-3">
+                                            {{
+                                                form_row(form.marriage.partner_first.first_name, {'attr': {
+                                                    'class': 'form-control',
+                                                    'placeholder': 'Nombre del primer cónyuge',
+                                                    'onfocus': 'this.placeholder = ""',
+                                                    'onblur': 'this.placeholder = "Nombre del primer cónyuge"',
+                                                }})
+                                            }}
                                         </div>
-
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                {{
-                                                    form_row(form.marriage.partner_first.dni, {'attr': {
-                                                        'class': 'form-control',
-                                                        'placeholder': 'DNI del primer cónyuge',
-                                                        'onfocus': 'this.placeholder = ""',
-                                                        'onblur': 'this.placeholder = "DNI del primer cónyuge"',
-                                                    }})
-                                                }}
-                                            </div>
-                                            <div class="col-md-6">
-                                                {{
-                                                    form_row(form.marriage.partner_first.nationality, {'attr': {
-                                                        'class': 'form-control',
-                                                        'placeholder': 'Nacionalidad del primer cónyuge',
-                                                        'onfocus': 'this.placeholder = ""',
-                                                        'onblur': 'this.placeholder = "Nacionalidad del primer cónyuge"',
-                                                    }})
-                                                }}
-                                            </div>
+                                        <div class="col-md-3">
+                                            {{
+                                                form_row(form.marriage.partner_first.last_name, {'attr': {
+                                                    'class': 'form-control',
+                                                    'placeholder': 'Apellidos del primer cónyuge',
+                                                    'onfocus': 'this.placeholder = ""',
+                                                    'onblur': 'this.placeholder = "Apellidos del primer cónyuge"',
+                                                }})
+                                            }}
                                         </div>
-
-                                        <div class="row">
-                                            <div class="col-md-4">
-                                                {{
-                                                    form_row(form.marriage.partner_first.street, {'attr': {
-                                                        'class': 'form-control'
-                                                    }})
-                                                }}
-                                            </div>
-                                            <div class="col-md-4">
-                                                {{
-                                                    form_row(form.marriage.partner_first.address, {'attr': {
-                                                        'class': 'form-control',
-                                                        'placeholder': 'Dirección del primer cónyuge',
-                                                        'onfocus': 'this.placeholder = ""',
-                                                        'onblur': 'this.placeholder = "Dirección del primer cónyuge"',
-                                                    }})
-                                                }}
-                                            </div>
-                                            <div class="col-md-4">
-                                                {{
-                                                    form_row(form.marriage.partner_first.town, {'attr': {
-                                                        'class': 'form-control',
-                                                        'placeholder': 'Ciudad de la dirección del primer cónyuge',
-                                                        'onfocus': 'this.placeholder = ""',
-                                                        'onblur': 'this.placeholder = "Ciudad de la dirección del primer cónyuge"',
-                                                    }})
-                                                }}
-                                            </div>
+                                        <div class="col-md-3">
+                                            {{
+                                                form_row(form.marriage.partner_first.dni, {'attr': {
+                                                    'class': 'form-control',
+                                                    'placeholder': 'DNI del primer cónyuge',
+                                                    'onfocus': 'this.placeholder = ""',
+                                                    'onblur': 'this.placeholder = "DNI del primer cónyuge"',
+                                                }})
+                                            }}
                                         </div>
                                     </div>
 
-                                    <div class="col-md-6">
-
-                                        <h5>Segundo cónyuge</h5>
-                                        <p>Introduzca los datos del segundo cónyuge</p>
-
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                {{
-                                                    form_row(form.marriage.partner_second.title, {'attr': {
-                                                        'class': 'form-control',
-                                                    }})
-                                                }}
-                                            </div>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            {{
+                                                form_row(form.marriage.partner_first.nationality, {'attr': {
+                                                    'class': 'form-control',
+                                                    'placeholder': 'Nacionalidad del primer cónyuge',
+                                                    'onfocus': 'this.placeholder = ""',
+                                                    'onblur': 'this.placeholder = "Nacionalidad del primer cónyuge"',
+                                                }})
+                                            }}
                                         </div>
-
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                {{
-                                                    form_row(form.marriage.partner_second.first_name, {'attr': {
-                                                        'class': 'form-control',
-                                                        'placeholder': 'Nombre del segundo cónyuge',
-                                                        'onfocus': 'this.placeholder = ""',
-                                                        'onblur': 'this.placeholder = "Nombre del segundo cónyuge"',
-                                                    }})
-                                                }}
-                                            </div>
-                                            <div class="col-md-6">
-                                                {{
-                                                    form_row(form.marriage.partner_second.last_name, {'attr': {
-                                                        'class': 'form-control',
-                                                        'placeholder': 'Apellido del segundo cónyuge',
-                                                        'onfocus': 'this.placeholder = ""',
-                                                        'onblur': 'this.placeholder = "Apellido del segundo cónyuge"',
-                                                    }})
-                                                }}
-                                            </div>
+                                        <div class="col-md-3">
+                                            {{
+                                                form_row(form.marriage.partner_first.street, {'attr': {
+                                                    'class': 'form-control'
+                                                }})
+                                            }}
                                         </div>
-
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                {{
-                                                    form_row(form.marriage.partner_second.dni, {'attr': {
-                                                        'class': 'form-control',
-                                                        'placeholder': 'DNI del segundo cónyuge',
-                                                        'onfocus': 'this.placeholder = ""',
-                                                        'onblur': 'this.placeholder = "DNI del segundo cónyuge"',
-                                                    }})
-                                                }}
-                                            </div>
-                                            <div class="col-md-6">
-                                                {{
-                                                    form_row(form.marriage.partner_second.nationality, {'attr': {
-                                                        'class': 'form-control',
-                                                        'placeholder': 'Nacionalidad del segundo cónyuge',
-                                                        'onfocus': 'this.placeholder = ""',
-                                                        'onblur': 'this.placeholder = "Nacionalidad del segundo cónyuge"',
-                                                    }})
-                                                }}
-                                             </div>
+                                        <div class="col-md-3">
+                                            {{
+                                                form_row(form.marriage.partner_first.address, {'attr': {
+                                                    'class': 'form-control',
+                                                    'placeholder': 'Dirección del primer cónyuge',
+                                                    'onfocus': 'this.placeholder = ""',
+                                                    'onblur': 'this.placeholder = "Dirección del primer cónyuge"',
+                                                }})
+                                            }}
                                         </div>
+                                        <div class="col-md-3">
+                                            {{
+                                                form_row(form.marriage.partner_first.town, {'attr': {
+                                                    'class': 'form-control',
+                                                    'placeholder': 'Ciudad de la dirección del primer cónyuge',
+                                                    'onfocus': 'this.placeholder = ""',
+                                                    'onblur': 'this.placeholder = "Ciudad de la dirección del primer cónyuge"',
+                                                }})
+                                            }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <h5>Segundo cónyuge</h5>
+                                <p>Introduzca los datos del segundo cónyuge</p>
 
-                                        <div class="row">
-                                            <div class="col-md-4">
-                                                {{
-                                                    form_row(form.marriage.partner_second.street, {'attr': {
-                                                        'class': 'form-control'
-                                                    }})
-                                                }}
-                                            </div>
-                                            <div class="col-md-4">
-                                                {{
-                                                    form_row(form.marriage.partner_second.address, {'attr': {
-                                                        'class': 'form-control',
-                                                        'placeholder': 'Dirección del segundo cónyuge',
-                                                        'onfocus': 'this.placeholder = ""',
-                                                        'onblur': 'this.placeholder = "Dirección del segundo cónyuge"',
-                                                    }})
-                                                }}
-                                            </div>
-                                            <div class="col-md-4">
-                                                {{
-                                                    form_row(form.marriage.partner_second.town, {'attr': {
-                                                        'class': 'form-control',
-                                                        'placeholder': 'Ciudad de la dirección del segundo cónyuge',
-                                                        'onfocus': 'this.placeholder = ""',
-                                                        'onblur': 'this.placeholder = "Ciudad de la dirección del segundo cónyuge"',
-                                                    }})
-                                                }}
-                                            </div>
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            {{
+                                                form_row(form.marriage.partner_second.title, {'attr': {
+                                                    'class': 'form-control',
+                                                }})
+                                            }}
+                                        </div>
+                                        <div class="col-md-3">
+                                            {{
+                                                form_row(form.marriage.partner_second.first_name, {'attr': {
+                                                    'class': 'form-control',
+                                                    'placeholder': 'Nombre del segundo cónyuge',
+                                                    'onfocus': 'this.placeholder = ""',
+                                                    'onblur': 'this.placeholder = "Nombre del segundo cónyuge"',
+                                                }})
+                                            }}
+                                        </div>
+                                        <div class="col-md-3">
+                                            {{
+                                                form_row(form.marriage.partner_second.last_name, {'attr': {
+                                                    'class': 'form-control',
+                                                    'placeholder': 'Apellido del segundo cónyuge',
+                                                    'onfocus': 'this.placeholder = ""',
+                                                    'onblur': 'this.placeholder = "Apellido del segundo cónyuge"',
+                                                }})
+                                            }}
+                                        </div>
+                                        <div class="col-md-3">
+                                            {{
+                                                form_row(form.marriage.partner_second.dni, {'attr': {
+                                                    'class': 'form-control',
+                                                    'placeholder': 'DNI del segundo cónyuge',
+                                                    'onfocus': 'this.placeholder = ""',
+                                                    'onblur': 'this.placeholder = "DNI del segundo cónyuge"',
+                                                }})
+                                            }}
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            {{
+                                                form_row(form.marriage.partner_second.nationality, {'attr': {
+                                                    'class': 'form-control',
+                                                    'placeholder': 'Nacionalidad del segundo cónyuge',
+                                                    'onfocus': 'this.placeholder = ""',
+                                                    'onblur': 'this.placeholder = "Nacionalidad del segundo cónyuge"',
+                                                }})
+                                            }}
+                                         </div>
+                                        <div class="col-md-3">
+                                            {{
+                                                form_row(form.marriage.partner_second.street, {'attr': {
+                                                    'class': 'form-control'
+                                                }})
+                                            }}
+                                        </div>
+                                        <div class="col-md-3">
+                                            {{
+                                                form_row(form.marriage.partner_second.address, {'attr': {
+                                                    'class': 'form-control',
+                                                    'placeholder': 'Dirección del segundo cónyuge',
+                                                    'onfocus': 'this.placeholder = ""',
+                                                    'onblur': 'this.placeholder = "Dirección del segundo cónyuge"',
+                                                }})
+                                            }}
+                                        </div>
+                                        <div class="col-md-3">
+                                            {{
+                                                form_row(form.marriage.partner_second.town, {'attr': {
+                                                    'class': 'form-control',
+                                                    'placeholder': 'Ciudad de la dirección del segundo cónyuge',
+                                                    'onfocus': 'this.placeholder = ""',
+                                                    'onblur': 'this.placeholder = "Ciudad de la dirección del segundo cónyuge"',
+                                                }})
+                                            }}
                                         </div>
                                     </div>
                                 </div>
