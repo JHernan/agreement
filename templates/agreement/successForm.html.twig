@@ -261,8 +261,9 @@
                             <b>GUARDA Y CUSTODIA.</b>
                             {% if custody == 'Compartida' %}
                                 La guarda y custodia {{ children_of_younger_text }}, será compartida. Para ello {{ children_will_be_text }} en compañía de cada progenitor {{ alternate_weeks_text }}.
+                                {{ pick_up_text }}
                             {% else %}
-                                La guardia y custodia {{ children_of_younger_text }} es atribuida a {{ custody_partner }}. {# TODO #}
+                                La guardia y custodia {{ children_of_younger_text }} es atribuida a {{ custody_partner }}.
                             {% endif %}
                         </div>
                         <h2 style="text-align: center;">-{{ section|roman }}-</h2>
@@ -276,7 +277,8 @@
                                 En principio el régimen de visitas se determinará previo acuerdo de ambos progenitores, pero para el caso de desacuerdo y como mínimo, se estará al siguiente régimen, debiendo ser interpretado con criterios de flexibilidad y buena fe, dado que se contempla como un derecho {{ children_of_younger_text }}.
                                 <br />
                                 <br />
-                                <b>A)</b> {{ children_younger_text | capitalize }} estará en compañía del progenitor no custodio durante fines de semana alternos. {{ pick_up_text }}
+                                <b>A)</b> {{ children_younger_text | capitalize }} estará en compañía del progenitor no custodio durante fines de semana alternos.
+                                {{ pick_up_text }}
                             {% endif %}
                             <br />
                             <br />
