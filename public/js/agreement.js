@@ -692,6 +692,18 @@ jQuery(document).ready(function() {
             at: 'top right',
         }
     });
+    $('#request_agreement_partner').qtip({
+        content: {
+            text: 'Seleccione el cónyuge que ostentará la guarda y custodia y el convenio automáticamente generará un régimen de visitas al progenitor no custodio de los dos.'
+        },
+        style: {
+            classes: 'qtip-bootstrap'
+        },
+        position: {
+            my: 'bottom right',
+            at: 'top right',
+        }
+    });
     $('#request_agreement_pick_up').qtip({
         content: {
             text: 'Se tiene que escoger un lugar para la recogida de los menores. Damos a elegir entre el centro escolar o el domicilio de los cónyuges.'
@@ -728,9 +740,34 @@ jQuery(document).ready(function() {
             at: 'top right',
         }
     });
+    $('#request_agreement_partner_summer').qtip({
+        content: {
+            text: 'Selecciona el cónyuge que elegirá el período de vacaciones en los años pares y el convenio atribuirá la elección de los años impares al otro progenitor.'
+        },
+        style: {
+            classes: 'qtip-bootstrap'
+        },
+        position: {
+            my: 'bottom right',
+            at: 'top right',
+        }
+    });
+    $('#request_agreement_partner_holy_week').qtip({
+        content: {
+            text: 'Seleccione el cónyuge que elegirá el periodo de Semana Santa en los años pares y el convenio atribuirá la elección de los años impares al otro progenitor.'
+        },
+        style: {
+            classes: 'qtip-bootstrap'
+        },
+        position: {
+            my: 'bottom right',
+            at: 'top right',
+        }
+    });
     $('#request_agreement_partner_christmas').qtip({
         content: {
-            text: 'Los periodos de navidad siempre se dividen por mitad, eligiendo cada progenitor en los distintos años.'
+            text: 'Los periodos de Navidad siempre se dividen por mitad, eligiendo cada progenitor en los distintos años.<br />' +
+                'Seleccione el cónyuge que elegirá el periodo de Navidad en los años pares y el convenio atribuirá la elección de los años impares al otro progenitor.'
         },
         style: {
             classes: 'qtip-bootstrap'
