@@ -6,6 +6,8 @@ namespace App\Form;
 use App\Entity\Agreement;
 use App\Entity\Request;
 use App\Repository\RequestTypeRepository;
+use Karser\Recaptcha3Bundle\Form\Recaptcha3Type;
+use Karser\Recaptcha3Bundle\Validator\Constraints\Recaptcha3;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -42,6 +44,11 @@ class RequestType extends AbstractType
             ])
             ->add('agreement', AgreementType::class, [
                 'data_class' => 'App\Entity\Agreement'
+            ])
+            ->add('captcha', Recaptcha3Type::class, [
+                'constraints' => new Recaptcha3(),
+                'action_name' => 'request',
+                'error_bubbling'=> false
             ])
             ->add('save', SubmitType::class)
         ;

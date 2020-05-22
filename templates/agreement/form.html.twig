@@ -46,6 +46,7 @@
         <div class="row" id="app">
             <div class="col-md-12">
                 <div id="headline" class="section_bottom">
+                    {{ form_errors(form.captcha) }}
                     <h3 class="text-heading title_color">Generador de convenio de separación</h3>
                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
 
@@ -54,7 +55,6 @@
                     </p>
                 </div>
 {#                <form class="row contact_form" action="{{ path('form') }}" method="post" id="contactForm" novalidate="novalidate">#}
-
                 <form class="row contact_form" action="{{ path('form') }}" method="post" id="contactForm">
 
                     <div class="col-md-12">
@@ -618,6 +618,7 @@
                                 </div>
                             </div>
                         </div>
+                        {{ form_widget(form.captcha) }}
                         {{ form_row(form.save, {
                             'label': 'Descargar convenio',
                             'attr': {
@@ -638,10 +639,29 @@
 {% block blog %}{% endblock %}
 
 {% block javascripts %}
-{#    <script src="{{ asset('build/js/app.js') }}"></script>#}
     <script src="{{ asset('js/jquery-3.2.1.min.js') }}"></script>
     <script src="http://cdn.jsdelivr.net/qtip2/3.0.3/jquery.qtip.min.js"></script>
     <script src="{{ asset('js/agreement.js') }}"></script>
     <!-- Bootstrap Date-Picker Plugin -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+    <script>
+        jQuery(document).ready(function() {
+            const siteKey = '6Lf8BfsUAAAAAC-HUxlN_QbFDUxCgALzyonBL1M7';
+
+            //either on page load
+            grecaptcha.ready(function () {
+                setInterval(function(){
+                    grecaptcha.execute(siteKey, {
+                        action: 'request'
+                    }).then(function (token) {
+                        //the token will be sent on form submit
+                        $('#request_captcha').val(token);
+                        //keep in mind that token expires in 120 seconds so it's better to add setTimeout.
+                    });
+
+                }, 60000);
+            });
+        });
+    </script>
+    <script src="https://www.google.com/recaptcha/api.js?render=6Lf8BfsUAAAAAC-HUxlN_QbFDUxCgALzyonBL1M7"></script>
 {% endblock %}

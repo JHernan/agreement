@@ -50,6 +50,7 @@
 
 # ENV
 .env
+.env.test
 
 # PHPStorm
 .idea/
