@@ -73,4 +73,11 @@ class AgreementController extends Controller
     public function contactAction(Request $request){
         return $this->render('agreement/contact.html.twig');
     }
+
+    /**
+     * @Route("/politica-de-cookies", name="cookies", methods={"GET"})
+     */
+    public function cookiesAction(Request $request){
+        return $this->render('agreement/cookies.html.twig');
+    }
 }

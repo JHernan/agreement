@@ -554,7 +554,15 @@
                 </div>
             </div>
         </footer>
-        <!--================ End footer Area =================-->
+            <!--================ End footer Area =================-->
+            <!--================ Start Cookies Area =================-->
+        <div id="cookies_box">
+            <p><button id="accept_cookies" class="pull-right"><i class="fa fa-times"></i> Aceptar y cerrar este mensaje</button>
+                Utilizamos cookies propias y de terceros para obtener datos estadísticos de la navegación de nuestros usuarios y mejorar nuestros servicios.<br />
+                Si acepta o continúa navegando, consideramos que acepta su uso. Puede cambiar la configuración u obtener más información <a target="_blank" href="{{ path('cookies') }}">aquí</a>
+            </p>
+        </div>
+            <!--================ End Cookies Area =================-->
         {% endblock %}
     {% endblock %}
     {% block javascripts %}
@@ -571,11 +579,7 @@
         <script src="{{ asset('js/jquery.ajaxchimp.min.js') }}"></script>
         <script src="{{ asset('vendors/counter-up/jquery.waypoints.min.js') }}"></script>
         <script src="{{ asset('vendors/counter-up/jquery.counterup.js') }}"></script>
-        <script src="{{ asset('js/mail-script.js') }}"></script>
-        <!--gmaps Js-->
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
-        <script src="{{ asset('js/gmaps.min.js') }}"></script>
-        <script src="{{ asset('js/theme.js') }}"></script>
+        <script src="{{ asset('js/cookies.js') }}"></script>
     {% endblock %}
 </body>
 </html>
