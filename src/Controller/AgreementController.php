@@ -68,6 +68,13 @@ class AgreementController extends Controller
     }
 
     /**
+     * @Route("/sobre-nosotros", name="about_us", methods={"GET"})
+     */
+    public function aboutUsAction(Request $request){
+        return $this->render('agreement/about-us.html.twig');
+    }
+
+    /**
      * @Route("/contacto", name="contact", methods={"GET"})
      */
     public function contactAction(Request $request){

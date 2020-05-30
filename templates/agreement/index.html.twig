@@ -1,13 +1,13 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Index{% endblock %}
+{% block title %}Convenio Divorcio{% endblock %}
 
 {% block stylesheets %}
     {{ parent() }}
     <style>
         .pricing {
             text-align: center;
-            border: 1px solid #f0f0f0;
+            border: 1px solid #888;
             color: #777;
             font-size: 14px;
             padding-left: 0;
@@ -96,58 +96,20 @@
     </style>
 {% endblock %}
 
-{% block home_banner %}
-    <section class="home_banner_area overlay">
-        <div class="banner_inner">
-            <div class="container">
-                <div class="row fullscreen d-flex align-items-center justify-content-center" style="height: 640px;">
-                    <div class="banner_content">
-                        <h2>
-                            Divorcios<br>
-                            Juanqui S.A.<br>
-                        </h2>
-                        <p>
-                            Rellena un sencillito formulario para ahorrarte 400 pavos que te va a cobrar el cabrón este.
-                        </p>
-                        <a class="primary-btn text-uppercase" href="{{ path('form') }}">Formulario</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-{% endblock %}
 {% block features %}{% endblock %}
 {% block video %}{% endblock %}
 
 {% block service %}
-    <section class="section_gap_top">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="row">
-                        <h3 class="text-heading title_color">INTRODUCCIÓN</h3>
-                        <p class="sample-text">
-                            La gran mentira que los despachos de abogados tratan de ocultar es que gran parte de su trabajo no es necesario.<br />
-                            Tratan de vender que dos personas que ven su matrimonio fracasar necesitan de ayuda profesional, de uno, dos o todo un equipo de abogados para alcanzar un acuerdo que sea beneficioso.<br />
-                            Lo cierto es que <b>dos personas racionales</b>, que dejando a un lado los rencores que surgen con una ruptura matrimonial, y con la información necesaria, <b>son capaces de poder llegar a un acuerdo que sea satisfactorio.</b><br />
-                            Es obvio que habrá casos complicados en los que la presencia de un abogado sea necesario cuando las partes no puedan llegar a un acuerdo, pero <b>en el mayoría de los casos el abogado solo será necesario para presentar la demanda en el Juzgado o en la notaría.</b>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section_gap_top">
+    <section class="contact_area section_gap_top">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
                     <div class="row">
                         <h3 class="text-heading title_color">COMO FUNCIONA</h3>
                         <p class="sample-text">
-                            TK ofrece la posibilidad de <b>realizar un convenio</b>, dando a los cónyuges la posibilidad de fijar los términos.<br />
-                            Para ello proveemos de <b>múltiples situaciones</b>, custodia compartida o monoparental, así como distintos métodos de regular el régimen de visitas. Incluso se prevé la posibilidad de realizar un convenio sin hijos.<br />
-                            En la <a href="{{ path('form') }}">web</a> se le irá guiando y pidiéndole que rellene los distintos campos para <b>obtener finalmente un convenio de separación o divorcio.</b>
+                            <b>ConvenioDivorcio.com</b> ofrece la posibilidad de realizar un convenio, dando a los cónyuges la posibilidad de fijar los términos.<br />
+                            Para ello proveemos de múltiples situaciones, <b>custodia compartida o monoparental</b>, así como distintos métodos de regular el <b>régimen de visitas</b>.<br />
+                            Incluso se prevé la posibilidad de realizar un convenio sin hijos. En web se le irá guiando y pidiéndole que rellene los distintos campos para <b>obtener finalmente un convenio de separación o divorcio</b>.
                         </p>
                     </div>
                 </div>
@@ -165,9 +127,9 @@
                     </p>
                 </div>
                 <div class="col-lg-4">
-                    <h3 class="text-heading title_color">QUÉ PASA CON LOS DATOS</h3>
+                    <h3 class="text-heading title_color">TRATAMIENTO DE LOS DATOS PERSONALES</h3>
                     <p class="sample-text">
-                        TK <b>no almacena ningún tipo de dato personal</b> y no tenemos acceso al convenio de divorcio.
+                        ConvenioDivorcio.com <b>no almacena ningún tipo de dato personal</b> y no tenemos acceso al convenio de divorcio generado.
                     </p>
                 </div>
                 <div class="col-lg-4">
@@ -180,30 +142,16 @@
         </div>
     </section>
 
-    <section class="section_gap_top">
+    <section class="section_gap_top section_bottom">
         <div class="container">
             <div class="row">
-                <h3 class="text-heading title_color">CUAL ES EL TRUCO</h3>
-                <p class="sample-text">
-                    <b>Ninguno.</b><br />
-                    Sigue siendo necesario la realización de una demanda para presentar la demanda, y nosotros <b>nos ofrecemos conforme a una tarifa plana a la presentación del convenio.</b><br />
-                    Si nuestra tarifa no le convence y quiere que otro abogado le presente la demanda no tenemos inconveniente.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <section class="section_gap_top">
-        <div class="container">
-            <div class="row section_gap_bottom">
                 <h3 class="text-heading title_color">QUÉ OTROS SERVICIOS OFRECEMOS</h3>
                 <p class="sample-text">
-                    Si quiere una atención más personalizada, el despacho profesional tiene más de cuarenta años de experiencia llevando procedimientos de divorcio y puedes contactar con nosotros y explicarnos tu caso, nos pondremos en contacto con usted sin compromiso alguno.
+                    <b>Si quiere una atención más personalizada</b>, el despacho profesional tiene más de cuarenta años de experiencia llevando procedimientos de divorcio y puede contactar con nosotros y explicarnos su caso, <b>nos pondremos en contacto con usted sin compromiso alguno</b>.
                 </p>
             </div>
         </div>
     </section>
-
 
     <section>
         <div class="container">
@@ -213,9 +161,10 @@
                         <div class="col-md-4">
                             <ul class="pricing p-green">
                                 <li>
-                                    <big>Generación automática del convenio de separación</big>
+                                    <big>Generación Convenio Gratuito</big>
                                 </li>
-                                <li>TK ofrece la posibilidad de realizar, de manera gratuita, un convenio de separación o divorcio, listo para su descarga, y que podrá ser presentado en cualquier sede judicial. No requerimos ningún tipo de registro y no haremos uso de sus datos personales.</li>
+                                <li>ConvenioDivorcio.com ofrece la posibilidad de realizar, de manera <b>gratuita</b>, un convenio de separación o divorcio, listo para su descarga, y que podrá ser presentado en sede judicial.<br />
+                                    No requerimos ningún tipo de registro y no haremos uso de sus datos personales.</li>
                                 <br />
                                 <li>
                                     <h3>0€</h3>
@@ -230,9 +179,9 @@
                         <div class="col-md-4">
                             <ul class="pricing p-blue">
                                 <li>
-                                    <big>Generación automática del convenio de separación</big>
+                                    <big>Presentación del Convenio</big>
                                 </li>
-                                <li>Si desea que TK presente su demanda ofrecemos un precio competitivo y la revisión del convenio antes de su presentación por un abogado en ejercicio.</li>
+                                <li>Si desea que ConvenioDivorcio.com <b>presente su demanda</b> ofrecemos un precio competitivo y la revisión del convenio antes de su presentación por un abogado en ejercicio.</li>
                                 <br /><br />
                                 <br />
                                 <li>
@@ -248,16 +197,16 @@
                         <div class="col-md-4">
                             <ul class="pricing p-red">
                                 <li>
-                                    <big>Generación personalizada del convenio de separación</big>
+                                    <big>Convenio personalizado</big>
                                 </li>
-                                <li>Por último, ofrecemos la tercera opción de realizar un convenio personalizado si considera que el gratuito no se ajusta a su situación, incluyéndose en el precio la presentación del convenio en el juzgado.
+                                <li>Ofrecemos la opción de realizar un <b>convenio personalizado</b> si considera que el gratuito no se ajusta a su situación, incluyéndose en el precio la presentación del convenio en el juzgado.
                                     <br /> Los gastos del procurador están incluidos en el precio.</li>
                                 <li>
                                     <h3>1.000€</h3>
                                     <span>Pago único</span>
                                 </li>
                                 <li>
-                                    <a href="#" class="genric-btn danger circle">Contacta</a>
+                                    <a href="{{ path('contact') }}" class="genric-btn danger circle">Contacta</a>
                                 </li>
                             </ul>
                         </div>
