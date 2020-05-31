@@ -14,53 +14,87 @@
                     <div class="row section_bottom">
                         <h3 class="text-heading title_color">Contacto</h3>
                         <p class="sample-text">
-                            Puedes contactar con nosotros a través de los siguientes medios, o bien rellenando el formulario de contacto.
-                            Nos pondremos en contacto contigo lo antes posible.
+                            Si tiene alguna duda acerca de los servicios que ofrecemos o desea realizar cualquier consulta, puede contactar con nosotros rellenando el formulario de contacto. <br />
+                            Nos pondremos en contacto con usted lo antes posible.
                         </p>
                     </div>
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-3">
-                    <div class="contact_info">
-                        <div class="info_item">
-                            <i class="lnr lnr-home"></i>
-                            <h6>California, United States</h6>
-                            <p>Santa monica bullevard</p>
-                        </div>
-                        <div class="info_item">
-                            <i class="lnr lnr-phone-handset"></i>
-                            <h6><a href="#">00 (440) 9865 562</a></h6>
-                            <p>Mon to Fri 9am to 6 pm</p>
-                        </div>
-                        <div class="info_item">
-                            <i class="lnr lnr-envelope"></i>
-                            <h6><a href="#">support@colorlib.com</a></h6>
-                            <p>Send us your query anytime!</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-9">
-                    <form class="row contact_form" action="contact_process.php" method="post" id="contactForm" novalidate="novalidate">
+                <div class="col-lg-12">
+                    {{ form_errors(form.captcha) }}
+                    <form class="row contact_form" action="{{ path('contact') }}" method="post" id="contactForm">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'">
+                                {{
+                                    form_widget(form.name, {'attr': {
+                                        'class': 'form-control',
+                                        'placeholder': 'Introduzca su nombre',
+                                        'onfocus': 'this.placeholder = ""',
+                                        'onblur': 'this.placeholder = "Introduzca su nombre"',
+                                    }})
+                                }}
+                                {{ form_errors(form.name) }}
                             </div>
                             <div class="form-group">
-                                <input type="email" class="form-control" id="email" name="email" placeholder="Enter email address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'">
+                                {{
+                                form_widget(form.email, {'attr': {
+                                    'class': 'form-control',
+                                    'placeholder': 'Introduzca su email',
+                                    'onfocus': 'this.placeholder = ""',
+                                    'onblur': 'this.placeholder = "Introduzca su email"',
+                                }})
+                                }}
+                                {{ form_errors(form.email) }}
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control" id="subject" name="subject" placeholder="Enter Subject" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Subject'">
+                                {{
+                                form_widget(form.phone, {'attr': {
+                                    'class': 'form-control',
+                                    'placeholder': 'Introduzca su teléfono',
+                                    'onfocus': 'this.placeholder = ""',
+                                    'onblur': 'this.placeholder = "Introduzca su teléfono"',
+                                }})
+                                }}
+                                {{ form_errors(form.phone) }}
+                            </div>
+                            <div class="form-group">
+                                {{
+                                form_widget(form.subject, {'attr': {
+                                    'class': 'form-control',
+                                    'placeholder': 'Introduzca el motivo de su contacto',
+                                    'onfocus': 'this.placeholder = ""',
+                                    'onblur': 'this.placeholder = "Introduzca el motivo de su contacto"',
+                                }})
+                                }}
+                                {{ form_errors(form.subject) }}
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <textarea class="form-control" name="message" id="message" rows="1" placeholder="Enter Message" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Message'"></textarea>
+                                {{
+                                form_widget(form.message, {'attr': {
+                                    'class': 'form-control',
+                                    'placeholder': 'Introduzca el mensaje',
+                                    'onfocus': 'this.placeholder = ""',
+                                    'onblur': 'this.placeholder = "Introduzca el mensaje"',
+                                }})
+                                }}
+                                {{ form_errors(form.message) }}
                             </div>
                         </div>
+                        {{ form_widget(form.captcha) }}
                         <div class="col-md-12 text-right">
-                            <button type="submit" value="submit" class="primary-btn text-uppercase">Send Message</button>
+                            {{
+                            form_row(form.send, {
+                                'label': 'Enviar mensaje',
+                                'attr': {
+                                    'class': 'primary-btn text-uppercase'
+                                }
+                            })
+                            }}
                         </div>
+                        {{ form_row(form._token) }}
                     </form>
                 </div>
             </div>

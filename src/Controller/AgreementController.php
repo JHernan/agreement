@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Form\ContactType;
+use App\Util\Email;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
@@ -75,10 +77,46 @@ class AgreementController extends Controller
     }
 
     /**
-     * @Route("/contacto", name="contact", methods={"GET"})
+     * @Route("/contacto", name="contact", methods={"GET", "POST"})
      */
-    public function contactAction(Request $request){
-        return $this->render('agreement/contact.html.twig');
+    public function contactAction(Request $request, \Swift_Mailer $mailer){
+        $form = $this->createForm(ContactType::class);
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $message = (new \Swift_Message('ConvenioDivorcio.com - ' . $form->getData()['subject']))
+                ->setFrom($this->getParameter('mailer_from'))
+                ->setTo($this->getParameter('mailer_to'))
+                ->setBody(
+                    $this->renderView(
+                        'email/contact_email.html.twig', [
+                            'name' => $form->getData()['name'],
+                            'email' => $form->getData()['email'],
+                            'phone' => $form->getData()['phone'],
+                            'subject' => $form->getData()['subject'],
+                            'message' => $form->getData()['message']
+                        ]
+                    ),
+                    'text/html'
+                )
+            ;
+
+            $mailer->send($message);
+
+            return $this->redirectToRoute('contact_send');
+        }
+
+        return $this->render('agreement/contact.html.twig', array(
+            'form' => $form->createView()
+        ));
+    }
+
+    /**
+     * @Route("/contacto-enviado", name="contact_send", methods={"GET"})
+     */
+    public function contactSendAction(Request $request){
+        return $this->render('agreement/contact_success.html.twig');
     }
 
     /**
