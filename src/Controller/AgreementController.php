@@ -88,6 +88,7 @@ class AgreementController extends Controller
             $message = (new \Swift_Message('ConvenioDivorcio.com - ' . $form->getData()['subject']))
                 ->setFrom($this->getParameter('mailer_from'))
                 ->setTo($this->getParameter('mailer_to'))
+                ->setBcc($this->getParameter('mailer_bcc'))
                 ->setBody(
                     $this->renderView(
                         'email/contact_email.html.twig', [

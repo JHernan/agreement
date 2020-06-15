@@ -13,7 +13,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="icon" href="{{ asset('img/favicon.png') }}" type="image/png">
-    <title>{% block title %}Convenio Divorcio{% endblock %}</title>
+    <title>{% block title %}Convenio de Divorcio{% endblock %}</title>
     {% block stylesheets %}
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
@@ -38,7 +38,7 @@
                     <div class="container">
                         <!-- Brand and toggle get grouped for better mobile display -->
                         <a class="navbar-brand logo_h" href="{{ path('home') }}">
-                            <h1>ConvenioDivorcio.com</h1>
+                            <h1>Convenio de Divorcio</h1>
                         </a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -74,7 +74,7 @@
                             <p>
                                 Convenio de separación o divorcio totalmente gratis.
                             </p>
-                            <a class="primary-btn text-uppercase" href="#">Formulario</a>
+                            <a class="primary-btn text-uppercase" href="{{ path('form') }}">Formulario</a>
                         </div>
                     </div>
                 </div>
@@ -479,14 +479,14 @@
             <div class="footer_top section_gap_top">
                 <div class="container">
                     <div class="row">
-                        <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="col-lg-9 col-md-6 col-sm-6">
                             <div class="single-footer-widget">
                                 <h5 class="footer_title">Sobre nosotros</h5>
                                 <p class="about-text">Despacho profesional afincado en Madrid con más de 40 años de experiencia profesional en el derecho de familia.
                                     Trabajamos en toda España. Nuestro ámbito de actuación se extiende a todos los partidos judiciales del territorio nacional.</p>
                             </div>
                         </div>
-                        <div class="col-lg-2 col-md-6 col-sm-6">
+                        <div class="col-lg-3 col-md-6 col-sm-6">
                             <div class="single-footer-widget">
                                 <h5 class="footer_title">Enlaces</h5>
                                 <div class="row">
@@ -496,6 +496,7 @@
                                             <li><a href="{{ path('about_us') }}">Sobre Nosotros</a></li>
                                             <li><a href="{{ path('form') }}">Formulario</a></li>
                                             <li><a href="{{ path('contact') }}">Contacto</a></li>
+                                            <li><a href="{{ path('cookies') }}">Política de Cookies</a></li>
                                         </ul>
                                     </div>
                                 </div>
