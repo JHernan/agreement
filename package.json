@@ -13,6 +13,6 @@
     "watch:all": "yarn watch:css & yarn watch:vue & wait"
   },
   "dependencies": {
-    "node-sass": "^4.12.0"
+    "node-sass": "^4.13.1"
   }
 }
